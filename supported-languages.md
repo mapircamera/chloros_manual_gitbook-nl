@@ -4,57 +4,78 @@ Chloros biedt volledige interface-ondersteuning in **38 talen wereldwijd**, waar
 
 Chloros ondersteunt de volgende talen:
 
-1. 🇺🇸 **Engels**
-2. 🇪🇸 **Español** (Spaans)
-3. 🇵🇹 **Português** (Portugees)
-4. 🇫🇷 **Français** (Frans)
-5. 🇩🇪 **Deutsch** (Duits)
-6. 🇮🇹 **Italiano** (Italiaans)
-7. 🇯🇵 **日本語** (Japans)
-8. 🇰🇷 **한국어** (Koreaans)
-9. 🇨🇳 **简体中文** (Vereenvoudigd Chinees)
-10. 🇹🇼 **繁體中文** (Traditioneel Chinees)
-11. 🇷🇺 **Русский** (Russisch)
-12. 🇳🇱 **Nederlands** (Nederlands)
-13. 🇸🇦 **العربية** (Arabisch)
-14. 🇵🇱 **Polski** (Pools)
-15. 🇹🇷 **Türkçe** (Turks)
-16. 🇮🇳 **हिंदी** (Hindi)
-17. 🇮🇩 **Bahasa Indonesia** (Indonesisch)
-18. 🇻🇳 **Tiếng Việt** (Vietnamees)
-19. 🇹🇭 **ไทย** (Thais)
-20. 🇸🇪 **Svenska** (Zweeds)
-21. 🇩🇰 **Dansk** (Deens)
-22. 🇳🇴 **Norsk** (Noors)
-23. 🇫🇮 **Suomi** (Fins)
-24. 🇬🇷 **Ελληνικά** (Grieks)
-25. 🇨🇿 **Čeština** (Tsjechisch)
-26. 🇭🇺 **Magyar** (Hongaars)
-27. 🇷🇴 **Română** (Roemeens)
-28. 🇺🇦 **Українська** (Oekraïens)
-29. 🇧🇷 **Português Brasileiro** (Braziliaans Portugees)
-30. 🇭🇰 **粵語** (Kantonees)
-31. 🇲🇾 **Bahasa Melayu** (Maleis)
-32. 🇸🇰 **Slovenčina** (Slowaaks)
-33. 🇧🇬 **Български** (Bulgaars)
-34. 🇭🇷 **Hrvatski** (Kroatisch)
-35. 🇱🇹 **Lietuvių** (Litouws)
-36. 🇱🇻 **Latviešu** (Lets)
-37. 🇪🇪 **Eesti** (Ests)
-38. 🇸🇮 **Slovenščina** (Sloveens)
+| # | Taal | Native naam | CLI-code |
+|---|----------|-------------|----------|
+| 1 | 🇺🇸 Engels | Engels | `en` |
+| 2 | 🇪🇸 Spaans | Español | `es` |
+| 3 | 🇵🇹 Portugees | Português | `pt` |
+| 4 | 🇫🇷 Frans | Français | `fr` |
+| 5 | 🇩🇪 Duits | Deutsch | `de` |
+| 6 | 🇮🇹 Italiaans | Italiano | `it` |
+| 7 | 🇯🇵 Japans | 日本語 | `ja` |
+| 8 | 🇰🇷 Koreaans | 한국어 | `ko` |
+| 9 | 🇨🇳 Chinees (vereenvoudigd) | 简体中文 | `zh` |
+| 10 | 🇹🇼 Chinees (traditioneel) | 繁體中文 | `zh-TW` |
+| 11 | 🇷🇺 Russisch | Русский | `ru` |
+| 12 | 🇳🇱 Nederlands | Nederlands | `nl` |
+| 13 | 🇸🇦 Arabisch | العربية | `ar` |
+| 14 | 🇵🇱 Pools | Polski | `pl` |
+| 15 | 🇹🇷 Turks | Türkçe | `tr` |
+| 16 | 🇮🇳 Hindi | हिंदी | `hi` |
+| 17 | 🇮🇩 Indonesisch | Bahasa Indonesia | `id` |
+| 18 | 🇻🇳 Vietnamees | Tiếng Việt | `vi` |
+| 19 | 🇹🇭 Thais | ไทย | `th` |
+| 20 | 🇸🇪 Zweeds | Svenska | `sv` |
+| 21 | 🇩🇰 Deens | Dansk | `da` |
+| 22 | 🇳🇴 Noors | Norsk | `no` |
+| 23 | 🇫🇮 Fins | Suomi | `fi` |
+| 24 | 🇬🇷 Grieks | Ελληνικά | `el` |
+| 25 | 🇨🇿 Tsjechisch | Čeština | `cs` |
+| 26 | 🇭🇺 Hongaars | Magyar | `hu` |
+| 27 | 🇷🇴 Roemeens | Română | `ro` |
+| 28 | 🇺🇦 Oekraïens | Українська | `uk` |
+| 29 | 🇧🇷 Braziliaans Portugees | Português Brasileiro | `pt-BR` |
+| 30 | 🇭🇰 Kantonees | 粵語 | `zh-HK` |
+| 31 | 🇲🇾 Maleis | Bahasa Melayu | `ms` |
+| 32 | 🇸🇰 Slowaaks | Slovenčina | `sk` |
+| 33 | 🇧🇬 Bulgaars | Български | `bg` |
+| 34 | 🇭🇷 Kroatisch | Hrvatski | `hr` |
+| 35 | 🇱🇹 Litouws | Lietuvių | `lt` |
+| 36 | 🇱🇻 Lets | Latviešu | `lv` |
+| 37 | 🇪🇪 Ests | Eesti | `et` |
+| 38 | 🇸🇮 Sloveens | Slovenščina | `sl` |
 
 ## Hoe u de taal kunt wijzigen
 
 ### In Chloros Desktop/Browser
 
 1. Open de instellingen van de applicatie.
-2. Ga naar het menu voor taalselectie.
+2. Ga naar het menu voor taalkeuze.
 3. Kies de gewenste taal uit de lijst.
 4. De interface wordt onmiddellijk bijgewerkt.
 
 ### In Chloros CLI
 
-Gebruik de taalparameter bij uw opdrachten om de taal van de interface in te stellen.
+Gebruik de opdracht `language` om de taal van de CLI-interface te bekijken of te wijzigen:
+
+```bash
+# View current language
+chloros-cli language
+
+# Change to Spanish
+chloros-cli language es
+
+# Change to Chinese (Simplified)
+chloros-cli language zh
+
+# Change to Brazilian Portuguese
+chloros-cli language pt-BR
+
+# List all available languages
+chloros-cli language --list
+```
+
+Raadpleeg de [CLI-documentatie](CLI.md) voor meer informatie.
 
 ### In Chloros Python SDK
 
@@ -64,9 +85,9 @@ Stel de taalparameter in bij het initialiseren van de SDK om berichten en uitvoe
 
 Alle 38 talen worden volledig ondersteund in:
 
-* **Chloros Desktop** - Volledige GUI-vertaling
+* **Chloros Desktop** - Volledige vertaling van de GUI
 * **Chloros Browser** - Webinterface in alle talen
 * **Chloros CLI** - Opdrachtregelinterface en uitvoerberichten
-* **Chloros Python SDK** - API berichten en documentatie
+* **Chloros Python SDK** - API-berichten en documentatie
 
-Dankzij de taalondersteuning kunnen gebruikers wereldwijd efficiënt werken in hun moedertaal, zonder belemmeringen.
+Dankzij de taalondersteuning kunnen gebruikers wereldwijd efficiënt en zonder belemmeringen in hun moedertaal werken.
