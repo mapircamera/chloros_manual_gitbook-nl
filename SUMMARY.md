@@ -16,7 +16,7 @@
 ## Afbeeldingen verwerken (GUI)
 
 * [Projectinstellingen aanpassen](processing-images-gui/adjusting-project-settings.md)
-* [Bestanden toevoegen aan een project](processing-images-gui/page-1.md)
+* [Bestanden toevoegen aan een project](processing-images-gui/adding-files-to-a-project.md)
 * [Doelafbeeldingen kiezen](processing-images-gui/choosing-target-images.md)
 * [Het starten van de verwerking](processing-images-gui/starting-the-processing.md)
 * [Toezicht houden op de verwerking](processing-images-gui/monitoring-the-processing.md)
@@ -24,11 +24,11 @@
 
 ## PROJECTINSTELLINGEN
 
-* [Projectinstellingen](project-settings/page-2.md)
+* [Projectinstellingen](project-settings/project-settings.md)
 * [Multispectrale indexformules](project-settings/multispectral-index-formulas.md)
 
 ## BEELDVIEWER (GUI)
 
-* [Een afbeelding op volledig scherm openen](image-viewer-gui/page-3.md)
+* [Een afbeelding op volledig scherm openen](image-viewer-gui/opening-an-image-full-screen.md)
 * [Afbeeldingslagen](image-viewer-gui/image-layers.md)
 * [Index/LUT-sandbox](image-viewer-gui/index-lut-sandbox.md)
