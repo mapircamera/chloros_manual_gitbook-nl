@@ -128,8 +128,8 @@ print(f"Chloros SDK version: {chloros_sdk.__version__}")
 De SDK gebruikt dezelfde licentie als Chloros, Chloros (browser) en Chloros CLI. Activeer eenmaal via de GUI of CLI:
 
 1. Open **Chloros of Chloros (browser)** en log in op het tabblad Gebruiker <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> . Of open **CLI**.
-2. Voer uw Chloros+-inloggegevens in en log in
-3. De licentie wordt lokaal in de cache opgeslagen (blijft behouden na herstarten)
+2. Voer uw Chloros+ inloggegevens in en log in
+3. De licentie wordt lokaal opgeslagen (blijft behouden na herstarten)
 
 {% hint style=&quot;success&quot; %}
 **Eenmalige installatie**: Nadat u zich hebt aangemeld via de GUI of CLI, gebruikt SDK automatisch de opgeslagen licentie. Er is geen aanvullende authenticatie nodig!
@@ -234,9 +234,9 @@ Afbeeldingen importeren vanuit een map.
 | Parameter     | Type     | Vereist | Beschrijving                        |
 | ------------- | -------- | -------- | ---------------------------------- |
 | `folder_path` | str/Pad | Ja      | Pad naar map met afbeeldingen         |
-| `recursive`   | bool     | Nee       | Submappen doorzoeken (standaard: False) |
+| `recursive`   | bool     | Nee       | Zoek in submappen (standaard: False) |
 
-**Retourneert:** `dict` - Importeren resultaten met aantal bestanden
+**Retourneert:** `dict` - Importeerresultaten met aantal bestanden
 
 **Voorbeeld:**
 
@@ -261,7 +261,7 @@ Configureer verwerkingsinstellingen.
 | `debayer`                 | str  | &quot;Hoge kwaliteit (sneller)&quot; | Debayer-methode                  |
 | `vignette_correction`     | bool | `True`                  | Vignettecorrectie inschakelen      |
 | `reflectance_calibration` | bool | `True`                  | Reflectiekalibratie inschakelen  |
-| `indices`                 | lijst | `None`                  | Te berekenen vegetatie-indexen |
+| `indices`                 | lijst | `None`                  | Vegetatie-indexen om te berekenen |
 | `export_format`           | str  | &quot;TIFF (16-bit)&quot;         | Uitvoerformaat                   |
 | `ppk`                     | bool | `False`                 | PPK-correcties inschakelen          |
 | `custom_settings`         | dict | `None`                  | Geavanceerde aangepaste instellingen        |
@@ -311,7 +311,7 @@ Verwerk de projectafbeeldingen.
 | `mode`              | str      | `"parallel"` | Verwerkingsmodus: &quot;parallel&quot; of &quot;serieel&quot;   |
 | `wait`              | bool     | `True`       | Wachten op voltooiing                       |
 | `progress_callback` | callable | `None`       | Callback-functie voor voortgang (progress, msg) |
-| `poll_interval`     | float    | `2.0`        | Polling-interval voor voortgang (seconden)   |
+| `poll_interval`     | float    | `2.0`        | Pollinginterval voor voortgang (seconden)   |
 
 **Retourneert:** `dict` - Verwerkingsresultaten
 
@@ -360,7 +360,7 @@ print(config['Project Settings'])
 
 Haal backend-statusinformatie op.
 
-**Retourneert:** `dict` - Backend-status
+**Retourneert:** `dict` - Backendstatus
 
 **Voorbeeld:**
 
@@ -397,7 +397,7 @@ Handige functie van één regel om een map te verwerken.
 | `folder_path`             | str/Pad | Vereist        | Pad naar map met afbeeldingen     |
 | `project_name`            | str      | Automatisch gegenereerd  | Projectnaam                   |
 | `camera`                  | str      | `None`          | Camerasjabloon                |
-| `indices`                 | lijst     | `["NDVI"]`      | Indices om te berekenen           |
+| `indices`                 | list     | `["NDVI"]`      | Indices om te berekenen           |
 | `vignette_correction`     | bool     | `True`          | Vignettecorrectie inschakelen     |
 | `reflectance_calibration` | bool     | `True`          | Reflectiekalibratie inschakelen |
 | `export_format`           | str      | &quot;TIFF (16-bit)&quot; | Uitvoerformaat                  |
@@ -457,7 +457,7 @@ with ChlorosLocal() as chloros:
 
 ### Voorbeeld 1: Basisverwerking
 
-Een map verwerken met standaardinstellingen:
+Verwerk een map met standaardinstellingen:
 
 ```python
 from chloros_sdk import process_folder
@@ -470,7 +470,7 @@ print(f"Processing complete: {results}")
 
 ***
 
-### Voorbeeld 2: aangepaste workflow
+### Voorbeeld 2: Aangepaste workflow
 
 Volledige controle over de verwerkingspijplijn:
 
@@ -514,7 +514,7 @@ print("Processing complete!")
 
 ### Voorbeeld 3: batchverwerking van meerdere mappen
 
-Verwerk meerdere vluchtgegevenssets:
+Verwerk meerdere vluchtdatasets:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -566,7 +566,7 @@ print("All flights processed!")
 
 ### Voorbeeld 4: integratie van onderzoekspijplijn
 
-Chloros integreren met gegevensanalyse:
+Integreer Chloros met gegevensanalyse:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -660,7 +660,7 @@ logging.info("Processing complete!")
 
 ### Voorbeeld 6: Foutverwerking
 
-Robuuste foutafhandeling voor productiegebruik:
+Robuuste foutverwerking voor productiegebruik:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -841,7 +841,7 @@ chloros = ChlorosLocal(
 
 ### Niet-blokkerende verwerking
 
-Start de verwerking en ga door met andere taken:
+Start de verwerking en ga verder met andere taken:
 
 ```python
 # Start processing (non-blocking)
@@ -1123,7 +1123,7 @@ chloros.process(progress_callback=notebook_progress)
 
 ### V: Is er een internetverbinding nodig voor SDK?
 
-**A:** Alleen voor de eerste activering van de licentie. Nadat u bent ingelogd via Chloros, Chloros (browser) of Chloros CLI, wordt de licentie lokaal opgeslagen en werkt deze 30 dagen offline.
+**A:** Alleen voor de eerste activering van de licentie. Nadat u zich hebt aangemeld via Chloros, Chloros (browser) of Chloros CLI, wordt de licentie lokaal in de cache opgeslagen en werkt deze 30 dagen offline.
 
 ***
 
@@ -1149,19 +1149,19 @@ chloros.process(progress_callback=notebook_progress)
 
 ***
 
-### V: Kan ik apps distribueren die zijn gebouwd met de SDK?
+### V: Kan ik apps distribueren die zijn gebouwd met SDK?
 
-**A:** SDK-code kan worden geïntegreerd in uw applicaties, maar:
+**A:** SDK-code kan in uw applicaties worden geïntegreerd, maar:
 
-* Eindgebruikers moeten Chloros geïnstalleerd hebben
-* Eindgebruikers moeten actieve Chloros+-licenties hebben
+* Eindgebruikers moeten Chloros geïnstalleerd hebben.
+* Eindgebruikers moeten actieve Chloros+-licenties hebben.
 * Voor commerciële distributie is een OEM-licentie vereist.
 
 Neem contact op met info@mapir.camera voor vragen over OEM.
 
 ***
 
-### V: Hoe werk ik de SDK bij?
+### V: Hoe werk ik SDK bij?
 
 ```bash
 pip install --upgrade chloros-sdk
@@ -1199,7 +1199,7 @@ Plan via Taakplanner om dagelijks uit te voeren.
 
 ### V: Ondersteunt SDK async/await?
 
-**A:** De huidige versie is synchroon. Gebruik voor asynchroon gedrag `wait=False` of voer het uit in een aparte thread:
+**A:** De huidige versie is synchroon. Gebruik voor asynchroon gedrag `wait=False` of voer uit in een aparte thread:
 
 ```python
 import threading

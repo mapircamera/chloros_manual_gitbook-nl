@@ -8,7 +8,7 @@ metaLinks:
 
 ### TIFF (16-bits)
 
-16-bits (digitaal pixelgetal 0 - 65535) TIFF (.tif) formaat uitvoer.
+16-bits (digitaal pixelnummer 0 - 65535) TIFF (.tif) formaat uitvoer.
 
 ### TIFF (32-bits, procent %)
 

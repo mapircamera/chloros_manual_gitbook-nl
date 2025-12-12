@@ -70,9 +70,9 @@ pip install chloros-sdk
 
 ***
 
-## Wat is inbegrepen?
+## Wat zit erbij
 
-De installatie van Chloros omvat:
+De Chloros installatie bevat:
 
 * ✅ **Chloros Desktop GUI** - Volledig uitgeruste grafische interface
 * ✅ **Chloros (browser)** - Webgebaseerde interface voor systemen met lagere specificaties
@@ -97,7 +97,7 @@ Ontgrendel geavanceerde functies met een Chloros+ abonnement:
 
 ## Hulp bij installatie
 
-### Probleemoplossing
+### Problemen oplossen
 
 **Installatie mislukt met foutmelding:**
 
@@ -113,7 +113,7 @@ Ontgrendel geavanceerde functies met een Chloros+ abonnement:
 * Controleer Windows Event Viewer voor foutdetails
 * Neem contact op met de ondersteuning met de foutenlogboeken
 
-**Problemen met licentieactivering:**
+**Problemen met het activeren van de licentie:**
 
 * Zorg ervoor dat de internetverbinding actief is
 * Controleer de inloggegevens op [https://cloud.mapir.camera](https://cloud.mapir.camera)
@@ -165,4 +165,4 @@ Ongeoorloofd gebruik, distributie of wijziging is verboden.
 
 **Gratis versie**: beschikbaar voor persoonlijk en commercieel gebruik met beperkte functionaliteit.
 
-**Chloros+**: licentie op basis van een abonnement voor geavanceerde functies en commerciële implementaties.
+**Chloros+**: licentie op basis van een abonnement voor geavanceerde functies en commerciële toepassingen.

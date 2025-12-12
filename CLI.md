@@ -1,8 +1,6 @@
 # CLI : Opdrachtregel
 
-<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
-
-De **Chloros CLI** biedt krachtige opdrachtregeltoegang tot de Chloros-beeldverwerkingsengine, waardoor automatisering, scripting en headless-werking voor uw beeldverwerkingsworkflows mogelijk wordt.
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>De **Chloros CLI** biedt krachtige opdrachtregeltoegang tot de Chloros-beeldverwerkingsengine, waardoor automatisering, scripting en headless-werking voor uw beeldverwerkingsworkflows mogelijk wordt.
 
 ### Belangrijkste kenmerken
 
@@ -10,7 +8,7 @@ De **Chloros CLI** biedt krachtige opdrachtregeltoegang tot de Chloros-beeldverw
 * 🔗 **Integratie** - Integreer in bestaande workflows en pijplijnen
 * 💻 **Headless-werking** - Draait zonder GUI
 * 🌍 **Meertalig** - Ondersteuning voor 38 talen
-* ⚡ **Parallelle verwerking** - Dynamisch schaalbaar naar uw CPU (tot 16 parallelle workers)
+* ⚡ **Parallelle verwerking** - Schaalbaar naar uw CPU (tot 16 parallelle workers)
 
 ### Vereisten
 
@@ -42,7 +40,7 @@ Het installatieprogramma voegt automatisch `chloros-cli` toe aan uw systeem PATH
 
 ### Eerste installatie
 
-Voordat u CLI gebruikt, moet u uw Chloros+-licentie activeren:
+Activeer uw Chloros+-licentie voordat u CLI gebruikt:
 
 ```bash
 # Login with your Chloros+ account
@@ -292,7 +290,7 @@ chloros-cli language ja
 | `sl`    | Sloveens             | Slovenščina      |
 
 {% hint style=&quot;success&quot; %}
-**Automatische persistentie**: Uw taalvoorkeur wordt opgeslagen in `~/.chloros/cli_language.json` en blijft gedurende alle sessies behouden.
+**Automatische persistentie**: Uw taalvoorkeur wordt opgeslagen in `~/.chloros/cli_language.json` en blijft behouden tijdens alle sessies.
 {% endhint %}
 
 ***
@@ -408,7 +406,7 @@ De CLI gebruikt **Hoge kwaliteit (sneller)** als standaard en aanbevolen debayer
 **Wat het doet:** Corrigeert lichtverlies aan de randen van het beeld (donkere hoeken die vaak voorkomen in camerabeelden).
 
 * **Standaard ingeschakeld** - De meeste gebruikers kunnen dit beter ingeschakeld laten.
-* Gebruik `--no-vignette` om dit uit te schakelen.
+* Gebruik `--no-vignette` om uit te schakelen.
 
 {% hint style=&quot;success&quot; %}
 **Aanbeveling**: Schakel vignettecorrectie altijd in om een gelijkmatige helderheid over het hele beeld te garanderen.
@@ -706,9 +704,9 @@ No images found in the specified folder
 
 **Oplossingen:**
 
-1. Controleer of de map ondersteunde formaten bevat (.RAW, .TIF, .JPG)
+1. Controleer of de map ondersteunde indelingen bevat (.RAW, .TIF, .JPG)
 2. Controleer of het pad naar de map correct is (gebruik aanhalingstekens voor paden met spaties)
-3. Controleer of u leesrechten hebt voor de map.
+3. Zorg ervoor dat u leesrechten hebt voor de map.
 4. Controleer of de bestandsextensies correct zijn.
 
 ***
