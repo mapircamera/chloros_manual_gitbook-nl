@@ -14,7 +14,9 @@ Vanuit het hoofdmenu kunt u een nieuw project starten, een bestaand project open
 
 Wanneer deze knop is ingeschakeld, start de knop voor het starten van de verwerking de beeldverwerkingspijplijn.
 
-### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Voortgangsbalk <img src=".gitbook/assets/image (5).png" alt="" data-size="line">In de gratis Chloros-modus, die alle bestanden achtereenvolgens verwerkt, toont de voortgangsbalk 2 fasen: Doeldetectie en Verwerking.
+### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Voortgangsbalk <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
+
+In de gratis Chloros-modus, die alle bestanden achtereenvolgens verwerkt, toont de voortgangsbalk 2 fasen: Doeldetectie en Verwerking.
 
 In de betaalde Chloros+-licentiemodus, die alle bestanden tegelijkertijd verwerkt, toont de voortgangsbalk 4 fasen: Detecteren, Analyseren, Kalibreren, Exporteren. Als u uw muiscursor op de voortgangsbalk van Chloros+ plaatst, wordt het uitgebreide paneel met 4 voortgangsbalkjes weergegeven, zodat u de voortgang kunt volgen. Als u op de bovenste voortgangsbalk klikt, wordt het dropdown-paneel bevroren. Als u nogmaals klikt, wordt het paneel weer ontdooid.
 
