@@ -6,7 +6,9 @@ Via het <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> kantba
 
 Wanneer u bent ingelogd, worden uw accountgegevens weergegeven:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>## CLI Inloggen
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
+
+## CLI Inloggen
 
 Log in met uw Chloros+-inloggegevens om CLI-verwerking in te schakelen.
 
@@ -28,7 +30,9 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 **Uitvoer:**
 
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>### Vervaldatum van het abonnement
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+
+### Vervaldatum van het abonnement
 
 De vervaldatum van het abonnement in de GUI geeft aan wanneer uw licentie ongeldig wordt. Voor maandelijkse abonnementen is de vervaldatum aan het einde van de maand. Voor jaarabonnementen is dat een jaar nadat u het abonnement bent gestart. De licentiecontrole vereist een maandelijkse internetverbinding om te verifiëren, met een respijtperiode van 30 dagen.
 

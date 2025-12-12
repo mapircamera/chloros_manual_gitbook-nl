@@ -1,12 +1,12 @@
 # Bestanden toevoegen aan een project
 
-Nadat u een project hebt gemaakt of geopend in Chloros, is de volgende stap het toevoegen van uw multispectrale beelden om te beginnen met de verwerking. Met het tabblad Bestandsbrowser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> maakt het eenvoudig om beelden te importeren en uw dataset te beheren.
+Nadat u een project hebt gemaakt of geopend in Chloros, is de volgende stap het toevoegen van uw multispectrale beelden om met de verwerking te beginnen. Met het tabblad Bestandsbrowser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> maakt het eenvoudig om beelden te importeren en uw dataset te beheren.
 
 ## Toegang tot de bestandsbrowser
 
 1. Open of maak een project in Chloros
 2. Klik op het pictogram **Bestandsbrowser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> in de linkerzijbalk
-3. Het paneel Bestandsbrowser geeft de bestandenlijst van uw project weer
+3. Het paneel Bestandsbrowser geeft de bestandslijst van uw project weer
 
 {% hint style=&quot;info&quot; %}
 **Ondersteunde bestandstypen**: Chloros ondersteunt RAW+JPG- en JPG-afbeeldingsbestanden van MAPIR Survey3W en Survey3N camera&#x27;s. Alleen RAW+JPG wordt aanbevolen.
@@ -32,14 +32,14 @@ Gebruik deze optie om afzonderlijke afbeeldingsbestanden of een kleine selectie 
 Gebruik deze optie om alle afbeeldingen uit een map in één keer te importeren.
 
 1. Klik op de knop **&quot;Map toevoegen&quot;** bovenaan het paneel Bestandsbrowser.
-2. Navigeer naar de map met de afbeeldingen van uw opnamesessie en selecteer deze.
+2. Navigeer naar de map met uw opnamebeelden en selecteer deze.
 3. Klik op **&quot;Map selecteren&quot;** om alle ondersteunde afbeeldingen uit die map te importeren.
 
 ***
 
 ## De tabel van de bestandsbrowser begrijpen
 
-Zodra de afbeeldingen zijn geïmporteerd, worden ze weergegeven in een tabel met de volgende kolommen:
+Zodra de afbeeldingen zijn geïmporteerd, verschijnen ze in een tabel met de volgende kolommen:
 
 ### Miniatuur
 
@@ -85,7 +85,7 @@ Om ongewenste afbeeldingen uit uw project te verwijderen:
 
 * **Sorteren op kolom**: klik op een kolomkop om afbeeldingen te sorteren
 * **Sorteren op tijdstempel**: handig voor het ordenen van chronologische opnamereeksen
-* **Filter voor cameramodel**: groepeer afbeeldingen op cameratype als u meerdere camera&#x27;s gebruikt
+* **Filter op cameramodel**: groepeer afbeeldingen op cameratype als u meerdere camera&#x27;s gebruikt
 
 ***
 
@@ -110,7 +110,7 @@ Klik op een afbeeldingsminiatuur in de bestandsbrowser om deze weer te geven in 
 
 ## Omgaan met dubbele bestanden
 
-Chloros detecteert automatisch dubbele bestanden en negeert deze:
+Chloros detecteert en negeert automatisch dubbele bestanden:
 
 * Bestanden met identieke bestandsnamen worden overgeslagen
 * Voorkomt onbedoelde dubbele verwerking
@@ -166,7 +166,7 @@ Als uw project afbeeldingen van meerdere MAPIR-camera&#x27;s bevat:
 
 * Bestandsformaat wordt niet ondersteund (alleen RAW+JPG en JPG van MAPIR-camera&#x27;s)
 * Afbeeldingen zijn afkomstig van niet-MAPIR-camera&#x27;s (zie [Ondersteunde camera&#x27;s](../supported-cameras.md))
-* Bestandsbeschadiging of onvolledige overdracht vanaf SD-kaart
+* Bestand is beschadigd of onvolledig overgedragen vanaf SD-kaart
 
 **Oplossing**: Controleer de compatibiliteit van het bestandsformaat en het cameramodel.
 
@@ -187,7 +187,7 @@ Als uw project afbeeldingen van meerdere MAPIR-camera&#x27;s bevat:
 * Cameraklok niet correct ingesteld
 * EXIF-gegevens verwijderd door externe software
 
-**Oplossing**: Controleer of de tijdinstellingen van de camera correct waren tijdens het vastleggen
+**Oplossing**: Controleer of de tijdinstellingen van de camera correct waren tijdens het vastleggen.
 
 ***
 
@@ -195,8 +195,8 @@ Als uw project afbeeldingen van meerdere MAPIR-camera&#x27;s bevat:
 
 Zodra uw bestanden zijn geïmporteerd:
 
-1. **Controleer de bestandslijst** - Zorg ervoor dat alle afbeeldingen correct zijn geladen
-2. **Controleer cameramodellen** - Controleer of de camera correct is gedetecteerd
+1. **Controleer de bestandslijst** - Controleer of alle afbeeldingen correct zijn geladen.
+2. **Controleer cameramodellen** - Controleer of de camera correct is gedetecteerd.
 3. **Markeer doelafbeeldingen** - Zie [Doelafbeeldingen kiezen](choosing-target-images.md)
 4. **Pas instellingen aan** - Configureer verwerkingsopties in [Projectinstellingen](adjusting-project-settings.md)
 5. **Start de verwerking** - Zie [De verwerking starten](starting-the-processing.md)

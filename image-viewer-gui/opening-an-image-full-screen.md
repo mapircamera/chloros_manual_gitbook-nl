@@ -15,21 +15,21 @@ De meest gebruikelijke manier om een afbeelding te openen in de Image Viewer:
 
 ### Het tabblad Image Viewer openen
 
-Zodra een afbeelding is geladen in het voorvertoningsgebied:
+Zodra een afbeelding in het voorvertoningsgebied is geladen:
 
 1. Klik op het pictogram **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> in de linkerzijbalk
-2. Het tabblad Afbeeldingenviewer wordt geopend en de geselecteerde afbeelding wordt op volledig scherm weergegeven
+2. Het tabblad Afbeeldingsviewer wordt geopend en de geselecteerde afbeelding wordt op volledig scherm weergegeven
 3. Geavanceerde weergave- en analysetools worden beschikbaar in de linkerzijbalk
 
 ***
 
-## Overzicht van de interface van de Afbeeldingenviewer
+## Overzicht van de interface van de afbeeldingsviewer
 
 ### Hoofdweergavegebied
 
 Het grootste deel van het scherm toont uw afbeelding:
 
-* **Volledige resolutie**: afbeeldingen worden weergegeven in de oorspronkelijke resolutie
+* **Volledige resolutie**: afbeeldingen worden weergegeven op de oorspronkelijke resolutie
 * **Zoombaar**: gebruik de bedieningselementen of het muiswiel om in te zoomen
 * **Pannen**: klik en sleep om te bewegen wanneer u inzoomt
 * **Beeldverhouding behouden**: afbeeldingen worden proportioneel geschaald
@@ -93,19 +93,19 @@ Wanneer u de muiscursor over de afbeelding beweegt, worden de pixelwaarden in re
 
 * **Drijvend getal en rode lijn in de index LUT-gradiëntlegenda aan de rechterkant**
 * **Bij verder inzoomen, drijvende waarde nabij de cursor en gemarkeerde pixel**
-* Toont waarden voor pixels **onder de cursor of gemarkeerde pixels**
+* Toont waarden voor pixel **onder de cursor of gemarkeerd**
 * Wordt bijgewerkt terwijl u de muis beweegt
 
 ***
 
-## Beeldtypen die u kunt bekijken
+## Beeldtypes die u kunt bekijken
 
 ### Originele beelden (voorafgaand aan verwerking)
 
 **RAW + JPG-afbeeldingen van camera:**
 
 * Geeft RAW-gegevens weer zoals in het voorbeeld
-* Toont originele, ongecorrigeerde waarden
+* Toont originele, ongewijzigde waarden
 * Handig om de beeldkwaliteit te controleren vóór verwerking
 
 ### Gekalibreerde reflectieafbeeldingen
@@ -128,11 +128,11 @@ Wanneer u de muiscursor over de afbeelding beweegt, worden de pixelwaarden in re
 
 ***
 
-## Toepassing van index en LUT
+## Index- en LUT-toepassing
 
-Toepassing van multispectrale indices en kleuren-LUT&#x27;s:
+Multispectrale indices en kleuren-LUT&#x27;s toepassen:
 
-1. Zoek **Index/LUT Sandbox** in **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> zijbalk
+1. Zoek **Index/LUT Sandbox** in de **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> zijbalk
 2. Selecteer vegetatie-index (NDVI, NDRE, enz.)
 3. Selecteer multispectrale formule of maak uw eigen aangepaste formule (alleen Chloros+)
 4. Pas kleur-LUT-gradiënt toe voor visualisatie
@@ -160,8 +160,8 @@ Zie [Index/LUT Sandbox](index-lut-sandbox.md) voor gedetailleerde instructies.
 
 ### Weergavebediening
 
-* **P**: Pixelprocentmodus in- of uitschakelen
-* **L**: Lagenpaneel in- of uitschakelen
+* **P**: Pixelprocentmodus in-/uitschakelen
+* **L**: Lagenpaneel in-/uitschakelen
 * **Esc**: Volledig scherm sluiten of terugkeren naar bestandsbrowser
 
 ### Overig
@@ -207,14 +207,14 @@ Controleer of de indexen correct zijn berekend:
 
 **Mogelijke oorzaken:**
 
-* Waardebereik buiten weergavemogelijkheden
+* Waardebereik buiten de weergavemogelijkheden
 * 32-bits float-beeld met ongebruikelijke waarden
 * Fout bij indexberekening
 
 **Oplossingen:**
 
 1. Controleer de pixelwaarden. Als deze allemaal erg laag of erg hoog zijn, pas dan het weergavebereik aan.
-2. Probeer het bestand te openen in QGIS of een vergelijkbaar programma met automatische bereikaanpassing.
+2. Probeer het bestand te openen in QGIS of een soortgelijk programma met automatische bereikaanpassing.
 3. Controleer het foutopsporingslogboek van de verwerking op fouten.
 
 ### Pixelwaarden lijken onjuist
@@ -224,7 +224,7 @@ Controleer of de indexen correct zijn berekend:
 * Verkeerde afbeelding weergeven (origineel versus verwerkt)
 * Kalibratie is niet correct toegepast
 * Lichtsensorgegevens zijn niet opgenomen in de invoer
-* Percentagemodus is onjuist ingeschakeld
+* Percentagemodus is onjuist ingesteld
 
 **Oplossingen:**
 
@@ -240,7 +240,7 @@ Nu u afbeeldingen op volledig scherm kunt bekijken:
 
 * [**Afbeeldingslagen**](image-layers.md) - Meer informatie over multibandvisualisatie
 * [**Index/LUT Sandbox**](index-lut-sandbox.md) - Pas aangepaste indexen en kleurovergangen toe
-* [**Multispectrale indexformules**](../project-settings/multispectral-index-formulas.md) - Meer informatie over beschikbare indexen
+* [**Multispectrale indexformules**](../project-settings/multispectral-index-formulas.md) - Begrijp de beschikbare indexen
 
 Voor de verwerkingsworkflow, zie:
 

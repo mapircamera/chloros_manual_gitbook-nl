@@ -1,6 +1,6 @@
 # Doelafbeeldingen selecteren
 
-Het markeren van afbeeldingen die kalibratiedoelen bevatten, is een cruciale stap die de verwerkingspijplijn van Chloros aanzienlijk versnelt. Door vooraf doelafbeeldingen te selecteren, hoeft Chloros niet elke afbeelding in uw dataset te scannen op kalibratiedoelen.
+Het markeren van afbeeldingen die kalibratiedoelen bevatten, is een cruciale stap die de verwerkingspijplijn van Chloros aanzienlijk versnelt. Door doelafbeeldingen vooraf te selecteren, hoeft Chloros niet elke afbeelding in uw dataset te scannen op kalibratiedoelen.
 
 ## Waarom doelafbeeldingen markeren?
 
@@ -19,7 +19,7 @@ Zonder doelafbeeldingen te markeren, moet Chloros:
 Wanneer u de kolom Doel voor specifieke afbeeldingen aanvinkt:
 
 * scant Chloros alleen de aangevinkte afbeeldingen op doelen
-* wordt de doelherkenning veel sneller voltooid
+* wordt de doeldetectie veel sneller voltooid
 * wordt de totale verwerkingstijd aanzienlijk verkort
 
 {% hint style=&quot;success&quot; %}
@@ -30,7 +30,7 @@ Wanneer u de kolom Doel voor specifieke afbeeldingen aanvinkt:
 
 ## Doelafbeeldingen markeren
 
-### Stap 1: Identificeer uw doelafbeeldingen
+### Stap 1: Uw doelafbeeldingen identificeren
 
 Bekijk uw geïmporteerde afbeeldingen in de bestandsbrowser en identificeer welke afbeeldingen kalibratiedoelen bevatten.
 
@@ -66,7 +66,7 @@ Controleer voor de verwerking nogmaals:
 
 **Timing:**
 
-* Leg doelafbeeldingen direct voor en tijdens uw opnamesessie vast.
+* Leg doelafbeeldingen vast vlak voor en tijdens uw opnamesessie.
 * Onder dezelfde lichtomstandigheden als uw DAQ-lichtsensor.
 * Maak voor het beste resultaat zo vaak mogelijk doelafbeeldingen. Anders worden de gegevens van de lichtsensor gebruikt om de kalibratie in de loop van de tijd aan te passen.
 
@@ -95,7 +95,7 @@ Controleer voor de verwerking nogmaals:
 **Aanbevolen schema:**
 
 * 3-5 afbeeldingen vastgelegd kort nadat de lichtsensor begint met opnemen
-* Draai de camera tussen opnames om voor het beste resultaat
+* Draai de camera tussen opnames voor het beste resultaat
 * Optioneel: periodiek halverwege de sessie als de lichtomstandigheden voortdurend veranderen
 
 ***
@@ -150,8 +150,8 @@ Als Chloros uw doelen niet correct detecteert, pas dan deze instellingen aan in 
 
 **Mogelijke oorzaken:**
 
-* Doelafbeeldingen zijn niet gemarkeerd in de bestandsbrowser
-* Doel is te klein in het kader (&lt; 30% van de afbeelding)
+* Doelafbeeldingen niet gemarkeerd in bestandsbrowser
+* Doel te klein in kader (&lt; 30% van afbeelding)
 * Slechte belichting (schaduwen, schittering)
 * Instellingen voor doelwitdetectie te streng
 
@@ -189,7 +189,7 @@ Controleer voordat u met de verwerking begint uw selectie van doelafbeeldingen:
 * [ ] Doelen duidelijk zichtbaar in het voorbeeld wanneer erop wordt geklikt
 * [ ] Alle 4 kalibratiepanelen zichtbaar in elke doelafbeelding
 * [ ] Geen schaduwen of obstructies op doelen
-* [ ] Voor dubbele camera: doelen gemarkeerd voor beide cameratypes
+* [ ] Voor dubbele camera: doelen gemarkeerd voor beide cameratypen
 
 ***
 
@@ -205,7 +205,7 @@ Hoewel dit niet wordt aanbevolen voor wetenschappelijk werk, kunt u zonder doele
 4. De uitvoer wordt niet gekalibreerd voor absolute reflectie
 
 {% hint style=&quot;warning&quot; %}
-**Niet aanbevolen**: zonder reflectiekalibratie geven pixelwaarden alleen de relatieve helderheid weer, niet de wetenschappelijke reflectiemetingen. Gebruik kalibratiedoelen voor nauwkeurige, herhaalbare resultaten.
+**Niet aanbevolen**: zonder reflectiekalibratie geven pixelwaarden alleen de relatieve helderheid weer, geen wetenschappelijke reflectiemetingen. Gebruik kalibratiedoelen voor nauwkeurige, herhaalbare resultaten.
 {% endhint %}
 
 ***

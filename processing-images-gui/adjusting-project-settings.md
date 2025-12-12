@@ -39,13 +39,13 @@ Bepaalt hoe Chloros kalibratiedoelen in uw afbeeldingen identificeert.
 
 **Belangrijkste instellingen:**
 
-* **Minimale kalibratiemonsteroppervlakte**: Drempelwaarde voor doelherkenning (standaard: 25 pixels)
-* **Minimale doelclustering**: Drempelwaarde voor het groeperen van doelgebieden (standaard: 60)
+* **Minimale kalibratiemonsteroppervlakte**: groottegrens voor doelherkenning (standaard: 25 pixels)
+* **Minimale doelclustering**: gelijkenisgrens voor het groeperen van doelgebieden (standaard: 60)
 
 **Wanneer aanpassen:**
 
-* Vergroot het monsteroppervlak als er valse detecties worden gedaan.
-* Verklein het monsteroppervlak als er geen doelen worden gedetecteerd.
+* Vergroot de monsteroppervlakte als er valse detecties worden gedaan.
+* Verklein de monsteroppervlakte als er geen doelen worden gedetecteerd.
 * Pas de clustering aan als doelen worden opgesplitst in meerdere detecties.
 
 ### Verwerking
@@ -62,7 +62,7 @@ Belangrijkste opties voor beeldverwerking en kalibratie.
 **Geavanceerde instellingen:**
 
 * **Tijdzone-offset lichtsensor**: voor PPK-tijdsynchronisatie (standaard: 0)
-* **PPK-correcties toepassen**: gebruikt GPS-/belichtingspindata uit .daq-bestanden
+* **PPK-correcties toepassen**: gebruikt GPS-/belichtingspin-gegevens uit .daq-bestanden
 * **Belichtingspin 1/2**: wijst camera&#x27;s toe aan belichtingspinnen voor opstellingen met twee camera&#x27;s
 
 ### Index (multispectrale indices)
@@ -81,7 +81,7 @@ Configureer welke vegetatie-indices moeten worden berekend en geëxporteerd.
 * **NDVI**: Algemene gezondheid van de vegetatie (meest gebruikelijk)
 * **NDRE**: Vroege stressdetectie met RedEdge
 * **GNDVI**: Gevoelig voor chlorofylconcentratie
-* **OSAVI**: Werkt goed met zichtbare grond
+* **OSAVI**: Werkt goed met zichtbare bodem
 * **EVI**: Regio&#x27;s met hoge bladoppervlakte-index (LAI)
 
 **Aangepaste formules (alleen Chloros+):**
@@ -113,7 +113,7 @@ Maak herbruikbare sjablonen voor consistente workflows:
 
 1. Configureer alle gewenste instellingen in het paneel Projectinstellingen.
 2. Scrol naar het gedeelte **&quot;Projectsjabloon opslaan&quot;** onderaan.
-3. Voer een beschrijvende sjabloonnaam in (bijv. &quot;Survey3N\_RGN\_Agriculture&quot;).
+3. Voer een beschrijvende sjabloonnaam in (bijvoorbeeld &quot;Survey3N\_RGN\_Agriculture&quot;).
 4. Klik op het pictogram Opslaan.
 
 **Voordelen:**
@@ -202,7 +202,7 @@ Voor herhaalde onderzoeken van hetzelfde gebied in de loop van de tijd:
 
 Voor projecten met veel afbeeldingen (500+):
 
-* Overweeg om het project op te splitsen in kleinere projecten op basis van datum of gebied.
+* Overweeg om de dataset op te splitsen in kleinere projecten op basis van datum of gebied.
 * Gebruik Chloros+ parallelle verwerking voor snellere resultaten.
 * Overweeg CLI of API voor batchautomatisering.
 * Pas het minimale herkalibratie-interval aan om de detectietijd van het doel te verkorten.

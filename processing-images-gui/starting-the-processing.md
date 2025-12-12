@@ -23,7 +23,7 @@ Controleer voordat u op de knop Start klikt of alles gereed is:
 
 ### Zoek de startknop
 
-De knop Start/Afspelen bevindt zich in de bovenste kopbalk van Chloros:
+De knop Start/Afspelen bevindt zich in de bovenste balk van Chloros:
 
 * Positie: midden bovenaan het venster
 * Pictogram: **knop Afspelen/Start** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">
@@ -31,13 +31,13 @@ De knop Start/Afspelen bevindt zich in de bovenste kopbalk van Chloros:
 
 ### Klik om te starten
 
-1. Klik op de **knop Afspelen/Starten** in de bovenste balk
+1. Klik op de **knop Afspelen/Starten** in de bovenste koptekst
 2. De verwerking begint onmiddellijk
 3. De knop wordt tijdens de verwerking uitgeschakeld (grijs)
 4. De voortgangsbalk wordt bijgewerkt en toont de verwerkingsstatus
 
 {% hint style=&quot;success&quot; %}
-**Verwerking gestart**: Zodra u op de knop klikt, voert Chloros automatisch alle verwerkingsstappen uit: doel detecteren, debayering, kalibratie, indexberekening en exporteren.
+**Verwerking gestart**: Zodra u hierop klikt, voert Chloros automatisch alle verwerkingsstappen uit: doelherkenning, debayering, kalibratie, indexberekening en export.
 {% endhint %}
 
 ***
@@ -75,19 +75,19 @@ Chloros werkt in twee verschillende verwerkingsmodi, afhankelijk van uw licentie
 * Verwerkt meerdere afbeeldingen tegelijkertijd
 * Multi-threaded werking (maximaal 16 parallelle workers)
 * Maakt gebruik van meerdere CPU-kernen
-* Optionele GPU (CUDA) versnelling met NVIDIA grafische kaarten
+* Optionele GPU (CUDA)-versnelling met NVIDIA grafische kaarten
 
 **Voortgangsbalk toont 4 fasen:**
 
 1. **Detecteren** - Kalibratiedoelen zoeken
-2. **Analyseren** - Afbeeldingsmetadata onderzoeken en pijplijn voorbereiden
+2. **Analyseren** - Beeldmetadata onderzoeken en pijplijn voorbereiden
 3. **Kalibreren** - Correcties en kalibraties toepassen
 4. **Exporteren** - Verwerkte afbeeldingen en indexen opslaan
 
 **Interactie met voortgangsbalk:**
 
 * **Beweeg de muis** over de balk om een gedetailleerd dropdown-paneel met 4 fasen te zien
-* **Klik** op de voortgangsbalk om het dropdown-paneel op zijn plaats te houden
+* **Klik** op de voortgangsbalk om het dropdown-paneel op zijn plaats te vergrendelen
 * **Klik nogmaals** om het paneel te ontgrendelen en te verbergen
 
 **Verwerkingstijd:**
@@ -111,7 +111,7 @@ Chloros werkt in twee verschillende verwerkingsmodi, afhankelijk van uw licentie
 * Scant gemarkeerde doelafbeeldingen (of alle afbeeldingen als er geen zijn gemarkeerd)
 * Identificeert de 4 kalibratiepanelen in elk doel
 * Haalt reflectiewaarden uit doelpanelen
-* Registreert tijdstempels van doelen voor kalibratieschema&#x27;s
+* Registreert tijdstempels van doelen voor kalibratieplanning
 
 **Duur:** 1-30 seconden (met gemarkeerde doelen), 5-30+ minuten (ongemarkeerd)
 
@@ -155,7 +155,7 @@ Chloros werkt in twee verschillende verwerkingsmodi, afhankelijk van uw licentie
 * Schrijft bestanden naar submappen van cameramodellen
 * Behoudt originele bestandsnamen met achtervoegsels
 
-**Duur:** varieert per exportformaat en bestandsgrootte
+**Duur:** Varieert per exportformaat en bestandsgrootte
 
 ***
 
@@ -181,11 +181,11 @@ Eenmaal gestart, wordt de hele pijplijn automatisch uitgevoerd:
 
 * Hoog CPU-gebruik (multi-threaded, tot 16 cores)
 * Met GPU-versnelling: hoog GPU-gebruik
-* Computer reageert mogelijk minder goed tijdens verwerking
+* Computer reageert mogelijk minder snel tijdens verwerking
 * Start geen andere CPU-intensieve taken
 
 {% hint style=&quot;warning&quot; %}
-**Prestatietip**: Sluit voor optimale prestaties van Chloros+ andere toepassingen en laat Chloros alle systeembronnen gebruiken.
+**Prestatietip**: Sluit andere toepassingen en laat Chloros alle systeembronnen gebruiken voor de beste prestaties van Chloros+.
 {% endhint %}
 
 ### Verwerking kan niet worden gepauzeerd
@@ -197,7 +197,7 @@ Eenmaal gestart, wordt de hele pijplijn automatisch uitgevoerd:
 * Gedeeltelijke resultaten worden niet opgeslagen.
 * Bij annulering moet u opnieuw beginnen.
 
-**Planningstip:** Overweeg voor zeer grote projecten om in batches te verwerken of CLI te gebruiken voor een betere controle.
+**Planningstip:** Overweeg bij zeer grote projecten om in batches te verwerken of CLI te gebruiken voor een betere controle.
 
 ***
 
@@ -210,7 +210,7 @@ Terwijl de verwerking wordt uitgevoerd, kunt u:
 * **Het tabblad Logboek controleren** - Bekijk gedetailleerde verwerkingsberichten en waarschuwingen
 * **Een voorbeeld van voltooide afbeeldingen bekijken** - Sommige exportbestanden kunnen tijdens de verwerking verschijnen
 
-Zie [De verwerking controleren](monitoring-the-processing.md) voor gedetailleerde informatie over controleren.
+Zie [De verwerking controleren] voor gedetailleerde informatie over het controleren.(monitoring-the-processing.md).
 
 ***
 
@@ -218,7 +218,7 @@ Zie [De verwerking controleren](monitoring-the-processing.md) voor gedetailleerd
 
 Als u de verwerking moet stoppen:
 
-### Annuleren
+### Hoe annuleren
 
 1. Zoek de **knop Stoppen/Annuleren** (vervangt de knop Starten tijdens de verwerking)
 2. Klik op de knop Stoppen
@@ -294,7 +294,7 @@ De werkelijke verwerkingstijd varieert sterk, afhankelijk van:
 3. Start Chloros opnieuw op als de knop nog steeds uitgeschakeld is
 4. Controleer het foutlogboek op foutmeldingen
 
-### Verwerking start en mislukt onmiddellijk
+### Verwerking start en mislukt vervolgens onmiddellijk
 
 **Mogelijke oorzaken:**
 

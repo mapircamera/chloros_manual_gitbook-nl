@@ -19,7 +19,7 @@ Voor gebruikers zonder Chloros+-licentie:
 
 * Algemeen voltooiingspercentage (0-100%)
 * Naam van de huidige fase
-* Eenvoudige horizontale balkvisualisatie
+* Eenvoudige horizontale balkweergave
 
 ### Chloros+ voortgangsbalk
 
@@ -36,7 +36,7 @@ Voor gebruikers met een Chloros+ licentie:
 
 * **Beweeg de muis over** de voortgangsbalk om het uitgebreide paneel met 4 fasen te zien
 * **Klik op** de voortgangsbalk om het uitgebreide paneel vast te zetten/vast te pinnen
-* **Klik nogmaals** om het paneel los te maken en automatisch te verbergen wanneer u de muis weghaalt
+* **Klik nogmaals** om het paneel los te maken en automatisch te verbergen wanneer u de muis wegneemt
 * Elke fase toont de individuele voortgang (0-100%)
 
 ***
@@ -50,7 +50,7 @@ Voor gebruikers met een Chloros+ licentie:
 * Chloros scant afbeeldingen die zijn gemarkeerd met het selectievakje Doel
 * Computervisie-algoritmen identificeren de 4 kalibratiepanelen
 * Reflectiewaarden worden uit elk paneel gehaald
-* Tijdstempels van doelen worden geregistreerd voor een juiste kalibratieschema
+* Doeltijdstempels worden geregistreerd voor een juiste kalibratieschema
 
 **Duur:**
 
@@ -76,7 +76,7 @@ Voor gebruikers met een Chloros+ licentie:
 * EXIF-metadata van afbeeldingen lezen (tijdstempels, belichtingsinstellingen)
 * Kalibratiestrategie bepalen op basis van tijdstempels van doelen
 * Wachtrij voor beeldverwerking organiseren
-* Werkers voor parallelle verwerking voorbereiden (alleen Chloros+)
+* Parallelle verwerkingswerkers voorbereiden (alleen Chloros+)
 
 **Duur:** 5-30 seconden
 
@@ -94,7 +94,7 @@ Voor gebruikers met een Chloros+ licentie:
 
 **Wat gebeurt er:**
 
-* **Debayering**: RAW-Bayer-patroon omzetten naar 3 kanalen
+* **Debayering**: RAW Bayer-patroon omzetten naar 3 kanalen
 * **Vignettecorrectie**: verwijderen van donkere randen rond de lens
 * **Reflectiekalibratie**: normaliseren met streefwaarden
 * **Indexberekening**: berekenen van multispectrale indices
@@ -124,10 +124,10 @@ Voor gebruikers met een Chloros+ licentie:
 
 **Wat gebeurt er:**
 
-* Gekalibreerde afbeeldingen naar schijf schrijven in geselecteerd formaat
-* Multispectrale indexafbeeldingen exporteren met LUT-kleuren
+* Gekalibreerde afbeeldingen in het geselecteerde formaat naar schijf schrijven
+* Multispectrale indexafbeeldingen met LUT-kleuren exporteren
 * Submappen voor cameramodellen aanmaken
-* Originele bestandsnamen behouden met de juiste extensies
+* Originele bestandsnamen met de juiste extensies behouden
 
 **Duur:** 10-20% van de totale verwerkingstijd
 
@@ -147,7 +147,7 @@ Voor gebruikers met een Chloros+ licentie:
 
 ## Tabblad Debuglog
 
-Het debuglog biedt gedetailleerde informatie over de voortgang van de verwerking en eventuele problemen die zich hebben voorgedaan.
+Het debuglog biedt gedetailleerde informatie over de voortgang van de verwerking en eventuele problemen die zich voordoen.
 
 ### Toegang tot het debuglog
 
@@ -198,8 +198,8 @@ Kritieke problemen die ervoor kunnen zorgen dat de verwerking mislukt:
 | Bericht                          | Betekenis                                | Vereiste actie                                         |
 | -------------------------------- | -------------------------------------- | ----------------------------------------------------- |
 | &quot;Doel gedetecteerd in \[bestandsnaam]&quot; | Kalibratiedoel succesvol gevonden  | Geen - normaal                                         |
-| &quot;Beeld X van Y wordt verwerkt&quot;        | Huidige voortgangsupdate                | Geen - normaal                                         |
-| &quot;Geen doelen gevonden&quot;               | Geen kalibratiedoelen gedetecteerd        | Markeer doelbeelden of schakel reflectiekalibratie uit |
+| &quot;Afbeelding X van Y wordt verwerkt&quot;        | Huidige voortgangsupdate                | Geen - normaal                                         |
+| &quot;Geen doelen gevonden&quot;               | Geen kalibratiedoelen gedetecteerd        | Markeer doelafbeeldingen of schakel reflectiekalibratie uit |
 | &quot;Onvoldoende schijfruimte&quot;        | Onvoldoende opslagruimte voor uitvoer          | Maak schijfruimte vrij                                    |
 | &quot;Beschadigd bestand overslaan&quot;        | Beeldbestand is beschadigd                  | Kopieer bestand opnieuw vanaf SD-kaart                             |
 | &quot;PPK-gegevens toegepast&quot;               | GPS-correcties uit .daq-bestand toegepast | Geen - normaal                                         |
@@ -246,10 +246,10 @@ Om het logboek te kopiëren voor probleemoplossing of ondersteuning:
 * Grote projecten (500+ afbeeldingen): 8-16 GB
 * Chloros+ parallelle modus gebruikt meer RAM
 
-**Als het geheugen bijna vol is:**
+**Als er weinig geheugen beschikbaar is:**
 
 * Verwerk kleinere batches
-* Sluit andere applicaties
+* Sluit andere toepassingen
 * Upgrade het RAM-geheugen als u regelmatig grote datasets verwerkt
 
 ### GPU-gebruik (Chloros+ met CUDA)
@@ -386,7 +386,7 @@ Zodra de verwerking is voltooid:
 
 1. **Bekijk de resultaten** - Zie [De verwerking voltooien](finishing-the-processing.md)
 2. **Controleer de uitvoermap** - Controleer of alle bestanden correct zijn geëxporteerd
-3. **Bekijk het foutopsporingslogboek** - Controleer op waarschuwingen of fouten
+3. **Controleer het foutopsporingslogboek** - Controleer op waarschuwingen of fouten
 4. **Bekijk een voorbeeld van de verwerkte afbeeldingen** - Gebruik Image Viewer of externe software
 
 Zie [De verwerking voltooien](finishing-the-processing.md) voor informatie over het bekijken en gebruiken van uw verwerkte resultaten.

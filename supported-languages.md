@@ -50,7 +50,7 @@ Chloros ondersteunt de volgende talen:
 ### In Chloros Desktop/Browser
 
 1. Open de instellingen van de applicatie.
-2. Ga naar het menu voor taalkeuze.
+2. Ga naar het menu voor taalselectie.
 3. Kies de gewenste taal uit de lijst.
 4. De interface wordt onmiddellijk bijgewerkt.
 
@@ -85,7 +85,7 @@ Stel de taalparameter in bij het initialiseren van de SDK om berichten en uitvoe
 
 Alle 38 talen worden volledig ondersteund in:
 
-* **Chloros Desktop** - Volledige vertaling van de GUI
+* **Chloros Desktop** - Volledige GUI-vertaling
 * **Chloros Browser** - Webinterface in alle talen
 * **Chloros CLI** - Opdrachtregelinterface en uitvoerberichten
 * **Chloros Python SDK** - API-berichten en documentatie

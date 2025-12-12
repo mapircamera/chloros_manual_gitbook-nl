@@ -17,7 +17,7 @@ Wanneer de verwerking succesvol is voltooid, ziet u verschillende indicatoren:
 
 ### De uitvoermap openen
 
-1. Klik op het **hoofdmenu** <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> (linksboven)
+1. Klik op het pictogram **Hoofdmenu** <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> (linksboven)
 2. Selecteer **&quot;Projectmap openen&quot;**
 3. Uw bestandsverkenner wordt geopend in de projectmap
 4. Zoek uw project op naam
@@ -35,11 +35,11 @@ Wanneer de verwerking succesvol is voltooid, ziet u verschillende indicatoren:
 3. Het voorbeeld verschijnt in het voorbeeldvenster van Windows Explorer
 4. Gebruik de pijltjestoetsen om door de afbeeldingen te bladeren
 
-### Voorbeeld in externe afbeeldingsviewers
+### Voorvertoning in externe afbeeldingsviewers
 
 **Aanbevolen viewers:**
 
-* **QGIS** - Gratis GIS-software (het meest geschikt voor georefereerde multispectrale analyse)
+* **QGIS** - Gratis GIS-software (het beste voor georefereerde multispectrale analyse)
 * **IrfanView** - Snelle, lichtgewicht afbeeldingsviewer (ondersteunt TIFF)
 * **Adobe Photoshop** - Professionele bewerking (ondersteuning voor TIFF)
 * **GIMP** - Gratis alternatief voor Photoshop
@@ -49,8 +49,8 @@ Wanneer de verwerking succesvol is voltooid, ziet u verschillende indicatoren:
 
 Gebruik de ingebouwde Image Viewer van Chloros voor geavanceerde visualisatie:
 
-1. Klik op een miniatuurafbeelding in de bestandsbrowser.
-2. De afbeelding wordt geopend in het hoofdvoorbeeldvenster.
+1. Klik op een miniatuurafbeelding in de bestandsbrowser
+2. De afbeelding wordt geopend in het hoofdvoorbeeldgebied
 3. Klik op het tabblad **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> in de linkerzijbalk.
 4. Gebruik [Index/LUT Sandbox](../image-viewer-gui/index-lut-sandbox.md) voor interactieve analyse.
 
@@ -66,16 +66,16 @@ Zie [Image Viewer](../image-viewer-gui/opening-an-image-full-screen.md) voor ged
 2. Blader door de berichten
 3. Zoek naar gele waarschuwingen of rode fouten
 4. Controleer alle gemelde problemen
-5. Neem contact op met MAPIR ondersteuning voor hulp
+5. Neem contact op met MAPIR-ondersteuning voor hulp
 
 ### Het logboek opslaan
 
-Om een overzicht van de verwerking bij te houden of om naar MAPIR ondersteuning te sturen:
+Om een overzicht van de verwerking bij te houden of om naar MAPIR-ondersteuning te sturen:
 
 1. Klik op de knop **&quot;Kopiëren&quot;** of **&quot;Downloaden&quot;**
 2. Sla het logboek op als tekstbestand in de projectmap
 3. Voeg het toe aan de projectdocumentatie
-4. Stuur het naar de ondersteuning van MAPIR als er problemen zijn opgetreden
+4. Stuur het naar MAPIR-ondersteuning als er problemen zijn opgetreden
 
 ***
 
@@ -88,7 +88,7 @@ Om een overzicht van de verwerking bij te houden of om naar MAPIR ondersteuning 
 * Bestanden voldeden niet aan de verwerkingscriteria
 * Alleen doelafbeeldingen (uitgesloten van export)
 * Schijfruimte raakte op tijdens export
-* Bestandscorruptie tijdens verwerking
+* Bestandsbeschadiging tijdens verwerking
 
 **Oplossingen:**
 
@@ -102,23 +102,23 @@ Om een overzicht van de verwerking bij te houden of om naar MAPIR ondersteuning 
 **Mogelijke oorzaken:**
 
 * Vignetteringscorrectie uitgeschakeld
-* Camera/lens staat niet in de Chloros-profieldatabase
+* Camera/lens staat niet in de Chloros-profielendatabase
 * Extreme vignettering die niet kan worden gecorrigeerd
 
 **Oplossingen:**
 
-1. Controleer of vignetteringscorrectie is ingeschakeld in Projectinstellingen
-2. Controleer of het cameramodel correct is gedetecteerd
-3. Neem contact op met MAPIR-ondersteuning als vignettering aanhoudt
+1. Controleer of vignetteringscorrectie is ingeschakeld in Projectinstellingen.
+2. Controleer of het cameramodel correct is gedetecteerd.
+3. Neem contact op met MAPIR-ondersteuning als vignettering aanhoudt.
 
 ### Probleem: onjuiste kleuren of waarden
 
 **Mogelijke oorzaken:**
 
-* Geen kalibratiedoelen gedetecteerd
-* Verkeerd kalibratiedoelmodel geselecteerd
-* Reflectiekalibratie uitgeschakeld
-* Doelafbeeldingen van slechte kwaliteit
+* Geen kalibratiedoelen gedetecteerd.
+* Verkeerd kalibratiedoelmodel geselecteerd.
+* Reflectiekalibratie uitgeschakeld.
+* Doelafbeeldingen van slechte kwaliteit.
 
 **Oplossingen:**
 
@@ -159,7 +159,7 @@ Om een overzicht van de verwerking bij te houden of om naar MAPIR ondersteuning 
    * WebODM
 2. **Bewaar EXIF-metadata**: zorg ervoor dat GPS-gegevens bewaard blijven voor geotagging
 3. **Gekalibreerde workflows**: gebruik reflectiebeelden voor wetenschappelijke nauwkeurigheid
-4. **Verwerk indexmozaïeken**: maak NDVI orthomozaïeken van individuele indexafbeeldingen
+4. **Verwerk indexmozaïeken**: Maak NDVI orthomozaïeken van individuele indexafbeeldingen
 5. **Exporteer georefereerde GeoTIFF**: voor gebruik in GIS-toepassingen
 
 ### Voor GIS-analyse
@@ -279,9 +279,9 @@ U hebt nu de volledige Chloros-verwerkingsworkflow voltooid:
 4. ✅ **Doelen gemarkeerd** - Zie [Doelafbeeldingen kiezen](choosing-target-images.md)
 5. ✅ **Verwerking gestart** - Zie [De verwerking starten](starting-the-processing.md)
 6. ✅ **Voortgang gecontroleerd** - Zie [De verwerking controleren](monitoring-the-processing.md)
-7. ✅ **Resultaten beoordeeld** - Deze pagina
+7. ✅ **Resultaten bekeken** - Deze pagina
 
-**Uw gekalibreerde, reflectantiegecorrigeerde multispectrale afbeeldingen zijn klaar voor analyse!**
+**Uw gekalibreerde, reflectiegecorrigeerde multispectrale afbeeldingen zijn klaar voor analyse!**
 
 ***
 
@@ -289,7 +289,7 @@ U hebt nu de volledige Chloros-verwerkingsworkflow voltooid:
 
 ### Geavanceerde functies
 
-* [**Afbeeldingsviewer**](../image-viewer-gui/opening-an-image-full-screen.md) - Interactieve visualisatie en analyse
+* [**Beeldviewer**](../image-viewer-gui/opening-an-image-full-screen.md) - Interactieve visualisatie en analyse
 * [**Index/LUT Sandbox**](../image-viewer-gui/index-lut-sandbox.md) - Aangepaste indextests
 * [**Multispectrale indexformules**](../project-settings/multispectral-index-formulas.md) - Volledige indexreferentie
 
@@ -299,7 +299,7 @@ U hebt nu de volledige Chloros-verwerkingsworkflow voltooid:
 * [**Python SDK**](../api-python-sdk.md) - Programmatische automatisering
 * [**Chloros+ Functies**](../#chloros) - Geavanceerde verwerkingsmogelijkheden
 
-### Ondersteuning &amp; Leren
+### Ondersteuning en leren
 
 * [**FAQ**](../faq.md) - Antwoorden op veelgestelde vragen
 * [**Kalibratiedoelen**](../calibration-targets.md) - Inzicht in reflectiekalibratie
