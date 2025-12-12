@@ -1,247 +1,247 @@
-# Opening an Image Full Screen
+# Een afbeelding op volledig scherm openen
 
-The Chloros Image Viewer provides a dedicated full-screen interface for viewing, analyzing, and manipulating your multispectral images. Whether viewing original images or processed outputs, the Image Viewer offers powerful tools for inspection and analysis.
+De Chloros Image Viewer biedt een speciale interface op volledig scherm voor het bekijken, analyseren en bewerken van uw multispectrale afbeeldingen. Of u nu originele afbeeldingen of bewerkte uitvoer bekijkt, de Image Viewer biedt krachtige tools voor inspectie en analyse.
 
-## Accessing the Image Viewer
+## Toegang tot de Image Viewer
 
-### From the File Browser
+### Vanuit de bestandsbrowser
 
-The most common way to open an image in the Image Viewer:
+De meest gebruikelijke manier om een afbeelding te openen in de Image Viewer:
 
-1. Ensure you're in the **File Browser** tab <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Click any **image thumbnail** in the image grid
-3. The image opens in the **main preview area** (center of screen)
-4. The image is now loaded and ready for full-screen viewing
+1. Zorg ervoor dat u zich in het tabblad **Bestandsbrowser** bevindt <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
+2. Klik op een **afbeeldingsminiatuur** in het afbeeldingenraster
+3. De afbeelding wordt geopend in het **hoofdvoorvertoningsgebied** (midden van het scherm)
+4. De afbeelding is nu geladen en klaar om op volledig scherm te worden bekeken
 
-### Opening the Image Viewer Tab
+### Het tabblad Image Viewer openen
 
-Once an image is loaded in the preview area:
+Zodra een afbeelding is geladen in het voorvertoningsgebied:
 
-1. Click the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> icon in the left sidebar
-2. The Image Viewer tab opens, displaying the selected image full-screen
-3. Advanced viewing and analysis tools become available in the left sidebar
-
-***
-
-## Image Viewer Interface Overview
-
-### Main Display Area
-
-The largest portion of the screen shows your image:
-
-* **Full resolution**: Images displayed at native resolution
-* **Zoomable**: Use controls or mouse wheel to zoom
-* **Pannable**: Click and drag to move around when zoomed
-* **Aspect ratio maintained**: Images scale proportionally
+1. Klik op het pictogram **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> in de linkerzijbalk
+2. Het tabblad Afbeeldingenviewer wordt geopend en de geselecteerde afbeelding wordt op volledig scherm weergegeven
+3. Geavanceerde weergave- en analysetools worden beschikbaar in de linkerzijbalk
 
 ***
 
-## Viewing Options
+## Overzicht van de interface van de Afbeeldingenviewer
 
-### Basic Image Navigation
+### Hoofdweergavegebied
 
-#### Browse Through Images
+Het grootste deel van het scherm toont uw afbeelding:
 
-Navigate through your image set using keyboard shortcuts or buttons:
-
-* **Next image**: Click → button or press **→** (Right Arrow) key
-* **Previous image**: Click ← button or press **←** (Left Arrow) key
-* **Jump to specific image**: Return to File Browser and click desired thumbnail
-
-#### Zoom Controls
-
-Adjust magnification to inspect image details:
-
-**Zoom In:**
-
-* Click **+** (Plus) button
-* Press **+** or **=** key
-* Scroll mouse wheel **up**
-
-**Zoom Out:**
-
-* Click **−** (Minus) button
-* Press **−** (Minus) key
-* Scroll mouse wheel **down**
-
-**Fit to Screen:**
-
-* Click **↔** (Fit) button
-* Press **0** (Zero) key
-* Double-click on image
-
-#### Pan When Zoomed
-
-When zoomed in beyond screen size:
-
-1. Move mouse cursor over image
-2. Click and **hold left mouse button**
-3. **Drag** to move image around
-4. Release to stop panning
-
-**Alternative**: Use arrow keys to pan in small increments
+* **Volledige resolutie**: afbeeldingen worden weergegeven in de oorspronkelijke resolutie
+* **Zoombaar**: gebruik de bedieningselementen of het muiswiel om in te zoomen
+* **Pannen**: klik en sleep om te bewegen wanneer u inzoomt
+* **Beeldverhouding behouden**: afbeeldingen worden proportioneel geschaald
 
 ***
 
-## Pixel Value Inspection
+## Weergaveopties
 
-### Viewing Pixel Values at Cursor
+### Basisnavigatie door afbeeldingen
 
-As you move your mouse cursor over the image, pixel values display in real-time:
+#### Door afbeeldingen bladeren
 
-**Value display location:**
+Navigeer door uw afbeeldingsset met behulp van sneltoetsen of knoppen:
 
-* **Floating number and red line in right side index LUT gradient legend**
-* **When zoomed in further, floating value near cursor and highlighted pixel**
-* Shows values for pixel **under cursor or highlighted**
-* Updates as you move mouse
+* **Volgende afbeelding**: klik op de knop → of druk op de toets **→** (pijl naar rechts)
+* **Vorige afbeelding**: klik op de knop ← of druk op de toets **←** (pijl naar links)
+* **Naar een specifieke afbeelding springen**: ga terug naar de bestandsbrowser en klik op de gewenste miniatuur
 
-***
+#### Zoomknoppen
 
-## Image Types You Can View
+Pas de vergroting aan om afbeeldingsdetails te bekijken:
 
-### Original Images (Pre-Processing)
+**Inzoomen:**
 
-**RAW + JPG images from camera:**
+* Klik op de knop **+** (plus)
+* Druk op de toets **+** of **=**
+* Scroll met het muiswiel **omhoog**
 
-* Display RAW data as previewed
-* Show original, uncorrected values
-* Useful for checking image quality before processing
+**Uitzoomen:**
 
-### Calibrated Reflectance Images
+* Klik op de knop **−** (min)
+* Druk op de toets **−** (min)
+* Scroll met het muiswiel **omlaag**
 
-**After processing:**
+**Aanpassen aan scherm:**
 
-* Vignette corrected
-* Reflectance calibrated
-* Multi-band TIFF (Red, Green, NIR, etc.)
-* Scientific data ready for analysis
+* Klik op de knop **↔** (Aanpassen)
+* Druk op de toets **0** (Nul)
+* Dubbelklik op de afbeelding
 
-### Index Images
+#### Pannen bij zoomen
 
-**NDVI, NDRE, GNDVI, etc. (\_NDVI.tif files):**
+Wanneer u verder inzoomt dan de schermgrootte:
 
-* Single-band grayscale images
-* Pixel values represent index calculation results
-* Range typically -1 to +1 for normalized indices
-* Can apply color LUTs for visualization
+1. Beweeg de muiscursor over de afbeelding
+2. Klik en **houd de linkermuisknop ingedrukt**
+3. **Sleep** om de afbeelding te verplaatsen
+4. Laat los om het pannen te stoppen
 
-***
-
-## Index and LUT Application
-
-Apply multispectral indices and color Look-Up Tables:
-
-1. Locate **Index/LUT Sandbox** in **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebar
-2. Select vegetation index (NDVI, NDRE, etc.)
-3. Select multispectral formula, or create your own custom one (Chloros+ only)
-4. Apply color LUT gradient for visualization
-5. Adjust value ranges and thresholds
-
-See [Index/LUT Sandbox](index-lut-sandbox.md) for detailed instructions.
+**Alternatief**: gebruik de pijltjestoetsen om in kleine stapjes te pannen
 
 ***
 
-## Keyboard Shortcuts
+## Pixelwaarde inspecteren
 
-### Navigation
+### Pixelwaarden bij de cursor bekijken
 
-* **→** (Right Arrow): Next image
-* **←** (Left Arrow): Previous image
-* **Home**: First image in list
-* **End**: Last image in list
+Wanneer u de muiscursor over de afbeelding beweegt, worden de pixelwaarden in realtime weergegeven:
 
-### Zoom
+**Locatie van de waardeweergave:**
 
-* **+** or **=**: Zoom in
-* **−**: Zoom out
-* **0** (Zero): Fit to screen
-* **Mouse Wheel**: Zoom in/out
-
-### View Controls
-
-* **P**: Toggle pixel percent mode
-* **L**: Toggle layers panel
-* **Esc**: Close full-screen or return to File Browser
-
-### Other
-
-* **Ctrl+S**: Save current image
-* **F**: Full-screen mode (if available)
+* **Drijvend getal en rode lijn in de index LUT-gradiëntlegenda aan de rechterkant**
+* **Bij verder inzoomen, drijvende waarde nabij de cursor en gemarkeerde pixel**
+* Toont waarden voor pixels **onder de cursor of gemarkeerde pixels**
+* Wordt bijgewerkt terwijl u de muis beweegt
 
 ***
 
-### Verifying Index Calculations
+## Beeldtypen die u kunt bekijken
 
-Check that indices calculated correctly:
+### Originele beelden (voorafgaand aan verwerking)
 
-1. Open NDVI or other index image
-2. Check vegetation areas:
-   * **NDVI**: Should show 0.4-0.9 for healthy plants
-   * **NDRE**: Higher values for vigorous growth
-   * **GNDVI**: Similar to NDVI but chlorophyll-sensitive
-3. Check non-vegetation:
-   * **Soil**: Near 0 or slightly negative
-   * **Water**: Negative values (-0.5 to 0)
+**RAW + JPG-afbeeldingen van camera:**
 
-***
+* Geeft RAW-gegevens weer zoals in het voorbeeld
+* Toont originele, ongecorrigeerde waarden
+* Handig om de beeldkwaliteit te controleren vóór verwerking
 
-## Troubleshooting Viewing Issues
+### Gekalibreerde reflectieafbeeldingen
 
-### Image Won't Open
+**Na verwerking:**
 
-**Possible causes:**
+* Vignette gecorrigeerd
+* Reflectie gekalibreerd
+* Multi-band TIFF (Red, Green, NIR, enz.)
+* Wetenschappelijke gegevens klaar voor analyse
 
-* File corrupted during processing
-* Unsupported file format
-* Insufficient memory for large image
+### Indexafbeeldingen
 
-**Solutions:**
+**NDVI, NDRE, GNDVI, enz. (\_NDVI.tif-bestanden):**
 
-1. Try opening in external viewer to verify file integrity
-2. Check file format matches expected type
-3. Close other applications to free memory
-4. Try smaller/different image
-
-### Black or White Image Display
-
-**Possible causes:**
-
-* Value range outside display capability
-* 32-bit float image with unusual values
-* Index calculation error
-
-**Solutions:**
-
-1. Check pixel values - if all very low or very high, adjust display range
-2. Try opening in QGIS or similar with auto-range adjustment
-3. Check Debug Log from processing for errors
-
-### Pixel Values Seem Wrong
-
-**Possible causes:**
-
-* Viewing wrong image (original vs processed)
-* Calibration didn't apply correctly
-* Light sensor data wasn't included in input
-* Percent mode toggled incorrectly
-
-**Solutions:**
-
-1. Verify you're viewing processed output (check filename suffix)
-2. Check percent mode button state
-3. Compare with known-good images from same dataset
+* Enkelvoudige grijswaardenafbeeldingen
+* Pixelwaarden vertegenwoordigen indexberekeningsresultaten
+* Bereik doorgaans -1 tot +1 voor genormaliseerde indices
+* Kleuren-LUT&#x27;s kunnen worden toegepast voor visualisatie
 
 ***
 
-## Next Steps
+## Toepassing van index en LUT
 
-Now that you can view images full-screen:
+Toepassing van multispectrale indices en kleuren-LUT&#x27;s:
 
-* [**Image Layers**](image-layers.md) - Learn about multi-band visualization
-* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Apply custom indices and color mapping
-* [**Multispectral Index Formulas**](../project-settings/multispectral-index-formulas.md) - Understand available indices
+1. Zoek **Index/LUT Sandbox** in **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> zijbalk
+2. Selecteer vegetatie-index (NDVI, NDRE, enz.)
+3. Selecteer multispectrale formule of maak uw eigen aangepaste formule (alleen Chloros+)
+4. Pas kleur-LUT-gradiënt toe voor visualisatie
+5. Pas waardebereiken en drempels aan
 
-For processing workflow, see:
+Zie [Index/LUT Sandbox](index-lut-sandbox.md) voor gedetailleerde instructies.
 
-* [**Processing Images (GUI)**](../processing-images-gui/page-1.md) - Complete processing guide
+***
+
+## Sneltoetsen
+
+### Navigatie
+
+* **→** (pijl naar rechts): volgende afbeelding
+* **←** (pijl naar links): vorige afbeelding
+* **Home**: eerste afbeelding in de lijst
+* **End**: Laatste afbeelding in de lijst
+
+### Zoomen
+
+* **+** of **=**: Inzoomen
+* **−**: Uitzoomen
+* **0** (nul): Aanpassen aan scherm
+* **Muiswiel**: In-/uitzoomen
+
+### Weergavebediening
+
+* **P**: Pixelprocentmodus in- of uitschakelen
+* **L**: Lagenpaneel in- of uitschakelen
+* **Esc**: Volledig scherm sluiten of terugkeren naar bestandsbrowser
+
+### Overig
+
+* **Ctrl+S**: Huidige afbeelding opslaan
+* **F**: Volledig scherm (indien beschikbaar)
+
+***
+
+### Indexberekeningen controleren
+
+Controleer of de indexen correct zijn berekend:
+
+1. Open NDVI of een andere indexafbeelding
+2. Controleer de vegetatiegebieden:
+   * **NDVI**: Moet 0,4-0,9 weergeven voor gezonde planten
+   * **NDRE**: hogere waarden voor krachtige groei
+   * **GNDVI**: vergelijkbaar met NDVI, maar chlorofylgevoelig
+3. Controleer niet-vegetatie:
+   * **Bodem**: Bijna 0 of licht negatief
+   * **Water**: Negatieve waarden (-0,5 tot 0)
+
+***
+
+## Problemen met weergeven oplossen
+
+### Afbeelding kan niet worden geopend
+
+**Mogelijke oorzaken:**
+
+* Bestand beschadigd tijdens verwerking
+* Niet-ondersteund bestandsformaat
+* Onvoldoende geheugen voor grote afbeelding
+
+**Oplossingen:**
+
+1. Probeer het bestand te openen in een externe viewer om de integriteit van het bestand te controleren
+2. Controleer of het bestandsformaat overeenkomt met het verwachte type
+3. Sluit andere toepassingen om geheugen vrij te maken
+4. Probeer een kleiner/ander beeld
+
+### Zwart-wit beeldweergave
+
+**Mogelijke oorzaken:**
+
+* Waardebereik buiten weergavemogelijkheden
+* 32-bits float-beeld met ongebruikelijke waarden
+* Fout bij indexberekening
+
+**Oplossingen:**
+
+1. Controleer de pixelwaarden. Als deze allemaal erg laag of erg hoog zijn, pas dan het weergavebereik aan.
+2. Probeer het bestand te openen in QGIS of een vergelijkbaar programma met automatische bereikaanpassing.
+3. Controleer het foutopsporingslogboek van de verwerking op fouten.
+
+### Pixelwaarden lijken onjuist
+
+**Mogelijke oorzaken:**
+
+* Verkeerde afbeelding weergeven (origineel versus verwerkt)
+* Kalibratie is niet correct toegepast
+* Lichtsensorgegevens zijn niet opgenomen in de invoer
+* Percentagemodus is onjuist ingeschakeld
+
+**Oplossingen:**
+
+1. Controleer of u de verwerkte uitvoer bekijkt (controleer de bestandsextensie)
+2. Controleer de status van de knop voor de percentagemodus
+3. Vergelijk met bekende goede afbeeldingen uit dezelfde dataset
+
+***
+
+## Volgende stappen
+
+Nu u afbeeldingen op volledig scherm kunt bekijken:
+
+* [**Afbeeldingslagen**](image-layers.md) - Meer informatie over multibandvisualisatie
+* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Pas aangepaste indexen en kleurovergangen toe
+* [**Multispectrale indexformules**](../project-settings/multispectral-index-formulas.md) - Meer informatie over beschikbare indexen
+
+Voor de verwerkingsworkflow, zie:
+
+* [**Afbeeldingen verwerken (GUI)**](../processing-images-gui/adding-files-to-a-project.md) - Volledige verwerkingsgids

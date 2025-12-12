@@ -4,169 +4,165 @@ metaLinks:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/download
 ---
 
-# Download
+# Downloaden
 
-Download the latest version of Chloros for Windows to get started with multispectral image processing.
+Download de nieuwste versie van Chloros voor Windows om aan de slag te gaan met multispectrale beeldverwerking.
 
-### System Requirements
+### Systeemvereisten
 
-| Requirement          | Minimum                         | Recommended                     |
+| Vereiste          | Minimum                         | Aanbevolen                     |
 | -------------------- | ------------------------------- | ------------------------------- |
-| **Operating System** | Windows 10 (64-bit)             | Windows 11 (64-bit)             |
-| **Processor**        | Intel Core i5 or equivalent     | Intel Core i7 or better         |
-| **Memory (RAM)**     | 8GB                             | 16GB or more                    |
-| **Graphics Card**    | DirectX 11 compatible           | NVIDIA GPU with 4GB+ VRAM       |
-| **Storage**          | 2GB free space                  | SSD with 10GB+ free space       |
-| **Display**          | 1920x1080                       | 2560x1440 or higher             |
-| **Internet**         | Required for license activation | Required for license activation |
+| **Besturingssysteem** | Windows 10 (64-bits)             | Windows 11 (64-bits)             |
+| **Processor**        | Intel Core i5 of gelijkwaardig     | Intel Core i7 of beter         |
+| **Geheugen (RAM)**     | 8 GB                             | 16 GB of meer                    |
+| **Grafische kaart**    | Compatibel met DirectX 11           | NVIDIA GPU met 4 GB+ VRAM       |
+| **Opslagruimte**          | 2 GB vrije ruimte                  | SSD met 10 GB+ vrije ruimte       |
+| **Beeldscherm**          | 1920x1080                       | 2560x1440 of hoger             |
+| **Internet**         | Vereist voor licentieactivering | Vereist voor licentieactivering |
 
-{% hint style="info" %}
-**GPU Acceleration**: Chloros+ users with NVIDIA GPUs (4GB+ VRAM) can use CUDA acceleration for significantly faster processing.
+{% hint style=&quot;info&quot; %}
+**GPU-versnelling**: Chloros+ gebruikers met NVIDIA GPU&#x27;s (4 GB+ VRAM) kunnen CUDA-versnelling gebruiken voor aanzienlijk snellere verwerking.
 {% endhint %}
 
 ***
 
 ## Download Chloros
 
-### <a href="https://drive.google.com/file/d/1HjwrUY4M7HGxDbMybO7iPe_6JoHnUGr4/view?usp=drive_link" class="button primary">Download Chloros Here</a>
+### <a href="https://drive.google.com/file/d/1HjwrUY4M7HGxDbMybO7iPe_6JoHnUGr4/view?usp=drive_link" class="button primary">Download Chloros hier</a>
 
-### Latest Stable Release
+### Laatste stabiele release
 
-**Chloros Installer for Windows**
+**Chloros-installatieprogramma voor Windows**
 
-* **Version**: 1.0.3
-* **Release Date**: December ?, 2025
-* **File Size**: 1.6GB
-* **File Type**: .exe (Windows Installer)
+* **Versie**: 1.0.3
+* **Releasedatum**: december ?, 2025
+* **Bestandsgrootte**: 1,6 GB
+* **Bestandstype**: .exe (Windows-installatieprogramma)
 
-#### **Installation Steps:**
+#### **Installatiestappen:**
 
-1. Download the `CHLOROS INSTALLER - CURRENT VERSION.exe` file
-2. Double-click the installer to begin installation
-3. Follow the installation wizard prompts
-4. Choose installation directory (default: `C:\Program Files\Chloros\`)
-5. Complete installation and launch Chloros
-6. Sign in with your MAPIR Cloud Chloros+ account (or continue with free version)
+1. Download het bestand `CHLOROS INSTALLER - CURRENT VERSION.exe`.
+2. Dubbelklik op het installatieprogramma om de installatie te starten.
+3. Volg de instructies van de installatiewizard.
+4. Kies de installatiemap (standaard: `C:\Program Files\Chloros\`).
+5. Voltooi de installatie en start Chloros.
+6. Meld u aan met uw MAPIR Cloud Chloros+-account (of ga verder met de gratis versie)
 
-{% hint style="success" %}
-The installer automatically adds `chloros-cli` to your system PATH for command-line access.
+{% hint style=&quot;success&quot; %}
+Het installatieprogramma voegt automatisch `chloros-cli` toe aan uw systeem PATH voor toegang via de opdrachtregel.
 {% endhint %}
 
 ***
 
-## Additional Resources
+## Aanvullende bronnen
 
 ### Python SDK
 
-For developers and automation workflows, install the Chloros Python SDK:
+Voor ontwikkelaars en automatiseringsworkflows installeert u Chloros Python SDK:
 
 ```bash
 pip install chloros-sdk
 ```
 
-**Documentation**: [API: Python SDK](api-python-sdk.md)
+**Documentatie**: [API: Python SDK](api-python-sdk.md)
 
-**Requirements**: Chloros Desktop must be installed, Chloros+ license required
-
-***
-
-## What's Included
-
-The Chloros installation includes:
-
-* ✅ **Chloros Desktop GUI** - Full-featured graphical interface
-* ✅ **Chloros (Browser)** - Web-based interface for lower-spec systems
-* ✅ **Chloros CLI** - Command-line interface (requires Chloros+ license)
-* ✅ **Backend Engine** - Image processing pipeline
-* ✅ **Camera Profiles** - Pre-configured MAPIR camera templates
+**Vereisten**: Chloros Desktop moet geïnstalleerd zijn, Chloros+ licentie vereist.
 
 ***
 
-## Upgrade to Chloros+
+## Wat is inbegrepen?
 
-Unlock advanced features with a Chloros+ subscription:
+De installatie van Chloros omvat:
 
-* 🚀 **Multi-threaded Processing** - Process images in parallel
-* ⚡ **GPU (CUDA) Acceleration** - Leverage NVIDIA GPU power
-* 💻 **CLI Access** - Automate with command-line tools
-* 🐍 **Python SDK** - Programmatic API access
-* 📱 **Multiple Devices** - Use on 2-10+ devices (plan dependent)
-* 🧮 **Custom Formulas** - Create custom multispectral indices
-
-<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">View Chloros+ Plans &#x26; Pricing</a></p>
+* ✅ **Chloros Desktop GUI** - Volledig uitgeruste grafische interface
+* ✅ **Chloros (browser)** - Webgebaseerde interface voor systemen met lagere specificaties
+* ✅ **Chloros CLI** - Opdrachtregelinterface (vereist Chloros+ licentie)
+* ✅ **Backend Engine** - Beeldverwerkingspijplijn
+* ✅ **Cameraprofielen** - Vooraf geconfigureerde MAPIR camerasjablonen
 
 ***
 
-## Installation Help
+## Upgrade naar Chloros+
 
-### Troubleshooting
+Ontgrendel geavanceerde functies met een Chloros+ abonnement:
 
-**Installation fails with error message:**
+* 🚀 **Multi-threaded verwerking** - Verwerk beelden parallel
+* ⚡ **GPU (CUDA)-versnelling** - Maak gebruik van de kracht van NVIDIA GPU
+* 💻 **CLI-toegang** - Automatiseer met opdrachtregelprogramma&#x27;s
+* 🐍 **Python SDK** - Programmatische API-toegang
+* 📱 **Meerdere apparaten** - Gebruik op 2-10+ apparaten (afhankelijk van het abonnement)
+* 🧮 **Aangepaste formules** - Maak aangepaste multispectrale indices
 
-* Ensure you have administrator rights
-* Temporarily disable antivirus software
-* Check that you meet minimum system requirements
+<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Bekijk Chloros+ abonnementen en prijzen</a></p>***
 
-**Application won't start:**
+## Hulp bij installatie
 
-* Try Chloros (Browser) version
-* Verify Windows 10/11 (64-bit) is installed
-* Update graphics drivers
-* Check Windows Event Viewer for error details
-* Contact support with error logs
+### Probleemoplossing
 
-**License activation issues:**
+**Installatie mislukt met foutmelding:**
 
-* Ensure internet connection is active
-* Verify credentials at [https://cloud.mapir.camera](https://cloud.mapir.camera)
-* Check firewall isn't blocking Chloros
-* See [Chloros+ Login](chloros+-login.md) for detailed instructions
+* Zorg ervoor dat u beheerdersrechten hebt
+* Schakel antivirussoftware tijdelijk uit
+* Controleer of u voldoet aan de minimale systeemvereisten
 
-### Getting Support
+**Toepassing start niet:**
 
-Need help with installation or setup?
+* Probeer de Chloros (browser) versie
+* Controleer of Windows 10/11 (64-bit) is geïnstalleerd
+* Werk de grafische stuurprogramma&#x27;s bij
+* Controleer Windows Event Viewer voor foutdetails
+* Neem contact op met de ondersteuning met de foutenlogboeken
 
-* 📧 **Email**: info@mapir.camera
+**Problemen met licentieactivering:**
+
+* Zorg ervoor dat de internetverbinding actief is
+* Controleer de inloggegevens op [https://cloud.mapir.camera](https://cloud.mapir.camera)
+* Controleer of de firewall Chloros niet blokkeert
+* Zie [Chloros+ Login](chloros+-login.md) voor gedetailleerde instructies
+
+### Ondersteuning krijgen
+
+Hulp nodig bij de installatie of configuratie?
+
+* 📧 **E-mail**: info@mapir.camera
 * 🌐 **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* 📚 **Documentation**: [Getting Started](./)
-* ❓ **FAQ**: [Frequently Asked Questions](faq.md)
+* 📚 **Documentatie**: [Aan de slag](./)
+* ❓ **FAQ**: [Veelgestelde vragen](faq.md)
 
 ***
 
-## Change Log
+## Wijzigingslogboek
 
 <details>
 
-<summary>Version 1.0.3</summary>
+<summary>Versie 1.0.3</summary>
 
-### **Release Date**: December ?, 2025
+### **Releasedatum**: december ?, 2025
 
-#### New Features
+#### Nieuwe functies
 
-* Initial Launch
+* Eerste lancering
 
-#### Improvements
+#### Verbeteringen
 
-* Initial Launch
+* Eerste lancering
 
-#### Bug Fixes
+#### Bugfixes
 
-* Initial Launch
+* Eerste lancering
 
-#### Known Issues
+#### Bekende problemen
 
-* Initial Launch
+* Eerste lancering
 
-</details>
+</details>***
 
-***
+## Licentieovereenkomst
 
-## License Agreement
+**Eigendomsrechtelijke software** - Copyright (c) 2025 MAPIR Inc.
 
-**Proprietary Software** - Copyright (c) 2025 MAPIR Inc.
+Ongeoorloofd gebruik, distributie of wijziging is verboden.
 
-Unauthorized use, distribution, or modification is prohibited.
+**Gratis versie**: beschikbaar voor persoonlijk en commercieel gebruik met beperkte functionaliteit.
 
-**Free Version**: Available for personal and commercial use with feature limitations
-
-**Chloros+**: Subscription-based license for advanced features and commercial deployments
+**Chloros+**: licentie op basis van een abonnement voor geavanceerde functies en commerciële implementaties.

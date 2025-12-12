@@ -1,48 +1,48 @@
 # API : Python SDK
 
-The **Chloros Python SDK** provides programmatic access to the Chloros image processing engine, enabling automation, custom workflows, and seamless integration with your Python applications and research pipelines.
+De **Chloros Python SDK** biedt programmatische toegang tot de Chloros beeldverwerkingsengine, waardoor automatisering, aangepaste workflows en naadloze integratie met uw Python-toepassingen en onderzoekspijplijnen mogelijk worden.
 
-### Key Features
+### Belangrijkste kenmerken
 
-* 🐍 **Native Python** - Clean, Pythonic API for image processing
-* 🔧 **Full API Access** - Complete control over Chloros processing
-* 🚀 **Automation** - Build custom batch processing workflows
-* 🔗 **Integration** - Embed Chloros in existing Python applications
-* 📊 **Research-Ready** - Perfect for scientific analysis pipelines
-* ⚡ **Parallel Processing** - Scales to your CPU cores (Chloros+)
+* 🐍 **Native Python** - Schone, Pythonic API voor beeldverwerking
+* 🔧 **Volledige API-toegang** - Volledige controle over Chloros-verwerking
+* 🚀 **Automatisering** - Bouw aangepaste batchverwerkingsworkflows
+* 🔗 **Integratie** - Chloros integreren in bestaande Python-toepassingen
+* 📊 **Klaar voor onderzoek** - Perfect voor wetenschappelijke analysepijplijnen
+* ⚡ **Parallelle verwerking** - Schaalbaar naar uw CPU-kernen (Chloros+)
 
-### Requirements
+### Vereisten
 
-| Requirement          | Details                                                             |
+| Vereiste          | Details                                                             |
 | -------------------- | ------------------------------------------------------------------- |
-| **Chloros Desktop**  | Must be installed locally                                           |
-| **License**          | Chloros+ ([paid plan required](https://cloud.mapir.camera/pricing)) |
-| **Operating System** | Windows 10/11 (64-bit)                                              |
-| **Python**           | Python 3.7 or higher                                                |
-| **Memory**           | 8GB RAM minimum (16GB recommended)                                  |
-| **Internet**         | Required for license activation                                     |
+| **Chloros Desktop**  | Moet lokaal zijn geïnstalleerd                                           |
+| **Licentie**          | Chloros+ ([betaald abonnement vereist](https://cloud.mapir.camera/pricing)) |
+| **Besturingssysteem** | Windows 10/11 (64-bits)                                              |
+| **Python**           | Python 3.7 of hoger                                                |
+| **Geheugen**           | minimaal 8 GB RAM (16 GB aanbevolen)                                  |
+| **Internet**         | vereist voor licentieactivering                                     |
 
-{% hint style="warning" %}
-**License Requirement**: The Python SDK requires a paid Chloros+ subscription for API access. Standard (free) plans do not have API/SDK access. Visit [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) to upgrade.
+{% hint style=&quot;warning&quot; %}
+**Licentievereiste**: Voor Python SDK is een betaald Chloros+-abonnement vereist voor toegang tot API. Standaard (gratis) abonnementen hebben geen toegang tot API/SDK. Ga naar [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) om te upgraden.
 {% endhint %}
 
-## Quick Start
+## Snel aan de slag
 
-### Installation
+### Installatie
 
-Install via pip:
+Installeer via pip:
 
 ```bash
 pip install chloros-sdk
 ```
 
-{% hint style="info" %}
-**First-Time Setup**: Before using the SDK, activate your Chloros+ license by opening Chloros, Chloros (Browser) or Chloros CLI and logging in with your credentials. This only needs to be done once.
+{% hint style=&quot;info&quot; %}
+**Eerste installatie**: Voordat u de SDK gebruikt, moet u uw Chloros+-licentie activeren door Chloros, Chloros (browser) of Chloros CLI te openen en in te loggen met uw inloggegevens. Dit hoeft slechts eenmaal te worden gedaan.
 {% endhint %}
 
-### Basic Usage
+### Basisgebruik
 
-Process a folder with just a few lines:
+Verwerk een map met slechts een paar regels:
 
 ```python
 from chloros_sdk import process_folder
@@ -51,9 +51,9 @@ from chloros_sdk import process_folder
 results = process_folder("C:\\DroneImages\\Flight001")
 ```
 
-### Full Control
+### Volledige controle
 
-For advanced workflows:
+Voor geavanceerde workflows:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -80,39 +80,39 @@ chloros.process(mode="parallel", wait=True)
 
 ***
 
-## Installation Guide
+## Installatiehandleiding
 
-### Prerequisites
+### Vereisten
 
-Before installing the SDK, ensure you have:
+Voordat u SDK installeert, moet u ervoor zorgen dat u beschikt over:
 
-1. **Chloros Desktop** installed ([download](download.md))
-2. **Python 3.7+** installed ([python.org](https://www.python.org))
-3. **Active Chloros+ license** ([upgrade](https://cloud.mapir.camera/pricing))
+1. **Chloros Desktop** geïnstalleerd ([download](download.md))
+2. **Python 3.7+** geïnstalleerd ([python.org](https://www.python.org))
+3. **Actieve Chloros+-licentie** ([upgrade](https://cloud.mapir.camera/pricing))
 
-### Install via pip
+### Installeren via pip
 
-**Standard installation:**
+**Standaardinstallatie:**
 
 ```bash
 pip install chloros-sdk
 ```
 
-**With progress monitoring support:**
+**Met ondersteuning voor voortgangsbewaking:**
 
 ```bash
 pip install chloros-sdk[progress]
 ```
 
-**Development installation:**
+**Ontwikkelingsinstallatie:**
 
 ```bash
 pip install chloros-sdk[dev]
 ```
 
-### Verify Installation
+### Installatie controleren
 
-Test that the SDK is installed correctly:
+Controleer of SDK correct is geïnstalleerd:
 
 ```python
 import chloros_sdk
@@ -121,23 +121,23 @@ print(f"Chloros SDK version: {chloros_sdk.__version__}")
 
 ***
 
-## First-Time Setup
+## Eerste installatie
 
-### License Activation
+### Licentie activeren
 
-The SDK uses the same license as Chloros, Chloros (Browser), and Chloros CLI. Activate once via the GUI or CLI:
+De SDK gebruikt dezelfde licentie als Chloros, Chloros (browser) en Chloros CLI. Activeer eenmaal via de GUI of CLI:
 
-1. Open **Chloros or Chloros (Browser)** and login on the User <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> tab. Or, open the **CLI**.
-2. Enter your Chloros+ credentials and log in
-3. License is cached locally (persists across reboots)
+1. Open **Chloros of Chloros (browser)** en log in op het tabblad Gebruiker <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> . Of open **CLI**.
+2. Voer uw Chloros+-inloggegevens in en log in
+3. De licentie wordt lokaal in de cache opgeslagen (blijft behouden na herstarten)
 
-{% hint style="success" %}
-**One-Time Setup**: After logging in via the GUI or CLI, the SDK automatically uses the cached license. No additional authentication needed!
+{% hint style=&quot;success&quot; %}
+**Eenmalige installatie**: Nadat u zich hebt aangemeld via de GUI of CLI, gebruikt SDK automatisch de opgeslagen licentie. Er is geen aanvullende authenticatie nodig!
 {% endhint %}
 
-### Test Connection
+### Verbinding testen
 
-Verify the SDK can connect to Chloros:
+Controleer of de SDK verbinding kan maken met Chloros:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -152,11 +152,11 @@ print(f"Backend running: {status['running']}")
 
 ***
 
-## API Reference
+## API Referentie
 
-### ChlorosLocal Class
+### ChlorosLocal-klasse
 
-Main class for local Chloros image processing.
+Hoofdklasse voor lokale Chloros-beeldverwerking.
 
 #### Constructor
 
@@ -172,15 +172,15 @@ ChlorosLocal(
 
 **Parameters:**
 
-| Parameter                 | Type | Default                   | Description                           |
+| Parameter                 | Type | Standaard                   | Beschrijving                           |
 | ------------------------- | ---- | ------------------------- | ------------------------------------- |
-| `api_url`                 | str  | `"http://localhost:5000"` | URL of local Chloros backend          |
-| `auto_start_backend`      | bool | `True`                    | Automatically start backend if needed |
-| `backend_exe`             | str  | `None` (auto-detect)      | Path to backend executable            |
-| `timeout`                 | int  | `30`                      | Request timeout in seconds            |
-| `backend_startup_timeout` | int  | `60`                      | Timeout for backend startup (seconds) |
+| `api_url`                 | str  | `"http://localhost:5000"` | URL van lokale Chloros-backend          |
+| `auto_start_backend`      | bool | `True`                    | Start backend automatisch indien nodig |
+| `backend_exe`             | str  | `None` (automatische detectie)      | Pad naar uitvoerbaar backend-bestand            |
+| `timeout`                 | int  | `30`                      | Time-out voor verzoek in seconden            |
+| `backend_startup_timeout` | int  | `60`                      | Time-out voor opstarten backend (seconden) |
 
-**Examples:**
+**Voorbeelden:**
 
 ```python
 # Default (auto-start backend)
@@ -198,22 +198,22 @@ chloros = ChlorosLocal(timeout=60)
 
 ***
 
-### Methods
+### Methoden
 
 #### `create_project(project_name, camera=None)`
 
-Create a new Chloros project.
+Maak een nieuw Chloros-project aan.
 
 **Parameters:**
 
-| Parameter      | Type | Required | Description                                              |
+| Parameter      | Type | Vereist | Beschrijving                                              |
 | -------------- | ---- | -------- | -------------------------------------------------------- |
-| `project_name` | str  | Yes      | Name for the project                                     |
-| `camera`       | str  | No       | Camera template (e.g., "Survey3N\_RGN", "Survey3W\_OCN") |
+| `project_name` | str  | Ja      | Naam voor het project                                     |
+| `camera`       | str  | Nee       | Camerasjabloon (bijv. &quot;Survey3N\_RGN&quot;, &quot;Survey3W\_OCN&quot;) |
 
-**Returns:** `dict` - Project creation response
+**Retourneert:** `dict` - Reactie op het aanmaken van een project
 
-**Example:**
+**Voorbeeld:**
 
 ```python
 # Basic project
@@ -227,18 +227,18 @@ chloros.create_project("DroneField_A", camera="Survey3N_RGN")
 
 #### `import_images(folder_path, recursive=False)`
 
-Import images from a folder.
+Afbeeldingen importeren vanuit een map.
 
 **Parameters:**
 
-| Parameter     | Type     | Required | Description                        |
+| Parameter     | Type     | Vereist | Beschrijving                        |
 | ------------- | -------- | -------- | ---------------------------------- |
-| `folder_path` | str/Path | Yes      | Path to folder with images         |
-| `recursive`   | bool     | No       | Search subfolders (default: False) |
+| `folder_path` | str/Pad | Ja      | Pad naar map met afbeeldingen         |
+| `recursive`   | bool     | Nee       | Submappen doorzoeken (standaard: False) |
 
-**Returns:** `dict` - Import results with file count
+**Retourneert:** `dict` - Importeren resultaten met aantal bestanden
 
-**Example:**
+**Voorbeeld:**
 
 ```python
 # Import from folder
@@ -252,32 +252,32 @@ chloros.import_images("C:\\DroneImages", recursive=True)
 
 #### `configure(**settings)`
 
-Configure processing settings.
+Configureer verwerkingsinstellingen.
 
 **Parameters:**
 
-| Parameter                 | Type | Default                 | Description                     |
+| Parameter                 | Type | Standaard                 | Beschrijving                     |
 | ------------------------- | ---- | ----------------------- | ------------------------------- |
-| `debayer`                 | str  | "High Quality (Faster)" | Debayer method                  |
-| `vignette_correction`     | bool | `True`                  | Enable vignette correction      |
-| `reflectance_calibration` | bool | `True`                  | Enable reflectance calibration  |
-| `indices`                 | list | `None`                  | Vegetation indices to calculate |
-| `export_format`           | str  | "TIFF (16-bit)"         | Output format                   |
-| `ppk`                     | bool | `False`                 | Enable PPK corrections          |
-| `custom_settings`         | dict | `None`                  | Advanced custom settings        |
+| `debayer`                 | str  | &quot;Hoge kwaliteit (sneller)&quot; | Debayer-methode                  |
+| `vignette_correction`     | bool | `True`                  | Vignettecorrectie inschakelen      |
+| `reflectance_calibration` | bool | `True`                  | Reflectiekalibratie inschakelen  |
+| `indices`                 | lijst | `None`                  | Te berekenen vegetatie-indexen |
+| `export_format`           | str  | &quot;TIFF (16-bit)&quot;         | Uitvoerformaat                   |
+| `ppk`                     | bool | `False`                 | PPK-correcties inschakelen          |
+| `custom_settings`         | dict | `None`                  | Geavanceerde aangepaste instellingen        |
 
-**Export Formats:**
+**Exportformaten:**
 
-* `"TIFF (16-bit)"` - Recommended for GIS/photogrammetry
-* `"TIFF (32-bit, Percent)"` - Scientific analysis
-* `"PNG (8-bit)"` - Visual inspection
-* `"JPG (8-bit)"` - Compressed output
+* `"TIFF (16-bit)"` - Aanbevolen voor GIS/fotogrammetrie
+* `"TIFF (32-bit, Percent)"` - Wetenschappelijke analyse
+* `"PNG (8-bit)"` - Visuele inspectie
+* `"JPG (8-bit)"` - Gecomprimeerde uitvoer
 
-**Available Indices:**
+**Beschikbare indexen:**
 
-NDVI, NDRE, GNDVI, OSAVI, CIG, EVI, SAVI, MSAVI, MTVI2, and more.
+NDVI, NDRE, GNDVI, OSAVI, CIG, EVI, SAVI, MSAVI, MTVI2, en meer.
 
-**Example:**
+**Voorbeeld:**
 
 ```python
 # Basic configuration
@@ -302,24 +302,24 @@ chloros.configure(
 
 #### `process(mode="parallel", wait=True, progress_callback=None)`
 
-Process the project images.
+Verwerk de projectafbeeldingen.
 
 **Parameters:**
 
-| Parameter           | Type     | Default      | Description                               |
+| Parameter           | Type     | Standaard      | Beschrijving                               |
 | ------------------- | -------- | ------------ | ----------------------------------------- |
-| `mode`              | str      | `"parallel"` | Processing mode: "parallel" or "serial"   |
-| `wait`              | bool     | `True`       | Wait for completion                       |
-| `progress_callback` | callable | `None`       | Progress callback function(progress, msg) |
-| `poll_interval`     | float    | `2.0`        | Polling interval for progress (seconds)   |
+| `mode`              | str      | `"parallel"` | Verwerkingsmodus: &quot;parallel&quot; of &quot;serieel&quot;   |
+| `wait`              | bool     | `True`       | Wachten op voltooiing                       |
+| `progress_callback` | callable | `None`       | Callback-functie voor voortgang (progress, msg) |
+| `poll_interval`     | float    | `2.0`        | Polling-interval voor voortgang (seconden)   |
 
-**Returns:** `dict` - Processing results
+**Retourneert:** `dict` - Verwerkingsresultaten
 
-{% hint style="warning" %}
-**Parallel Mode**: Requires Chloros+ license. Automatically scales to your CPU cores (up to 16 workers).
+{% hint style=&quot;warning&quot; %}
+**Parallelle modus**: vereist Chloros+ licentie. Schaalbaar naar uw CPU-kernen (maximaal 16 workers).
 {% endhint %}
 
-**Example:**
+**Voorbeeld:**
 
 ```python
 # Simple processing
@@ -343,11 +343,11 @@ chloros.process(wait=False)
 
 #### `get_config()`
 
-Get current project configuration.
+Haal de huidige projectconfiguratie op.
 
-**Returns:** `dict` - Current project configuration
+**Retourneert:** `dict` - Huidige projectconfiguratie
 
-**Example:**
+**Voorbeeld:**
 
 ```python
 config = chloros.get_config()
@@ -358,11 +358,11 @@ print(config['Project Settings'])
 
 #### `get_status()`
 
-Get backend status information.
+Haal backend-statusinformatie op.
 
-**Returns:** `dict` - Backend status
+**Retourneert:** `dict` - Backend-status
 
-**Example:**
+**Voorbeeld:**
 
 ```python
 status = chloros.get_status()
@@ -374,9 +374,9 @@ print(f"URL: {status['url']}")
 
 #### `shutdown_backend()`
 
-Shutdown the backend (if started by SDK).
+Sluit de backend af (indien gestart door SDK).
 
-**Example:**
+**Voorbeeld:**
 
 ```python
 chloros.shutdown_backend()
@@ -384,29 +384,29 @@ chloros.shutdown_backend()
 
 ***
 
-### Convenience Functions
+### Handige functies
 
 #### `process_folder(folder_path, **options)`
 
-One-line convenience function to process a folder.
+Handige functie van één regel om een map te verwerken.
 
 **Parameters:**
 
-| Parameter                 | Type     | Default         | Description                    |
+| Parameter                 | Type     | Standaard         | Beschrijving                    |
 | ------------------------- | -------- | --------------- | ------------------------------ |
-| `folder_path`             | str/Path | Required        | Path to folder with images     |
-| `project_name`            | str      | Auto-generated  | Project name                   |
-| `camera`                  | str      | `None`          | Camera template                |
-| `indices`                 | list     | `["NDVI"]`      | Indices to calculate           |
-| `vignette_correction`     | bool     | `True`          | Enable vignette correction     |
-| `reflectance_calibration` | bool     | `True`          | Enable reflectance calibration |
-| `export_format`           | str      | "TIFF (16-bit)" | Output format                  |
-| `mode`                    | str      | `"parallel"`    | Processing mode                |
-| `progress_callback`       | callable | `None`          | Progress callback              |
+| `folder_path`             | str/Pad | Vereist        | Pad naar map met afbeeldingen     |
+| `project_name`            | str      | Automatisch gegenereerd  | Projectnaam                   |
+| `camera`                  | str      | `None`          | Camerasjabloon                |
+| `indices`                 | lijst     | `["NDVI"]`      | Indices om te berekenen           |
+| `vignette_correction`     | bool     | `True`          | Vignettecorrectie inschakelen     |
+| `reflectance_calibration` | bool     | `True`          | Reflectiekalibratie inschakelen |
+| `export_format`           | str      | &quot;TIFF (16-bit)&quot; | Uitvoerformaat                  |
+| `mode`                    | str      | `"parallel"`    | Verwerkingsmodus                |
+| `progress_callback`       | callable | `None`          | Voortgangs-callback              |
 
-**Returns:** `dict` - Processing results
+**Retourneert:** `dict` - Verwerkingsresultaten
 
-**Example:**
+**Voorbeeld:**
 
 ```python
 from chloros_sdk import process_folder
@@ -435,9 +435,9 @@ results = process_folder(
 
 ***
 
-## Context Manager Support
+## Ondersteuning voor contextmanager
 
-The SDK supports context managers for automatic cleanup:
+De SDK ondersteunt contextmanagers voor automatische opschoning:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -453,11 +453,11 @@ with ChlorosLocal() as chloros:
 
 ***
 
-## Complete Examples
+## Volledige voorbeelden
 
-### Example 1: Basic Processing
+### Voorbeeld 1: Basisverwerking
 
-Process a folder with default settings:
+Een map verwerken met standaardinstellingen:
 
 ```python
 from chloros_sdk import process_folder
@@ -470,9 +470,9 @@ print(f"Processing complete: {results}")
 
 ***
 
-### Example 2: Custom Workflow
+### Voorbeeld 2: aangepaste workflow
 
-Full control over processing pipeline:
+Volledige controle over de verwerkingspijplijn:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -512,9 +512,9 @@ print("Processing complete!")
 
 ***
 
-### Example 3: Batch Processing Multiple Folders
+### Voorbeeld 3: batchverwerking van meerdere mappen
 
-Process multiple flight datasets:
+Verwerk meerdere vluchtgegevenssets:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -564,9 +564,9 @@ print("All flights processed!")
 
 ***
 
-### Example 4: Research Pipeline Integration
+### Voorbeeld 4: integratie van onderzoekspijplijn
 
-Integrate Chloros with data analysis:
+Chloros integreren met gegevensanalyse:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -619,9 +619,9 @@ print(df)
 
 ***
 
-### Example 5: Custom Progress Monitoring
+### Voorbeeld 5: Aangepaste voortgangsbewaking
 
-Advanced progress tracking with logging:
+Geavanceerde voortgangsbewaking met logboekregistratie:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -658,9 +658,9 @@ logging.info("Processing complete!")
 
 ***
 
-### Example 6: Error Handling
+### Voorbeeld 6: Foutverwerking
 
-Robust error handling for production use:
+Robuuste foutafhandeling voor productiegebruik:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -710,9 +710,9 @@ else:
 
 ***
 
-### Example 7: Command-Line Tool
+### Voorbeeld 7: opdrachtregelprogramma
 
-Build a custom CLI tool with the SDK:
+Bouw een aangepast CLI-programma met SDK:
 
 ```python
 #!/usr/bin/env python
@@ -775,7 +775,7 @@ if __name__ == '__main__':
     sys.exit(main())
 ```
 
-**Usage:**
+**Gebruik:**
 
 ```bash
 python my_processor.py "C:\Flight001" "C:\Flight002" --indices NDVI NDRE GNDVI
@@ -783,11 +783,11 @@ python my_processor.py "C:\Flight001" "C:\Flight002" --indices NDVI NDRE GNDVI
 
 ***
 
-## Exception Handling
+## Uitzonderingsafhandeling
 
-The SDK provides specific exception classes for different error types:
+De SDK biedt specifieke uitzonderingsklassen voor verschillende fouttypes:
 
-### Exception Hierarchy
+### Uitzonderingshiërarchie
 
 ```python
 ChlorosError                    # Base exception
@@ -799,7 +799,7 @@ ChlorosError                    # Base exception
 └── ChlorosConfigurationError  # Configuration errors
 ```
 
-### Exception Examples
+### Voorbeelden van uitzonderingen
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -824,11 +824,11 @@ except ChlorosError as e:
 
 ***
 
-## Advanced Topics
+## Geavanceerde onderwerpen
 
-### Custom Backend Configuration
+### Aangepaste backendconfiguratie
 
-Use a custom backend location or configuration:
+Gebruik een aangepaste backendlocatie of -configuratie:
 
 ```python
 chloros = ChlorosLocal(
@@ -839,9 +839,9 @@ chloros = ChlorosLocal(
 )
 ```
 
-### Non-Blocking Processing
+### Niet-blokkerende verwerking
 
-Start processing and continue with other tasks:
+Start de verwerking en ga door met andere taken:
 
 ```python
 # Start processing (non-blocking)
@@ -861,9 +861,9 @@ while True:
 print("Processing complete!")
 ```
 
-### Memory Management
+### Geheugenbeheer
 
-For large datasets, process in batches:
+Verwerk grote datasets in batches:
 
 ```python
 from pathlib import Path
@@ -888,15 +888,15 @@ for i in range(0, len(images), batch_size):
 
 ***
 
-## Troubleshooting
+## Probleemoplossing
 
-### Backend Not Starting
+### Backend start niet
 
-**Issue:** SDK fails to start backend
+**Probleem:** SDK kan de backend niet starten.
 
-**Solutions:**
+**Oplossingen:**
 
-1. Verify Chloros Desktop is installed:
+1. Controleer of Chloros Desktop is geïnstalleerd:
 
 ```python
 import os
@@ -904,8 +904,8 @@ backend_path = r"C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backen
 print(f"Backend exists: {os.path.exists(backend_path)}")
 ```
 
-2. Check Windows Firewall isn't blocking
-3. Try manual backend path:
+2. Controleer of Windows Firewall niet blokkeert
+3. Probeer het handmatige backend-pad:
 
 ```python
 chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
@@ -913,14 +913,14 @@ chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
 
 ***
 
-### License Not Detected
+### Licentie niet gedetecteerd
 
-**Issue:** SDK warns about missing license
+**Probleem:** SDK waarschuwt voor ontbrekende licentie
 
-**Solutions:**
+**Oplossingen:**
 
-1. Open Chloros, Chloros (Browser) or Chloros CLI and login.
-2. Verify license is cached:
+1. Open Chloros, Chloros (browser) of Chloros CLI en log in.
+2. Controleer of de licentie in de cache is opgeslagen:
 
 ```python
 from pathlib import Path
@@ -931,15 +931,15 @@ cache_path = Path(os.getenv('APPDATA')) / 'Chloros' / 'cache'
 print(f"Cache exists: {cache_path.exists()}")
 ```
 
-3. Contact support: info@mapir.camera
+3. Neem contact op met de ondersteuning: info@mapir.camera
 
 ***
 
-### Import Errors
+### Importfouten
 
-**Issue:** `ModuleNotFoundError: No module named 'chloros_sdk'`
+**Probleem:** `ModuleNotFoundError: No module named 'chloros_sdk'`
 
-**Solutions:**
+**Oplossingen:**
 
 ```bash
 # Verify installation
@@ -955,36 +955,36 @@ python -c "import sys; print(sys.path)"
 
 ***
 
-### Processing Timeout
+### Time-out bij verwerking
 
-**Issue:** Processing times out
+**Probleem:** Time-out bij verwerking
 
-**Solutions:**
+**Oplossingen:**
 
-1. Increase timeout:
+1. Verleng de time-out:
 
 ```python
 chloros = ChlorosLocal(timeout=120)  # 2 minutes
 ```
 
-2. Process smaller batches
-3. Check available disk space
-4. Monitor system resources
+2. Verwerk kleinere batches
+3. Controleer de beschikbare schijfruimte
+4. Controleer de systeembronnen
 
 ***
 
-### Port Already in Use
+### Poort al in gebruik
 
-**Issue:** Backend port 5000 occupied
+**Probleem:** Backend-poort 5000 bezet
 
-**Solutions:**
+**Oplossingen:**
 
 ```python
 # Use different port
 chloros = ChlorosLocal(api_url="http://localhost:5001")
 ```
 
-Or find and close conflicting process:
+Of zoek en sluit het conflicterende proces:
 
 ```powershell
 # PowerShell
@@ -993,36 +993,36 @@ Get-NetTCPConnection -LocalPort 5000
 
 ***
 
-## Performance Tips
+## Tips voor betere prestaties
 
-### Optimize Processing Speed
+### Verwerkingssnelheid optimaliseren
 
-1. **Use Parallel Mode** (requires Chloros+)
+1. **Gebruik parallelle modus** (vereist Chloros+)
 
 ```python
 chloros.process(mode="parallel")  # Up to 16 workers
 ```
 
-2. **Reduce Output Resolution** (if acceptable)
+2. **Verminder de uitvoerresolutie** (indien acceptabel)
 
 ```python
 chloros.configure(export_format="PNG (8-bit)")  # Faster than TIFF
 ```
 
-3. **Disable Unnecessary Indices**
+3. **Schakel onnodige indexen uit**
 
 ```python
 # Only calculate needed indices
 chloros.configure(indices=["NDVI"])  # Not all indices
 ```
 
-4. **Process on SSD** (not HDD)
+4. **Verwerk op SSD** (niet op HDD)
 
 ***
 
-### Memory Optimization
+### Geheugenoptimalisatie
 
-For large datasets:
+Voor grote datasets:
 
 ```python
 # Process in batches instead of all at once
@@ -1031,9 +1031,9 @@ For large datasets:
 
 ***
 
-### Background Processing
+### Achtergrondverwerking
 
-Free up Python for other tasks:
+Maak Python vrij voor andere taken:
 
 ```python
 chloros.process(wait=False)  # Non-blocking
@@ -1044,9 +1044,9 @@ chloros.process(wait=False)  # Non-blocking
 
 ***
 
-## Integration Examples
+## Integratievoorbeelden
 
-### Django Integration
+### Django-integratie
 
 ```python
 # views.py
@@ -1119,49 +1119,49 @@ chloros.process(progress_callback=notebook_progress)
 
 ***
 
-## FAQ
+## Veelgestelde vragen
 
-### Q: Does the SDK require an internet connection?
+### V: Is er een internetverbinding nodig voor SDK?
 
-**A:** Only for initial license activation. After logging in via Chloros, Chloros (Browser) or Chloros CLI the license is cached locally and works offline for 30 days.
-
-***
-
-### Q: Can I use the SDK on a server without GUI?
-
-**A:** Yes! Requirements:
-
-* Windows Server 2016 or later
-* Chloros installed (one-time)
-* License activated on any machine (cached license copied to server)
+**A:** Alleen voor de eerste activering van de licentie. Nadat u bent ingelogd via Chloros, Chloros (browser) of Chloros CLI, wordt de licentie lokaal opgeslagen en werkt deze 30 dagen offline.
 
 ***
 
-### Q: What's the difference between Desktop, CLI, and SDK?
+### V: Kan ik SDK gebruiken op een server zonder GUI?
 
-| Feature         | Desktop GUI | CLI Command Line | Python SDK  |
+**A:** Ja! Vereisten:
+
+* Windows Server 2016 of hoger
+* Chloros geïnstalleerd (eenmalig)
+* Licentie geactiveerd op een willekeurige machine (in cache opgeslagen licentie gekopieerd naar server)
+
+***
+
+### V: Wat is het verschil tussen Desktop, CLI en SDK?
+
+| Functie         | Desktop GUI | CLI Opdrachtregel | Python SDK  |
 | --------------- | ----------- | ---------------- | ----------- |
 | **Interface**   | Point-click | Command          | Python API  |
-| **Best For**    | Visual work | Scripting        | Integration |
-| **Automation**  | Limited     | Good             | Excellent   |
-| **Flexibility** | Basic       | Good             | Maximum     |
-| **License**     | Chloros+    | Chloros+         | Chloros+    |
+| **Meest geschikt voor**    | Visueel werk | Scripting        | Integratie |
+| **Automatisering**  | Beperkt     | Goed             | Uitstekend   |
+| **Flexibiliteit** | Basis       | Goed             | Maximaal     |
+| **Licentie**     | Chloros+    | Chloros+         | Chloros+    |
 
 ***
 
-### Q: Can I distribute apps built with the SDK?
+### V: Kan ik apps distribueren die zijn gebouwd met de SDK?
 
-**A:** SDK code can be integrated into your applications, but:
+**A:** SDK-code kan worden geïntegreerd in uw applicaties, maar:
 
-* End users need Chloros installed
-* End users need active Chloros+ licenses
-* Commercial distribution requires OEM licensing
+* Eindgebruikers moeten Chloros geïnstalleerd hebben
+* Eindgebruikers moeten actieve Chloros+-licenties hebben
+* Voor commerciële distributie is een OEM-licentie vereist.
 
-Contact info@mapir.camera for OEM inquiries.
+Neem contact op met info@mapir.camera voor vragen over OEM.
 
 ***
 
-### Q: How do I update the SDK?
+### V: Hoe werk ik de SDK bij?
 
 ```bash
 pip install --upgrade chloros-sdk
@@ -1169,9 +1169,9 @@ pip install --upgrade chloros-sdk
 
 ***
 
-### Q: Where are processed images saved?
+### V: Waar worden bewerkte afbeeldingen opgeslagen?
 
-By default, in the Project Path :
+Standaard in het projectpad:
 
 ```
 Project_Path/
@@ -1181,9 +1181,9 @@ Project_Path/
 
 ***
 
-### Q: Can I process images from Python scripts running on schedule?
+### V: Kan ik afbeeldingen verwerken vanuit Python-scripts die volgens een schema worden uitgevoerd?
 
-**A:** Yes! Use Windows Task Scheduler with Python scripts:
+**A:** Ja! Gebruik Windows Taakplanner met Python-scripts:
 
 ```python
 # scheduled_processing.py
@@ -1193,13 +1193,13 @@ from chloros_sdk import process_folder
 results = process_folder("C:\\Flights\\Today")
 ```
 
-Schedule via Task Scheduler to run daily.
+Plan via Taakplanner om dagelijks uit te voeren.
 
 ***
 
-### Q: Does the SDK support async/await?
+### V: Ondersteunt SDK async/await?
 
-**A:** Current version is synchronous. For async behavior, use `wait=False` or run in separate thread:
+**A:** De huidige versie is synchroon. Gebruik voor asynchroon gedrag `wait=False` of voer het uit in een aparte thread:
 
 ```python
 import threading
@@ -1215,26 +1215,26 @@ thread.start()
 
 ***
 
-## Getting Help
+## Hulp krijgen
 
-### Documentation
+### Documentatie
 
-* **API Reference**: This page
+* **API-referentie**: deze pagina
 
-### Support Channels
+### Ondersteuningskanalen
 
-* **Email**: info@mapir.camera
+* **E-mail**: info@mapir.camera
 * **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* **Pricing**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
+* **Prijzen**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
-### Sample Code
+### Voorbeeldcode
 
-All examples listed here are tested and production-ready. Copy and adapt them for your use case.
+Alle hier vermelde voorbeelden zijn getest en klaar voor productie. Kopieer ze en pas ze aan voor uw gebruikssituatie.
 
 ***
 
-## License
+## Licentie
 
-**Proprietary Software** - Copyright (c) 2025 MAPIR Inc.
+**Eigendomsrechtelijke software** - Copyright (c) 2025 MAPIR Inc.
 
-SDK requires an active Chloros+ subscription. Unauthorized use, distribution, or modification is prohibited.
+SDK vereist een actief Chloros+-abonnement. Ongeautoriseerd gebruik, distributie of wijziging is verboden.

@@ -1,48 +1,46 @@
-# CLI : Command Line
+# CLI : Opdrachtregel
 
-<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>De **Chloros CLI** biedt krachtige opdrachtregeltoegang tot de Chloros-beeldverwerkingsengine, waardoor automatisering, scripting en headless-werking voor uw beeldverwerkingsworkflows mogelijk wordt.
 
-The **Chloros CLI** provides powerful command-line access to the Chloros image processing engine, enabling automation, scripting, and headless operation for your imaging workflows.
+### Belangrijkste kenmerken
 
-### Key Features
+* 🚀 **Automatisering** - Script batchverwerking van meerdere datasets
+* 🔗 **Integratie** - Integreer in bestaande workflows en pijplijnen
+* 💻 **Headless-werking** - Draait zonder GUI
+* 🌍 **Meertalig** - Ondersteuning voor 38 talen
+* ⚡ **Parallelle verwerking** - Dynamisch schaalbaar naar uw CPU (tot 16 parallelle workers)
 
-* 🚀 **Automation** - Script batch processing of multiple datasets
-* 🔗 **Integration** - Embed in existing workflows and pipelines
-* 💻 **Headless Operation** - Run without GUI
-* 🌍 **Multi-Language** - Support for 38 languages
-* ⚡ **Parallel Processing** - Dynamically scales to your CPU (up to 16 parallel workers)
+### Vereisten
 
-### Requirements
-
-| Requirement          | Details                                                             |
+| Vereiste          | Details                                                             |
 | -------------------- | ------------------------------------------------------------------- |
-| **Operating System** | Windows 10/11 (64-bit)                                              |
-| **License**          | Chloros+ ([paid plan required](https://cloud.mapir.camera/pricing)) |
-| **Memory**           | 8GB RAM minimum (16GB recommended)                                  |
-| **Internet**         | Required for license activation                                     |
-| **Disk Space**       | Varies by project size                                              |
+| **Besturingssysteem** | Windows 10/11 (64-bit)                                              |
+| **Licentie**          | Chloros+ ([betaald abonnement vereist](https://cloud.mapir.camera/pricing)) |
+| **Geheugen**           | Minimaal 8 GB RAM (16 GB aanbevolen)                                  |
+| **Internet**         | Vereist voor licentieactivering                                     |
+| **Schijfruimte**       | Varieert per projectgrootte                                              |
 
-{% hint style="warning" %}
-**License Requirement**: The CLI requires a paid Chloros+ subscription. Standard (free) plans do not have CLI access. Visit [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) to upgrade.
+{% hint style=&quot;warning&quot; %}
+**Licentievereiste**: Voor CLI is een betaald Chloros+-abonnement vereist. Standaard (gratis) abonnementen hebben geen toegang tot CLI. Ga naar [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) om te upgraden.
 {% endhint %}
 
-## Quick Start
+## Snel aan de slag
 
-### Installation
+### Installatie
 
-The CLI is automatically included with the Chloros installer:
+De CLI wordt automatisch meegeleverd met het Chloros-installatieprogramma:
 
-1. Download and run **Chloros Installer.exe**
-2. Complete the installation wizard
-3. CLI installed to: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
+1. Download en voer **Chloros Installer.exe** uit.
+2. Voltooi de installatiewizard.
+3. CLI geïnstalleerd in: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
 
-{% hint style="success" %}
-The installer automatically adds `chloros-cli` to your system PATH. Restart your terminal after installation.
+{% hint style=&quot;success&quot; %}
+Het installatieprogramma voegt automatisch `chloros-cli` toe aan uw systeem PATH. Start uw terminal opnieuw op na de installatie.
 {% endhint %}
 
-### First-Time Setup
+### Eerste installatie
 
-Before using the CLI, activate your Chloros+ license:
+Voordat u CLI gebruikt, moet u uw Chloros+-licentie activeren:
 
 ```bash
 # Login with your Chloros+ account
@@ -55,9 +53,9 @@ chloros-cli status
 chloros-cli process "C:\Images\Dataset001"
 ```
 
-### Basic Usage
+### Basisgebruik
 
-Process a folder with default settings:
+Verwerk een map met standaardinstellingen:
 
 ```powershell
 chloros-cli process "C:\Images\Dataset001"
@@ -65,9 +63,9 @@ chloros-cli process "C:\Images\Dataset001"
 
 ***
 
-## Command Reference
+## Commando-referentie
 
-### General Syntax
+### Algemene syntaxis
 
 ```
 chloros-cli [global-options] <command> [command-options]
@@ -75,89 +73,87 @@ chloros-cli [global-options] <command> [command-options]
 
 ***
 
-## Commands
+## Commando&#x27;s
 
-### `process` - Process Images
+### `process` - Afbeeldingen verwerken
 
-Process images in a folder with calibration.
+Verwerk afbeeldingen in een map met kalibratie.
 
-**Syntax:**
+**Syntaxis:**
 
 ```bash
 chloros-cli process <input-folder> [options]
 ```
 
-**Example:**
+**Voorbeeld:**
 
 ```powershell
 chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 ```
 
-#### Process Command Options
+#### Opties voor verwerkingsopdrachten
 
-| Option                | Type    | Default        | Description                                                                            |
+| Optie                | Type    | Standaard        | Beschrijving                                                                            |
 | --------------------- | ------- | -------------- | -------------------------------------------------------------------------------------- |
-| `<input-folder>`      | Path    | _Required_     | Folder containing RAW/JPG multispectral images                                         |
-| `-o, --output`        | Path    | Same as input  | Output folder for processed images                                                     |
-| `-n, --project-name`  | String  | Auto-generated | Custom project name                                                                    |
-| `--vignette`          | Flag    | Enabled        | Enable vignette correction                                                             |
-| `--no-vignette`       | Flag    | -              | Disable vignette correction                                                            |
-| `--reflectance`       | Flag    | Enabled        | Enable reflectance calibration                                                         |
-| `--no-reflectance`    | Flag    | -              | Disable reflectance calibration                                                        |
-| `--ppk`               | Flag    | Disabled       | Apply PPK corrections from .daq light sensor data                                      |
-| `--format`            | Choice  | TIFF (16-bit)  | Output format: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
-| `--min-target-size`   | Integer | Auto           | Minimum target size in pixels for calibration panel detection                          |
-| `--target-clustering` | Integer | Auto           | Target clustering threshold (0-100)                                                    |
-| `--exposure-pin-1`    | String  | None           | Lock exposure for camera model (Pin 1)                                                 |
-| `--exposure-pin-2`    | String  | None           | Lock exposure for camera model (Pin 2)                                                 |
-| `--recal-interval`    | Integer | Auto           | Recalibration interval in seconds                                                      |
-| `--timezone-offset`   | Integer | 0              | Timezone offset in hours                                                               |
+| `<input-folder>`      | Pad    | _Vereist_     | Map met RAW/JPG multispectrale afbeeldingen                                         |
+| `-o, --output`        | Pad    | Hetzelfde als invoer  | Uitvoermap voor verwerkte afbeeldingen                                                     |
+| `-n, --project-name`  | Tekenreeks  | Automatisch gegenereerd | Aangepaste projectnaam                                                                    |
+| `--vignette`          | Vlag    | Ingeschakeld        | Vignettecorrectie inschakelen                                                             |
+| `--no-vignette`       | Vlag    | -              | Vignettecorrectie uitschakelen                                                            |
+| `--reflectance`       | Vlag    | Ingeschakeld        | Reflectiekalibratie inschakelen                                                         |
+| `--no-reflectance`    | Vlag    | -              | Reflectiekalibratie uitschakelen                                                        |
+| `--ppk`               | Vlag    | Uitgeschakeld       | PPK-correcties toepassen op basis van .daq-lichtsensorgegevens                                      |
+| `--format`            | Keuze  | TIFF (16-bits)  | Uitvoerformaat: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
+| `--min-target-size`   | Geheel getal | Auto           | Minimale doelgrootte in pixels voor detectie van kalibratiepaneel                          |
+| `--target-clustering` | Geheel getal | Auto           | Drempelwaarde voor doelclustering (0-100)                                                    |
+| `--exposure-pin-1`    | String  | Geen           | Belichting vergrendelen voor cameramodel (pin 1)                                                 |
+| `--exposure-pin-2`    | String  | Geen           | Belichting vergrendelen voor cameramodel (pin 2)                                                 |
+| `--recal-interval`    | Geheel getal | Auto           | Herkalibratie-interval in seconden                                                      |
+| `--timezone-offset`   | Geheel getal | 0              | Tijdzone-offset in uren                                                               |
 
 ***
 
-### `login` - Authenticate Account
+### `login` - Account verifiëren
 
-Login with your Chloros+ credentials to enable CLI processing.
+Log in met uw Chloros+ inloggegevens om CLI-verwerking in te schakelen.
 
-**Syntax:**
+**Syntaxis:**
 
 ```bash
 chloros-cli login <email> <password>
 ```
 
-**Example:**
+**Voorbeeld:**
 
 ```powershell
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% hint style="warning" %}
-**Special Characters**: Use single quotes around passwords containing characters like `$`, `!`, or spaces.
+{% hint style=&quot;warning&quot; %}
+**Speciale tekens**: Gebruik enkele aanhalingstekens rond wachtwoorden die tekens zoals `$`, `!` of spaties bevatten.
 {% endhint %}
 
-**Output:**
+**Uitvoer:**
 
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
 
-***
+### `logout` - Inloggegevens wissen
 
-### `logout` - Clear Credentials
+Wis opgeslagen inloggegevens en log uit bij uw account.
 
-Clear stored credentials and logout from your account.
-
-**Syntax:**
+**Syntaxis:**
 
 ```bash
 chloros-cli logout
 ```
 
-**Example:**
+**Voorbeeld:**
 
 ```powershell
 chloros-cli logout
 ```
 
-**Output:**
+**Uitvoer:**
 
 ```
 ✓ Logout successful
@@ -166,23 +162,23 @@ chloros-cli logout
 
 ***
 
-### `status` - Check License Status
+### `status` - Licentiestatus controleren
 
-Display current license and authentication status.
+Geef de huidige licentie- en authenticatiestatus weer.
 
-**Syntax:**
+**Syntaxis:**
 
 ```bash
 chloros-cli status
 ```
 
-**Example:**
+**Voorbeeld:**
 
 ```powershell
 chloros-cli status
 ```
 
-**Output:**
+**Uitvoer:**
 
 ```
 ╔══════════════════════════════════════╗
@@ -197,31 +193,31 @@ chloros-cli status
 
 ***
 
-### `export-status` - Check Export Progress
+### `export-status` - Exportvoortgang controleren
 
-Monitor Thread 4 export progress during or after processing.
+Controleer de exportvoortgang van thread 4 tijdens of na de verwerking.
 
-**Syntax:**
+**Syntaxis:**
 
 ```bash
 chloros-cli export-status
 ```
 
-**Example:**
+**Voorbeeld:**
 
 ```powershell
 chloros-cli export-status
 ```
 
-**Use Case:** Call this command while processing is running to check export progress.
+**Gebruiksscenario:** Roep deze opdracht aan terwijl de verwerking wordt uitgevoerd om de voortgang van de export te controleren.
 
 ***
 
-### `language` - Manage Interface Language
+### `language` - Taal van de interface beheren
 
-View or change the CLI interface language.
+Bekijk of wijzig de CLI-interfacetaal.
 
-**Syntax:**
+**Syntaxis:**
 
 ```bash
 # Show current language
@@ -234,7 +230,7 @@ chloros-cli language --list
 chloros-cli language <language-code>
 ```
 
-**Examples:**
+**Voorbeelden:**
 
 ```powershell
 # View current language
@@ -250,66 +246,66 @@ chloros-cli language es
 chloros-cli language ja
 ```
 
-#### Supported Languages (38 Total)
+#### Ondersteunde talen (38 in totaal)
 
-| Code    | Language              | Native Name      |
+| Code    | Taal              | Native naam      |
 | ------- | --------------------- | ---------------- |
-| `en`    | English               | English          |
-| `es`    | Spanish               | Español          |
-| `pt`    | Portuguese            | Português        |
-| `fr`    | French                | Français         |
-| `de`    | German                | Deutsch          |
-| `it`    | Italian               | Italiano         |
-| `ja`    | Japanese              | 日本語              |
-| `ko`    | Korean                | 한국어              |
-| `zh`    | Chinese (Simplified)  | 简体中文             |
-| `zh-TW` | Chinese (Traditional) | 繁體中文             |
-| `ru`    | Russian               | Русский          |
-| `nl`    | Dutch                 | Nederlands       |
-| `ar`    | Arabic                | العربية          |
-| `pl`    | Polish                | Polski           |
-| `tr`    | Turkish               | Türkçe           |
+| `en`    | Engels               | Engels          |
+| `es`    | Spaans               | Español          |
+| `pt`    | Portugees            | Português        |
+| `fr`    | Frans                | Français         |
+| `de`    | Duits                | Deutsch          |
+| `it`    | Italiaans               | Italiano         |
+| `ja`    | Japans              | 日本語              |
+| `ko`    | Koreaans                | 한국어              |
+| `zh`    | Chinees (vereenvoudigd)  | 简体中文             |
+| `zh-TW` | Chinees (traditioneel) | 繁體中文             |
+| `ru`    | Russisch               | Русский          |
+| `nl`    | Nederlands                 | Nederlands       |
+| `ar`    | Arabisch                | العربية          |
+| `pl`    | Pools                | Polski           |
+| `tr`    | Turks               | Türkçe           |
 | `hi`    | Hindi                 | हिंदी            |
-| `id`    | Indonesian            | Bahasa Indonesia |
-| `vi`    | Vietnamese            | Tiếng Việt       |
-| `th`    | Thai                  | ไทย              |
-| `sv`    | Swedish               | Svenska          |
-| `da`    | Danish                | Dansk            |
-| `no`    | Norwegian             | Norsk            |
-| `fi`    | Finnish               | Suomi            |
-| `el`    | Greek                 | Ελληνικά         |
-| `cs`    | Czech                 | Čeština          |
-| `hu`    | Hungarian             | Magyar           |
-| `ro`    | Romanian              | Română           |
-| `uk`    | Ukrainian             | Українська       |
-| `pt-BR` | Brazilian Portuguese  | Português Brasileiro |
-| `zh-HK` | Cantonese             | 粵語             |
-| `ms`    | Malay                 | Bahasa Melayu    |
-| `sk`    | Slovak                | Slovenčina       |
-| `bg`    | Bulgarian             | Български        |
-| `hr`    | Croatian              | Hrvatski         |
-| `lt`    | Lithuanian            | Lietuvių         |
-| `lv`    | Latvian               | Latviešu         |
-| `et`    | Estonian              | Eesti            |
-| `sl`    | Slovenian             | Slovenščina      |
+| `id`    | Indonesisch            | Bahasa Indonesia |
+| `vi`    | Vietnamees            | Tiếng Việt       |
+| `th`    | Thais                  | ไทย              |
+| `sv`    | Zweeds               | Svenska          |
+| `da`    | Deens                | Dansk            |
+| `no`    | Noors             | Norsk            |
+| `fi`    | Fins               | Suomi            |
+| `el`    | Grieks                 | Ελληνικά         |
+| `cs`    | Tsjechisch                 | Čeština          |
+| `hu`    | Hongaars             | Magyar           |
+| `ro`    | Roemeens              | Română           |
+| `uk`    | Oekraïens             | Українська       |
+| `pt-BR` | Braziliaans Portugees  | Português Brasileiro |
+| `zh-HK` | Kantonees             | 粵語             |
+| `ms`    | Maleis                 | Bahasa Melayu    |
+| `sk`    | Slowaaks                | Slovenčina       |
+| `bg`    | Bulgaars             | Български        |
+| `hr`    | Kroatisch              | Hrvatski         |
+| `lt`    | Litouws            | Lietuvių         |
+| `lv`    | Lets               | Latviešu         |
+| `et`    | Ests              | Eesti            |
+| `sl`    | Sloveens             | Slovenščina      |
 
-{% hint style="success" %}
-**Automatic Persistence**: Your language preference is saved to `~/.chloros/cli_language.json` and persists across all sessions.
+{% hint style=&quot;success&quot; %}
+**Automatische persistentie**: Uw taalvoorkeur wordt opgeslagen in `~/.chloros/cli_language.json` en blijft gedurende alle sessies behouden.
 {% endhint %}
 
 ***
 
-### `set-project-folder` - Set Default Project Folder
+### `set-project-folder` - Standaardprojectmap instellen
 
-Change the default project folder location (shared with GUI).
+Wijzig de locatie van de standaardprojectmap (gedeeld met GUI).
 
-**Syntax:**
+**Syntaxis:**
 
 ```bash
 chloros-cli set-project-folder <folder-path>
 ```
 
-**Example:**
+**Voorbeeld:**
 
 ```powershell
 chloros-cli set-project-folder "C:\Projects\2025"
@@ -317,23 +313,23 @@ chloros-cli set-project-folder "C:\Projects\2025"
 
 ***
 
-### `get-project-folder` - Show Project Folder
+### `get-project-folder` - Projectmap weergeven
 
-Display the current default project folder location.
+Geef de huidige standaardlocatie van de projectmap weer.
 
-**Syntax:**
+**Syntaxis:**
 
 ```bash
 chloros-cli get-project-folder
 ```
 
-**Example:**
+**Voorbeeld:**
 
 ```powershell
 chloros-cli get-project-folder
 ```
 
-**Output:**
+**Uitvoer:**
 
 ```
 ℹ Current project folder: C:\Projects\2025
@@ -341,11 +337,11 @@ chloros-cli get-project-folder
 
 ***
 
-### `reset-project-folder` - Reset to Default
+### `reset-project-folder` - Terugzetten naar standaard
 
-Reset the project folder to the default location.
+Zet de projectmap terug naar de standaardlocatie.
 
-**Syntax:**
+**Syntaxis:**
 
 ```bash
 chloros-cli reset-project-folder
@@ -353,19 +349,19 @@ chloros-cli reset-project-folder
 
 ***
 
-## Global Options
+## Algemene opties
 
-These options apply to all commands:
+Deze opties zijn van toepassing op alle opdrachten:
 
-| Option          | Type    | Default       | Description                                      |
+| Optie          | Type    | Standaard       | Beschrijving                                      |
 | --------------- | ------- | ------------- | ------------------------------------------------ |
-| `--backend-exe` | Path    | Auto-detected | Path to backend executable                       |
-| `--port`        | Integer | 5000          | Backend API port number                          |
-| `--restart`     | Flag    | -             | Force restart backend (kills existing processes) |
-| `--version`     | Flag    | -             | Show version information and exit                |
-| `--help`        | Flag    | -             | Show help information and exit                   |
+| `--backend-exe` | Pad    | Automatisch gedetecteerd | Pad naar uitvoerbaar bestand backend                       |
+| `--port`        | Geheel getal | 5000          | Backend API poortnummer                          |
+| `--restart`     | Vlag    | -             | Backend geforceerd opnieuw opstarten (bestaande processen beëindigen) |
+| `--version`     | Vlag    | -             | Versie-informatie weergeven en afsluiten                |
+| `--help`        | Vlag    | -             | Help-informatie weergeven en afsluiten                   |
 
-**Example with Global Options:**
+**Voorbeeld met algemene opties:**
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Survey_001"
@@ -373,80 +369,78 @@ chloros-cli --port 5001 process "C:\Datasets\Survey_001"
 
 ***
 
-## Processing Settings Guide
+## Handleiding voor verwerkingsinstellingen
 
-### Parallel Processing
+### Parallelle verwerking
 
-Chloros+ CLI **automatically scales** parallel processing to match your computer's capabilities:
+Chloros+ CLI **schaalt automatisch** parallelle verwerking om aan te sluiten bij de mogelijkheden van uw computer:
 
-**How It Works:**
+**Hoe het werkt:**
 
-* Detects your CPU cores and RAM
-* Allocates workers: **2× CPU cores** (uses hyperthreading)
-* **Maximum: 16 parallel workers** (for stability)
+* Detecteert uw CPU-kernen en RAM
+* Wijst werknemers toe: **2× CPU-kernen** (maakt gebruik van hyperthreading)
+* **Maximaal: 16 parallelle werknemers** (voor stabiliteit)
 
-**System Tiers:**
+**Systeemniveaus:**
 
-| System Type   | CPU        | RAM      | Workers  | Performance     |
+| Systeemtype   | CPU        | RAM      | Werknemers  | Prestaties     |
 | ------------- | ---------- | -------- | -------- | --------------- |
-| **High-End**  | 16+ cores  | 32+ GB   | Up to 16 | Maximum speed   |
-| **Mid-Range** | 8-15 cores | 16-31 GB | 8-16     | Excellent speed |
-| **Low-End**   | 4-7 cores  | 8-15 GB  | 4-8      | Good speed      |
+| **High-end**  | 16+ kernen  | 32+ GB   | Tot 16 | Maximale snelheid   |
+| **Middenklasse** | 8-15 cores | 16-31 GB | 8-16     | Uitstekende snelheid |
+| **Low-end**   | 4-7 cores  | 8-15 GB  | 4-8      | Goede snelheid      |
 
-{% hint style="success" %}
-**Automatic Optimization**: The CLI automatically detects your system specs and configures optimal parallel processing. No manual configuration needed!
+{% hint style=&quot;success&quot; %}
+**Automatische optimalisatie**: De CLI detecteert automatisch uw systeemspecificaties en configureert optimale parallelle verwerking. Handmatige configuratie is niet nodig!
 {% endhint %}
 
-### Debayer Methods
+### Debayer-methoden
 
-The CLI uses **High Quality (Faster)** as the default and recommended debayer algorithm:
+De CLI gebruikt **Hoge kwaliteit (sneller)** als standaard en aanbevolen debayer-algoritme:
 
-| Method                      | Quality | Speed | Description                                 |
+| Methode                      | Kwaliteit | Snelheid | Beschrijving                                 |
 | --------------------------- | ------- | ----- | ------------------------------------------- |
-| **High Quality (Faster)** ⭐ | ⭐⭐⭐⭐    | ⚡⚡⚡   | Edge-aware algorithm (default, recommended) |
+| **Hoge kwaliteit (sneller)** ⭐ | ⭐⭐⭐⭐    | ⚡⚡⚡   | Randbewust algoritme (standaard, aanbevolen) |
 
-### Vignette Correction
+### Vignettecorrectie
 
-**What it does:** Corrects light falloff at image edges (darker corners common in camera imagery).
+**Wat het doet:** Corrigeert lichtverlies aan de randen van het beeld (donkere hoeken die vaak voorkomen in camerabeelden).
 
-* **Enabled by default** - Most users should keep this enabled
-* Use `--no-vignette` to disable
+* **Standaard ingeschakeld** - De meeste gebruikers kunnen dit beter ingeschakeld laten.
+* Gebruik `--no-vignette` om dit uit te schakelen.
 
-{% hint style="success" %}
-**Recommendation**: Always enable vignette correction to ensure uniform brightness across the frame.
+{% hint style=&quot;success&quot; %}
+**Aanbeveling**: Schakel vignettecorrectie altijd in om een gelijkmatige helderheid over het hele beeld te garanderen.
 {% endhint %}
 
-### Reflectance Calibration
+### Reflectiekalibratie
 
-Converts raw sensor values to standardized reflectance percentages using calibration panels.
+Converteert ruwe sensorwaarden naar gestandaardiseerde reflectiepercentages met behulp van kalibratiepanelen.
 
-* **Enabled by default** - Essential for vegetation analysis
-* Requires calibration target panels in images
-* Use `--no-reflectance` to disable
+* **Standaard ingeschakeld** - Essentieel voor vegetatieanalyse.
+* Vereist kalibratiedoelpanelen in afbeeldingen.
+* Gebruik `--no-reflectance` om uit te schakelen.
 
-{% hint style="info" %}
-**Requirements**: Ensure calibration panels are properly exposed and visible in your images for accurate reflectance conversion.
+{% hint style=&quot;info&quot; %}
+**Vereisten**: Zorg ervoor dat kalibratiepanelen goed belicht en zichtbaar zijn in uw afbeeldingen voor een nauwkeurige reflectieconversie.
 {% endhint %}
 
-### PPK Corrections
+### PPK-correcties
 
-**What it does:** Applies Post-Processed Kinematic corrections using DAQ-A-SD log data for improved GPS accuracy.
+**Wat het doet:** Past post-processed kinematische correcties toe met behulp van DAQ-A-SD-loggegevens voor verbeterde GPS-nauwkeurigheid.
 
-* **Disabled by default**
-* Use `--ppk` to enable
-* Requires .daq files in project folder from MAPIR DAQ-A-SD light sensor.
+* **Standaard uitgeschakeld**
+* Gebruik `--ppk` om in te schakelen
+* Vereist .daq-bestanden in de projectmap van MAPIR DAQ-A-SD-lichtsensor.
 
-### Output Formats
+### Uitvoerformaten
 
-<table><thead><tr><th width="197">Format</th><th width="130.20001220703125">Bit Depth</th><th width="116.5999755859375">File Size</th><th>Best For</th></tr></thead><tbody><tr><td><strong>TIFF (16-bit)</strong> ⭐</td><td>16-bit integer</td><td>Large</td><td>GIS analysis, photogrammetry (recommended)</td></tr><tr><td><strong>TIFF (32-bit, Percent)</strong></td><td>32-bit float</td><td>Very Large</td><td>Scientific analysis, research</td></tr><tr><td><strong>PNG (8-bit)</strong></td><td>8-bit integer</td><td>Medium</td><td>Visual inspection, web sharing</td></tr><tr><td><strong>JPG (8-bit)</strong></td><td>8-bit integer</td><td>Small</td><td>Quick preview, compressed output</td></tr></tbody></table>
+<table><thead><tr><th width="197">Formaat</th><th width="130.20001220703125">Bitdiepte</th><th width="116.5999755859375">Bestandsgrootte</th><th>Meest geschikt voor</th></tr></thead><tbody><tr><td><strong>TIFF (16-bits)</strong> ⭐</td><td>16-bits geheel getal</td><td>Groot</td><td>GIS-analyse, fotogrammetrie (aanbevolen)</td></tr><tr><td><strong>TIFF (32-bits, procent)</strong></td><td>32-bits float</td><td>Zeer groot</td><td>Wetenschappelijke analyse, onderzoek</td></tr><tr><td><strong>PNG (8-bit)</strong></td><td>8-bits geheel getal</td><td>Gemiddeld</td><td>Visuele inspectie, delen via internet</td></tr><tr><td><strong>JPG (8-bit)</strong></td><td>8-bits geheel getal</td><td>Klein</td><td>Snelle preview, gecomprimeerde uitvoer</td></tr></tbody></table>***
 
-***
+## Automatisering en scripting
 
-## Automation & Scripting
+### PowerShell-batchverwerking
 
-### PowerShell Batch Processing
-
-Process multiple dataset folders automatically:
+Meerdere datasets automatisch verwerken:
 
 ```powershell
 # process_all_datasets.ps1
@@ -470,9 +464,9 @@ foreach ($dataset in $datasets) {
 Write-Host "All datasets processed!" -ForegroundColor Green
 ```
 
-### Windows Batch Script
+### Windows-batchscript
 
-Simple loop for batch processing:
+Eenvoudige lus voor batchverwerking:
 
 ```batch
 @echo off
@@ -497,9 +491,9 @@ echo All datasets processed!
 pause
 ```
 
-### Python Automation Script
+### Python Automatiseringsscript
 
-Advanced automation with error handling:
+Geavanceerde automatisering met foutafhandeling:
 
 ```python
 import subprocess
@@ -578,16 +572,16 @@ if __name__ == '__main__':
 
 ***
 
-## Processing Workflow
+## Verwerkingsworkflow
 
-### Standard Workflow
+### Standaardworkflow
 
-1. **Input**: Folder containing RAW/JPG image pairs
-2. **Discovery**: CLI auto-scans for supported image files
-3. **Processing**: Parallel mode scales to your CPU cores (Chloros+)
-4. **Output**: Creates camera-model subfolders with processed images
+1. **Invoer**: map met RAW/JPG-afbeeldingsparen
+2. **Detectie**: CLI scant automatisch naar ondersteunde afbeeldingsbestanden
+3. **Verwerking**: Parallelle modus schaalt naar uw CPU-kernen (Chloros+)
+4. **Uitvoer**: Maakt submappen voor cameramodellen met verwerkte afbeeldingen
 
-### Example Output Structure
+### Voorbeeld van uitvoerstructuur
 
 ```
 MyProject/
@@ -600,72 +594,72 @@ MyProject/
     └── ...
 ```
 
-### Processing Time Estimates
+### Geschatte verwerkingstijd
 
-Typical processing times for 100 images (12MP each):
+Typische verwerkingstijden voor 100 afbeeldingen (elk 12 MP):
 
-| Mode              | Time      | Hardware                                     |
+| Modus              | Tijd      | Hardware                                     |
 | ----------------- | --------- | -------------------------------------------- |
-| **Parallel Mode** | 5-10 min  | i7/Ryzen 7, 16GB RAM, SSD (up to 16 workers) |
-| **Parallel Mode** | 10-15 min | i5/Ryzen 5, 8GB RAM, HDD (up to 8 workers)   |
+| **Parallelle modus** | 5-10 min  | i7/Ryzen 7, 16 GB RAM, SSD (maximaal 16 workers) |
+| **Parallelle modus** | 10-15 min | i5/Ryzen 5, 8 GB RAM, HDD (maximaal 8 workers)   |
 
-{% hint style="info" %}
-**Performance Tip**: Processing time varies based on image count, resolution, and computer specs.
+{% hint style=&quot;info&quot; %}
+**Prestatietip**: De verwerkingstijd varieert afhankelijk van het aantal afbeeldingen, de resolutie en de specificaties van de computer.
 {% endhint %}
 
 ***
 
-## Troubleshooting
+## Probleemoplossing
 
-### CLI Not Found
+### CLI niet gevonden
 
-**Error:**
+**Fout:**
 
 ```
 'chloros-cli' is not recognized as an internal or external command
 ```
 
-**Solutions:**
+**Oplossingen:**
 
-1. Verify installation location:
+1. Controleer de installatielocatie:
 
 ```powershell
 dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
 ```
 
-2. Use full path if not in PATH:
+2. Gebruik het volledige pad als het niet in PATH staat:
 
 ```powershell
 "C:\Program Files\Chloros\resources\cli\chloros-cli.exe" process "C:\Datasets\Field_A"
 ```
 
-3. Add to PATH manually:
-   * Open System Properties → Environment Variables
-   * Edit PATH variable
-   * Add: `C:\Program Files\Chloros\resources\cli`
-   * Restart terminal
+3. Voeg handmatig toe aan PATH:
+   * Open Systeemeigenschappen → Omgevingsvariabelen
+   * Bewerk de variabele PATH
+   * Voeg toe: `C:\Program Files\Chloros\resources\cli`
+   * Start de terminal opnieuw op
 
 ***
 
-### Backend Failed to Start
+### Backend kan niet worden gestart
 
-**Error:**
+**Fout:**
 
 ```
 Backend failed to start within 30 seconds
 ```
 
-**Solutions:**
+**Oplossingen:**
 
-1. Check if backend already running (close it first)
-2. Check Windows Firewall is not blocking
-3. Try different port:
+1. Controleer of de backend al actief is (sluit deze eerst)
+2. Controleer of Windows Firewall niet blokkeert
+3. Probeer een andere poort:
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
 ```
 
-4. Force restart backend:
+4. Forceer het opnieuw opstarten van de backend:
 
 ```powershell
 chloros-cli --restart process "C:\Datasets\Field_A"
@@ -673,71 +667,71 @@ chloros-cli --restart process "C:\Datasets\Field_A"
 
 ***
 
-### License / Authentication Issues
+### Licentie-/authenticatieproblemen
 
-**Error:**
+**Fout:**
 
 ```
 Chloros+ license required for CLI access
 ```
 
-**Solutions:**
+**Oplossingen:**
 
-1. Verify you have an active Chloros+ subscription
-2. Login with your credentials:
+1. Controleer of u een actief Chloros+-abonnement hebt.
+2. Log in met uw inloggegevens:
 
 ```powershell
 chloros-cli login user@example.com 'password'
 ```
 
-3. Check license status:
+3. Controleer de licentiestatus:
 
 ```powershell
 chloros-cli status
 ```
 
-4. Contact support: info@mapir.camera
+4. Neem contact op met de ondersteuning: info@mapir.camera
 
 ***
 
-### No Images Found
+### Geen afbeeldingen gevonden
 
-**Error:**
+**Fout:**
 
 ```
 No images found in the specified folder
 ```
 
-**Solutions:**
+**Oplossingen:**
 
-1. Verify folder contains supported formats (.RAW, .TIF, .JPG)
-2. Check folder path is correct (use quotes for paths with spaces)
-3. Ensure you have read permissions for the folder
-4. Check file extensions are correct
-
-***
-
-### Processing Stalls or Hangs
-
-**Solutions:**
-
-1. Check available disk space (ensure enough for output)
-2. Close other applications to free memory
-3. Reduce image count (process in batches)
+1. Controleer of de map ondersteunde formaten bevat (.RAW, .TIF, .JPG)
+2. Controleer of het pad naar de map correct is (gebruik aanhalingstekens voor paden met spaties)
+3. Controleer of u leesrechten hebt voor de map.
+4. Controleer of de bestandsextensies correct zijn.
 
 ***
 
-### Port Already in Use
+### Verwerking loopt vast of hangt op
 
-**Error:**
+**Oplossingen:**
+
+1. Controleer de beschikbare schijfruimte (zorg ervoor dat er voldoende ruimte is voor de uitvoer).
+2. Sluit andere toepassingen om geheugen vrij te maken.
+3. Verminder het aantal afbeeldingen (verwerk in batches).
+
+***
+
+### Poort al in gebruik
+
+**Fout:**
 
 ```
 Port 5000 is already in use
 ```
 
-**Solution:**
+**Oplossing:**
 
-Specify a different port:
+Geef een andere poort op:
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
@@ -745,35 +739,35 @@ chloros-cli --port 5001 process "C:\Datasets\Field_A"
 
 ***
 
-## FAQ
+## Veelgestelde vragen
 
-### Q: Do I need a license for the CLI?
+### V: Heb ik een licentie nodig voor de CLI?
 
-**A:** Yes! The CLI requires a paid **Chloros+ license**.
+**A:** Ja! Voor de CLI is een betaalde **Chloros+-licentie** vereist.
 
-* ❌ Standard (free) plan: CLI disabled
-* ✅ Chloros+ (paid) plans: CLI fully enabled
+* ❌ Standaard (gratis) abonnement: CLI uitgeschakeld
+* ✅ Chloros+ (betaalde) abonnementen: CLI volledig ingeschakeld
 
-Subscribe at: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
-
-***
-
-### Q: Can I use the CLI on a server without GUI?
-
-**A:** Yes! The CLI runs completely headless. Requirements:
-
-* Windows Server 2016 or later
-* Visual C++ Redistributable installed
-* Sufficient RAM (8GB minimum, 16GB recommended)
-* One-time GUI license activation on any machine
+Abonneren op: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
 ***
 
-### Q: Where are processed images saved?
+### V: Kan ik de CLI gebruiken op een server zonder GUI?
 
-**A:** By default, processed images are saved in the **same folder as input** in camera-model subfolders (e.g., `Survey3N_RGN/`).
+**A:** Ja! De CLI werkt volledig headless. Vereisten:
 
-Use `-o` option to specify different output folder:
+* Windows Server 2016 of hoger
+* Visual C++ Redistributable geïnstalleerd
+* Voldoende RAM (minimaal 8 GB, 16 GB aanbevolen)
+* Eenmalige activering van GUI-licentie op elke machine
+
+***
+
+### V: Waar worden verwerkte afbeeldingen opgeslagen?
+
+**A:** Standaard worden verwerkte afbeeldingen opgeslagen in **dezelfde map als de invoer** in submappen van het cameramodel (bijv. `Survey3N_RGN/`).
+
+Gebruik de optie `-o` om een andere uitvoermap op te geven:
 
 ```powershell
 chloros-cli process "C:\Input" -o "D:\Output"
@@ -781,13 +775,13 @@ chloros-cli process "C:\Input" -o "D:\Output"
 
 ***
 
-### Q: Can I process multiple folders at once?
+### V: Kan ik meerdere mappen tegelijk verwerken?
 
-**A:** Not directly in one command, but you can use scripting to process folders sequentially. See [Automation & Scripting](CLI.md#automation--scripting) section.
+**A:** Niet rechtstreeks in één opdracht, maar u kunt scripts gebruiken om mappen achtereenvolgens te verwerken. Zie het gedeelte [Automatisering en scripting](CLI.md#automation--scripting).
 
 ***
 
-### Q: How do I save CLI output to a log file?
+### V: Hoe sla ik CLI-uitvoer op in een logbestand?
 
 **PowerShell:**
 
@@ -803,25 +797,25 @@ chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
 
 ***
 
-### Q: What happens if I press Ctrl+C during processing?
+### V: Wat gebeurt er als ik tijdens de verwerking op Ctrl+C druk?
 
-**A:** The CLI will:
+**A:** De CLI zal:
 
-1. Stop processing gracefully
-2. Shut down the backend
-3. Exit with code 130
+1. De verwerking netjes stoppen
+2. De backend afsluiten
+3. Afsluiten met code 130
 
-Partially processed images may remain in the output folder.
-
-***
-
-### Q: Can I automate CLI processing?
-
-**A:** Absolutely! The CLI is designed for automation. See [Automation & Scripting](CLI.md#automation--scripting) for PowerShell, Batch, and Python examples.
+Gedeeltelijk verwerkte afbeeldingen kunnen in de uitvoermap achterblijven.
 
 ***
 
-### Q: How do I check the CLI version?
+### V: Kan ik de verwerking van CLI automatiseren?
+
+**A:** Absoluut! De CLI is ontworpen voor automatisering. Zie [Automatisering en scripting](CLI.md#automation--scripting) voor voorbeelden van PowerShell, Batch en Python.
+
+***
+
+### V: Hoe controleer ik de CLI-versie?
 
 **A:**
 
@@ -829,7 +823,7 @@ Partially processed images may remain in the output folder.
 chloros-cli --version
 ```
 
-**Output:**
+**Uitvoer:**
 
 ```
 Chloros CLI 1.0.2
@@ -837,11 +831,11 @@ Chloros CLI 1.0.2
 
 ***
 
-## Getting Help
+## Help krijgen
 
-### Command-Line Help
+### Help bij de opdrachtregel
 
-View help information directly in the CLI:
+Bekijk helpinformatie rechtstreeks in CLI:
 
 ```powershell
 # General help
@@ -853,19 +847,19 @@ chloros-cli login --help
 chloros-cli language --help
 ```
 
-### Support Channels
+### Ondersteuningskanalen
 
-* **Email**: info@mapir.camera
+* **E-mail**: info@mapir.camera
 * **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* **Pricing**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
+* **Prijzen**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
 ***
 
-## Complete Examples
+## Volledige voorbeelden
 
-### Example 1: Basic Processing
+### Voorbeeld 1: Basisverwerking
 
-Process with default settings (vignette, reflectance):
+Verwerking met standaardinstellingen (vignettering, reflectie):
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A_2025_01_15"
@@ -873,9 +867,9 @@ chloros-cli process "C:\Datasets\Field_A_2025_01_15"
 
 ***
 
-### Example 2: High-Quality Scientific Output
+### Voorbeeld 2: Wetenschappelijke output van hoge kwaliteit
 
-32-bit float TIFF:
+32-bits float TIFF:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
@@ -886,9 +880,9 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 ***
 
-### Example 3: Fast Preview Processing
+### Voorbeeld 3: Snelle previewverwerking
 
-8-bit PNG without calibration for quick review:
+8-bits PNG zonder kalibratie voor snelle beoordeling:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
@@ -899,9 +893,9 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 ***
 
-### Example 4: PPK-Corrected Processing
+### Voorbeeld 4: PPK-gecorrigeerde verwerking
 
-Apply PPK corrections with reflectance:
+PPK-correcties toepassen met reflectie:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
@@ -911,9 +905,9 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 ***
 
-### Example 5: Custom Output Location
+### Voorbeeld 5: Aangepaste uitvoerlocatie
 
-Process to different drive with specific format:
+Verwerken naar een andere schijf met een specifiek formaat:
 
 ```powershell
 chloros-cli process "C:\Input\Raw_Images" ^
@@ -923,9 +917,9 @@ chloros-cli process "C:\Input\Raw_Images" ^
 
 ***
 
-### Example 6: Authentication Workflow
+### Voorbeeld 6: authenticatieworkflow
 
-Complete authentication flow:
+Volledige authenticatiestroom voltooien:
 
 ```powershell
 # Step 1: Login
@@ -943,9 +937,9 @@ chloros-cli logout
 
 ***
 
-### Example 7: Multi-Language Usage
+### Voorbeeld 7: gebruik van meerdere talen
 
-Change interface language:
+Interfacetaal wijzigen:
 
 ```powershell
 # List available languages

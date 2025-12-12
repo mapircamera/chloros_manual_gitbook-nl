@@ -1,165 +1,165 @@
-# Monitoring the Processing
+# De verwerking monitoren
 
-Once processing has started, Chloros provides several ways to monitor progress, check for issues, and understand what's happening with your dataset. This page explains how to track your processing and interpret the information Chloros provides.
+Zodra de verwerking is gestart, biedt Chloros verschillende manieren om de voortgang te monitoren, te controleren op problemen en inzicht te krijgen in wat er met uw dataset gebeurt. Op deze pagina wordt uitgelegd hoe u uw verwerking kunt volgen en de informatie die Chloros biedt, kunt interpreteren.
 
-## Progress Bar Overview
+## Overzicht voortgangsbalk
 
-The progress bar in the top header shows real-time processing status and completion percentage.
+De voortgangsbalk in de bovenste koptekst toont de realtime verwerkingsstatus en het voltooiingspercentage.
 
-### Free Mode Progress Bar
+### Voortgangsbalk in de gratis modus
 
-For users without Chloros+ license:
+Voor gebruikers zonder Chloros+-licentie:
 
-**2-Stage Progress Display:**
+**Voortgangsbalk in twee fasen:**
 
-1. **Target Detect** - Finding calibration targets in images
-2. **Processing** - Applying corrections and exporting
+1. **Doeldetectie** - Kalibratiedoelen zoeken in afbeeldingen
+2. **Verwerking** - Correcties toepassen en exporteren
 
-**Progress bar shows:**
+**Voortgangsbalk toont:**
 
-* Overall completion percentage (0-100%)
-* Current stage name
-* Simple horizontal bar visualization
+* Algemeen voltooiingspercentage (0-100%)
+* Naam van de huidige fase
+* Eenvoudige horizontale balkvisualisatie
 
-### Chloros+ Progress Bar
+### Chloros+ voortgangsbalk
 
-For users with Chloros+ license:
+Voor gebruikers met een Chloros+ licentie:
 
-**4-Stage Progress Display:**
+**Voortgangsbalk met 4 fasen:**
 
-1. **Detecting** - Finding calibration targets
-2. **Analyzing** - Examining images and preparing pipeline
-3. **Calibrating** - Applying vignette and reflectance corrections
-4. **Exporting** - Saving processed files
+1. **Detecteren** - Kalibratiedoelen zoeken
+2. **Analyseren** - Beelden onderzoeken en pijplijn voorbereiden
+3. **Kalibreren** - Vignettering en reflectiecorrecties toepassen
+4. **Exporteren** - Verwerkte bestanden opslaan
 
-**Interactive Features:**
+**Interactieve functies:**
 
-* **Hover over** progress bar to see expanded 4-stage panel
-* **Click** progress bar to freeze/pin the expanded panel
-* **Click again** to unfreeze and auto-hide on mouse leave
-* Each stage shows individual progress (0-100%)
-
-***
-
-## Understanding Each Processing Stage
-
-### Stage 1: Detecting (Target Detection)
-
-**What's happening:**
-
-* Chloros scans images marked with Target checkbox
-* Computer vision algorithms identify the 4 calibration panels
-* Reflectance values extracted from each panel
-* Target timestamps recorded for proper calibration scheduling
-
-**Duration:**
-
-* With marked targets: 10-60 seconds
-* Without marked targets: 5-30+ minutes (scans all images)
-
-**Progress indicator:**
-
-* Detecting: 0% → 100%
-* Number of images scanned
-* Targets found count
-
-**What to watch for:**
-
-* Should complete quickly if targets properly marked
-* If taking too long, targets may not be marked
-* Check Debug Log for "Target found" messages
-
-### Stage 2: Analyzing
-
-**What's happening:**
-
-* Reading image EXIF metadata (timestamps, exposure settings)
-* Determining calibration strategy based on target timestamps
-* Organizing image processing queue
-* Preparing parallel processing workers (Chloros+ only)
-
-**Duration:** 5-30 seconds
-
-**Progress indicator:**
-
-* Analyzing: 0% → 100%
-* Fast stage, usually completes quickly
-
-**What to watch for:**
-
-* Should progress steadily without pauses
-* Warnings about missing metadata will appear in Debug Log
-
-### Stage 3: Calibrating
-
-**What's happening:**
-
-* **Debayering**: Converting RAW Bayer pattern to 3 channels
-* **Vignette correction**: Removing lens edge darkening
-* **Reflectance calibration**: Normalizing with target values
-* **Index calculation**: Computing multispectral indices
-* Processing each image through the full pipeline
-
-**Duration:** Majority of total processing time (60-80%)
-
-**Progress indicator:**
-
-* Calibrating: 0% → 100%
-* Current image being processed
-* Images completed / Total images
-
-**Processing behavior:**
-
-* **Free mode**: Processes one image at a time sequentially
-* **Chloros+ mode**: Processes up to 16 images simultaneously
-* **GPU acceleration**: Significantly speeds up this stage
-
-**What to watch for:**
-
-* Steady progress through image count
-* Check Debug Log for per-image completion messages
-* Warnings about image quality or calibration issues
-
-### Stage 4: Exporting
-
-**What's happening:**
-
-* Writing calibrated images to disk in selected format
-* Exporting multispectral index images with LUT colors
-* Creating camera model subfolders
-* Preserving original filenames with appropriate suffixes
-
-**Duration:** 10-20% of total processing time
-
-**Progress indicator:**
-
-* Exporting: 0% → 100%
-* Files being written
-* Export format and destination
-
-**What to watch for:**
-
-* Disk space warnings
-* File write errors
-* Completion of all configured outputs
+* **Beweeg de muis over** de voortgangsbalk om het uitgebreide paneel met 4 fasen te zien
+* **Klik op** de voortgangsbalk om het uitgebreide paneel vast te zetten/vast te pinnen
+* **Klik nogmaals** om het paneel los te maken en automatisch te verbergen wanneer u de muis weghaalt
+* Elke fase toont de individuele voortgang (0-100%)
 
 ***
 
-## Debug Log Tab
+## Uitleg van elke verwerkingsfase
 
-The Debug Log provides detailed information about processing progress and any issues encountered.
+### Fase 1: Detecteren (doeldetectie)
 
-### Accessing the Debug Log
+**Wat gebeurt er:**
 
-1. Click the **Debug Log** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> icon in the left sidebar
-2. Log panel opens showing real-time processing messages
-3. Auto-scrolls to show latest messages
+* Chloros scant afbeeldingen die zijn gemarkeerd met het selectievakje Doel
+* Computervisie-algoritmen identificeren de 4 kalibratiepanelen
+* Reflectiewaarden worden uit elk paneel gehaald
+* Tijdstempels van doelen worden geregistreerd voor een juiste kalibratieschema
 
-### Understanding Log Messages
+**Duur:**
 
-#### Information Messages (White/Gray)
+* Met gemarkeerde doelen: 10-60 seconden
+* Zonder gemarkeerde doelen: 5-30+ minuten (scant alle afbeeldingen)
 
-Normal processing updates:
+**Voortgangsindicator:**
+
+* Detecteren: 0% → 100%
+* Aantal gescande afbeeldingen
+* Aantal gevonden doelen
+
+**Waar u op moet letten:**
+
+* Moet snel voltooid zijn als de doelen correct zijn gemarkeerd
+* Als het te lang duurt, zijn de doelen mogelijk niet gemarkeerd
+* Controleer het foutopsporingslogboek op berichten met &#x27;Doel gevonden&#x27;
+
+### Fase 2: Analyseren
+
+**Wat gebeurt er:**
+
+* EXIF-metadata van afbeeldingen lezen (tijdstempels, belichtingsinstellingen)
+* Kalibratiestrategie bepalen op basis van tijdstempels van doelen
+* Wachtrij voor beeldverwerking organiseren
+* Werkers voor parallelle verwerking voorbereiden (alleen Chloros+)
+
+**Duur:** 5-30 seconden
+
+**Voortgangsindicator:**
+
+* Analyseren: 0% → 100%
+* Snelle fase, meestal snel voltooid
+
+**Waar u op moet letten:**
+
+* Moet gestaag vorderen zonder pauzes
+* Waarschuwingen over ontbrekende metadata verschijnen in het foutopsporingslogboek
+
+### Fase 3: Kalibreren
+
+**Wat gebeurt er:**
+
+* **Debayering**: RAW-Bayer-patroon omzetten naar 3 kanalen
+* **Vignettecorrectie**: verwijderen van donkere randen rond de lens
+* **Reflectiekalibratie**: normaliseren met streefwaarden
+* **Indexberekening**: berekenen van multispectrale indices
+* Verwerken van elke afbeelding via de volledige pijplijn
+
+**Duur:** het grootste deel van de totale verwerkingstijd (60-80%)
+
+**Voortgangsindicator:**
+
+* Kalibreren: 0% → 100%
+* Huidige afbeelding wordt verwerkt
+* Afbeeldingen voltooid / Totaal aantal afbeeldingen
+
+**Verwerkingsgedrag:**
+
+* **Vrije modus**: Verwerkt één afbeelding tegelijk achter elkaar
+* **Chloros+ modus**: Verwerkt maximaal 16 afbeeldingen tegelijk
+* **GPU-versnelling**: versnelt deze fase aanzienlijk
+
+**Waar u op moet letten:**
+
+* Gelijkmatige voortgang door het aantal afbeeldingen
+* Controleer het foutopsporingslogboek voor voltooiingsberichten per afbeelding
+* Waarschuwingen over beeldkwaliteit of kalibratieproblemen
+
+### Fase 4: Exporteren
+
+**Wat gebeurt er:**
+
+* Gekalibreerde afbeeldingen naar schijf schrijven in geselecteerd formaat
+* Multispectrale indexafbeeldingen exporteren met LUT-kleuren
+* Submappen voor cameramodellen aanmaken
+* Originele bestandsnamen behouden met de juiste extensies
+
+**Duur:** 10-20% van de totale verwerkingstijd
+
+**Voortgangsindicator:**
+
+* Exporteren: 0% → 100%
+* Bestanden worden geschreven
+* Exportformaat en bestemming
+
+**Waar u op moet letten:**
+
+* Waarschuwingen over schijfruimte
+* Fouten bij het schrijven van bestanden
+* Voltooiing van alle geconfigureerde uitvoer
+
+***
+
+## Tabblad Debuglog
+
+Het debuglog biedt gedetailleerde informatie over de voortgang van de verwerking en eventuele problemen die zich hebben voorgedaan.
+
+### Toegang tot het debuglog
+
+1. Klik op het pictogram **Debuglog** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> in de linkerzijbalk.
+2. Het logboekvenster wordt geopend met realtime verwerkingsberichten.
+3. Er wordt automatisch gescrolld om de nieuwste berichten weer te geven.
+
+### Logboekberichten begrijpen
+
+#### Informatieberichten (wit/grijs)
+
+Normale verwerkingsupdates:
 
 ```
 [INFO] Processing started
@@ -169,9 +169,9 @@ Normal processing updates:
 [INFO] Processing complete
 ```
 
-#### Warning Messages (Yellow)
+#### Waarschuwingsberichten (geel)
 
-Non-critical issues that don't stop processing:
+Niet-kritieke problemen die de verwerking niet stoppen:
 
 ```
 [WARN] No GPS data found in IMG_0145.RAW
@@ -179,11 +179,11 @@ Non-critical issues that don't stop processing:
 [WARN] Low contrast in calibration panel - results may vary
 ```
 
-**Action:** Review warnings after processing, but don't interrupt
+**Actie:** Bekijk de waarschuwingen na de verwerking, maar onderbreek deze niet.
 
-#### Error Messages (Red)
+#### Foutmeldingen (Red)
 
-Critical issues that may cause processing to fail:
+Kritieke problemen die ervoor kunnen zorgen dat de verwerking mislukt:
 
 ```
 [ERROR] Cannot write file - disk full
@@ -191,202 +191,202 @@ Critical issues that may cause processing to fail:
 [ERROR] No targets detected - enable reflectance calibration or mark target images
 ```
 
-**Action:** Stop processing, resolve error, restart
+**Actie:** Stop de verwerking, los de fout op en start opnieuw.
 
-### Common Log Messages
+### Algemene logberichten
 
-| Message                          | Meaning                                | Action Needed                                         |
+| Bericht                          | Betekenis                                | Vereiste actie                                         |
 | -------------------------------- | -------------------------------------- | ----------------------------------------------------- |
-| "Target detected in \[filename]" | Calibration target found successfully  | None - normal                                         |
-| "Processing image X of Y"        | Current progress update                | None - normal                                         |
-| "No targets found"               | No calibration targets detected        | Mark target images or disable reflectance calibration |
-| "Insufficient disk space"        | Not enough storage for output          | Free up disk space                                    |
-| "Skipping corrupted file"        | Image file is damaged                  | Re-copy file from SD card                             |
-| "PPK data applied"               | GPS corrections from .daq file applied | None - normal                                         |
+| &quot;Doel gedetecteerd in \[bestandsnaam]&quot; | Kalibratiedoel succesvol gevonden  | Geen - normaal                                         |
+| &quot;Beeld X van Y wordt verwerkt&quot;        | Huidige voortgangsupdate                | Geen - normaal                                         |
+| &quot;Geen doelen gevonden&quot;               | Geen kalibratiedoelen gedetecteerd        | Markeer doelbeelden of schakel reflectiekalibratie uit |
+| &quot;Onvoldoende schijfruimte&quot;        | Onvoldoende opslagruimte voor uitvoer          | Maak schijfruimte vrij                                    |
+| &quot;Beschadigd bestand overslaan&quot;        | Beeldbestand is beschadigd                  | Kopieer bestand opnieuw vanaf SD-kaart                             |
+| &quot;PPK-gegevens toegepast&quot;               | GPS-correcties uit .daq-bestand toegepast | Geen - normaal                                         |
 
-### Copying Log Data
+### Loggegevens kopiëren
 
-To copy log for troubleshooting or support:
+Om het logboek te kopiëren voor probleemoplossing of ondersteuning:
 
-1. Open Debug Log panel
-2. Click **"Copy Log"** button (or right-click → Select All)
-3. Paste into text file or email
-4. Send to MAPIR support if needed
-
-***
-
-## System Resource Monitoring
-
-### CPU Usage
-
-**Free Mode:**
-
-* 1 CPU core at \~100%
-* Other cores idle or available
-* System remains responsive
-
-**Chloros+ Parallel Mode:**
-
-* Multiple cores at 80-100% (up to 16 cores)
-* High overall CPU utilization
-* System may feel less responsive
-
-**To monitor:**
-
-* Windows Task Manager (Ctrl+Shift+Esc)
-* Performance tab → CPU section
-* Look for "Chloros" or "chloros-backend" processes
-
-### Memory (RAM) Usage
-
-**Typical usage:**
-
-* Small projects (< 100 images): 2-4 GB
-* Medium projects (100-500 images): 4-8 GB
-* Large projects (500+ images): 8-16 GB
-* Chloros+ parallel mode uses more RAM
-
-**If memory is low:**
-
-* Process smaller batches
-* Close other applications
-* Upgrade RAM if regularly processing large datasets
-
-### GPU Usage (Chloros+ with CUDA)
-
-When GPU acceleration is enabled:
-
-* NVIDIA GPU shows high utilization (60-90%)
-* VRAM usage increases (requires 4GB+ VRAM)
-* Calibrating stage is significantly faster
-
-**To monitor:**
-
-* NVIDIA System Tray icon
-* Task Manager → Performance → GPU
-* GPU-Z or similar monitoring tool
-
-### Disk I/O
-
-**What to expect:**
-
-* High disk read during Analyzing stage
-* High disk write during Exporting stage
-* SSD significantly faster than HDD
-
-**Performance tip:**
-
-* Use SSD for project folder when possible
-* Avoid network drives for large datasets
-* Ensure disk isn't near capacity (affects write speed)
+1. Open het paneel Debug Log (Foutopsporingslogboek)
+2. Klik op de knop **&quot;Copy Log&quot;** (Logboek kopiëren) (of klik met de rechtermuisknop → Select All (Alles selecteren))
+3. Plak in een tekstbestand of e-mail
+4. Stuur indien nodig naar MAPIR-ondersteuning
 
 ***
 
-## Detecting Problems During Processing
+## Systeembronnen bewaken
 
-### Warning Signs
+### CPU-gebruik
 
-**Progress stalls (no change for 5+ minutes):**
+**Vrije modus:**
 
-* Check Debug Log for errors
-* Verify disk space available
-* Check Task Manager to ensure Chloros is running
+* 1 CPU-kern op ~100%
+* Andere kernen inactief of beschikbaar
+* Systeem blijft responsief
 
-**Error messages appear frequently:**
+**Chloros+ Parallelle modus:**
 
-* Stop processing and review errors
-* Common causes: disk space, corrupted files, memory issues
-* See Troubleshooting section below
+* Meerdere kernen op 80-100% (maximaal 16 kernen)
+* Hoog algemeen CPU-gebruik
+* Systeem kan minder responsief aanvoelen
 
-**System becomes unresponsive:**
+**Om te controleren:**
 
-* Chloros+ parallel mode using too many resources
-* Consider reducing concurrent tasks or upgrading hardware
-* Free mode is less resource-intensive
+* Windows Taakbeheer (Ctrl+Shift+Esc)
+* Tabblad Prestaties → sectie CPU
+* Zoek naar processen &quot;Chloros&quot; of &quot;chloros-backend&quot;
 
-### When to Stop Processing
+### Geheugengebruik (RAM)
 
-Stop processing if you see:
+**Normaal gebruik:**
 
-* ❌ "Disk full" or "Cannot write file" errors
-* ❌ Repeated image file corruption errors
-* ❌ System completely frozen (not responding)
-* ❌ Realized wrong settings were configured
-* ❌ Wrong images imported
+* Kleine projecten (&lt; 100 afbeeldingen): 2-4 GB
+* Middelgrote projecten (100-500 afbeeldingen): 4-8 GB
+* Grote projecten (500+ afbeeldingen): 8-16 GB
+* Chloros+ parallelle modus gebruikt meer RAM
 
-**How to stop:**
+**Als het geheugen bijna vol is:**
 
-1. Click **Stop/Cancel button** (replaces Start button)
-2. Processing halts, progress is lost
-3. Fix issues and restart from beginning
+* Verwerk kleinere batches
+* Sluit andere applicaties
+* Upgrade het RAM-geheugen als u regelmatig grote datasets verwerkt
 
-***
+### GPU-gebruik (Chloros+ met CUDA)
 
-## Troubleshooting During Processing
+Wanneer GPU-versnelling is ingeschakeld:
 
-### Processing is Very Slow
+* NVIDIA GPU vertoont een hoog gebruik (60-90%)
+* VRAM-gebruik neemt toe (vereist 4 GB+ VRAM)
+* Kalibratiefase is aanzienlijk sneller
 
-**Possible causes:**
+**Om te controleren:**
 
-* Unmarked target images (scanning all images)
-* HDD instead of SSD storage
-* Insufficient system resources
-* Many indices configured
-* Network drive access
+* NVIDIA-pictogram in het systeemvak
+* Taakbeheer → Prestaties → GPU
+* GPU-Z of vergelijkbare monitoringtool
 
-**Solutions:**
+### Schijf-I/O
 
-1. If just started and in Detecting stage: Cancel, mark targets, restart
-2. For future: Use SSD, reduce indices, upgrade hardware
-3. Consider CLI for batch processing large datasets
+**Wat u kunt verwachten:**
 
-### "Disk Space" Warnings
+* Hoge schijfleesactiviteit tijdens de analysefase
+* Hoge schrijfactiviteit tijdens de exportfase
+* SSD aanzienlijk sneller dan HDD
 
-**Solutions:**
+**Prestatietip:**
 
-1. Free up disk space immediately
-2. Move project to drive with more space
-3. Reduce number of indices to export
-4. Use JPG format instead of TIFF (smaller files)
-
-### Frequent "Corrupted File" Messages
-
-**Solutions:**
-
-1. Re-copy images from SD card to ensure integrity
-2. Test SD card for errors
-3. Remove corrupted files from project
-4. Continue processing remaining images
-
-### System Overheating / Throttling
-
-**Solutions:**
-
-1. Ensure adequate ventilation
-2. Clean dust from computer vents
-3. Reduce processing load (use Free mode instead of Chloros+)
-4. Process during cooler times of day
+* Gebruik indien mogelijk SSD voor projectmap
+* Vermijd netwerkschijven voor grote datasets
+* Zorg ervoor dat de schijf niet bijna vol is (beïnvloedt de schrijfsnelheid)
 
 ***
 
-## Processing Complete Notification
+## Problemen detecteren tijdens verwerking
 
-When processing finishes:
+### Waarschuwingssignalen
 
-* Progress bar reaches 100%
-* **"Processing Complete"** message appears in Debug Log
-* Start button becomes enabled again
-* All output files are in camera model subfolder
+**Voortgang stagneert (geen verandering gedurende 5+ minuten):**
+
+* Controleer het foutopsporingslogboek op fouten
+* Controleer de beschikbare schijfruimte
+* Controleer Taakbeheer om te zien of Chloros actief is
+
+**Er verschijnen regelmatig foutmeldingen:**
+
+* Stop de verwerking en controleer de fouten
+* Veelvoorkomende oorzaken: schijfruimte, beschadigde bestanden, geheugenproblemen
+* Zie het gedeelte Probleemoplossing hieronder
+
+**Systeem reageert niet meer:**
+
+* Chloros+ parallelle modus gebruikt te veel bronnen
+* Overweeg om het aantal gelijktijdige taken te verminderen of de hardware te upgraden
+* De vrije modus is minder intensief voor de bronnen
+
+### Wanneer moet u de verwerking stoppen?
+
+Stop de verwerking als u het volgende ziet:
+
+* ❌ Fouten &quot;Schijf vol&quot; of &quot;Kan bestand niet schrijven&quot;
+* ❌ Herhaalde fouten met beschadigde afbeeldingsbestanden
+* ❌ Systeem volledig vastgelopen (reageert niet)
+* ❌ Verkeerde instellingen geconfigureerd
+* ❌ Verkeerde afbeeldingen geïmporteerd
+
+**Hoe stoppen:**
+
+1. Klik op de **knop Stoppen/Annuleren** (vervangt de knop Start)
+2. De verwerking wordt gestopt, de voortgang gaat verloren
+3. Los de problemen op en start opnieuw vanaf het begin
 
 ***
 
-## Next Steps
+## Problemen oplossen tijdens de verwerking
 
-Once processing completes:
+### De verwerking verloopt erg traag
 
-1. **Review results** - See [Finishing the Processing](finishing-the-processing.md)
-2. **Check output folder** - Verify all files exported correctly
-3. **Review Debug Log** - Check for any warnings or errors
-4. **Preview processed images** - Use Image Viewer or external software
+**Mogelijke oorzaken:**
 
-For information about reviewing and using your processed results, see [Finishing the Processing](finishing-the-processing.md).
+* Niet-gemarkeerde doelafbeeldingen (alle afbeeldingen worden gescand)
+* HDD in plaats van SSD-opslag
+* Onvoldoende systeembronnen
+* Veel indexen geconfigureerd
+* Toegang tot netwerkschijf
+
+**Oplossingen:**
+
+1. Als u net bent begonnen en u zich in de detectiefase bevindt: annuleer, markeer doelen, start opnieuw
+2. Voor de toekomst: gebruik SSD, verminder het aantal indexen, upgrade de hardware
+3. Overweeg CLI voor batchverwerking van grote datasets
+
+### Waarschuwingen voor &quot;schijfruimte&quot;
+
+**Oplossingen:**
+
+1. Maak onmiddellijk schijfruimte vrij
+2. Verplaats het project naar een schijf met meer ruimte
+3. Verminder het aantal te exporteren indexen.
+4. Gebruik het JPG-formaat in plaats van TIFF (kleinere bestanden).
+
+### Frequente meldingen over &quot;beschadigde bestanden&quot;
+
+**Oplossingen:**
+
+1. Kopieer de afbeeldingen opnieuw vanaf de SD-kaart om de integriteit te waarborgen.
+2. Test de SD-kaart op fouten.
+3. Verwijder beschadigde bestanden uit het project.
+4. Ga door met het verwerken van de resterende afbeeldingen.
+
+### Oververhitting/throttling van het systeem
+
+**Oplossingen:**
+
+1. Zorg voor voldoende ventilatie.
+2. Verwijder stof uit de ventilatieopeningen van de computer.
+3. Verminder de verwerkingsbelasting (gebruik de modus Free in plaats van Chloros+).
+4. Voer de verwerking uit tijdens koelere momenten van de dag.
+
+***
+
+## Meldingen dat de verwerking is voltooid
+
+Wanneer de verwerking is voltooid:
+
+* De voortgangsbalk bereikt 100%
+* Het bericht **&quot;Verwerking voltooid&quot;** verschijnt in het foutopsporingslogboek
+* De startknop wordt weer ingeschakeld
+* Alle uitvoerbestanden staan in de submap van het cameramodel
+
+***
+
+## Volgende stappen
+
+Zodra de verwerking is voltooid:
+
+1. **Bekijk de resultaten** - Zie [De verwerking voltooien](finishing-the-processing.md)
+2. **Controleer de uitvoermap** - Controleer of alle bestanden correct zijn geëxporteerd
+3. **Bekijk het foutopsporingslogboek** - Controleer op waarschuwingen of fouten
+4. **Bekijk een voorbeeld van de verwerkte afbeeldingen** - Gebruik Image Viewer of externe software
+
+Zie [De verwerking voltooien](finishing-the-processing.md) voor informatie over het bekijken en gebruiken van uw verwerkte resultaten.

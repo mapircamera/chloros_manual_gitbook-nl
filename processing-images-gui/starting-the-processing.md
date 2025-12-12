@@ -1,366 +1,366 @@
-# Starting the Processing
+# De verwerking starten
 
-Once you've imported your images, marked your calibration targets, and configured your project settings, you're ready to begin processing. This page guides you through initiating the Chloros processing pipeline.
+Nadat u uw afbeeldingen hebt geïmporteerd, uw kalibratiedoelen hebt gemarkeerd en uw projectinstellingen hebt geconfigureerd, bent u klaar om te beginnen met de verwerking. Op deze pagina wordt uitgelegd hoe u de Chloros-verwerkingspijplijn start.
 
-## Pre-Processing Checklist
+## Checklist voorafgaand aan de verwerking
 
-Before clicking the Start button, verify that everything is ready:
+Controleer voordat u op de knop Start klikt of alles gereed is:
 
-* [ ] **Files imported** - All images appear in File Browser
-* [ ] **Target images marked** - Target column checked for calibration images
-* [ ] **Camera models detected** - Camera Model column shows correct cameras
-* [ ] **Settings configured** - Project Settings reviewed and adjusted
-* [ ] **Indices selected** - Desired multispectral indices added (if needed)
-* [ ] **Export format chosen** - Output format appropriate for your workflow
+* [ ] **Bestanden geïmporteerd** - Alle afbeeldingen worden weergegeven in de bestandsbrowser
+* [ ] **Doelafbeeldingen gemarkeerd** - Doelkolom gecontroleerd voor kalibratieafbeeldingen
+* [ ] **Cameramodellen gedetecteerd** - De kolom Cameramodel toont de juiste camera&#x27;s
+* [ ] **Instellingen geconfigureerd** - Projectinstellingen gecontroleerd en aangepast
+* [ ] **Indexen geselecteerd** - Gewenste multispectrale indexen toegevoegd (indien nodig)
+* [ ] **Exportformaat gekozen** - Uitvoerformaat dat geschikt is voor uw workflow
 
-{% hint style="info" %}
-**Tip**: Click through a few images in the File Browser to verify they loaded correctly before processing.
+{% hint style=&quot;info&quot; %}
+**Tip**: Klik door een paar afbeeldingen in de bestandsbrowser om te controleren of ze correct zijn geladen voordat u ze verwerkt.
 {% endhint %}
 
 ***
 
-## Starting the Processing
+## De verwerking starten
 
-### Locate the Start Button
+### Zoek de startknop
 
-The Start/Play button is located in the top header bar of Chloros:
+De knop Start/Afspelen bevindt zich in de bovenste kopbalk van Chloros:
 
-* Position: Top center of the window
-* Icon: **Play/Start button** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">
-* Status: Button is enabled (bright) when ready to process
+* Positie: midden bovenaan het venster
+* Pictogram: **knop Afspelen/Start** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">
+* Status: De knop is ingeschakeld (helder) wanneer deze klaar is voor verwerking
 
-### Click to Start
+### Klik om te starten
 
-1. Click the **Play/Start button** in the top header
-2. Processing begins immediately
-3. The button becomes disabled (grayed out) during processing
-4. Progress bar updates, showing processing status
+1. Klik op de **knop Afspelen/Starten** in de bovenste balk
+2. De verwerking begint onmiddellijk
+3. De knop wordt tijdens de verwerking uitgeschakeld (grijs)
+4. De voortgangsbalk wordt bijgewerkt en toont de verwerkingsstatus
 
-{% hint style="success" %}
-**Processing Started**: Once clicked, Chloros automatically handles all processing steps - target detection, debayering, calibration, index calculation, and export.
+{% hint style=&quot;success&quot; %}
+**Verwerking gestart**: Zodra u op de knop klikt, voert Chloros automatisch alle verwerkingsstappen uit: doel detecteren, debayering, kalibratie, indexberekening en exporteren.
 {% endhint %}
 
 ***
 
-## Understanding Processing Modes
+## Verwerkingsmodi begrijpen
 
-Chloros operates in two different processing modes depending on your license:
+Chloros werkt in twee verschillende verwerkingsmodi, afhankelijk van uw licentie:
 
-### Free Mode (Sequential Processing)
+### Gratis modus (sequentiële verwerking)
 
-**Available to all users**
+**Beschikbaar voor alle gebruikers**
 
-**How it works:**
+**Hoe het werkt:**
 
-* Processes images one at a time, sequentially
-* Single-threaded operation
-* Lower memory usage
+* Verwerkt afbeeldingen één voor één, sequentieel
+* Single-threaded werking
+* Lager geheugengebruik
 
-**Progress bar shows 2 stages:**
+**Voortgangsbalk toont 2 fasen:**
 
-1. **Target Detect** - Scanning for calibration targets
-2. **Processing** - Applying calibration and exporting images
+1. **Doeldetectie** - Scannen naar kalibratiedoelen
+2. **Verwerking** - Kalibratie toepassen en afbeeldingen exporteren
 
-**Processing time:**
+**Verwerkingstijd:**
 
-* Much slower than Chloros+ parallel mode
-* Suitable for small to medium datasets (< 200 images)
+* Veel langzamer dan Chloros+ parallelle modus
+* Geschikt voor kleine tot middelgrote datasets (&lt; 200 afbeeldingen)
 
-### Chloros+ Mode (Parallel Processing)
+### Chloros+ modus (parallelle verwerking)
 
-**Requires Chloros+ license**
+**Vereist Chloros+ licentie**
 
-**How it works:**
+**Hoe het werkt:**
 
-* Processes multiple images simultaneously
-* Multi-threaded operation (up to 16 parallel workers)
-* Utilizes multiple CPU cores
-* Optional GPU (CUDA) acceleration with NVIDIA graphics cards
+* Verwerkt meerdere afbeeldingen tegelijkertijd
+* Multi-threaded werking (maximaal 16 parallelle workers)
+* Maakt gebruik van meerdere CPU-kernen
+* Optionele GPU (CUDA) versnelling met NVIDIA grafische kaarten
 
-**Progress bar shows 4 stages:**
+**Voortgangsbalk toont 4 fasen:**
 
-1. **Detecting** - Finding calibration targets
-2. **Analyzing** - Examining image metadata and preparing pipeline
-3. **Calibrating** - Applying corrections and calibrations
-4. **Exporting** - Saving processed images and indices
+1. **Detecteren** - Kalibratiedoelen zoeken
+2. **Analyseren** - Afbeeldingsmetadata onderzoeken en pijplijn voorbereiden
+3. **Kalibreren** - Correcties en kalibraties toepassen
+4. **Exporteren** - Verwerkte afbeeldingen en indexen opslaan
 
-**Progress bar interaction:**
+**Interactie met voortgangsbalk:**
 
-* **Hover mouse** over bar to see detailed 4-stage dropdown panel
-* **Click** progress bar to freeze the dropdown panel in place
-* **Click again** to unfreeze and hide panel
+* **Beweeg de muis** over de balk om een gedetailleerd dropdown-paneel met 4 fasen te zien
+* **Klik** op de voortgangsbalk om het dropdown-paneel op zijn plaats te houden
+* **Klik nogmaals** om het paneel te ontgrendelen en te verbergen
 
-**Processing time:**
+**Verwerkingstijd:**
 
-* Significantly faster than free mode
-* Scales with CPU core count
-* GPU acceleration further improves speed
+* Aanzienlijk sneller dan de vrije modus
+* Schaalbaar met het aantal CPU-kernen
+* GPU-versnelling verbetert de snelheid nog verder
 
-{% hint style="info" %}
-**Chloros+ Speed**: Parallel processing can be 5-10x faster than sequential mode for large datasets. A 500-image project that takes 2 hours in free mode may complete in 15-20 minutes with Chloros+.
+{% hint style=&quot;info&quot; %}
+**Chloros+ Snelheid**: Parallelle verwerking kan 5-10 keer sneller zijn dan de sequentiële modus voor grote datasets. Een project met 500 afbeeldingen dat in de gratis modus 2 uur duurt, kan met Chloros+ in 15-20 minuten worden voltooid.
 {% endhint %}
 
 ***
 
-## What Happens During Processing
+## Wat gebeurt er tijdens de verwerking?
 
-### Stage 1: Target Detection
+### Fase 1: Doeldetectie
 
-**What Chloros does:**
+**Wat Chloros doet:**
 
-* Scans marked target images (or all images if none marked)
-* Identifies the 4 calibration panels in each target
-* Extracts reflectance values from target panels
-* Records target timestamps for calibration scheduling
+* Scant gemarkeerde doelafbeeldingen (of alle afbeeldingen als er geen zijn gemarkeerd)
+* Identificeert de 4 kalibratiepanelen in elk doel
+* Haalt reflectiewaarden uit doelpanelen
+* Registreert tijdstempels van doelen voor kalibratieschema&#x27;s
 
-**Duration:** 1-30 seconds (with marked targets), 5-30+ minutes (unmarked)
+**Duur:** 1-30 seconden (met gemarkeerde doelen), 5-30+ minuten (ongemarkeerd)
 
-### Stage 2: Debayering (RAW Conversion)
+### Fase 2: Debayering (RAW-conversie)
 
-**What Chloros does:**
+**Wat Chloros doet:**
 
-* Converts RAW Bayer pattern data to full RGB images
-* Applies high-quality demosaicing algorithm
-* Preserves maximum image quality and detail
+* Converteert RAW-Bayer-patroongegevens naar volledige RGB-afbeeldingen
+* Past een hoogwaardig demosaicing-algoritme toe
+* Behoudt maximale beeldkwaliteit en details
 
-**Duration:** Varies by image count and CPU speed
+**Duur:** varieert afhankelijk van het aantal afbeeldingen en de CPU-snelheid
 
-### Stage 3: Calibration
+### Fase 3: Kalibratie
 
-**What Chloros does:**
+**Wat Chloros doet:**
 
-* **Vignette correction**: Removes lens darkening at edges
-* **Reflectance calibration**: Normalizes using target reflectance values
-* Applies corrections across all bands/channels
-* Uses appropriate calibration target for each image based on timestamp
+* **Vignettecorrectie**: verwijdert lensverduistering aan de randen
+* **Reflectiekalibratie**: normaliseert met behulp van doelreflectiewaarden
+* Past correcties toe op alle banden/kanalen
+* Gebruikt het juiste kalibratiedoel voor elke afbeelding op basis van de tijdstempel
 
-**Duration:** Majority of processing time
+**Duur:** Het grootste deel van de verwerkingstijd
 
-### Stage 4: Index Calculation
+### Fase 4: Indexberekening
 
-**What Chloros does:**
+**Wat Chloros doet:**
 
-* Calculates configured multispectral indices (NDVI, NDRE, etc.)
-* Applies band math to calibrated images
-* Generates index images for each selected index
+* Berekent geconfigureerde multispectrale indices (NDVI, NDRE, enz.)
+* Past bandwiskunde toe op gekalibreerde beelden
+* Genereert indexbeelden voor elke geselecteerde index
 
-**Duration:** A few seconds per image
+**Duur:** Enkele seconden per beeld
 
-### Stage 5: Export
+### Fase 5: Exporteren
 
-**What Chloros does:**
+**Wat Chloros doet:**
 
-* Saves calibrated images in selected format
-* Exports index images with configured LUT colors
-* Writes files to camera model subfolders
-* Preserves original filenames with suffixes
+* Slaat gekalibreerde beelden op in het geselecteerde formaat
+* Exporteert indexbeelden met geconfigureerde LUT-kleuren
+* Schrijft bestanden naar submappen van cameramodellen
+* Behoudt originele bestandsnamen met achtervoegsels
 
-**Duration:** Varies by export format and file size
+**Duur:** varieert per exportformaat en bestandsgrootte
 
 ***
 
-## Processing Behavior
+## Verwerkingsgedrag
 
-### Automatic Processing Pipeline
+### Automatische verwerkingspijplijn
 
-Once started, the entire pipeline runs automatically:
+Eenmaal gestart, wordt de hele pijplijn automatisch uitgevoerd:
 
-* No user interaction needed
-* All configured steps execute in sequence
-* Progress updates shown in real-time
+* Geen gebruikersinteractie nodig
+* Alle geconfigureerde stappen worden achtereenvolgens uitgevoerd
+* Voortgang wordt in realtime weergegeven
 
-### Computer Usage During Processing
+### Computergebruik tijdens verwerking
 
-**Free Mode:**
+**Vrije modus:**
 
-* Relatively low CPU usage (single-threaded)
-* Computer remains responsive for other tasks
-* Safe to minimize Chloros and work in other applications
+* Relatief laag CPU-gebruik (single-threaded)
+* Computer blijft responsief voor andere taken
+* Veilig om Chloros te minimaliseren en in andere toepassingen te werken
 
-**Chloros+ Parallel Mode:**
+**Chloros+ Parallelle modus:**
 
-* High CPU usage (multi-threaded, up to 16 cores)
-* With GPU acceleration: High GPU usage
-* Computer may be less responsive during processing
-* Avoid starting other CPU-intensive tasks
+* Hoog CPU-gebruik (multi-threaded, tot 16 cores)
+* Met GPU-versnelling: hoog GPU-gebruik
+* Computer reageert mogelijk minder goed tijdens verwerking
+* Start geen andere CPU-intensieve taken
 
-{% hint style="warning" %}
-**Performance Tip**: For best Chloros+ performance, close other applications and let Chloros use full system resources.
+{% hint style=&quot;warning&quot; %}
+**Prestatietip**: Sluit voor optimale prestaties van Chloros+ andere toepassingen en laat Chloros alle systeembronnen gebruiken.
 {% endhint %}
 
-### Processing Cannot Be Paused
+### Verwerking kan niet worden gepauzeerd
 
-**Important limitations:**
+**Belangrijke beperkingen:**
 
-* Once started, processing cannot be paused
-* You can cancel processing, but progress is lost
-* Partial results are not saved
-* Must restart from beginning if canceled
+* Eenmaal gestart, kan de verwerking niet worden gepauzeerd.
+* U kunt de verwerking annuleren, maar de voortgang gaat verloren.
+* Gedeeltelijke resultaten worden niet opgeslagen.
+* Bij annulering moet u opnieuw beginnen.
 
-**Planning tip:** For very large projects, consider processing in batches or using CLI for better control.
-
-***
-
-## Monitoring Your Processing
-
-While processing runs, you can:
-
-* **Watch progress bar** - See overall completion percentage
-* **View current stage** - Detect, Analyze, Calibrate, or Export
-* **Check log tab** - See detailed processing messages and warnings
-* **Preview completed images** - Some export files may appear during processing
-
-For detailed information on monitoring, see [Monitoring the Processing](monitoring-the-processing.md).
+**Planningstip:** Overweeg voor zeer grote projecten om in batches te verwerken of CLI te gebruiken voor een betere controle.
 
 ***
 
-## Canceling Processing
+## Uw verwerking controleren
 
-If you need to stop processing:
+Terwijl de verwerking wordt uitgevoerd, kunt u:
 
-### How to Cancel
+* **De voortgangsbalk bekijken** - Bekijk het totale voltooiingspercentage
+* **De huidige fase bekijken** - Detecteren, analyseren, kalibreren of exporteren
+* **Het tabblad Logboek controleren** - Bekijk gedetailleerde verwerkingsberichten en waarschuwingen
+* **Een voorbeeld van voltooide afbeeldingen bekijken** - Sommige exportbestanden kunnen tijdens de verwerking verschijnen
 
-1. Locate the **Stop/Cancel button** (replaces Start button during processing)
-2. Click the Stop button
-3. Processing halts immediately
-4. Partial results are discarded
+Zie [De verwerking controleren](monitoring-the-processing.md) voor gedetailleerde informatie over controleren.
 
-### When to Cancel
+***
 
-**Valid reasons to cancel:**
+## De verwerking annuleren
 
-* Realized incorrect settings were used
-* Forgot to mark target images
-* Wrong images imported
-* System running too slow or unresponsive
+Als u de verwerking moet stoppen:
 
-**After canceling:**
+### Annuleren
 
-* Review and fix any issues
-* Adjust settings as needed
-* Restart processing from the beginning
-* For the cleanest experience, completely close Chloros and restart
+1. Zoek de **knop Stoppen/Annuleren** (vervangt de knop Starten tijdens de verwerking)
+2. Klik op de knop Stoppen
+3. De verwerking wordt onmiddellijk gestopt
+4. Gedeeltelijke resultaten worden verwijderd
 
-{% hint style="warning" %}
-**No Partial Results**: Canceling discards all progress. Chloros does not save partially processed images.
+### Wanneer annuleren
+
+**Geldige redenen om te annuleren:**
+
+* U realiseert zich dat er onjuiste instellingen zijn gebruikt
+* U bent vergeten doelafbeeldingen te markeren
+* Er zijn verkeerde afbeeldingen geïmporteerd
+* Het systeem werkt te traag of reageert niet
+
+**Na het annuleren:**
+
+* Controleer en los eventuele problemen op
+* Pas de instellingen indien nodig aan
+* Start de verwerking opnieuw vanaf het begin
+* Sluit Chloros volledig af en start opnieuw op voor de beste ervaring
+
+{% hint style=&quot;warning&quot; %}
+**Geen gedeeltelijke resultaten**: bij annuleren wordt alle voortgang verwijderd. Chloros slaat gedeeltelijk verwerkte afbeeldingen niet op.
 {% endhint %}
 
 ***
 
-## Processing Time Estimates
+## Geschatte verwerkingstijd
 
-Actual processing time varies greatly based on:
+De werkelijke verwerkingstijd varieert sterk, afhankelijk van:
 
-* Number of images
-* Image resolution
-* RAW vs JPG input format
-* Processing mode (Free vs Chloros+)
-* CPU speed and core count
-* GPU availability (Chloros+ only)
-* Number of indices to calculate
-* Export format complexity
+* Aantal afbeeldingen
+* Afbeeldingsresolutie
+* RAW- versus JPG-invoerformaat
+* Verwerkingsmodus (Free versus Chloros+)
+* CPU-snelheid en aantal cores
+* Beschikbaarheid van GPU (alleen Chloros+)
+* Aantal te berekenen indices
+* Complexiteit van het exportformaat
 
-### Rough Estimates (Chloros+, 12MP images, modern CPU)
+### Ruwe schattingen (Chloros+, 12 MP-afbeeldingen, moderne CPU)
 
-| Image Count | Free Mode | Chloros+ (CPU) | Chloros+ (GPU) |
+| Aantal afbeeldingen | Gratis modus | Chloros+ (CPU) | Chloros+ (GPU) |
 | ----------- | --------- | -------------- | -------------- |
-| 50 images   | 15-20 min | 5-8 min        | 3-5 min        |
-| 100 images  | 30-40 min | 10-15 min      | 5-8 min        |
-| 200 images  | 1-1.5 hrs | 20-30 min      | 10-15 min      |
-| 500 images  | 2-3 hrs   | 45-60 min      | 20-30 min      |
-| 1000 images | 4-6 hrs   | 1.5-2 hrs      | 40-60 min      |
+| 50 afbeeldingen   | 15-20 min | 5-8 min        | 3-5 min        |
+| 100 afbeeldingen  | 30-40 min | 10-15 min      | 5-8 min        |
+| 200 afbeeldingen  | 1-1,5 uur | 20-30 min      | 10-15 min      |
+| 500 afbeeldingen  | 2-3 uur   | 45-60 min      | 20-30 min      |
+| 1000 afbeeldingen | 4-6 uur   | 1,5-2 uur      | 40-60 min      |
 
-{% hint style="info" %}
-**First Run**: Initial processing may take longer as Chloros builds caches and profiles. Subsequent processing of similar datasets will be faster.
+{% hint style=&quot;info&quot; %}
+**Eerste keer**: De eerste verwerking kan langer duren omdat Chloros caches en profielen aanmaakt. De volgende verwerking van vergelijkbare datasets zal sneller gaan.
 {% endhint %}
 
 ***
 
-## Common Issues at Start
+## Veelvoorkomende problemen bij het opstarten
 
-### Start Button Disabled (Grayed Out)
+### Startknop uitgeschakeld (grijs weergegeven)
 
-**Possible causes:**
+**Mogelijke oorzaken:**
 
-* No images imported
-* Backend not fully started
-* Previous processing still running
-* Project not fully loaded
+* Er zijn geen afbeeldingen geïmporteerd
+* De backend is niet volledig opgestart
+* Eerdere verwerking is nog bezig
+* Het project is niet volledig geladen
 
-**Solutions:**
+**Oplossingen:**
 
-1. Wait for backend to fully initialize (check main menu icon)
-2. Verify images are imported in File Browser
-3. Restart Chloros if button remains disabled
-4. Check Debug Log for error messages
+1. Wacht tot de backend volledig is geïnitialiseerd (controleer het pictogram in het hoofdmenu)
+2. Controleer of de afbeeldingen zijn geïmporteerd in de bestandsbrowser
+3. Start Chloros opnieuw op als de knop nog steeds uitgeschakeld is
+4. Controleer het foutlogboek op foutmeldingen
 
-### Processing Starts Then Immediately Fails
+### Verwerking start en mislukt onmiddellijk
 
-**Possible causes:**
+**Mogelijke oorzaken:**
 
-* No valid images in project
-* Corrupted image files
-* Insufficient disk space
-* Insufficient memory (RAM)
+* Geen geldige afbeeldingen in project
+* Beschadigde afbeeldingsbestanden
+* Onvoldoende schijfruimte
+* Onvoldoende geheugen (RAM)
 
-**Solutions:**
+**Oplossingen:**
 
-1. Check Debug Log <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> for error messages
-2. Verify disk space available
-3. Try processing a smaller subset of images
-4. Verify images are not corrupted
+1. Controleer het foutopsporingslogboek <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> op foutmeldingen
+2. Controleer de beschikbare schijfruimte
+3. Probeer een kleinere subset van afbeeldingen te verwerken
+4. Controleer of de afbeeldingen niet beschadigd zijn
 
-### "No Targets Detected" Warning
+### Waarschuwing &quot;Geen doelen gedetecteerd&quot;
 
-**Possible causes:**
+**Mogelijke oorzaken:**
 
-* Forgot to mark target images
-* Target images don't contain visible targets
-* Target detection settings too strict
+* Vergeten doelafbeeldingen te markeren
+* Doelafbeeldingen bevatten geen zichtbare doelen
+* Instellingen voor doel detectie te streng
 
-**Solutions:**
+**Oplossingen:**
 
-1. Review [Choosing Target Images](choosing-target-images.md)
-2. Mark appropriate images in Target column
-3. Verify targets are visible in marked images
-4. Adjust target detection settings if needed
-
-***
-
-## Tips for Successful Processing
-
-### Before Starting
-
-1. **Test with small subset first** - Process 10-20 images to verify settings
-2. **Check available disk space** - Ensure 2-3x dataset size free
-3. **Close unnecessary applications** - Free up system resources
-4. **Verify target images** - Preview marked targets to ensure quality
-5. **Save project** - Project auto-saves, but good practice to save manually
-
-### During Processing
-
-1. **Avoid system sleep** - Disable power saving modes
-2. **Keep Chloros in foreground** - Or at least visible in taskbar
-3. **Monitor progress occasionally** - Check for warnings or errors
-4. **Don't load other heavy applications** - Especially with Chloros+ parallel mode
-
-### Chloros+ GPU Acceleration
-
-If using NVIDIA GPU acceleration:
-
-1. Update NVIDIA drivers to latest version
-2. Ensure GPU has 4GB+ VRAM
-3. Close GPU-intensive applications (games, video editing)
-4. Monitor GPU temperature (ensure adequate cooling)
+1. Bekijk [Doelafbeeldingen kiezen](choosing-target-images.md)
+2. Markeer de juiste afbeeldingen in de kolom Doel
+3. Controleer of de doelen zichtbaar zijn in de gemarkeerde afbeeldingen
+4. Pas indien nodig de instellingen voor doelherkenning aan
 
 ***
 
-## Next Steps
+## Tips voor een succesvolle verwerking
 
-Once processing has started:
+### Voordat u begint
 
-1. **Monitor the progress** - See [Monitoring the Processing](monitoring-the-processing.md)
-2. **Wait for completion** - Processing runs automatically
-3. **Review results** - See [Finishing the Processing](finishing-the-processing.md)
+1. **Test eerst met een kleine subset** - Verwerk 10-20 afbeeldingen om de instellingen te controleren
+2. **Controleer de beschikbare schijfruimte** - Zorg ervoor dat er 2-3 keer de grootte van de dataset vrij is
+3. **Sluit onnodige toepassingen** - Maak systeembronnen vrij
+4. **Controleer de doelafbeeldingen** - Bekijk een voorbeeld van de gemarkeerde doelen om de kwaliteit te controleren
+5. **Sla het project op** - Het project wordt automatisch opgeslagen, maar het is een goede gewoonte om het handmatig op te slaan.
 
-For information about what to do during processing, see [Monitoring the Processing](monitoring-the-processing.md).
+### Tijdens de verwerking
+
+1. **Voorkom dat het systeem in slaapstand gaat** - Schakel de energiebesparende modi uit.
+2. **Houd Chloros op de voorgrond** - Of zorg ervoor dat het ten minste zichtbaar is in de taakbalk.
+3. **Controleer af en toe de voortgang** - Controleer op waarschuwingen of fouten.
+4. **Laad geen andere zware applicaties** - Vooral niet in de parallelle modus van Chloros+
+
+### Chloros+ GPU-versnelling
+
+Als u NVIDIA GPU-versnelling gebruikt:
+
+1. Werk de NVIDIA-stuurprogramma&#x27;s bij naar de nieuwste versie
+2. Zorg ervoor dat de GPU 4 GB+ VRAM heeft
+3. Sluit GPU-intensieve applicaties (games, videobewerking)
+4. Controleer de GPU-temperatuur (zorg voor voldoende koeling)
+
+***
+
+## Volgende stappen
+
+Zodra de verwerking is gestart:
+
+1. **Controleer de voortgang** - Zie [De verwerking controleren](monitoring-the-processing.md)
+2. **Wacht tot de verwerking is voltooid** - De verwerking verloopt automatisch
+3. **Bekijk de resultaten** - Zie [De verwerking voltooien](finishing-the-processing.md)
+
+Voor informatie over wat u tijdens de verwerking moet doen, zie [De verwerking controleren](monitoring-the-processing.md).

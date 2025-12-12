@@ -1,204 +1,204 @@
-# Adding Files to a Project
+# Bestanden toevoegen aan een project
 
-Once you've created or opened a project in Chloros, the next step is to add your multispectral images to begin processing. The File Browser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> tab makes it easy to import images and manage your dataset.
+Nadat u een project hebt gemaakt of geopend in Chloros, is de volgende stap het toevoegen van uw multispectrale beelden om te beginnen met de verwerking. Met het tabblad Bestandsbrowser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> maakt het eenvoudig om beelden te importeren en uw dataset te beheren.
 
-## Accessing the File Browser
+## Toegang tot de bestandsbrowser
 
-1. Open or create a project in Chloros
-2. Click the **File Browser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> icon in the left sidebar
-3. The File Browser panel will display your project's file list
+1. Open of maak een project in Chloros
+2. Klik op het pictogram **Bestandsbrowser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> in de linkerzijbalk
+3. Het paneel Bestandsbrowser geeft de bestandenlijst van uw project weer
 
-{% hint style="info" %}
-**Supported File Types**: Chloros supports RAW+JPG and JPG image files from MAPIR Survey3W and Survey3N cameras. Only RAW+JPG are recommended.
+{% hint style=&quot;info&quot; %}
+**Ondersteunde bestandstypen**: Chloros ondersteunt RAW+JPG- en JPG-afbeeldingsbestanden van MAPIR Survey3W en Survey3N camera&#x27;s. Alleen RAW+JPG wordt aanbevolen.
 {% endhint %}
 
 ***
 
-## Adding Images to Your Project
+## Afbeeldingen toevoegen aan uw project
 
-There are two primary ways to add images to your project:
+Er zijn twee manieren om afbeeldingen toe te voegen aan uw project:
 
-### Method 1: Add Files
+### Methode 1: Bestanden toevoegen
 
-Use this option to import individual image files or a small selection of files.
+Gebruik deze optie om afzonderlijke afbeeldingsbestanden of een kleine selectie bestanden te importeren.
 
-1. Click the **"Add Files"** button at the top of the File Browser panel
-2. Navigate to the folder containing your images
-3. Select one or more image files (hold **Ctrl** to select multiple files)
-4. Click **"Open"** to import the selected files
+1. Klik op de knop **&quot;Bestanden toevoegen&quot;** bovenaan het paneel Bestandsbrowser.
+2. Navigeer naar de map met uw afbeeldingen.
+3. Selecteer een of meer afbeeldingsbestanden (houd **Ctrl** ingedrukt om meerdere bestanden te selecteren).
+4. Klik op **&quot;Openen&quot;** om de geselecteerde bestanden te importeren.
 
-### Method 2: Add Folder
+### Methode 2: Map toevoegen
 
-Use this option to import all images from a folder at once.
+Gebruik deze optie om alle afbeeldingen uit een map in één keer te importeren.
 
-1. Click the **"Add Folder"** button at the top of the File Browser panel
-2. Navigate to and select the folder containing your capture session images
-3. Click **"Select Folder"** to import all supported images from that folder
-
-***
-
-## Understanding the File Browser Table
-
-Once images are imported, they appear in a table with the following columns:
-
-### Thumbnail
-
-* Small preview of each image
-* Click thumbnail to view full image in the main preview area
-
-### File Name
-
-* Original filename from the camera
-* Maintains camera naming convention (e.g., IMG\_0001.RAW)
-
-### Timestamp
-
-* Date and time the image was captured
-* Extracted from image EXIF metadata
-* Used for PPK synchronization and calibration target detection
-
-### Camera Model
-
-* Automatically detected camera and filter configuration
-* Examples: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
-* Used to apply correct processing profiles
-
-### Target Column (Checkbox)
-
-* Check this box for images that contain calibration targets
-* Greatly speeds up target detection during processing
-* See [Choosing Target Images](choosing-target-images.md) for details
+1. Klik op de knop **&quot;Map toevoegen&quot;** bovenaan het paneel Bestandsbrowser.
+2. Navigeer naar de map met de afbeeldingen van uw opnamesessie en selecteer deze.
+3. Klik op **&quot;Map selecteren&quot;** om alle ondersteunde afbeeldingen uit die map te importeren.
 
 ***
 
-## Managing Files in Your Project
+## De tabel van de bestandsbrowser begrijpen
 
-### Removing Files
+Zodra de afbeeldingen zijn geïmporteerd, worden ze weergegeven in een tabel met de volgende kolommen:
 
-To remove unwanted images from your project:
+### Miniatuur
 
-1. Select one or more images in the File Browser table
-2. Click the **"Remove Selected"** button
-3. Confirm removal (files are not deleted from disk, only removed from the project)
+* Kleine preview van elke afbeelding.
+* Klik op de miniatuur om de volledige afbeelding in het hoofdpreviewgebied te bekijken.
 
-### Sorting and Filtering
+### Bestandsnaam
 
-* **Sort by column**: Click any column header to sort images
-* **Timestamp sort**: Useful for organizing chronological capture sequences
-* **Camera model filter**: Group images by camera type if using multiple cameras
+* Originele bestandsnaam van de camera.
+* Behoudt de naamgevingsconventie van de camera (bijv. IMG\_0001.RAW).
 
-***
+### Tijdstempel
 
-## Image Preview
+* Datum en tijd waarop de afbeelding is gemaakt.
+* Ontleend aan de EXIF-metadata van de afbeelding.
+* Gebruikt voor PPK-synchronisatie en detectie van kalibratiedoelen
 
-### Viewing Full Image
+### Cameramodel
 
-Click any image thumbnail in the File Browser to display it in the main preview area:
+* Automatisch gedetecteerde camera- en filterconfiguratie
+* Voorbeelden: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
+* Gebruikt om de juiste verwerkingsprofielen toe te passen
 
-1. Image appears in the center preview panel
-2. Use zoom controls to inspect image details
-3. Navigate between images using arrow keys
+### Doelkolom (selectievakje)
 
-### Quick Navigation
-
-* **Previous Image**: Click left arrow or press ← key
-* **Next Image**: Click right arrow or press → key
-* **Zoom In/Out**: Use mouse wheel or zoom buttons
-* **Pan**: Click and drag on image when zoomed in
+* Vink dit vakje aan voor afbeeldingen die kalibratiedoelen bevatten
+* Versnelt de detectie van doelen tijdens de verwerking aanzienlijk
+* Zie [Doelafbeeldingen kiezen](choosing-target-images.md) voor meer informatie
 
 ***
 
-## Duplicate File Handling
+## Bestanden in uw project beheren
 
-Chloros automatically detects and ignores duplicate files:
+### Bestanden verwijderen
 
-* Files with identical filenames are skipped
-* Prevents accidental double-processing
-* Warning message displayed when duplicates are detected
+Om ongewenste afbeeldingen uit uw project te verwijderen:
 
-{% hint style="warning" %}
-**Important**: Do not rename or modify your original image files before importing. Chloros relies on original filenames and metadata for proper processing.
+1. Selecteer een of meer afbeeldingen in de tabel Bestandsbrowser
+2. Klik op de knop **&quot;Geselecteerde verwijderen&quot;**
+3. Bevestig het verwijderen (bestanden worden niet van de schijf verwijderd, maar alleen uit het project)
+
+### Sorteren en filteren
+
+* **Sorteren op kolom**: klik op een kolomkop om afbeeldingen te sorteren
+* **Sorteren op tijdstempel**: handig voor het ordenen van chronologische opnamereeksen
+* **Filter voor cameramodel**: groepeer afbeeldingen op cameratype als u meerdere camera&#x27;s gebruikt
+
+***
+
+## Afbeeldingsvoorbeeld
+
+### Volledige afbeelding bekijken
+
+Klik op een afbeeldingsminiatuur in de bestandsbrowser om deze weer te geven in het hoofdvoorbeeldvenster:
+
+1. De afbeelding verschijnt in het voorbeeldvenster in het midden
+2. Gebruik de zoomknoppen om de afbeelding te bekijken
+3. Navigeer tussen afbeeldingen met de pijltjestoetsen
+
+### Snelle navigatie
+
+* **Vorige afbeelding**: klik op de pijl naar links of druk op de toets ←
+* **Volgende afbeelding**: klik op de pijl naar rechts of druk op de toets →
+* **In-/uitzoomen**: gebruik het muiswiel of de zoomknoppen
+* **Pannen**: klik en sleep op de afbeelding wanneer u hebt ingezoomd
+
+***
+
+## Omgaan met dubbele bestanden
+
+Chloros detecteert automatisch dubbele bestanden en negeert deze:
+
+* Bestanden met identieke bestandsnamen worden overgeslagen
+* Voorkomt onbedoelde dubbele verwerking
+* Er wordt een waarschuwingsbericht weergegeven wanneer duplicaten worden gedetecteerd
+
+{% hint style=&quot;warning&quot; %}
+**Belangrijk**: Hernoem of wijzig uw originele afbeeldingsbestanden niet voordat u ze importeert. Chloros vertrouwt op originele bestandsnamen en metagegevens voor een correcte verwerking.
 {% endhint %}
 
 ***
 
-## Mixed Camera Datasets
+## Gemengde cameragegevenssets
 
-If your project contains images from multiple MAPIR cameras:
+Als uw project afbeeldingen van meerdere MAPIR-camera&#x27;s bevat:
 
-1. Chloros automatically detects each camera model
-2. Each camera type is processed with its appropriate calibration profile
-3. File Browser displays camera model in the Camera Model column
-4. Processing applies correct settings for each camera type
+1. Chloros detecteert automatisch elk cameramodel.
+2. Elk cameratype wordt verwerkt met het juiste kalibratieprofiel.
+3. De bestandsbrowser geeft het cameramodel weer in de kolom Cameramodel.
+4. De verwerking past de juiste instellingen toe voor elk cameratype.
 
-**Example scenario**: Survey3W RGN + Survey3N OCN dual-camera setup
-
-***
-
-## Best Practices
-
-### Organize Before Import
-
-* Keep calibration target images in the same folder as survey images
-* Maintain original folder structure from your camera/SD card
-* Don't mix datasets from different sessions in one project
-
-### File Naming
-
-* Preserve original camera filenames (IMG\_0001.RAW, etc.)
-* Don't rename files before import
-* Original names contain important metadata
-
-### Calibration Target Images
-
-* Always include 1-2 calibration target images per session
-* Capture targets before and after the capture session
-* Place targets in the same lighting conditions as capture area
-* Mark target images using the Target checkbox to speed up processing
+**Voorbeeldscenario**: Survey3W RGN + Survey3N OCN dubbele camera-opstelling
 
 ***
 
-## Common Issues and Solutions
+## Best practices
 
-### Images Not Appearing After Import
+### Organiseren vóór het importeren
 
-**Possible causes:**
+* Bewaar kalibratiedoelafbeeldingen in dezelfde map als de onderzoeksafbeeldingen
+* Behoud de oorspronkelijke mapstructuur van uw camera/SD-kaart
+* Meng geen datasets van verschillende sessies in één project
 
-* File format not supported (only RAW+JPG and JPG from MAPIR cameras)
-* Images are from non-MAPIR cameras (see [Supported Cameras](../supported-cameras.md))
-* File corruption or incomplete transfer from SD card
+### Bestandsnaamgeving
 
-**Solution**: Verify file format and camera model compatibility
+* Behoud de oorspronkelijke bestandsnamen van de camera (IMG\_0001.RAW, enz.)
+* Hernoem bestanden niet vóór het importeren
+* Oorspronkelijke namen bevatten belangrijke metagegevens
 
-### Camera Model Not Detected
+### Kalibratiedoelafbeeldingen
 
-**Possible causes:**
-
-* Modified EXIF metadata
-* Images edited in external software
-* Incomplete file transfer
-
-**Solution**: Re-import original, unmodified files from camera/SD card
-
-### Missing Timestamps
-
-**Possible causes:**
-
-* Camera clock not set correctly
-* EXIF data stripped by external software
-
-**Solution**: Verify camera time settings were correct during capture
+* Voeg altijd 1-2 kalibratiedoelafbeeldingen per sessie toe.
+* Leg doelen vast voor en na de opnamesessie.
+* Plaats doelen in dezelfde lichtomstandigheden als het opnamegebied.
+* Markeer doelafbeeldingen met het selectievakje Doel om de verwerking te versnellen.
 
 ***
 
-## Next Steps
+## Veelvoorkomende problemen en oplossingen
 
-Once your files are imported:
+### Afbeeldingen worden niet weergegeven na het importeren
 
-1. **Review the file list** - Ensure all images loaded correctly
-2. **Check camera models** - Verify correct camera detection
-3. **Mark target images** - See [Choosing Target Images](choosing-target-images.md)
-4. **Adjust settings** - Configure processing options in [Project Settings](adjusting-project-settings.md)
-5. **Start processing** - See [Starting the Processing](starting-the-processing.md)
+**Mogelijke oorzaken:**
 
-For detailed information about project configuration, see [Adjusting Project Settings](adjusting-project-settings.md).
+* Bestandsformaat wordt niet ondersteund (alleen RAW+JPG en JPG van MAPIR-camera&#x27;s)
+* Afbeeldingen zijn afkomstig van niet-MAPIR-camera&#x27;s (zie [Ondersteunde camera&#x27;s](../supported-cameras.md))
+* Bestandsbeschadiging of onvolledige overdracht vanaf SD-kaart
+
+**Oplossing**: Controleer de compatibiliteit van het bestandsformaat en het cameramodel.
+
+### Cameramodel niet gedetecteerd
+
+**Mogelijke oorzaken:**
+
+* Gewijzigde EXIF-metadata
+* Afbeeldingen bewerkt in externe software
+* Onvolledige bestandsoverdracht
+
+**Oplossing**: Importeer de originele, ongewijzigde bestanden opnieuw vanaf de camera/SD-kaart.
+
+### Ontbrekende tijdstempels
+
+**Mogelijke oorzaken:**
+
+* Cameraklok niet correct ingesteld
+* EXIF-gegevens verwijderd door externe software
+
+**Oplossing**: Controleer of de tijdinstellingen van de camera correct waren tijdens het vastleggen
+
+***
+
+## Volgende stappen
+
+Zodra uw bestanden zijn geïmporteerd:
+
+1. **Controleer de bestandslijst** - Zorg ervoor dat alle afbeeldingen correct zijn geladen
+2. **Controleer cameramodellen** - Controleer of de camera correct is gedetecteerd
+3. **Markeer doelafbeeldingen** - Zie [Doelafbeeldingen kiezen](choosing-target-images.md)
+4. **Pas instellingen aan** - Configureer verwerkingsopties in [Projectinstellingen](adjusting-project-settings.md)
+5. **Start de verwerking** - Zie [De verwerking starten](starting-the-processing.md)
+
+Voor gedetailleerde informatie over projectconfiguratie, zie [Projectinstellingen aanpassen](adjusting-project-settings.md).

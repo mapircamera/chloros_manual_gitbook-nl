@@ -1,6 +1,6 @@
 # Ondersteunde talen
 
-Chloros biedt volledige interface-ondersteuning in **38 talen wereldwijd**, waardoor deze toegankelijk is voor gebruikers over de hele wereld. U kunt direct van taal wisselen in alle interfaces: Desktop, Browser, CLI en Python SDK.
+Chloros biedt volledige interface-ondersteuning in **38 talen wereldwijd**, waardoor het toegankelijk is voor gebruikers over de hele wereld. U kunt direct van taal wisselen in alle interfaces: Desktop, Browser, CLI en Python SDK.
 
 Chloros ondersteunt de volgende talen:
 
@@ -9,18 +9,18 @@ Chloros ondersteunt de volgende talen:
 3. 🇵🇹 **Português** (Portugees)
 4. 🇫🇷 **Français** (Frans)
 5. 🇩🇪 **Deutsch** (Duits)
-6. 🇮🇹 **Italiaans** (Italiaans)
+6. 🇮🇹 **Italiano** (Italiaans)
 7. 🇯🇵 **日本語** (Japans)
 8. 🇰🇷 **한국어** (Koreaans)
 9. 🇨🇳 **简体中文** (Vereenvoudigd Chinees)
-10. 🇹🇼 **繁體中文** (traditioneel Chinees)
+10. 🇹🇼 **繁體中文** (Traditioneel Chinees)
 11. 🇷🇺 **Русский** (Russisch)
 12. 🇳🇱 **Nederlands** (Nederlands)
 13. 🇸🇦 **العربية** (Arabisch)
 14. 🇵🇱 **Polski** (Pools)
 15. 🇹🇷 **Türkçe** (Turks)
 16. 🇮🇳 **हिंदी** (Hindi)
-17. 🇮🇩 **Bahasa Indonesië** (Indonesisch)
+17. 🇮🇩 **Bahasa Indonesia** (Indonesisch)
 18. 🇻🇳 **Tiếng Việt** (Vietnamees)
 19. 🇹🇭 **ไทย** (Thais)
 20. 🇸🇪 **Svenska** (Zweeds)
@@ -29,7 +29,7 @@ Chloros ondersteunt de volgende talen:
 23. 🇫🇮 **Suomi** (Fins)
 24. 🇬🇷 **Ελληνικά** (Grieks)
 25. 🇨🇿 **Čeština** (Tsjechisch)
-26. 🇭🇺 **Magyaars** (Hongaars)
+26. 🇭🇺 **Magyar** (Hongaars)
 27. 🇷🇴 **Română** (Roemeens)
 28. 🇺🇦 **Українська** (Oekraïens)
 29. 🇧🇷 **Português Brasileiro** (Braziliaans Portugees)
@@ -43,22 +43,22 @@ Chloros ondersteunt de volgende talen:
 37. 🇪🇪 **Eesti** (Ests)
 38. 🇸🇮 **Slovenščina** (Sloveens)
 
-## Taal wijzigen
+## Hoe u de taal kunt wijzigen
 
 ### In Chloros Desktop/Browser
 
-1. Open de applicatie-instellingen
-2. Navigeer naar het taalkeuzemenu
-3. Kies uw voorkeurstaal uit de lijst
-4. De interface wordt onmiddellijk bijgewerkt
+1. Open de instellingen van de applicatie.
+2. Ga naar het menu voor taalselectie.
+3. Kies de gewenste taal uit de lijst.
+4. De interface wordt onmiddellijk bijgewerkt.
 
 ### In Chloros CLI
 
-Gebruik de taalparameter bij uw opdrachten om de interfacetaal in te stellen.
+Gebruik de taalparameter bij uw opdrachten om de taal van de interface in te stellen.
 
 ### In Chloros Python SDK
 
-Stel de taalparameter in bij het initialiseren van de SDK om berichten en uitvoer in de taal van uw voorkeur te ontvangen.
+Stel de taalparameter in bij het initialiseren van de SDK om berichten en uitvoer in de taal van uw voorkeur te krijgen.
 
 ## Dekking
 
@@ -66,7 +66,7 @@ Alle 38 talen worden volledig ondersteund in:
 
 * **Chloros Desktop** - Volledige GUI-vertaling
 * **Chloros Browser** - Webinterface in alle talen
-* **Chloros CLI** - Commandoregelinterface en uitvoerberichten
-* **Chloros Python SDK** - API-berichten en documentatie
+* **Chloros CLI** - Opdrachtregelinterface en uitvoerberichten
+* **Chloros Python SDK** - API berichten en documentatie
 
-Taalondersteuning zorgt ervoor dat gebruikers wereldwijd zonder barrières efficiënt kunnen werken in hun moedertaal.
+Dankzij de taalondersteuning kunnen gebruikers wereldwijd efficiënt werken in hun moedertaal, zonder belemmeringen.
