@@ -1,17 +1,17 @@
-# Projects
+# Projecten
 
-Chloros allows you to create projects which can be reopened in the future.
+Met Chloros kunt u projecten creëren die in de toekomst heropend kunnen worden.
 
-## New Project
+## Nieuw project
 
 <figure><img src=".gitbook/assets/project_new.JPG" alt=""><figcaption></figcaption></figure>
 
-Select "New Project" from the main menu and enter a unique name for your project.
+Selecteer "Nieuw project" in het hoofdmenu en voer een unieke naam in voor uw project.
 
-## Open Project
+## Project openen
 
 <figure><img src=".gitbook/assets/project_open.JPG" alt=""><figcaption></figcaption></figure>
 
-Select "Open Project" to see a list of existing projects in the Project Folder. If no projects exist the secondary side menu will not open. You can see some GUI created projects (t1, t2, t3) listed in the above photo. The DATE\_TIME projects were created by the CLI using the default project naming scheme. Clicking any project name will open it.
+Selecteer "Open Project" om een ​​lijst met bestaande projecten in de Projectmap te zien. Als er geen projecten bestaan, wordt het secundaire zijmenu niet geopend. Op de bovenstaande foto ziet u enkele door de GUI gemaakte projecten (t1, t2, t3). De DATE\_TIME-projecten zijn door de CLI gemaakt met behulp van het standaardprojectnaamgevingsschema. Als u op een projectnaam klikt, wordt deze geopend.
 
-Clicking the "Open Project Folder" button opens your computer's file explorer at the project path. You can adjust the project path in the [Project Settings](project-settings/page-2.md).
+Als u op de knop "Projectmap openen" klikt, wordt de bestandsverkenner van uw computer geopend op het projectpad. U kunt het projectpad aanpassen in [Projectinstellingen](project-settings/page-2.md).

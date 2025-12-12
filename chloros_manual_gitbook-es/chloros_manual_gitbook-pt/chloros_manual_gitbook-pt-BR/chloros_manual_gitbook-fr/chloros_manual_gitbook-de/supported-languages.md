@@ -1,72 +1,72 @@
-# Supported Languages
+# Ondersteunde talen
 
-Chloros provides full interface support in **38 languages worldwide**, making it accessible to users across the globe. You can switch languages instantly across all interfaces: Desktop, Browser, CLI, and Python SDK.
+Chloros biedt volledige interface-ondersteuning in **38 talen wereldwijd**, waardoor deze toegankelijk is voor gebruikers over de hele wereld. U kunt direct van taal wisselen in alle interfaces: Desktop, Browser, CLI en Python SDK.
 
-Chloros supports the following languages:
+Chloros ondersteunt de volgende talen:
 
-1. 🇺🇸 **English**
-2. 🇪🇸 **Español** (Spanish)
-3. 🇵🇹 **Português** (Portuguese)
-4. 🇫🇷 **Français** (French)
-5. 🇩🇪 **Deutsch** (German)
-6. 🇮🇹 **Italiano** (Italian)
-7. 🇯🇵 **日本語** (Japanese)
-8. 🇰🇷 **한국어** (Korean)
-9. 🇨🇳 **简体中文** (Simplified Chinese)
-10. 🇹🇼 **繁體中文** (Traditional Chinese)
-11. 🇷🇺 **Русский** (Russian)
-12. 🇳🇱 **Nederlands** (Dutch)
-13. 🇸🇦 **العربية** (Arabic)
-14. 🇵🇱 **Polski** (Polish)
-15. 🇹🇷 **Türkçe** (Turkish)
+1. 🇺🇸 **Engels**
+2. 🇪🇸 **Español** (Spaans)
+3. 🇵🇹 **Português** (Portugees)
+4. 🇫🇷 **Français** (Frans)
+5. 🇩🇪 **Deutsch** (Duits)
+6. 🇮🇹 **Italiaans** (Italiaans)
+7. 🇯🇵 **日本語** (Japans)
+8. 🇰🇷 **한국어** (Koreaans)
+9. 🇨🇳 **简体中文** (Vereenvoudigd Chinees)
+10. 🇹🇼 **繁體中文** (traditioneel Chinees)
+11. 🇷🇺 **Русский** (Russisch)
+12. 🇳🇱 **Nederlands** (Nederlands)
+13. 🇸🇦 **العربية** (Arabisch)
+14. 🇵🇱 **Polski** (Pools)
+15. 🇹🇷 **Türkçe** (Turks)
 16. 🇮🇳 **हिंदी** (Hindi)
-17. 🇮🇩 **Bahasa Indonesia** (Indonesian)
-18. 🇻🇳 **Tiếng Việt** (Vietnamese)
-19. 🇹🇭 **ไทย** (Thai)
-20. 🇸🇪 **Svenska** (Swedish)
-21. 🇩🇰 **Dansk** (Danish)
-22. 🇳🇴 **Norsk** (Norwegian)
-23. 🇫🇮 **Suomi** (Finnish)
-24. 🇬🇷 **Ελληνικά** (Greek)
-25. 🇨🇿 **Čeština** (Czech)
-26. 🇭🇺 **Magyar** (Hungarian)
-27. 🇷🇴 **Română** (Romanian)
-28. 🇺🇦 **Українська** (Ukrainian)
-29. 🇧🇷 **Português Brasileiro** (Brazilian Portuguese)
-30. 🇭🇰 **粵語** (Cantonese)
-31. 🇲🇾 **Bahasa Melayu** (Malay)
-32. 🇸🇰 **Slovenčina** (Slovak)
-33. 🇧🇬 **Български** (Bulgarian)
-34. 🇭🇷 **Hrvatski** (Croatian)
-35. 🇱🇹 **Lietuvių** (Lithuanian)
-36. 🇱🇻 **Latviešu** (Latvian)
-37. 🇪🇪 **Eesti** (Estonian)
-38. 🇸🇮 **Slovenščina** (Slovenian)
+17. 🇮🇩 **Bahasa Indonesië** (Indonesisch)
+18. 🇻🇳 **Tiếng Việt** (Vietnamees)
+19. 🇹🇭 **ไทย** (Thais)
+20. 🇸🇪 **Svenska** (Zweeds)
+21. 🇩🇰 **Dansk** (Deens)
+22. 🇳🇴 **Norsk** (Noors)
+23. 🇫🇮 **Suomi** (Fins)
+24. 🇬🇷 **Ελληνικά** (Grieks)
+25. 🇨🇿 **Čeština** (Tsjechisch)
+26. 🇭🇺 **Magyaars** (Hongaars)
+27. 🇷🇴 **Română** (Roemeens)
+28. 🇺🇦 **Українська** (Oekraïens)
+29. 🇧🇷 **Português Brasileiro** (Braziliaans Portugees)
+30. 🇭🇰 **粵語** (Kantonees)
+31. 🇲🇾 **Bahasa Melayu** (Maleis)
+32. 🇸🇰 **Slovenčina** (Slowaaks)
+33. 🇧🇬 **Български** (Bulgaars)
+34. 🇭🇷 **Hrvatski** (Kroatisch)
+35. 🇱🇹 **Lietuvių** (Litouws)
+36. 🇱🇻 **Latviešu** (Lets)
+37. 🇪🇪 **Eesti** (Ests)
+38. 🇸🇮 **Slovenščina** (Sloveens)
 
-## How to Change Language
+## Taal wijzigen
 
 ### In Chloros Desktop/Browser
 
-1. Open the application settings
-2. Navigate to the language selection menu
-3. Choose your preferred language from the list
-4. The interface will update instantly
+1. Open de applicatie-instellingen
+2. Navigeer naar het taalkeuzemenu
+3. Kies uw voorkeurstaal uit de lijst
+4. De interface wordt onmiddellijk bijgewerkt
 
 ### In Chloros CLI
 
-Use the language parameter with your commands to set the interface language.
+Gebruik de taalparameter bij uw opdrachten om de interfacetaal in te stellen.
 
 ### In Chloros Python SDK
 
-Set the language parameter when initializing the SDK to get messages and outputs in your preferred language.
+Stel de taalparameter in bij het initialiseren van de SDK om berichten en uitvoer in de taal van uw voorkeur te ontvangen.
 
-## Coverage
+## Dekking
 
-All 38 languages are fully supported across:
+Alle 38 talen worden volledig ondersteund in:
 
-* **Chloros Desktop** - Complete GUI translation
-* **Chloros Browser** - Web interface in all languages
-* **Chloros CLI** - Command-line interface and output messages
-* **Chloros Python SDK** - API messages and documentation
+* **Chloros Desktop** - Volledige GUI-vertaling
+* **Chloros Browser** - Webinterface in alle talen
+* **Chloros CLI** - Commandoregelinterface en uitvoerberichten
+* **Chloros Python SDK** - API-berichten en documentatie
 
-Language support ensures that users worldwide can work efficiently in their native language without barriers.
+Taalondersteuning zorgt ervoor dat gebruikers wereldwijd zonder barrières efficiënt kunnen werken in hun moedertaal.

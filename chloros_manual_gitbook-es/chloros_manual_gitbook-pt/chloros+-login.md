@@ -1,43 +1,43 @@
-# Chloros+ Login
+# Chloros+ Inloggen
 
-## Chloros and Chloros (Browser) Login
+## Chloros en Chloros (browser) Inloggen
 
-The user <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> sidebar menu allows you to log into your Chloros+ account and unlock additional features.
+Met het gebruikerszijbalkmenu <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> kunt u inloggen op uw Chloros+-account en extra functies ontgrendelen.
 
-When logged in your account details will be shown:
+Wanneer u ingelogd bent, worden uw accountgegevens weergegeven:
 
 <figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
 
-## CLI Login
+## CLI-aanmelding
 
-Login with your Chloros+ credentials to enable CLI processing.
+Log in met uw Chloros+-inloggegevens om CLI-verwerking in te schakelen.
 
-**Syntax:**
+**Syntaxis:**
 
 ```bash
 chloros-cli login <email> <password>
 ```
 
-**Example:**
+**Voorbeeld:**
 
 ```powershell
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% hint style="warning" %}
-**Special Characters**: Use single quotes around passwords containing characters like `$`, `!`, or spaces.
-{% endhint %}
+{% hint style="waarschuwing" %}
+**Speciale tekens**: gebruik enkele aanhalingstekens rond wachtwoorden die tekens bevatten zoals `$`, `!` of spaties.
+{% eindhint %}
 
-**Output:**
+**Uitvoer:**
 
 <figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
 
-### Plan Expiration
+### Planvervaldatum
 
-The plan expiration in the GUI shows when your license will become invalid. For recurring monthly subscriptions the expiration is at the end of the month. For yearly subscriptions it is a year after you started the subscription. The license check requires a monthly internet connection to verify, with a 30 day grace period.
+De vervaldatum van het plan in de GUI geeft aan wanneer uw licentie ongeldig wordt. Bij terugkerende maandabonnementen vervalt de vervaldatum aan het einde van de maand. Bij jaarabonnementen is dit een jaar nadat u het abonnement bent gestart. Voor de licentiecontrole is een maandelijkse internetverbinding vereist, met een respijtperiode van 30 dagen.
 
-### Device Limit
+### Apparaatlimiet
 
-Each Chloros+ plan offers a different number of registered devices. Each device you log into with a Chloros+ account will count towards your number of registered devices. You can rename and remove a device on your MAPIR Cloud account page.
+Elk Chloros+ abonnement biedt een ander aantal geregistreerde apparaten. Elk apparaat waarop u inlogt met een Chloros+-account telt mee voor uw aantal geregistreerde apparaten. U kunt een apparaat hernoemen en verwijderen op uw MAPIR Cloud-accountpagina.
 
-<table><thead><tr><th width="168.5999755859375" align="right">Chloros+ Plan</th><th align="center">COPPER</th><th align="center">BRONZE</th><th align="center">SILVER</th><th align="center">GOLD</th></tr></thead><tbody><tr><td align="right">Devices Supported</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>
+<table><thead><tr><th width="168.5999755859375" align="right">Chloor+ Plan</th><th align="center">KOPER</th><th align="center">BRONZE</th><th align="center">ZILVER</th><th align="center">GOLD</th></tr></thead><tbody><tr><td align="right">Apparaten Ondersteund</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>
