@@ -1,6 +1,8 @@
 # CLI : Opdrachtregel
 
-<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>De **Chloros CLI** biedt krachtige opdrachtregeltoegang tot de Chloros-beeldverwerkingsengine, waardoor automatisering, scripting en headless-werking voor uw beeldverwerkingsworkflows mogelijk wordt.
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
+
+De **Chloros CLI** biedt krachtige opdrachtregeltoegang tot de Chloros-beeldverwerkingsengine, waardoor automatisering, scripting en headless-werking voor uw beeldverwerkingsworkflows mogelijk wordt.
 
 ### Belangrijkste kenmerken
 
