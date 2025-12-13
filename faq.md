@@ -1,10 +1,9 @@
 ---
-description: Frequently Asked Questions
+description: Veelgestelde vragen
 metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/faq
 ---
-
 # Veelgestelde vragen
 
 <details>
@@ -57,7 +56,7 @@ Door in de bestandsbrowser de doelafbeeldingen in de rechterkolom vooraf te sele
 
 <details>
 
-<summary>Als ik mijn beelden upload naar <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud,</a> moet ik ze dan eerst verwerken in Chloros voordat ik ze upload?</summary>
+<summary>Als ik mijn afbeeldingen upload naar <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud,</a> moet ik ze dan eerst verwerken in Chloros voordat ik ze upload?</summary>
 
 Als u van plan bent om naar ons online verwerkingsplatform [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription) te uploaden, bewerk de afbeeldingen dan niet voorafgaand aan het uploaden. Cloud voert dezelfde verwerking uit en nog veel meer.
 
@@ -65,7 +64,7 @@ Als u van plan bent om naar ons online verwerkingsplatform [MAPIR Cloud](https:/
 
 <details>
 
-<summary>Zal MAPIR ooit X-functie ondersteunen? Ik zou heel graag willen dat MAPIR X aanbood.</summary>
+<summary>Zal MAPIR ooit de X-functie ondersteunen? Ik zou heel graag willen dat MAPIR X aanbood.</summary>
 
 We zijn altijd geïnteresseerd in feedback over onze producten. Als u een probleem met onze producten constateert of een suggestie hebt over hoe we onze producten kunnen verbeteren, neem dan [CONTACT MET ONS OP](https://www.mapir.camera/community/contact) om uw mening te delen. Het grootste deel van onze R&amp;D wordt gestuurd door te luisteren naar de belangrijkste behoeften van onze klanten.
 

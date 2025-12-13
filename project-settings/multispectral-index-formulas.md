@@ -1,16 +1,15 @@
 ---
-description: This page lists some multispectral indices that Chloros uses
+description: This page lists some multispectral indices that Chloros uses.
 metaLinks:
   alternates:
     - >-
       https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/multispectral-index-formulas
 ---
-
 # Multispectrale indexformules
 
-De onderstaande indexformules maken gebruik van een combinatie van Survey3 filter gemiddelde transmissiebereiken:
+De onderstaande indexformules maken gebruik van een combinatie van Survey3-filtergemiddelde transmissiebereiken:
 
-<table><thead><tr><th align="center">Survey3 Filterkleur</th><th width="196.199951171875" align="center">Survey3-filternaam</th><th width="159.800048828125" align="center">Transmissiebereik (FWHM)</th><th align="center">Gemiddelde transmissie</th></tr></thead><tbody><tr><td align="center">Blue</td><td align="center">NGB - Blue</td><td align="center">468-483 nm</td><td align="center">475 nm</td></tr><tr><td align="center">Cyan</td><td align="center">OCN- Cyan</td><td align="center">476-512 nm</td><td align="center">494 nm</td></tr><tr><td align="center">Green</td><td align="center">RGN | NGB - Green</td><td align="center">543-558 nm</td><td align="center">547 nm</td></tr><tr><td align="center">Orange</td><td align="center">OCN - Orange</td><td align="center">598-640 nm</td><td align="center">619 nm</td></tr><tr><td align="center">Red</td><td align="center">RGN - Red</td><td align="center">653-668 nm</td><td align="center">661 nm</td></tr><tr><td align="center">RedEdge</td><td align="center">Re - RedEdge</td><td align="center">712-735 nm</td><td align="center">724 nm</td></tr><tr><td align="center">NIR1</td><td align="center">OCN - NIR1</td><td align="center">798-848 nm</td><td align="center">823 nm</td></tr><tr><td align="center">NIR2</td><td align="center">RGN | NGB | NIR - NIR2</td><td align="center">835-865 nm</td><td align="center">850 nm</td></tr></tbody></table>
+<table><thead><tr><th align="center">Survey3-filterkleur</th><th width="196.199951171875" align="center">Survey3-filternaam</th><th width="159.800048828125" align="center">Transmissiebereik (FWHM)</th><th align="center">Gemiddelde transmissie</th></tr></thead><tbody><tr><td align="center">Blue</td><td align="center">NGB - Blue</td><td align="center">468-483 nm</td><td align="center">475 nm</td></tr><tr><td align="center">Cyan</td><td align="center">OCN- Cyan</td><td align="center">476-512 nm</td><td align="center">494 nm</td></tr><tr><td align="center">Green</td><td align="center">RGN | NGB - Green</td><td align="center">543-558 nm</td><td align="center">547 nm</td></tr><tr><td align="center">Orange</td><td align="center">OCN - Orange</td><td align="center">598-640 nm</td><td align="center">619 nm</td></tr><tr><td align="center">Red</td><td align="center">RGN - Red</td><td align="center">653-668 nm</td><td align="center">661 nm</td></tr><tr><td align="center">RedEdge</td><td align="center">Re - RedEdge</td><td align="center">712-735 nm</td><td align="center">724 nm</td></tr><tr><td align="center">NIR1</td><td align="center">OCN - NIR1</td><td align="center">798-848 nm</td><td align="center">823 nm</td></tr><tr><td align="center">NIR2</td><td align="center">RGN | NGB | NIR - NIR2</td><td align="center">835-865 nm</td><td align="center">850 nm</td></tr></tbody></table>
 
 Wanneer deze formules worden gebruikt, kan de naam eindigen op &quot;\_1&quot; of &quot;\_2&quot;, wat overeenkomt met het NIR-filter dat werd gebruikt, namelijk NIR1 of NIR2.
 
@@ -18,13 +17,13 @@ Wanneer deze formules worden gebruikt, kan de naam eindigen op &quot;\_1&quot; o
 
 ## EVI - Verbeterde vegetatie-index
 
-Deze index is oorspronkelijk ontwikkeld voor gebruik met MODIS-gegevens als verbetering ten opzichte van NDVI door het vegetatiesignaal in gebieden met een hoge bladoppervlakte-index (LAI) te optimaliseren. Hij is vooral nuttig in gebieden met een hoge LAI-waarde waar NDVI verzadigd kan raken. Hij maakt gebruik van het blauwe reflectiegebied om de signalen van de bodemachtergrond te corrigeren en atmosferische invloeden, waaronder aerosolverstrooiing, te verminderen.
+Deze index is oorspronkelijk ontwikkeld voor gebruik met MODIS-gegevens als verbetering ten opzichte van NDVI door het vegetatiesignaal in gebieden met een hoge bladoppervlakte-index (LAI) te optimaliseren. Hij is vooral nuttig in gebieden met een hoge LAI waar NDVI verzadigd kan raken. Hij maakt gebruik van het blauwe reflectiegebied om bodembackgroundsignalen te corrigeren en atmosferische invloeden, waaronder aerosolverstrooiing, te verminderen.
 
 $$
 EVI = 2.5 *  {(NIR - Red) \over (NIR + 6 * Red - 7.5 * Blue + 1)}
 $$
 
-EVI-waarden moeten voor vegetatiepixels tussen 0 en 1 liggen. Heldere elementen zoals wolken en witte gebouwen, samen met donkere elementen zoals water, kunnen leiden tot abnormale pixelwaarden in een EVI-afbeelding. Voordat u een EVI-afbeelding maakt, moet u wolken en heldere elementen uit de reflectieafbeelding maskeren en optioneel de pixelwaarden van 0 tot 1 drempelen.
+EVI-waarden moeten voor vegetatiepixels tussen 0 en 1 liggen. Heldere elementen zoals wolken en witte gebouwen, samen met donkere elementen zoals water, kunnen leiden tot afwijkende pixelwaarden in een EVI-afbeelding. Voordat u een EVI-afbeelding maakt, moet u wolken en heldere kenmerken uit de reflectieafbeelding maskeren en optioneel de pixelwaarden van 0 tot 1 drempelen.
 
 _Referentie: Huete, A., et al. &quot;Overzicht van de radiometrische en biofysische prestaties van de MODIS-vegetatie-indexen.&quot; Remote Sensing of Environment 83 (2002):195–213._
 
@@ -38,7 +37,7 @@ $$
 FCI1 = Red * RedEdge
 $$
 
-Beboste gebieden hebben lagere FCI1-waarden vanwege de lagere reflectie van bomen en de aanwezigheid van schaduwen in de kruin.
+Beboste gebieden hebben lagere FCI1-waarden vanwege de lagere reflectie van bomen en de aanwezigheid van schaduwen binnen het bladerdak.
 
 _Referentie: Becker, Sarah J., Craig S.T. Daughtry en Andrew L. Russ. &quot;Robuuste bosbedekkingsindexen voor multispectrale beelden.&quot; Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505-512._
 
@@ -84,7 +83,7 @@ $$
 GARI = {NIR - [Green - \gamma(Blue - Red)] \over NIR + [Green - \gamma(Blue - Red)]   }
 $$
 
-De gamma-constante is een wegingsfunctie die afhankelijk is van de aerosolcondities in de atmosfeer. ENVI gebruikt een waarde van 1,7, wat de aanbevolen waarde is van Gitelson, Kaufman en Merzylak (1996, pagina 296).
+De gamma-constante is een wegingsfunctie die afhankelijk is van de aerosolomstandigheden in de atmosfeer. ENVI gebruikt een waarde van 1,7, wat de aanbevolen waarde is van Gitelson, Kaufman en Merzylak (1996, pagina 296).
 
 _Referentie: Gitelson, A., Y. Kaufman en M. Merzylak. &quot;Gebruik van een Green-kanaal bij teledetectie van wereldwijde vegetatie vanuit EOS-MODIS.&quot; Remote Sensing of Environment 58 (1996): 289-298._
 
@@ -92,13 +91,13 @@ _Referentie: Gitelson, A., Y. Kaufman en M. Merzylak. &quot;Gebruik van een Gree
 
 ## GCI - Green Chlorofylindex
 
-Deze index wordt gebruikt om het chlorofylgehalte in bladeren van een breed scala aan plantensoorten te schatten.
+Deze index wordt gebruikt om het chlorofylgehalte in bladeren van een groot aantal plantensoorten te schatten.
 
 $$
 GCI = {NIR \over Green} - 1
 $$
 
-Door een breed NIR en groene golflengten te gebruiken, kan het chlorofylgehalte beter worden voorspeld, terwijl er meer gevoeligheid en een hogere signaal-ruisverhouding mogelijk is.
+Door een breed spectrum aan NIR en groene golflengten te gebruiken, kan het chlorofylgehalte beter worden voorspeld, terwijl er meer gevoeligheid en een hogere signaal-ruisverhouding mogelijk is.
 
 _Referentie: Gitelson, A., Y. Gritz en M. Merzlyak. &quot;Relaties tussen het chlorofylgehalte in bladeren en spectrale reflectie en algoritmen voor niet-destructieve chlorofylbeoordeling in bladeren van hogere planten.&quot; Journal of Plant Physiology 160 (2003): 271-282._
 
@@ -138,7 +137,7 @@ $$
 GOSAVI = {NIR - Green \over NIR + Green + 0.16)  }
 $$
 
-_Referentie: Sripada, R., et al. &quot;Bepaling van de stikstofbehoefte voor maïs tijdens het seizoen met behulp van luchtfoto&#x27;s in kleur-infrarood.&quot; Proefschrift, North Carolina State University, 2005._
+_Referentie: Sripada, R., et al. &quot;Bepaling van de stikstofbehoefte voor maïs tijdens het seizoen met behulp van luchtfotografie in kleur-infrarood.&quot; Proefschrift, North Carolina State University, 2005._
 
 ***
 
@@ -150,19 +149,19 @@ $$
 GRVI = {NIR \over Green }
 $$
 
-_Referentie: Sripada, R., et al. &quot;Aerial Color Infrared Photography for Determining Early In-season Nitrogen Requirements in Corn.&quot; Agronomy Journal 98 (2006): 968-977._
+_Referentie: Sripada, R., et al. &quot;Luchtfoto&#x27;s in kleur en infrarood voor het bepalen van de stikstofbehoefte van maïs vroeg in het seizoen.&quot; Agronomy Journal 98 (2006): 968-977._
 
 ***
 
 ## GSAVI - Green Bodemgecorrigeerde vegetatie-index
 
-Deze index is oorspronkelijk ontworpen met kleuren-infraroodfotografie om de stikstofbehoefte voor maïs te voorspellen. Hij is vergelijkbaar met SAVI, maar vervangt de groene band door rood.
+Deze index is oorspronkelijk ontworpen met kleur-infraroodfotografie om de stikstofbehoefte voor maïs te voorspellen. Hij is vergelijkbaar met SAVI, maar vervangt de groene band door rood.
 
 $$
 GSAVI = 1.5 * {(NIR - Green) \over (NIR + Green + 0.5)  }
 $$
 
-_Referentie: Sripada, R., et al. &quot;Bepaling van de stikstofbehoefte voor maïs tijdens het seizoen met behulp van luchtfoto&#x27;s in kleur-infrarood.&quot; Proefschrift, North Carolina State University, 2005._
+_Referentie: Sripada, R., et al. &quot;Bepaling van de stikstofbehoefte van maïs tijdens het seizoen met behulp van luchtfoto&#x27;s in kleur-infrarood.&quot; Proefschrift, North Carolina State University, 2005._
 
 ***
 
@@ -188,7 +187,7 @@ _Referentie: Boegh, E., H. Soegaard, N. Broge, C. Hasager, N. Jensen, K. Schelde
 
 ## LCI - Bladchlorofylindex
 
-Deze index wordt gebruikt om het chlorofylgehalte in hogere planten te schatten, die gevoelig zijn voor variaties in reflectie als gevolg van chlorofylabsorptie.
+Deze index wordt gebruikt om het chlorofylgehalte in hogere planten te schatten en is gevoelig voor variaties in reflectie als gevolg van chlorofylabsorptie.
 
 $$
 LCI = {NIR2 - RedEdge \over NIR2 + Red}
@@ -234,7 +233,7 @@ $$
 
 ## NDVI - Genormaliseerde vegetatie-index
 
-Deze index is een maatstaf voor gezonde, groene vegetatie. De combinatie van de genormaliseerde verschilformule en het gebruik van de gebieden met de hoogste absorptie en reflectie van chlorofyl maken deze index robuust onder uiteenlopende omstandigheden. Hij kan echter verzadigd raken in dichte vegetatie wanneer LAI hoog wordt.
+Deze index is een maatstaf voor gezonde, groene vegetatie. De combinatie van de genormaliseerde verschilformule en het gebruik van de gebieden met de hoogste absorptie en reflectie van chlorofyl maakt deze index robuust onder uiteenlopende omstandigheden. Hij kan echter verzadigd raken in dichte vegetatie wanneer LAI hoog wordt.
 
 $$
 NDVI = {NIR - Red \over NIR + Red  }
@@ -242,11 +241,11 @@ $$
 
 De waarde van deze index varieert van -1 tot 1. Het gebruikelijke bereik voor groene vegetatie is 0,2 tot 0,8.
 
-_Referentie: Rouse, J., R. Haas, J. Schell en D. Deering. Monitoring Vegetation Systems in the Great Plains with ERTS. Derde ERTS-symposium, NASA (1973): 309-317._
+_Referentie: Rouse, J., R. Haas, J. Schell en D. Deering. Monitoring Vegetation Systems in the Great Plains with ERTS. Third ERTS Symposium, NASA (1973): 309-317._
 
 ***
 
-## NLI - Niet-lineaire index
+## NLI - Non-Linear Index (niet-lineaire index)
 
 Deze index gaat ervan uit dat de relatie tussen veel vegetatie-indexen en biofysische parameters aan het oppervlak niet-lineair is. Hij lineariseert relaties met oppervlakteparameters die de neiging hebben niet-lineair te zijn.
 
@@ -260,7 +259,7 @@ _Referentie: Goel, N., en W. Qin. &quot;Invloeden van de architectuur van het bl
 
 ## OSAVI - Geoptimaliseerde bodemgecorrigeerde vegetatie-index
 
-Deze index is gebaseerd op de bodemgecorrigeerde vegetatie-index (SAVI). Hij gebruikt een standaardwaarde van 0,16 voor de correctiefactor voor de achtergrond van het bladerdak. Rondeaux (1996) stelde vast dat deze waarde een grotere bodemvariatie oplevert dan SAVI voor lage vegetatiebedekking, terwijl hij een grotere gevoeligheid vertoont voor vegetatiebedekking van meer dan 50%. Deze index kan het best worden gebruikt in gebieden met relatief schaarse vegetatie waar de bodem zichtbaar is door het bladerdak.
+Deze index is gebaseerd op de bodemgecorrigeerde vegetatie-index (SAVI). Hij gebruikt een standaardwaarde van 0,16 voor de aanpassingsfactor voor de achtergrond van het bladerdak. Rondeaux (1996) stelde vast dat deze waarde een grotere bodemvariatie oplevert dan SAVI voor een lage vegetatiebedekking, terwijl hij een grotere gevoeligheid vertoont voor een vegetatiebedekking van meer dan 50%. Deze index kan het best worden gebruikt in gebieden met relatief schaarse vegetatie waar de bodem zichtbaar is door het bladerdak.
 
 $$
 OSAVI = {(NIR - Red) \over (NIR + Red + 0.16)  }
@@ -270,9 +269,9 @@ _Referentie: Rondeaux, G., M. Steven en F. Baret. &quot;Optimization of Soil-Adj
 
 ***
 
-## RDVI - Renormalized Difference Vegetation Index
+## RDVI - Renormalized Difference Vegetation Index (Grenormaliseerde vegetatie-index)
 
-Deze index maakt gebruik van het verschil tussen nabij-infrarode en rode golflengten, samen met de NDVI, om gezonde vegetatie te benadrukken. Hij is ongevoelig voor de effecten van bodem en de geometrie van de zon.
+Deze index maakt gebruik van het verschil tussen nabij-infrarode en rode golflengten, samen met de NDVI, om gezonde vegetatie te benadrukken. Hij is ongevoelig voor de effecten van de bodem en de geometrie van de zon.
 
 $$
 RDVI = {(NIR- Red) \over \sqrt{(NIR + Red)}  }
@@ -282,7 +281,7 @@ _Referentie: Roujean, J., en F. Breon. &quot;Estimating PAR Absorbed by Vegetati
 
 ***
 
-## SAVI - Soil Adjusted Vegetation Index
+## SAVI - Bodemgecorrigeerde vegetatie-index
 
 Deze index is vergelijkbaar met NDVI, maar onderdrukt de effecten van bodempixels. Hij maakt gebruik van een aanpassingsfactor voor de achtergrond van het bladerdak, _L_, die een functie is van de vegetatiedichtheid en vaak voorkennis van de hoeveelheid vegetatie vereist. Huete (1988) stelt een optimale waarde van _L_=0,5 voor om rekening te houden met eerste-orde variaties in de bodemachtergrond. Deze index kan het best worden gebruikt in gebieden met relatief dunne vegetatie waar de bodem door het bladerdak heen zichtbaar is.
 
@@ -294,9 +293,9 @@ _Referentie: Huete, A. &quot;A Soil-Adjusted Vegetation Index (SAVI).&quot; Remo
 
 ***
 
-## TDVI - Transformed Difference Vegetation Index
+## TDVI - Transformed Difference Vegetation Index (getransformeerde vegetatie-index)
 
-Deze index is nuttig voor het monitoren van de vegetatiebedekking in stedelijke omgevingen. Hij raakt niet verzadigd zoals NDVI en SAVI.
+Deze index is nuttig voor het monitoren van vegetatiebedekking in stedelijke omgevingen. Hij raakt niet verzadigd zoals NDVI en SAVI.
 
 $$
 TDVI = 1.5 * {(NIR- Red) \over \sqrt{NIR^{2} + Red + 0.5}  }
