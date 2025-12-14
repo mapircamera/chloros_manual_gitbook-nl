@@ -31,4 +31,4 @@
 
 * [Een afbeelding op volledig scherm openen](image-viewer-gui/opening-an-image-full-screen.md)
 * [Afbeeldingslagen](image-viewer-gui/image-layers.md)
-* [Index/LUT Sandbox](image-viewer-gui/index-lut-sandbox.md)
+* [Index/LUT-sandbox](image-viewer-gui/index-lut-sandbox.md)

@@ -19,7 +19,7 @@ Voor gebruikers zonder Chloros+-licentie:
 
 * Algemeen voltooiingspercentage (0-100%)
 * Naam van de huidige fase
-* Eenvoudige horizontale balkweergave
+* Eenvoudige horizontale balkvisualisatie
 
 ### Chloros+ voortgangsbalk
 
@@ -36,12 +36,12 @@ Voor gebruikers met een Chloros+ licentie:
 
 * **Beweeg de muis over** de voortgangsbalk om het uitgebreide paneel met 4 fasen te zien
 * **Klik op** de voortgangsbalk om het uitgebreide paneel vast te zetten/vast te pinnen
-* **Klik nogmaals** om het paneel los te maken en automatisch te verbergen wanneer u de muis wegneemt
+* **Klik nogmaals** om het paneel los te maken en automatisch te verbergen wanneer u de muis weghaalt
 * Elke fase toont de individuele voortgang (0-100%)
 
 ***
 
-## Uitleg van elke verwerkingsfase
+## Inzicht in elke verwerkingsfase
 
 ### Fase 1: Detecteren (doeldetectie)
 
@@ -94,7 +94,7 @@ Voor gebruikers met een Chloros+ licentie:
 
 **Wat gebeurt er:**
 
-* **Debayering**: RAW Bayer-patroon omzetten naar 3 kanalen
+* **Debayering**: RAW-Bayer-patroon omzetten naar 3 kanalen
 * **Vignettecorrectie**: verwijderen van donkere randen rond de lens
 * **Reflectiekalibratie**: normaliseren met streefwaarden
 * **Indexberekening**: berekenen van multispectrale indices
@@ -106,7 +106,7 @@ Voor gebruikers met een Chloros+ licentie:
 
 * Kalibreren: 0% → 100%
 * Huidige afbeelding wordt verwerkt
-* Afbeeldingen voltooid / Totaal aantal afbeeldingen
+* Voltooide afbeeldingen / Totaal aantal afbeeldingen
 
 **Verwerkingsgedrag:**
 
@@ -225,7 +225,7 @@ Om het logboek te kopiëren voor probleemoplossing of ondersteuning:
 * Andere kernen inactief of beschikbaar
 * Systeem blijft responsief
 
-**Chloros+ Parallelle modus:**
+**Chloros+ parallelle modus:**
 
 * Meerdere kernen op 80-100% (maximaal 16 kernen)
 * Hoog algemeen CPU-gebruik
@@ -276,13 +276,13 @@ Wanneer GPU-versnelling is ingeschakeld:
 
 **Prestatietip:**
 
-* Gebruik indien mogelijk SSD voor projectmap
+* Gebruik indien mogelijk SSD voor de projectmap
 * Vermijd netwerkschijven voor grote datasets
 * Zorg ervoor dat de schijf niet bijna vol is (beïnvloedt de schrijfsnelheid)
 
 ***
 
-## Problemen detecteren tijdens verwerking
+## Problemen detecteren tijdens de verwerking
 
 ### Waarschuwingssignalen
 
@@ -308,7 +308,7 @@ Wanneer GPU-versnelling is ingeschakeld:
 
 Stop de verwerking als u het volgende ziet:
 
-* ❌ Fouten &quot;Schijf vol&quot; of &quot;Kan bestand niet schrijven&quot;
+* ❌ Foutenmeldingen &quot;Schijf vol&quot; of &quot;Kan bestand niet schrijven&quot;
 * ❌ Herhaalde fouten met beschadigde afbeeldingsbestanden
 * ❌ Systeem volledig vastgelopen (reageert niet)
 * ❌ Verkeerde instellingen geconfigureerd
@@ -349,7 +349,7 @@ Stop de verwerking als u het volgende ziet:
 3. Verminder het aantal te exporteren indexen.
 4. Gebruik het JPG-formaat in plaats van TIFF (kleinere bestanden).
 
-### Frequente meldingen over &quot;beschadigde bestanden&quot;
+### Frequente berichten over &quot;beschadigde bestanden&quot;
 
 **Oplossingen:**
 
@@ -365,7 +365,7 @@ Stop de verwerking als u het volgende ziet:
 1. Zorg voor voldoende ventilatie.
 2. Verwijder stof uit de ventilatieopeningen van de computer.
 3. Verminder de verwerkingsbelasting (gebruik de modus Free in plaats van Chloros+).
-4. Voer de verwerking uit tijdens koelere momenten van de dag.
+4. Voer de verwerking uit op koelere momenten van de dag.
 
 ***
 
@@ -386,7 +386,7 @@ Zodra de verwerking is voltooid:
 
 1. **Bekijk de resultaten** - Zie [De verwerking voltooien](finishing-the-processing.md)
 2. **Controleer de uitvoermap** - Controleer of alle bestanden correct zijn geëxporteerd
-3. **Controleer het foutopsporingslogboek** - Controleer op waarschuwingen of fouten
+3. **Bekijk het foutopsporingslogboek** - Controleer op waarschuwingen of fouten
 4. **Bekijk een voorbeeld van de verwerkte afbeeldingen** - Gebruik Image Viewer of externe software
 
-Zie [De verwerking voltooien](finishing-the-processing.md) voor informatie over het bekijken en gebruiken van uw verwerkte resultaten.
+Voor informatie over het bekijken en gebruiken van uw verwerkte resultaten, zie [De verwerking voltooien](finishing-the-processing.md).

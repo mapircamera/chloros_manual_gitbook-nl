@@ -132,7 +132,7 @@ De SDK gebruikt dezelfde licentie als Chloros, Chloros (browser) en Chloros CLI.
 3. De licentie wordt lokaal opgeslagen (blijft behouden na herstarten)
 
 {% hint style=&quot;success&quot; %}
-**Eenmalige installatie**: Nadat u zich hebt aangemeld via de GUI of CLI, gebruikt SDK automatisch de opgeslagen licentie. Er is geen aanvullende authenticatie nodig!
+**Eenmalige installatie**: Nadat u bent ingelogd via de GUI of CLI, gebruikt de SDK automatisch de opgeslagen licentie. Er is geen aanvullende authenticatie nodig!
 {% endhint %}
 
 ### Verbinding testen
@@ -234,9 +234,9 @@ Afbeeldingen importeren vanuit een map.
 | Parameter     | Type     | Vereist | Beschrijving                        |
 | ------------- | -------- | -------- | ---------------------------------- |
 | `folder_path` | str/Pad | Ja      | Pad naar map met afbeeldingen         |
-| `recursive`   | bool     | Nee       | Zoek in submappen (standaard: False) |
+| `recursive`   | bool     | Nee       | Submappen doorzoeken (standaard: False) |
 
-**Retourneert:** `dict` - Importeerresultaten met aantal bestanden
+**Retourneert:** `dict` - Importeer resultaten met aantal bestanden
 
 **Voorbeeld:**
 
@@ -311,12 +311,12 @@ Verwerk de projectafbeeldingen.
 | `mode`              | str      | `"parallel"` | Verwerkingsmodus: &quot;parallel&quot; of &quot;serieel&quot;   |
 | `wait`              | bool     | `True`       | Wachten op voltooiing                       |
 | `progress_callback` | callable | `None`       | Callback-functie voor voortgang (progress, msg) |
-| `poll_interval`     | float    | `2.0`        | Pollinginterval voor voortgang (seconden)   |
+| `poll_interval`     | float    | `2.0`        | Polling-interval voor voortgang (seconden)   |
 
 **Retourneert:** `dict` - Verwerkingsresultaten
 
 {% hint style=&quot;warning&quot; %}
-**Parallelle modus**: vereist Chloros+ licentie. Schaalbaar naar uw CPU-kernen (maximaal 16 workers).
+**Parallelle modus**: vereist Chloros+-licentie. Schaalbaar naar uw CPU-kernen (maximaal 16 workers).
 {% endhint %}
 
 **Voorbeeld:**
@@ -397,7 +397,7 @@ Handige functie van één regel om een map te verwerken.
 | `folder_path`             | str/Pad | Vereist        | Pad naar map met afbeeldingen     |
 | `project_name`            | str      | Automatisch gegenereerd  | Projectnaam                   |
 | `camera`                  | str      | `None`          | Camerasjabloon                |
-| `indices`                 | list     | `["NDVI"]`      | Indices om te berekenen           |
+| `indices`                 | lijst     | `["NDVI"]`      | Indices om te berekenen           |
 | `vignette_correction`     | bool     | `True`          | Vignettecorrectie inschakelen     |
 | `reflectance_calibration` | bool     | `True`          | Reflectiekalibratie inschakelen |
 | `export_format`           | str      | &quot;TIFF (16-bit)&quot; | Uitvoerformaat                  |
@@ -455,9 +455,9 @@ with ChlorosLocal() as chloros:
 
 ## Volledige voorbeelden
 
-### Voorbeeld 1: Basisverwerking
+### Voorbeeld 1: basisverwerking
 
-Verwerk een map met standaardinstellingen:
+Een map verwerken met standaardinstellingen:
 
 ```python
 from chloros_sdk import process_folder
@@ -470,7 +470,7 @@ print(f"Processing complete: {results}")
 
 ***
 
-### Voorbeeld 2: Aangepaste workflow
+### Voorbeeld 2: aangepaste workflow
 
 Volledige controle over de verwerkingspijplijn:
 
@@ -514,7 +514,7 @@ print("Processing complete!")
 
 ### Voorbeeld 3: batchverwerking van meerdere mappen
 
-Verwerk meerdere vluchtdatasets:
+Verwerk meerdere vluchtgegevenssets:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -566,7 +566,7 @@ print("All flights processed!")
 
 ### Voorbeeld 4: integratie van onderzoekspijplijn
 
-Integreer Chloros met gegevensanalyse:
+Chloros integreren met gegevensanalyse:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -658,9 +658,9 @@ logging.info("Processing complete!")
 
 ***
 
-### Voorbeeld 6: Foutverwerking
+### Voorbeeld 6: Foutbehandeling
 
-Robuuste foutverwerking voor productiegebruik:
+Robuuste foutafhandeling voor productiegebruik:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -712,7 +712,7 @@ else:
 
 ### Voorbeeld 7: opdrachtregelprogramma
 
-Bouw een aangepast CLI-programma met SDK:
+Bouw een aangepast CLI-programma met de SDK:
 
 ```python
 #!/usr/bin/env python
@@ -888,11 +888,11 @@ for i in range(0, len(images), batch_size):
 
 ***
 
-## Probleemoplossing
+## Problemen oplossen
 
 ### Backend start niet
 
-**Probleem:** SDK kan de backend niet starten.
+**Probleem:** SDK kan de backend niet starten
 
 **Oplossingen:**
 
@@ -915,7 +915,7 @@ chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
 
 ### Licentie niet gedetecteerd
 
-**Probleem:** SDK waarschuwt voor ontbrekende licentie
+**Probleem:** SDK waarschuwt dat de licentie ontbreekt
 
 **Oplossingen:**
 
@@ -984,7 +984,7 @@ chloros = ChlorosLocal(timeout=120)  # 2 minutes
 chloros = ChlorosLocal(api_url="http://localhost:5001")
 ```
 
-Of zoek en sluit het conflicterende proces:
+Of zoek en sluit conflicterende processen:
 
 ```powershell
 # PowerShell
@@ -1121,9 +1121,9 @@ chloros.process(progress_callback=notebook_progress)
 
 ## Veelgestelde vragen
 
-### V: Is er een internetverbinding nodig voor SDK?
+### V: Heeft de SDK een internetverbinding nodig?
 
-**A:** Alleen voor de eerste activering van de licentie. Nadat u zich hebt aangemeld via Chloros, Chloros (browser) of Chloros CLI, wordt de licentie lokaal in de cache opgeslagen en werkt deze 30 dagen offline.
+**A:** Alleen voor de eerste activering van de licentie. Nadat u bent ingelogd via Chloros, Chloros (browser) of Chloros CLI, wordt de licentie lokaal opgeslagen en werkt deze 30 dagen offline.
 
 ***
 
@@ -1139,7 +1139,7 @@ chloros.process(progress_callback=notebook_progress)
 
 ### V: Wat is het verschil tussen Desktop, CLI en SDK?
 
-| Functie         | Desktop GUI | CLI Opdrachtregel | Python SDK  |
+| Functie         | Desktop GUI | CLI Command Line | Python SDK  |
 | --------------- | ----------- | ---------------- | ----------- |
 | **Interface**   | Point-click | Command          | Python API  |
 | **Meest geschikt voor**    | Visueel werk | Scripting        | Integratie |
@@ -1199,7 +1199,7 @@ Plan via Taakplanner om dagelijks uit te voeren.
 
 ### V: Ondersteunt SDK async/await?
 
-**A:** De huidige versie is synchroon. Gebruik voor asynchroon gedrag `wait=False` of voer uit in een aparte thread:
+**A:** De huidige versie is synchroon. Voor asynchroon gedrag gebruikt u `wait=False` of voert u het uit in een aparte thread:
 
 ```python
 import threading
@@ -1237,4 +1237,4 @@ Alle hier vermelde voorbeelden zijn getest en klaar voor productie. Kopieer ze e
 
 **Eigendomsrechtelijke software** - Copyright (c) 2025 MAPIR Inc.
 
-SDK vereist een actief Chloros+-abonnement. Ongeautoriseerd gebruik, distributie of wijziging is verboden.
+SDK vereist een actief Chloros+-abonnement. Ongeoorloofd gebruik, distributie of wijziging is verboden.

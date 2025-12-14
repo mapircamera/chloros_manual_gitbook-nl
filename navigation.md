@@ -1,6 +1,6 @@
 # GUI: Navigatie
 
-Wanneer u Chloros en Chloros (browser) voor het eerst start, wordt de backend opgestart. Zodra deze klaar is, wordt het hoofdmenu-icoontje linksboven weergegeven. <img src=".gitbook/assets/image (1).png" alt="" data-size="line"> .
+Wanneer u Chloros en Chloros (browser) voor het eerst start, wordt de backend opgestart. Zodra deze gereed is, wordt het hoofdmenu-icoontje linksboven weergegeven. <img src=".gitbook/assets/image (1).png" alt="" data-size="line"> .
 
 <figure><img src=".gitbook/assets/header.JPG" alt=""><figcaption></figcaption></figure>
 
@@ -32,7 +32,7 @@ Op het tabblad Projectinstellingen kunt u de algemene projectinstellingen en de 
 
 #### <img src=".gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> Bestandsbrowser
 
-Voeg bestanden/mappen toe aan het project en verwijder bestanden uit het project. Dubbele bestanden worden genegeerd. Vink het vakje in de doelkolom aan voor elke doelafbeelding, zodat de verwerking alleen gekeken wordt naar aangevinkte afbeeldingen als doel, wat uw verwerkingstijd aanzienlijk versnelt.
+Voeg bestanden/mappen toe aan het project en verwijder bestanden uit het project. Dubbele bestanden worden genegeerd. Vink het vakje in de doelkolom aan voor elke doelafbeelding, zodat de verwerking alleen gekeken wordt naar aangevinkte afbeeldingen voor doelen, wat uw verwerkingstijd aanzienlijk versnelt.
 
 #### <img src=".gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> [Afbeeldingsviewer](image-viewer-gui/opening-an-image-full-screen.md)
 

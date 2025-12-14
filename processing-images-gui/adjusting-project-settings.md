@@ -25,7 +25,7 @@ Voor typische MAPIR Survey3 cameraworkflows werken de standaardinstellingen goed
 * ✅ **Debayer-methode**: Hoge kwaliteit (sneller)
 * ✅ **Exportformaat**: TIFF (16-bits)
 
-Importeer gewoon uw afbeeldingen en begin met de verwerking met deze standaardinstellingen.
+Importeer gewoon uw afbeeldingen en begin met verwerken met deze standaardinstellingen.
 
 ***
 
@@ -39,14 +39,14 @@ Bepaalt hoe Chloros kalibratiedoelen in uw afbeeldingen identificeert.
 
 **Belangrijkste instellingen:**
 
-* **Minimale kalibratiemonsteroppervlakte**: groottegrens voor doelherkenning (standaard: 25 pixels)
-* **Minimale doelclustering**: gelijkenisgrens voor het groeperen van doelgebieden (standaard: 60)
+* **Minimale kalibratiemonsteroppervlakte**: groottedrempel voor doelwitdetectie (standaard: 25 pixels)
+* **Minimale doelwitclustering**: gelijkenisdrempel voor het groeperen van doelwitgebieden (standaard: 60)
 
 **Wanneer aanpassen:**
 
 * Vergroot de monsteroppervlakte als er valse detecties worden gedaan.
-* Verklein de monsteroppervlakte als er geen doelen worden gedetecteerd.
-* Pas de clustering aan als doelen worden opgesplitst in meerdere detecties.
+* Verklein de oppervlakte als er geen doelwitten worden gedetecteerd.
+* Pas de clustering aan als doelwitten worden opgesplitst in meerdere detecties.
 
 ### Verwerking
 
@@ -62,7 +62,7 @@ Belangrijkste opties voor beeldverwerking en kalibratie.
 **Geavanceerde instellingen:**
 
 * **Tijdzone-offset lichtsensor**: voor PPK-tijdsynchronisatie (standaard: 0)
-* **PPK-correcties toepassen**: gebruikt GPS-/belichtingspin-gegevens uit .daq-bestanden
+* **PPK-correcties toepassen**: gebruikt GPS-/belichtingspindata uit .daq-bestanden
 * **Belichtingspin 1/2**: wijst camera&#x27;s toe aan belichtingspinnen voor opstellingen met twee camera&#x27;s
 
 ### Index (multispectrale indices)
@@ -72,13 +72,13 @@ Configureer welke vegetatie-indices moeten worden berekend en geëxporteerd.
 **Indices toevoegen:**
 
 1. Klik op de knop **&quot;Index toevoegen&quot;**
-2. Selecteer een index in het vervolgkeuzemenu (NDVI, NDRE, GNDVI, enz.)
+2. Selecteer een index uit het vervolgkeuzemenu (NDVI, NDRE, GNDVI, enz.)
 3. Configureer de visualisatie-instellingen (LUT-kleuren, waardebereiken)
 4. Voeg indien nodig meerdere indices toe
 
 **Populaire indices:**
 
-* **NDVI**: Algemene gezondheid van de vegetatie (meest gebruikelijk)
+* **NDVI**: Algemene gezondheid van de vegetatie (meest voorkomend)
 * **NDRE**: Vroege stressdetectie met RedEdge
 * **GNDVI**: Gevoelig voor chlorofylconcentratie
 * **OSAVI**: Werkt goed met zichtbare bodem
@@ -151,7 +151,7 @@ Als u MAPIR DAQ-recorders met GPS gebruikt voor nauwkeurige geolocatie:
 ### Vereisten
 
 * MAPIR DAQ met GPS (GNSS)-module
-* .daq-logbestand met blootstellingspin-invoer
+* .daq-logbestand met exposure pin-vermeldingen
 * Camera aangesloten op DAQ-belichtingspinnen tijdens opnamesessie
 
 ### Configuratiestappen
@@ -211,7 +211,7 @@ Voor projecten met veel afbeeldingen (500+):
 
 ## Uw instellingen controleren
 
-Controleer voordat u begint met verwerken de volgende belangrijke instellingen:
+Controleer deze belangrijke instellingen voordat u begint met verwerken:
 
 * [ ] Cameramodel correct gedetecteerd in bestandsbrowser
 * [ ] Vignettecorrectie ingeschakeld

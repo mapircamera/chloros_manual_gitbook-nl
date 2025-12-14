@@ -3,7 +3,6 @@ metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/download
 ---
-
 # Downloaden
 
 Download de nieuwste versie van Chloros voor Windows om aan de slag te gaan met multispectrale beeldverwerking.
@@ -70,9 +69,9 @@ pip install chloros-sdk
 
 ***
 
-## Wat zit erbij
+## Wat is inbegrepen?
 
-De Chloros installatie bevat:
+De Chloros installatie omvat:
 
 * ✅ **Chloros Desktop GUI** - Volledig uitgeruste grafische interface
 * ✅ **Chloros (browser)** - Webgebaseerde interface voor systemen met lagere specificaties
@@ -97,7 +96,7 @@ Ontgrendel geavanceerde functies met een Chloros+ abonnement:
 
 ## Hulp bij installatie
 
-### Problemen oplossen
+### Probleemoplossing
 
 **Installatie mislukt met foutmelding:**
 
@@ -113,7 +112,7 @@ Ontgrendel geavanceerde functies met een Chloros+ abonnement:
 * Controleer Windows Event Viewer voor foutdetails
 * Neem contact op met de ondersteuning met de foutenlogboeken
 
-**Problemen met het activeren van de licentie:**
+**Problemen met licentieactivering:**
 
 * Zorg ervoor dat de internetverbinding actief is
 * Controleer de inloggegevens op [https://cloud.mapir.camera](https://cloud.mapir.camera)
@@ -166,3 +165,5 @@ Ongeoorloofd gebruik, distributie of wijziging is verboden.
 **Gratis versie**: beschikbaar voor persoonlijk en commercieel gebruik met beperkte functionaliteit.
 
 **Chloros+**: licentie op basis van een abonnement voor geavanceerde functies en commerciële toepassingen.
+
+<figure><img src=".gitbook/assets/t3-125_2.jpg" alt=""><figcaption></figcaption></figure>

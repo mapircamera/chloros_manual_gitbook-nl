@@ -19,7 +19,7 @@ Zonder doelafbeeldingen te markeren, moet Chloros:
 Wanneer u de kolom Doel voor specifieke afbeeldingen aanvinkt:
 
 * scant Chloros alleen de aangevinkte afbeeldingen op doelen
-* wordt de doeldetectie veel sneller voltooid
+* wordt de doelherkenning veel sneller voltooid
 * wordt de totale verwerkingstijd aanzienlijk verkort
 
 {% hint style=&quot;success&quot; %}
@@ -66,7 +66,7 @@ Controleer voor de verwerking nogmaals:
 
 **Timing:**
 
-* Leg doelafbeeldingen vast vlak voor en tijdens uw opnamesessie.
+* Leg doelafbeeldingen direct voor en tijdens uw opnamesessie vast.
 * Onder dezelfde lichtomstandigheden als uw DAQ-lichtsensor.
 * Maak voor het beste resultaat zo vaak mogelijk doelafbeeldingen. Anders worden de gegevens van de lichtsensor gebruikt om de kalibratie in de loop van de tijd aan te passen.
 
@@ -90,7 +90,7 @@ Controleer voor de verwerking nogmaals:
 
 ### Hoeveel doelafbeeldingen?
 
-**Minimaal:** 1 doelafbeelding per sessie. **Aanbevolen:** 3-5 doelafbeeldingen per sessie.
+**Minimum:** 1 doelafbeelding per sessie. **Aanbevolen:** 3-5 doelafbeeldingen per sessie.
 
 **Aanbevolen schema:**
 
@@ -153,7 +153,7 @@ Als Chloros uw doelen niet correct detecteert, pas dan deze instellingen aan in 
 * Doelafbeeldingen niet gemarkeerd in bestandsbrowser
 * Doel te klein in kader (&lt; 30% van afbeelding)
 * Slechte belichting (schaduwen, schittering)
-* Instellingen voor doelwitdetectie te streng
+* Instellingen voor doelwitdetectie zijn te streng
 
 **Oplossingen:**
 
@@ -185,11 +185,11 @@ Controleer voordat u met de verwerking begint uw selectie van doelafbeeldingen:
 
 * [ ] Minstens 1 doelafbeelding gemarkeerd per sessie
 * [ ] De selectievakjes in de doelkolom zijn aangevinkt voor alle doelafbeeldingen
-* [ ] Doelafbeeldingen vastgelegd binnen hetzelfde tijdsbestek als het onderzoek
-* [ ] Doelen duidelijk zichtbaar in het voorbeeld wanneer erop wordt geklikt
-* [ ] Alle 4 kalibratiepanelen zichtbaar in elke doelafbeelding
+* [ ] Doelafbeeldingen zijn binnen hetzelfde tijdsbestek als het onderzoek vastgelegd
+* [ ] Doelen zijn duidelijk zichtbaar in het voorbeeld wanneer erop wordt geklikt
+* [ ] Alle 4 kalibratiepanelen zijn zichtbaar in elke doelafbeelding
 * [ ] Geen schaduwen of obstructies op doelen
-* [ ] Voor dubbele camera: doelen gemarkeerd voor beide cameratypen
+* [ ] Voor dubbele camera: doelen gemarkeerd voor beide cameratypes
 
 ***
 
@@ -199,13 +199,13 @@ Controleer voordat u met de verwerking begint uw selectie van doelafbeeldingen:
 
 Hoewel dit niet wordt aanbevolen voor wetenschappelijk werk, kunt u zonder doelen verwerken:
 
-1. Laat alle selectievakjes in de kolom Doel leeg.
-2. **Schakel** &quot;Reflectiekalibratie&quot; uit in Projectinstellingen.
+1. Laat alle selectievakjes in de kolom Doel niet aangevinkt
+2. **Schakel** &quot;Reflectiekalibratie&quot; uit in Projectinstellingen
 3. Vignettecorrectie wordt nog steeds toegepast
 4. De uitvoer wordt niet gekalibreerd voor absolute reflectie
 
 {% hint style=&quot;warning&quot; %}
-**Niet aanbevolen**: zonder reflectiekalibratie geven pixelwaarden alleen de relatieve helderheid weer, geen wetenschappelijke reflectiemetingen. Gebruik kalibratiedoelen voor nauwkeurige, herhaalbare resultaten.
+**Niet aanbevolen**: zonder reflectiekalibratie geven pixelwaarden alleen de relatieve helderheid weer, niet de wetenschappelijke reflectiemetingen. Gebruik kalibratiedoelen voor nauwkeurige, herhaalbare resultaten.
 {% endhint %}
 
 ***

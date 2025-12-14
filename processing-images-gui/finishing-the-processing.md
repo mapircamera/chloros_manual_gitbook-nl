@@ -35,11 +35,11 @@ Wanneer de verwerking succesvol is voltooid, ziet u verschillende indicatoren:
 3. Het voorbeeld verschijnt in het voorbeeldvenster van Windows Explorer
 4. Gebruik de pijltjestoetsen om door de afbeeldingen te bladeren
 
-### Voorvertoning in externe afbeeldingsviewers
+### Voorbeeld in externe afbeeldingsviewers
 
 **Aanbevolen viewers:**
 
-* **QGIS** - Gratis GIS-software (het beste voor georefereerde multispectrale analyse)
+* **QGIS** - Gratis GIS-software (het meest geschikt voor georefereerde multispectrale analyse)
 * **IrfanView** - Snelle, lichtgewicht afbeeldingsviewer (ondersteunt TIFF)
 * **Adobe Photoshop** - Professionele bewerking (ondersteuning voor TIFF)
 * **GIMP** - Gratis alternatief voor Photoshop
@@ -50,8 +50,8 @@ Wanneer de verwerking succesvol is voltooid, ziet u verschillende indicatoren:
 Gebruik de ingebouwde Image Viewer van Chloros voor geavanceerde visualisatie:
 
 1. Klik op een miniatuurafbeelding in de bestandsbrowser
-2. De afbeelding wordt geopend in het hoofdvoorbeeldgebied
-3. Klik op het tabblad **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> in de linkerzijbalk.
+2. De afbeelding wordt geopend in het hoofdvoorbeeldvenster
+3. Klik op **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> in de linkerzijbalk.
 4. Gebruik [Index/LUT Sandbox](../image-viewer-gui/index-lut-sandbox.md) voor interactieve analyse.
 
 Zie [Image Viewer](../image-viewer-gui/opening-an-image-full-screen.md) voor gedetailleerde instructies.
@@ -123,7 +123,7 @@ Om een overzicht van de verwerking bij te houden of om naar MAPIR-ondersteuning 
 **Oplossingen:**
 
 1. Controleer of reflectiekalibratie is ingeschakeld.
-2. Controleer de berichten &#x27;Doel gevonden&#x27; in het foutopsporingslogboek.
+2. Controleer de meldingen &#x27;Doel gevonden&#x27; in het foutopsporingslogboek.
 3. Controleer de kwaliteit van de doelafbeeldingen.
 4. Voer de bewerking opnieuw uit met de juiste doelen gemarkeerd.
 
@@ -148,7 +148,7 @@ Om een overzicht van de verwerking bij te houden of om naar MAPIR-ondersteuning 
 
 ## Uw verwerkte beelden gebruiken
 
-### Voor fotogrammetrie/orthomozaïekcreatie
+### Voor fotogrammetrie/orthomosaïekcreatie
 
 **Aanbevolen workflow:**
 
@@ -244,7 +244,7 @@ Voor meerdere sessies/datasets:
 
 Als de resultaten niet bevredigend zijn:
 
-1. Bewaar de originele afbeeldingen (verwijder ze nooit)
+1. Bewaar de originele afbeeldingen (nooit verwijderen)
 2. Open hetzelfde project in Chloros
 3. Pas de instellingen aan in het paneel Projectinstellingen
 4. Verwerk opnieuw - de uitvoer overschrijft de vorige resultaten
@@ -262,14 +262,14 @@ Om alleen specifieke afbeeldingen opnieuw te verwerken:
 
 Als u problemen ondervindt:
 
-* 📧 **E-mail**: info@mapir.camera (voeg het foutopsporingslogboek toe)
+* 📧 **E-mail**: info@mapir.camera (voeg debuglogboek toe)
 * 🌐 **Ondersteuning**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **FAQ**: [Veelgestelde vragen](../faq.md)
 * 📖 **Documentatie**: [Chloros Handleiding](../)
 
 ***
 
-## Samenvatting: Volledige workflow
+## Samenvatting: volledige workflow
 
 U hebt nu de volledige Chloros-verwerkingsworkflow voltooid:
 
@@ -281,7 +281,7 @@ U hebt nu de volledige Chloros-verwerkingsworkflow voltooid:
 6. ✅ **Voortgang gecontroleerd** - Zie [De verwerking controleren](monitoring-the-processing.md)
 7. ✅ **Resultaten bekeken** - Deze pagina
 
-**Uw gekalibreerde, reflectiegecorrigeerde multispectrale afbeeldingen zijn klaar voor analyse!**
+**Uw gekalibreerde, reflectantiegecorrigeerde multispectrale afbeeldingen zijn klaar voor analyse!**
 
 ***
 
@@ -289,7 +289,7 @@ U hebt nu de volledige Chloros-verwerkingsworkflow voltooid:
 
 ### Geavanceerde functies
 
-* [**Beeldviewer**](../image-viewer-gui/opening-an-image-full-screen.md) - Interactieve visualisatie en analyse
+* [**Afbeeldingsviewer**](../image-viewer-gui/opening-an-image-full-screen.md) - Interactieve visualisatie en analyse
 * [**Index/LUT Sandbox**](../image-viewer-gui/index-lut-sandbox.md) - Aangepaste indextests
 * [**Multispectrale indexformules**](../project-settings/multispectral-index-formulas.md) - Volledige indexreferentie
 

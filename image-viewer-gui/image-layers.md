@@ -2,7 +2,7 @@
 
 Met de vervolgkeuzelijst Beeldlagen in de Chloros-beeldviewer kunt u snel schakelen tussen verschillende versies van hetzelfde beeld, van de originele opnames tot bewerkte reflectie-uitvoer en berekende indexbeelden.
 
-## Wat zijn beeldlagen?
+## Wat zijn afbeeldingslagen?
 
 In Chloros verwijzen **lagen** naar de verschillende afbeeldingsuitvoer die beschikbaar is voor één bronafbeelding. Wanneer u afbeeldingen verwerkt, maakt Chloros meerdere versies:
 
@@ -15,7 +15,7 @@ Met de **Layer Selector-dropdown** rechtsboven in de Image Viewer kunt u direct 
 
 ***
 
-## Beschikbare laagtypen
+## Beschikbare laagtypes
 
 ### JPG
 
@@ -40,7 +40,7 @@ Met de **Layer Selector-dropdown** rechtsboven in de Image Viewer kunt u direct 
 
 * De kwaliteit van de originele sensorgegevens inspecteren
 * Controleren op sensorproblemen of artefacten
-* De resultaten vóór en na verwerking vergelijken
+* Resultaten vóór en na verwerking vergelijken
 
 ### RAW (doel)
 
@@ -50,20 +50,20 @@ Met de **Layer Selector-dropdown** rechtsboven in de Image Viewer kunt u direct 
 
 **Wanneer bekijken:**
 
-* Om te controleren of kalibratiedoelen correct zijn gedetecteerd
-* Om de beeldkwaliteit van het doel te controleren
-* Om kalibratieproblemen op te lossen
+* Controleren of kalibratiedoelen correct zijn gedetecteerd
+* De beeldkwaliteit van het doel controleren
+* Problemen met kalibratie oplossen
 
 {% hint style=&quot;info&quot; %}
-**Doellaag**: deze laag verschijnt alleen in de vervolgkeuzelijst voor afbeeldingen die kalibratiedoelen bevatten. Normale opnamebeelden hebben deze optie niet.
+**Doellaag**: deze laag verschijnt alleen in de vervolgkeuzelijst voor afbeeldingen die kalibratiedoelen bevatten. Gewone opnamebeelden hebben deze optie niet.
 {% endhint %}
 
 ### RAW (reflectie)
 
-* Het gekalibreerde reflectie-uitvoerbeeld
+* De gekalibreerde reflectie-uitvoerbeeld
 * Vignette gecorrigeerd (indien ingeschakeld tijdens verwerking)
 * Reflectie gekalibreerd met behulp van doeldata (indien ingeschakeld)
-* Multiband TIFF met alle camerakanalen
+* Multi-band TIFF met alle camerakanalen
 * Pixelwaarden vertegenwoordigen procentuele reflectie (bij gebruik van de procentmodus)
 * Klaar om te bewerken met de [Index/LUT Sandbox](index-lut-sandbox.md)
 
@@ -83,7 +83,7 @@ Met de **Layer Selector-dropdown** rechtsboven in de Image Viewer kunt u direct 
 * Berekende vegetatie-indexafbeelding (NDVI in dit voorbeeld)
 * De indexnaam verandert op basis van welke index tijdens de verwerking is geconfigureerd
 * Voorbeelden: RAW (NDVI Index), RAW (NDRE Index), RAW (GNDVI Index), enz.
-* Enkelvoudige grijswaardenafbeelding met de resultaten van de indexberekening
+* Enkelvoudige grijswaardenafbeelding met indexberekeningsresultaten
 * Er verschijnt één laag voor elke index die is geconfigureerd in Projectinstellingen
 
 **Mogelijke indexnamen:**
@@ -91,17 +91,17 @@ Met de **Layer Selector-dropdown** rechtsboven in de Image Viewer kunt u direct 
 * RAW (NDVI Index)
 * RAW (NDRE Index)
 * RAW (GNDVI Index)
-* RAW (OSAVI-index)
+* RAW (OSAVI Index)
 * RAW (EVI-index)
 * RAW (SAVI-index)
 * En nog veel meer... (zie [Multispectrale indexformules](../project-settings/multispectral-index-formulas.md))
 
 **Wanneer bekijken:**
 
-* Bij het onderzoeken van indexberekeningsresultaten
-* Bij het controleren van indexwaardebereiken
-* Bij het identificeren van interessante gebieden
-* Bij het verifiëren van indexafbeeldingen voordat deze worden gebruikt in GIS of analyses
+* De resultaten van de indexberekening onderzoeken
+* De indexwaardebereiken controleren
+* Gebieden van belang identificeren
+* Indexafbeeldingen verifiëren voordat ze in GIS of analyses worden gebruikt
 
 ***
 
@@ -110,18 +110,18 @@ Met de **Layer Selector-dropdown** rechtsboven in de Image Viewer kunt u direct 
 ### De vervolgkeuzelijst openen
 
 1. Open een afbeelding in de modus Volledig scherm (klik op een willekeurige miniatuur in de afbeeldingsviewer)
-2. Zoek de **laagdropdown** in de rechterbovenhoek van de viewer
-3. De dropdown toont de momenteel geselecteerde laag (bijv. &quot;JPG&quot;)
-4. Klik op de dropdown om alle beschikbare lagen te zien
+2. Zoek de **laagvervolgkeuzelijst** in de rechterbovenhoek van de viewer
+3. De vervolgkeuzelijst toont de momenteel geselecteerde laag (bijvoorbeeld &quot;JPG&quot;)
+4. Klik op de vervolgkeuzelijst om alle beschikbare lagen te zien
 
 ### Van laag wisselen
 
-1. Klik op de laagdropdown om de lijst te openen
+1. Klik op de laagvervolgkeuzelijst om de lijst te openen
 2. Alle beschikbare lagen voor de huidige afbeelding worden weergegeven
-3. Klik op een laagnaam om naar die versie over te schakelen.
-4. De afbeelding wordt onmiddellijk bijgewerkt om de geselecteerde laag weer te geven.
+3. Klik op een laagnaam om naar die versie over te schakelen
+4. De afbeelding wordt onmiddellijk bijgewerkt om de geselecteerde laag weer te geven
 
-**Snel overschakelen:**
+**Snel wisselen:**
 
 * De vervolgkeuzelijst onthoudt uw laatste selectie.
 * Wanneer u naar de volgende afbeelding navigeert, probeert Chloros hetzelfde laagtype weer te geven.
@@ -129,7 +129,7 @@ Met de **Layer Selector-dropdown** rechtsboven in de Image Viewer kunt u direct 
 
 ### Beschikbaarheid van lagen
 
-Niet alle lagen zijn beschikbaar voor elke afbeelding:
+Niet alle lagen zijn voor elke afbeelding beschikbaar:
 
 **Altijd beschikbaar:**
 
@@ -154,13 +154,13 @@ Wanneer u naar een andere afbeelding navigeert (met de pijltjestoetsen of door o
 
 * Als u &quot;RAW (reflectie)&quot; bekijkt, wordt de volgende afbeelding weergegeven als &quot;RAW (reflectie)&quot; (indien beschikbaar)
 * Als u &quot;RAW (NDVI Index)&quot; bekijkt, wordt de volgende afbeelding weergegeven als &quot;RAW (NDVI Index)&quot; (indien beschikbaar)
-* Als dezelfde laag niet bestaat, wordt standaard JPG weergegeven.
+* Als dezelfde laag niet bestaat, wordt standaard JPG weergegeven
 
-**Voorbeeld van een workflow:**
+**Voorbeeld workflow:**
 
-1. Open afbeelding 1, schakel over naar RAW (NDVI Index).
-2. Druk op → om afbeelding 2 te bekijken.
-3. Afbeelding 2 geeft automatisch de laag RAW (NDVI Index) weer.
+1. Open afbeelding 1, schakel over naar RAW (NDVI Index)
+2. Druk op → om afbeelding 2 te bekijken
+3. Afbeelding 2 geeft automatisch de laag RAW (NDVI Index) weer
 4. Ga verder met navigeren - alle afbeeldingen tonen de NDVI-laag
 5. Zeer efficiënt voor het bekijken van indexresultaten voor veel afbeeldingen
 
@@ -172,9 +172,9 @@ Wanneer u naar een andere afbeelding navigeert (met de pijltjestoetsen of door o
 
 **Doel**: Vergelijk de originele afbeelding met de gekalibreerde afbeelding
 
-1. Open de verwerkte afbeelding in Image Viewer
+1. Open de bewerkte afbeelding in Image Viewer
 2. Selecteer **RAW (origineel)** in de vervolgkeuzelijst
-3. Let op de vignettering en niet-gekalibreerde waarden
+3. Let op de vignettering en de niet-gekalibreerde waarden
 4. Schakel over naar **RAW (reflectie)** in de vervolgkeuzelijst
 5. Vergelijk - vignettering verwijderd, waarden gekalibreerd
 
@@ -232,9 +232,9 @@ Verschillende lagen tonen verschillende pixelwaardebereiken:
 
 * **Bereik**: 0-65.535 (16-bits TIFF) of 0,0-1,0 (32-bits procent)
 * **Betekenis**: Gekalibreerde procentuele reflectie
-* **Gebruik**: Wetenschappelijke metingen en analyse
+* **Gebruik**: Wetenschappelijke metingen en analyses
 
-**Voor 16-bits TIFF:** Deel door 65.535 om de procentuele reflectie te verkrijgen **Voor 32-bits procent:** Waarden geven direct het percentage weer (0,5 = 50% reflectie)
+**Voor 16-bits TIFF:** Deel door 65.535 om de procentuele reflectie te verkrijgen **Voor 32-bits Percent:** Waarden geven direct het percentage weer (0,5 = 50% reflectie)
 
 ### RAW (indexafbeeldingen)
 
@@ -266,11 +266,11 @@ Verschillende lagen tonen verschillende pixelwaardebereiken:
 
 * **Controleer altijd RAW (origineel)**: controleer de kwaliteit van de brongegevens voordat u vertrouwt op de verwerkte uitvoer
 * **Vergelijk lagen**: gebruik laagwisseling om te controleren of de verwerking correct heeft gewerkt
-* **Controleer indexbereiken**: gebruik de modus Pixel Percent met indexlagen om te controleren of de waarden redelijk zijn
+* **Controleer indexbereiken**: gebruik de modus Pixelpercentage met indexlagen om te controleren of de waarden redelijk zijn
 
 ***
 
-## Probleemoplossing
+## Problemen oplossen
 
 ### Laag niet beschikbaar
 
@@ -281,13 +281,13 @@ Verschillende lagen tonen verschillende pixelwaardebereiken:
 * Afbeelding is niet verwerkt (alleen JPG en RAW (origineel) beschikbaar)
 * Reflectiekalibratie was uitgeschakeld tijdens de verwerking
 * Specifieke index was niet geconfigureerd in Projectinstellingen
-* Afbeelding is een afbeelding met alleen doelen (geen indices gegenereerd voor doelen)
+* Afbeelding is een afbeelding met alleen doelen (geen indexen gegenereerd voor doelen)
 
 **Oplossingen:**
 
 1. Controleer of de afbeelding is verwerkt (controleer de uitvoermap op verwerkte bestanden)
-2. Controleer de projectinstellingen om te bevestigen dat de indexen zijn geconfigureerd
-3. Verwerk opnieuw met de gewenste indexen ingeschakeld
+2. Controleer de projectinstellingen om te bevestigen dat de indices zijn geconfigureerd
+3. Verwerk opnieuw met de gewenste indices ingeschakeld
 
 ### Verkeerde laag weergegeven
 
@@ -299,7 +299,7 @@ Verschillende lagen tonen verschillende pixelwaardebereiken:
 
 ### Kalibratiedoelen niet zichtbaar
 
-**Probleem:** RAW-laag (doel) geeft geen doel detectie weer.
+**Probleem:** RAW-laag (doel) geeft geen doelherkenning weer.
 
 **Mogelijke oorzaken:**
 
@@ -330,12 +330,12 @@ Bij het bekijken van een laag kunt u het volgende gebruiken:
 
 Zie [Een afbeelding op volledig scherm openen](opening-an-image-full-screen.md) voor de volledige documentatie over de afbeeldingsviewer.
 
-### Index/LUT Sandbox
+### Index/LUT-sandbox
 
 Voor interactieve index-tests en visualisatie:
 
 * **Realtime indexberekening**: test verschillende indexformules
-* **LUT-kleurtoewijzing**: pas kleurovergangen toe op grijswaardenindexen
+* **LUT-kleurtoewijzing**: pas kleurgradiënten toe op grijswaardenindexen
 * **Visualisaties exporteren**: sla gekleurde indexafbeeldingen op
 
 Zie [Index/LUT Sandbox](index-lut-sandbox.md) voor meer informatie.

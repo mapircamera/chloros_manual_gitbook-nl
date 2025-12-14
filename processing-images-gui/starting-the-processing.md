@@ -33,11 +33,11 @@ De knop Start/Afspelen bevindt zich in de bovenste balk van Chloros:
 
 1. Klik op de **knop Afspelen/Starten** in de bovenste koptekst
 2. De verwerking begint onmiddellijk
-3. De knop wordt tijdens de verwerking uitgeschakeld (grijs)
+3. De knop wordt uitgeschakeld (grijs) tijdens de verwerking
 4. De voortgangsbalk wordt bijgewerkt en toont de verwerkingsstatus
 
 {% hint style=&quot;success&quot; %}
-**Verwerking gestart**: Zodra u hierop klikt, voert Chloros automatisch alle verwerkingsstappen uit: doelherkenning, debayering, kalibratie, indexberekening en export.
+**Verwerking gestart**: Zodra u op de knop hebt geklikt, voert Chloros automatisch alle verwerkingsstappen uit: doel detecteren, debayering, kalibratie, indexberekening en exporteren.
 {% endhint %}
 
 ***
@@ -73,21 +73,21 @@ Chloros werkt in twee verschillende verwerkingsmodi, afhankelijk van uw licentie
 **Hoe het werkt:**
 
 * Verwerkt meerdere afbeeldingen tegelijkertijd
-* Multi-threaded werking (maximaal 16 parallelle workers)
+* Multithreaded werking (maximaal 16 parallelle workers)
 * Maakt gebruik van meerdere CPU-kernen
 * Optionele GPU (CUDA)-versnelling met NVIDIA grafische kaarten
 
 **Voortgangsbalk toont 4 fasen:**
 
 1. **Detecteren** - Kalibratiedoelen zoeken
-2. **Analyseren** - Beeldmetadata onderzoeken en pijplijn voorbereiden
+2. **Analyseren** - Afbeeldingsmetadata onderzoeken en pijplijn voorbereiden
 3. **Kalibreren** - Correcties en kalibraties toepassen
 4. **Exporteren** - Verwerkte afbeeldingen en indexen opslaan
 
 **Interactie met voortgangsbalk:**
 
 * **Beweeg de muis** over de balk om een gedetailleerd dropdown-paneel met 4 fasen te zien
-* **Klik** op de voortgangsbalk om het dropdown-paneel op zijn plaats te vergrendelen
+* **Klik** op de voortgangsbalk om het dropdown-paneel op zijn plaats te houden
 * **Klik nogmaals** om het paneel te ontgrendelen en te verbergen
 
 **Verwerkingstijd:**
@@ -167,7 +167,7 @@ Eenmaal gestart, wordt de hele pijplijn automatisch uitgevoerd:
 
 * Geen gebruikersinteractie nodig
 * Alle geconfigureerde stappen worden achtereenvolgens uitgevoerd
-* Voortgang wordt in realtime weergegeven
+* Voortgangsupdates worden in realtime weergegeven
 
 ### Computergebruik tijdens verwerking
 
@@ -181,7 +181,7 @@ Eenmaal gestart, wordt de hele pijplijn automatisch uitgevoerd:
 
 * Hoog CPU-gebruik (multi-threaded, tot 16 cores)
 * Met GPU-versnelling: hoog GPU-gebruik
-* Computer reageert mogelijk minder snel tijdens verwerking
+* Computer reageert mogelijk minder goed tijdens verwerking
 * Start geen andere CPU-intensieve taken
 
 {% hint style=&quot;warning&quot; %}
@@ -197,7 +197,7 @@ Eenmaal gestart, wordt de hele pijplijn automatisch uitgevoerd:
 * Gedeeltelijke resultaten worden niet opgeslagen.
 * Bij annulering moet u opnieuw beginnen.
 
-**Planningstip:** Overweeg bij zeer grote projecten om in batches te verwerken of CLI te gebruiken voor een betere controle.
+**Planningstip:** Overweeg voor zeer grote projecten om in batches te verwerken of CLI te gebruiken voor een betere controle.
 
 ***
 
@@ -210,7 +210,7 @@ Terwijl de verwerking wordt uitgevoerd, kunt u:
 * **Het tabblad Logboek controleren** - Bekijk gedetailleerde verwerkingsberichten en waarschuwingen
 * **Een voorbeeld van voltooide afbeeldingen bekijken** - Sommige exportbestanden kunnen tijdens de verwerking verschijnen
 
-Zie [De verwerking controleren] voor gedetailleerde informatie over het controleren.(monitoring-the-processing.md).
+Zie [De verwerking controleren](monitoring-the-processing.md) voor gedetailleerde informatie over het controleren.
 
 ***
 
@@ -218,9 +218,9 @@ Zie [De verwerking controleren] voor gedetailleerde informatie over het controle
 
 Als u de verwerking moet stoppen:
 
-### Hoe annuleren
+### Annuleren
 
-1. Zoek de **knop Stoppen/Annuleren** (vervangt de knop Starten tijdens de verwerking)
+1. Zoek de **knop Stoppen/Annuleren** (vervangt de knop Start tijdens de verwerking)
 2. Klik op de knop Stoppen
 3. De verwerking wordt onmiddellijk gestopt
 4. Gedeeltelijke resultaten worden verwijderd
@@ -239,7 +239,7 @@ Als u de verwerking moet stoppen:
 * Controleer en los eventuele problemen op
 * Pas de instellingen indien nodig aan
 * Start de verwerking opnieuw vanaf het begin
-* Sluit Chloros volledig af en start opnieuw op voor de beste ervaring
+* Sluit Chloros volledig en start opnieuw op voor de beste ervaring
 
 {% hint style=&quot;warning&quot; %}
 **Geen gedeeltelijke resultaten**: bij annuleren wordt alle voortgang verwijderd. Chloros slaat gedeeltelijk verwerkte afbeeldingen niet op.
@@ -294,7 +294,7 @@ De werkelijke verwerkingstijd varieert sterk, afhankelijk van:
 3. Start Chloros opnieuw op als de knop nog steeds uitgeschakeld is
 4. Controleer het foutlogboek op foutmeldingen
 
-### Verwerking start en mislukt vervolgens onmiddellijk
+### Verwerking start en mislukt onmiddellijk
 
 **Mogelijke oorzaken:**
 
@@ -340,7 +340,7 @@ De werkelijke verwerkingstijd varieert sterk, afhankelijk van:
 ### Tijdens de verwerking
 
 1. **Voorkom dat het systeem in slaapstand gaat** - Schakel de energiebesparende modi uit.
-2. **Houd Chloros op de voorgrond** - Of zorg ervoor dat het ten minste zichtbaar is in de taakbalk.
+2. **Houd Chloros op de voorgrond** - Of zorg dat het in ieder geval zichtbaar is in de taakbalk.
 3. **Controleer af en toe de voortgang** - Controleer op waarschuwingen of fouten.
 4. **Laad geen andere zware applicaties** - Vooral niet in de parallelle modus van Chloros+
 
