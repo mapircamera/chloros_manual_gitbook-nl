@@ -88,7 +88,7 @@ Het tabblad Kaart ondersteunt twee tegelaanbieders voor de achtergrondkaartbeeld
 
 U kunt het type kaartlaag kiezen (van links naar rechts):
 
- <img src="../.gitbook/assets/image (23).png" alt="" data-size="original">### Terrein
+ <img src="../.gitbook/assets/image (23).png" alt="" data-size="line">### Terrein
 
 Toont hoogteprofielen en kaarttegels met details (wegen, enz.)
 

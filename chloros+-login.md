@@ -6,7 +6,7 @@ Via het <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> kantba
 
 Wanneer u bent ingelogd, worden uw accountgegevens weergegeven:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>## CLI Inloggen
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" data-size="line"><figcaption></figcaption></figure>## CLI Inloggen
 
 Log in met uw Chloros+ inloggegevens om CLI-verwerking in te schakelen.
 
