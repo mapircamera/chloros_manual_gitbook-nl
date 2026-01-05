@@ -29,6 +29,8 @@
 
 ## AFBEELDINGENVIEWER (GUI)
 
+* [Afbeeldingenraster](image-viewer-gui/image-grid.md)
 * [Een afbeelding op volledig scherm openen](image-viewer-gui/opening-an-image-full-screen.md)
 * [Afbeeldingslagen](image-viewer-gui/image-layers.md)
-* [Index/LUT-sandbox](image-viewer-gui/index-lut-sandbox.md)
+* [Index/LUT Sandbox](image-viewer-gui/index-lut-sandbox.md)
+* [Kaartmarkeringen](image-viewer-gui/map-markers.md)

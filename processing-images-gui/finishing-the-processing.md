@@ -9,16 +9,15 @@ Wanneer de verwerking succesvol is voltooid, ziet u verschillende indicatoren:
 * ✅ **Voortgangsbalk**: bereikt 100% voltooiing
 * ✅ **Debuglog**: toont het bericht &#x27;Verwerking voltooid&#x27;
 * ✅ **Startknop**: wordt weer ingeschakeld (klaar voor de volgende verwerkingsrun)
-* ✅ **Uitvoerbestanden**: alle verwerkte afbeeldingen worden opgeslagen in de submap van het cameramodel
-
-***
+* ✅ **Uitvoerbestanden**: alle verwerkte afbeeldingen worden opgeslagen in de submap van het cameramodel***
 
 ## Uw verwerkte afbeeldingen zoeken
 
 ### De uitvoermap openen
 
-1. Klik op het pictogram **Hoofdmenu** <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> (linksboven)
+1. Klik op het pictogram **Hoofdmenu** <img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt="" data-size="line"> (linksboven)
 2. Selecteer **&quot;Projectmap openen&quot;**
+
 3. Uw bestandsverkenner wordt geopend in de projectmap
 4. Zoek uw project op naam
 
@@ -37,9 +36,7 @@ Wanneer de verwerking succesvol is voltooid, ziet u verschillende indicatoren:
 
 ### Voorbeeld in externe afbeeldingsviewers
 
-**Aanbevolen viewers:**
-
-* **QGIS** - Gratis GIS-software (het meest geschikt voor georefereerde multispectrale analyse)
+**Aanbevolen viewers:*** **QGIS** - Gratis GIS-software (het beste voor georefereerde multispectrale analyse)
 * **IrfanView** - Snelle, lichtgewicht afbeeldingsviewer (ondersteunt TIFF)
 * **Adobe Photoshop** - Professionele bewerking (ondersteuning voor TIFF)
 * **GIMP** - Gratis alternatief voor Photoshop
@@ -65,14 +62,15 @@ Zie [Image Viewer](../image-viewer-gui/opening-an-image-full-screen.md) voor ged
 1. Open het tabblad **Debuglogboek** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> tabblad
 2. Blader door de berichten
 3. Zoek naar gele waarschuwingen of rode fouten
-4. Controleer alle gemelde problemen
+4. Bekijk alle gemelde problemen
 5. Neem contact op met MAPIR-ondersteuning voor hulp
 
 ### Het logboek opslaan
 
 Om een overzicht van de verwerking bij te houden of om naar MAPIR-ondersteuning te sturen:
 
-1. Klik op de knop **&quot;Kopiëren&quot;** of **&quot;Downloaden&quot;**
+1. Klik op de knop **&quot;Kopiëren&quot;**of**&quot;Downloaden&quot;**
+
 2. Sla het logboek op als tekstbestand in de projectmap
 3. Voeg het toe aan de projectdocumentatie
 4. Stuur het naar MAPIR-ondersteuning als er problemen zijn opgetreden
@@ -101,7 +99,7 @@ Om een overzicht van de verwerking bij te houden of om naar MAPIR-ondersteuning 
 
 **Mogelijke oorzaken:**
 
-* Vignetteringscorrectie uitgeschakeld
+* Vignettecorrectie uitgeschakeld
 * Camera/lens staat niet in de Chloros-profielendatabase
 * Extreme vignettering die niet kan worden gecorrigeerd
 
@@ -129,14 +127,10 @@ Om een overzicht van de verwerking bij te houden of om naar MAPIR-ondersteuning 
 
 ### Probleem: NDVI-waarden lijken onjuist.
 
-**Verwachte NDVI-bereiken:**
-
-* **Water, rotsen, grond**: -0,1 tot 0,2
+**Verwachte NDVI-bereiken:*** **Water, rotsen, grond**: -0,1 tot 0,2
 * **Schaarse/ongezonde vegetatie**: 0,2 tot 0,4
 * **Matige vegetatie**: 0,4 tot 0,6
-* **Gezonde, dichte vegetatie**: 0,6 tot 0,9
-
-**Als de waarden buiten deze bereiken vallen:**
+* **Gezonde, dichte vegetatie**: 0,6 tot 0,9**Als de waarden buiten deze bereiken vallen:**
 
 1. Controleer of de reflectiekalibratie is toegepast.
 2. Controleer of het logboek van de lichtsensor is opgenomen.
@@ -148,26 +142,27 @@ Om een overzicht van de verwerking bij te houden of om naar MAPIR-ondersteuning 
 
 ## Uw verwerkte beelden gebruiken
 
-### Voor fotogrammetrie/orthomosaïekcreatie
+### Voor fotogrammetrie/orthomozaïekcreatie
 
 **Aanbevolen workflow:**
 
-1. **Importeer gekalibreerde reflectiebeelden** in fotogrammetriesoftware:
+1.**Importeer gekalibreerde reflectiebeelden** in fotogrammetriesoftware:
    * Pix4Dmapper
    * Agisoft Metashape
    * DroneDeploy
    * WebODM
 2. **Bewaar EXIF-metadata**: zorg ervoor dat GPS-gegevens bewaard blijven voor geotagging
 3. **Gekalibreerde workflows**: gebruik reflectiebeelden voor wetenschappelijke nauwkeurigheid
-4. **Verwerk indexmozaïeken**: Maak NDVI orthomozaïeken van individuele indexafbeeldingen
+4. **Verwerk indexmozaïeken**: maak NDVI orthomozaïeken van individuele indexafbeeldingen
 5. **Exporteer georefereerde GeoTIFF**: voor gebruik in GIS-toepassingen
 
 ### Voor GIS-analyse
 
 **Aanbevolen workflow:**
 
-1. **Laad in QGIS, ArcGIS of vergelijkbaar**
-2. **Gebruik 16-bits TIFF** reflectiebeelden voor multibandanalyse
+1.**Laad in QGIS, ArcGIS of vergelijkbaar**
+
+2.**Gebruik 16-bits TIFF** reflectiebeelden voor multibandanalyse
 3. **Gebruik indexbeelden** (NDVI, NDRE) als kant-en-klare vegetatielagen
 4. **Rastercalculator**: combineer banden voor aangepaste analyse
 5. **Exporteren**: maak classificatiekaarten, wijzigingsdetectie, vegetatiegezondheidskaarten
@@ -176,32 +171,22 @@ Om een overzicht van de verwerking bij te houden of om naar MAPIR-ondersteuning 
 
 **Aanbevolen workflow:**
 
-1. **Gebruik indexafbeeldingen met LUT-kleuren** voor visuele rapporten
+1.**Gebruik indexafbeeldingen met LUT-kleuren** voor visuele rapporten
 2. **Statistieken extraheren**: gemiddelde NDVI per veld/perceel
-3. **Tijdreeks**: vergelijk indices over meerdere sessies
-4. **Genereer rapporten**: voeg kaarten, statistieken en visualisaties toe
+3. **Tijdreeksen**: indexen vergelijken over meerdere sessies
+4. **Rapporten genereren**: kaarten, statistieken en visualisaties opnemen***
 
-***
-
-## Archivering en back-up
+## Archiveren en back-ups maken
 
 ### Aanbevolen back-upstrategie
 
-**Wat moet u opslaan:**
-
-* ✅ **Originele RAW/JPG-afbeeldingen** - Archiveer op een aparte schijf/in de cloud
-* ✅ **Verwerkte outputs** - Bewaar gekalibreerde afbeeldingen en indices
+**Wat moet u opslaan:*** ✅ **Originele RAW/JPG-afbeeldingen** - Archiveren op aparte schijf/cloud
+* ✅ **Verwerkte outputs** - Gekalibreerde afbeeldingen en indices bewaren
 * ✅ **Projectbestand** - Bevat alle instellingen voor herverwerking indien nodig
 * ✅ **Debuglog** - Documenteert verwerkingsdetails
-* ✅ **Kalibratiedoelafbeeldingen** - Voor verificatie en herverwerking
-
-**Opslagaanbevelingen:**
-
-* **Onmiddellijke back-up**: externe harde schijf
-* **Langetermijnarchief**: cloudopslag (Google Drive, Dropbox, enz.)
-* **Kritieke gegevens**: bewaar 2-3 kopieën op verschillende locaties
-
-***
+* ✅ **Kalibratiedoelafbeeldingen** - Voor verificatie en herverwerking**Aanbevelingen voor opslag:*** **Onmiddellijke back-up**: externe harde schijf
+* **Langdurig archief**: cloudopslag (Google Drive, Dropbox, enz.)
+* **Kritieke gegevens**: bewaar 2-3 kopieën op verschillende locaties***
 
 ## Volgende verwerkingsruns
 
@@ -212,13 +197,12 @@ Als u in de toekomst vergelijkbare datasets verwerkt:
 1. **Sla de projectsjabloon op** (als u dat nog niet hebt gedaan)
 2. **Maak een nieuw project** met behulp van de opgeslagen sjabloon
 3. **Importeer nieuwe afbeeldingen**
-4. **Verwerk** met identieke instellingen voor consistentie
 
-### Batchverwerking van meerdere sessies
+4.**Verwerk**met identieke instellingen voor consistentie
 
-Voor meerdere sessies/datasets:
+### Meerdere sessies in batch verwerken
 
-**Optie 1: GUI - Meerdere projecten**
+Voor meerdere sessies/datasets:**Optie 1: GUI - Meerdere projecten**
 
 * Maak een apart project voor elke sessie.
 * Gebruik consistente sjablooninstellingen.
@@ -244,7 +228,7 @@ Voor meerdere sessies/datasets:
 
 Als de resultaten niet bevredigend zijn:
 
-1. Bewaar de originele afbeeldingen (nooit verwijderen)
+1. Bewaar de originele afbeeldingen (verwijder ze nooit)
 2. Open hetzelfde project in Chloros
 3. Pas de instellingen aan in het paneel Projectinstellingen
 4. Verwerk opnieuw - de uitvoer overschrijft de vorige resultaten
@@ -262,14 +246,12 @@ Om alleen specifieke afbeeldingen opnieuw te verwerken:
 
 Als u problemen ondervindt:
 
-* 📧 **E-mail**: info@mapir.camera (voeg debuglogboek toe)
+* 📧 **E-mail**: info@mapir.camera (voeg het foutopsporingslogboek toe)
 * 🌐 **Ondersteuning**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **FAQ**: [Veelgestelde vragen](../faq.md)
-* 📖 **Documentatie**: [Chloros Handleiding](../)
+* 📖 **Documentatie**: [Chloros Handleiding](../)***
 
-***
-
-## Samenvatting: volledige workflow
+## Samenvatting: Volledige workflow
 
 U hebt nu de volledige Chloros-verwerkingsworkflow voltooid:
 
@@ -279,9 +261,7 @@ U hebt nu de volledige Chloros-verwerkingsworkflow voltooid:
 4. ✅ **Doelen gemarkeerd** - Zie [Doelafbeeldingen kiezen](choosing-target-images.md)
 5. ✅ **Verwerking gestart** - Zie [De verwerking starten](starting-the-processing.md)
 6. ✅ **Voortgang gecontroleerd** - Zie [De verwerking controleren](monitoring-the-processing.md)
-7. ✅ **Resultaten bekeken** - Deze pagina
-
-**Uw gekalibreerde, reflectantiegecorrigeerde multispectrale afbeeldingen zijn klaar voor analyse!**
+7. ✅ **Resultaten beoordeeld** - Deze pagina**Uw gekalibreerde, reflectantiegecorrigeerde multispectrale afbeeldingen zijn klaar voor analyse!**
 
 ***
 
@@ -290,7 +270,7 @@ U hebt nu de volledige Chloros-verwerkingsworkflow voltooid:
 ### Geavanceerde functies
 
 * [**Afbeeldingsviewer**](../image-viewer-gui/opening-an-image-full-screen.md) - Interactieve visualisatie en analyse
-* [**Index/LUT Sandbox**](../image-viewer-gui/index-lut-sandbox.md) - Aangepaste indextests
+* [**Index/LUT Sandbox**](../image-viewer-gui/index-lut-sandbox.md) - Aangepaste index-tests
 * [**Multispectrale indexformules**](../project-settings/multispectral-index-formulas.md) - Volledige indexreferentie
 
 ### Automatisering en integratie

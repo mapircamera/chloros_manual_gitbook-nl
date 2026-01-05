@@ -2,21 +2,23 @@
 
 ## Chloros en Chloros (browser) Inloggen
 
-Via het <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> kantbalkmenu kunt u inloggen op uw Chloros+-account en extra functies ontgrendelen.
+Via het <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> kantbalkmenu kunt u inloggen op uw Chloros+ account en extra functies ontgrendelen.
 
 Wanneer u bent ingelogd, worden uw accountgegevens weergegeven:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>## CLI Inloggen
 
-## CLI Inloggen
-
-Log in met uw Chloros+-inloggegevens om CLI-verwerking in te schakelen.
+Log in met uw Chloros+ inloggegevens om CLI-verwerking in te schakelen.
 
 **Syntaxis:**
 
 ```bash
 chloros-cli login <email> <password>
 ```
+
+{% hint style=&quot;info&quot; %}
+**SDK-gebruikers**: De Python SDK biedt ook een programmatische `logout()`-methode om opgeslagen inloggegevens te wissen. Zie de [Python SDK documentatie](api-python-sdk.md#logout) voor meer informatie.
+{% endhint %}
 
 **Voorbeeld:**
 
@@ -30,9 +32,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 **Uitvoer:**
 
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
-
-### Vervaldatum van het abonnement
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>### Vervaldatum van het abonnement
 
 De vervaldatum van het abonnement in de GUI geeft aan wanneer uw licentie ongeldig wordt. Voor maandelijkse abonnementen is de vervaldatum aan het einde van de maand. Voor jaarabonnementen is dat een jaar nadat u het abonnement bent gestart. De licentiecontrole vereist een maandelijkse internetverbinding om te verifiëren, met een respijtperiode van 30 dagen.
 
