@@ -15,15 +15,15 @@ De meest gebruikelijke manier om een afbeelding te openen in de Image Viewer:
 
 ### Het tabblad Image Viewer openen
 
-Zodra een afbeelding in het voorvertoningsgebied is geladen:
+Zodra een afbeelding is geladen in het voorvertoningsgebied:
 
 1. Klik op het pictogram **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> in de linkerzijbalk
-2. Het tabblad Afbeeldingsviewer wordt geopend en de geselecteerde afbeelding wordt op volledig scherm weergegeven
+2. Het tabblad Afbeeldingenviewer wordt geopend en de geselecteerde afbeelding wordt op volledig scherm weergegeven
 3. Geavanceerde weergave- en analysetools worden beschikbaar in de linkerzijbalk
 
 ***
 
-## Overzicht van de interface van de afbeeldingsviewer
+## Overzicht van de interface van de Afbeeldingenviewer
 
 ### Hoofdweergavegebied
 
@@ -64,12 +64,6 @@ Pas de vergroting aan om afbeeldingsdetails te bekijken:
 * Druk op de toets **−** (min)
 * Scroll met het muiswiel **omlaag**
 
-**Aanpassen aan scherm:**
-
-* Klik op de knop **↔** (Aanpassen)
-* Druk op de toets **0** (Nul)
-* Dubbelklik op de afbeelding
-
 #### Pannen bij zoomen
 
 Wanneer u verder inzoomt dan de schermgrootte:
@@ -83,7 +77,7 @@ Wanneer u verder inzoomt dan de schermgrootte:
 
 ***
 
-## Pixelwaarde inspecteren
+## Pixelwaarden bekijken
 
 ### Pixelwaarden bij de cursor bekijken
 
@@ -91,48 +85,50 @@ Wanneer u de muiscursor over de afbeelding beweegt, worden de pixelwaarden in re
 
 **Locatie van de waardeweergave:**
 
-* **Drijvend getal en rode lijn in de index LUT-gradiëntlegenda aan de rechterkant**
-* **Bij verder inzoomen, drijvende waarde nabij de cursor en gemarkeerde pixel**
-* Toont waarden voor pixel **onder de cursor of gemarkeerd**
-* Wordt bijgewerkt terwijl u de muis beweegt
+* **Zwevend getal en rode lijn in de index LUT-gradiëntlegenda aan de rechterkant**
+* **Bij verder inzoomen, zwevende waarde bij de cursor en gemarkeerde pixel**
+* Toont waarden voor pixels **onder de cursor of gemarkeerde pixels**
+* Wordt bijgewerkt wanneer u de muis beweegt
 
 ***
 
 ## Beeldtypes die u kunt bekijken
 
-### Originele beelden (voorafgaand aan verwerking)
+### JPG
 
-**RAW + JPG-afbeeldingen van camera:**
+**JPG-beelden van camera:**
 
-* Geeft RAW-gegevens weer zoals in het voorbeeld
-* Toont originele, ongewijzigde waarden
+* Geef JPG-gegevens weer zoals in het voorbeeld
+* Toon originele, ongewijzigde waarden
 * Handig om de beeldkwaliteit te controleren vóór verwerking
 
-### Gekalibreerde reflectieafbeeldingen
+### RAW (origineel)
+
+### RAW (reflectie)
 
 **Na verwerking:**
 
-* Vignette gecorrigeerd
+* Vignettering gecorrigeerd
 * Reflectie gekalibreerd
 * Multi-band TIFF (Red, Green, NIR, enz.)
 * Wetenschappelijke gegevens klaar voor analyse
 
-### Indexafbeeldingen
+### RAW (index)
 
 **NDVI, NDRE, GNDVI, enz. (\_NDVI.tif-bestanden):**
 
 * Enkelvoudige grijswaardenafbeeldingen
 * Pixelwaarden vertegenwoordigen indexberekeningsresultaten
 * Bereik doorgaans -1 tot +1 voor genormaliseerde indices
-* Kleuren-LUT&#x27;s kunnen worden toegepast voor visualisatie
+* Kan kleuren-LUT&#x27;s toepassen voor visualisatie
 
 ***
 
 ## Index- en LUT-toepassing
 
-Multispectrale indices en kleuren-LUT&#x27;s toepassen:
+Pas multispectrale indices en kleuren-Look-Up Tables toe:
 
-1. Zoek **Index/LUT Sandbox** in de **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> zijbalk
+1. Zoek **Index/LUT Sandbox** in **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> zijbalk
 2. Selecteer vegetatie-index (NDVI, NDRE, enz.)
 3. Selecteer multispectrale formule of maak uw eigen aangepaste formule (alleen Chloros+)
 4. Pas kleur-LUT-gradiënt toe voor visualisatie
@@ -155,34 +151,22 @@ Zie [Index/LUT Sandbox](index-lut-sandbox.md) voor gedetailleerde instructies.
 
 * **+** of **=**: Inzoomen
 * **−**: Uitzoomen
-* **0** (nul): Aanpassen aan scherm
 * **Muiswiel**: In-/uitzoomen
-
-### Weergavebediening
-
-* **P**: Pixelprocentmodus in-/uitschakelen
-* **L**: Lagenpaneel in-/uitschakelen
-* **Esc**: Volledig scherm sluiten of terugkeren naar bestandsbrowser
-
-### Overig
-
-* **Ctrl+S**: Huidige afbeelding opslaan
-* **F**: Volledig scherm (indien beschikbaar)
 
 ***
 
 ### Indexberekeningen controleren
 
-Controleer of de indexen correct zijn berekend:
+Controleer of de indices correct zijn berekend:
 
 1. Open NDVI of een andere indexafbeelding
 2. Controleer de vegetatiegebieden:
    * **NDVI**: Moet 0,4-0,9 weergeven voor gezonde planten
-   * **NDRE**: hogere waarden voor krachtige groei
+   * **NDRE**: Hogere waarden voor krachtige groei
    * **GNDVI**: vergelijkbaar met NDVI, maar chlorofylgevoelig
 3. Controleer niet-vegetatie:
-   * **Bodem**: Bijna 0 of licht negatief
-   * **Water**: Negatieve waarden (-0,5 tot 0)
+   * **Bodem**: bijna 0 of licht negatief
+   * **Water**: negatieve waarden (-0,5 tot 0)
 
 ***
 
@@ -198,23 +182,23 @@ Controleer of de indexen correct zijn berekend:
 
 **Oplossingen:**
 
-1. Probeer het bestand te openen in een externe viewer om de integriteit van het bestand te controleren
-2. Controleer of het bestandsformaat overeenkomt met het verwachte type
-3. Sluit andere toepassingen om geheugen vrij te maken
-4. Probeer een kleiner/ander beeld
+1. Probeer het bestand te openen in een externe viewer om de integriteit van het bestand te controleren.
+2. Controleer of het bestandsformaat overeenkomt met het verwachte type.
+3. Sluit andere toepassingen om geheugen vrij te maken.
+4. Probeer een kleiner/ander beeld.
 
 ### Zwart-wit beeldweergave
 
 **Mogelijke oorzaken:**
 
-* Waardebereik buiten de weergavemogelijkheden
-* 32-bits float-beeld met ongebruikelijke waarden
-* Fout bij indexberekening
+* Waardebereik buiten de weergavemogelijkheden.
+* 32-bits float-beeld met ongebruikelijke waarden.
+* Fout in indexberekening.
 
 **Oplossingen:**
 
-1. Controleer de pixelwaarden. Als deze allemaal erg laag of erg hoog zijn, pas dan het weergavebereik aan.
-2. Probeer het bestand te openen in QGIS of een soortgelijk programma met automatische bereikaanpassing.
+1. Controleer de pixelwaarden - als deze allemaal erg laag of erg hoog zijn, pas dan het weergavebereik aan.
+2. Probeer het bestand te openen in QGIS of een vergelijkbaar programma met automatische bereikaanpassing.
 3. Controleer het foutopsporingslogboek van de verwerking op fouten.
 
 ### Pixelwaarden lijken onjuist
@@ -238,9 +222,9 @@ Controleer of de indexen correct zijn berekend:
 
 Nu u afbeeldingen op volledig scherm kunt bekijken:
 
-* [**Afbeeldingslagen**](image-layers.md) - Meer informatie over multibandvisualisatie
+* [**Beeldlagen**](image-layers.md) - Meer informatie over multibandvisualisatie
 * [**Index/LUT Sandbox**](index-lut-sandbox.md) - Pas aangepaste indexen en kleurovergangen toe
-* [**Multispectrale indexformules**](../project-settings/multispectral-index-formulas.md) - Begrijp de beschikbare indexen
+* [**Multispectrale indexformules**](../project-settings/multispectral-index-formulas.md) - Meer informatie over beschikbare indexen
 
 Voor de verwerkingsworkflow, zie:
 

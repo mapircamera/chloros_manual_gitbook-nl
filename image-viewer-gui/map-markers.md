@@ -2,6 +2,8 @@
 
 Het tabblad Kaart geeft uw afbeeldingen weer op een interactieve 2D-kaart op basis van hun GPS-coördinaten. Dit biedt een geografisch overzicht van uw opnamesessie en helpt u de ruimtelijke dekking te visualiseren. Het is ook handig wanneer u uw afbeeldingen voor het eerst importeert, om snel afbeeldingen te verwijderen die u niet hoeft te verwerken.
 
+<figure><img src="../.gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
+
 ## Toegang tot het tabblad Kaart
 
 1. Open of maak een project in Chloros.
@@ -9,15 +11,15 @@ Het tabblad Kaart geeft uw afbeeldingen weer op een interactieve 2D-kaart op bas
 3. Klik op het tabblad **Kaart** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> in de linkerzijbalk.
 4. De kaart geeft markeringen weer op de GPS-locatie van elke afbeelding.
 
-{% hint style=&quot;info&quot; %}
-**GPS vereist**: Alleen afbeeldingen met ingebedde GPS-coördinaten in hun EXIF-metadata worden op de kaart weergegeven. Zorg ervoor dat GPS is ingeschakeld op uw camera tijdens het maken van de opname.
+{% hint style="info" %}
+**GPS vereist**: alleen afbeeldingen met ingebedde GPS-coördinaten in hun EXIF-metadata worden op de kaart weergegeven. Zorg ervoor dat GPS is ingeschakeld op uw camera tijdens het maken van de opname.
 {% endhint %}
 
 ***
 
 ## Afbeeldingen aanpassen vanuit het tabblad Kaart
 
-Het tabblad **Kaart**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> heeft dezelfde toevoeg-  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  en verwijder  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  -knoppen als het tabblad [**Bestandsbrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Het toont ook dezelfde lijst met projectbestanden, maar met andere kolomkoppen:
+Het tabblad **Kaart** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> heeft dezelfde functies voor toevoegen  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  en verwijder  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  bestandsfuncties als het tabblad [**Bestandsbrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Het toont ook dezelfde lijst met projectbestanden, maar met andere kolomkoppen:
 
 ### Bestandsnaam
 
@@ -36,8 +38,8 @@ Het tabblad **Kaart**<img src="../.gitbook/assets/image (3).png" alt="" data-siz
 
 * De hoogte van de afbeelding
 
-{% hint style=&quot;info&quot; %}
-Als u op de kolomkoppen van de tabel klikt, worden de rijgegevens gesorteerd.
+{% hint style="info" %}
+Als u op de kolomkoppen van de tabel klikt, worden de rijgegevens gesorteerd
 {% endhint %}
 
 ***
@@ -50,10 +52,10 @@ Elke afbeelding met GPS-gegevens wordt weergegeven door een markering op de kaar
 
 * Markeringen geven de exacte GPS-coördinaten aan waar elke afbeelding is gemaakt.
 * Geclusterde markeringen kunnen worden gegroepeerd wanneer u uitzoomt.
-* Zoom in om de locaties van afzonderlijke afbeeldingen te zien.
+* Zoom in om de locaties van individuele afbeeldingen te zien.
 
-{% hint style=&quot;success&quot; %}
-SUPER-ZOOM: Wanneer u het maximale zoomniveau van de kaarttegelprovider bereikt, wordt de tegel bij verder inzoomen vergroot, zodat u markeringen kunt zien die dicht bij elkaar liggen.
+{% hint style="success" %}
+SUPERZOOM: Wanneer u het maximale zoomniveau van de kaarttegelprovider bereikt, wordt de tegel bij verder inzoomen vergroot, zodat u markeringen kunt zien die dicht bij elkaar liggen.
 {% endhint %}
 
 ### Voorbeeld bij aanwijzen
@@ -66,11 +68,11 @@ SUPER-ZOOM: Wanneer u het maximale zoomniveau van de kaarttegelprovider bereikt,
 
 ## Kaarttegelaanbieders
 
-{% hint style=&quot;success&quot; %}
-**Automatische selectie**: Chloros kiest automatisch de tegeldienst die het beste zoomniveau biedt voor uw huidige kaartlocatie. U kunt desgewenst handmatig tussen aanbieders schakelen.
+{% hint style="success" %}
+**Automatische selectie**: Chloros kiest automatisch de tegeldienst die het beste zoomniveau biedt voor uw huidige kaartlocatie. U kunt desgewenst handmatig schakelen tussen providers.
 {% endhint %}
 
-Het tabblad Kaart ondersteunt twee tegelaanbieders voor de achtergrondkaartbeelden:
+Het tabblad Kaart ondersteunt twee tegelleveranciers voor de achtergrondkaartbeelden:
 
 ### Google Maps
 
@@ -115,7 +117,9 @@ Toont satellietkaarttegels met toegevoegde details (wegen, enz.)
 
 ### Panknoppen
 
-* **Pannen**: klik en sleep om over de kaart te bewegen***
+* **Pannen**: klik en sleep om over de kaart te bewegen
+
+***
 
 ## Gebruiksscenario&#x27;s
 
@@ -123,11 +127,11 @@ Toont satellietkaarttegels met toegevoegde details (wegen, enz.)
 
 * Bekijk het dekkingsgebied van drone-opnamesessies
 * Identificeer hiaten in de beelddekking
-* Controleer de uitvoering van de vliegroute
+* Controleer de uitvoering van vliegroutes
 
 ### Beoordeling van grondonderzoek
 
-* Bekijk de ruimtelijke verdeling van grondopnames
+* Bekijk de ruimtelijke verdeling van opnames vanaf de grond
 * Lokaliseer kalibratiedoelbeelden ten opzichte van het onderzoeksgebied
 * Plan extra opnamelocaties
 

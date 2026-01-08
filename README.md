@@ -3,9 +3,7 @@ metaLinks: {}
 ---
 # Aan de slag
 
-<div data-full-width="false"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>
-
-Chloros is een softwaretoepassing van [MAPIR](https://www.mapir.camera) voor het verwerken van beelden en andere sensorgegevens.
+<div data-full-width="false"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>Chloros is een softwaretoepassing van [MAPIR](https://www.mapir.camera) voor het verwerken van beelden en andere sensorgegevens.
 
 ***
 
@@ -21,7 +19,7 @@ Werkt in uw webbrowser (Chrome/Edge). Het meest geschikt voor tragere computers 
 
 ## [Chloros CLI: Opdrachtregelinterface](CLI.md)
 
-Opdrachtregelbatchverwerking. Perfect voor automatisering, scripting en geavanceerde workflows. _CLI vereist een Chloros+-licentie om toegang te krijgen._
+Opdrachtregelbatchverwerking. Perfect voor automatisering, scripting en geavanceerde workflows. _CLI vereist een Chloros+-licentie voor toegang._
 
 ## [Chloros API: Python SDK](api-python-sdk.md)
 
@@ -38,10 +36,18 @@ Hoewel Chloros voor de meeste taken gratis te gebruiken is, wilt u misschien mee
 * **Chloros+** [**CLI**](CLI.md) **Toegang**: voer Chloros+ uit vanaf de opdrachtregel om te automatiseren en te integreren in uw eigen software.
 * **Chloros+** [**API**](api-python-sdk.md) **Toegang:** voer Chloros+ uit vanuit Python voor programmatische controle, waardoor naadloze integratie met uw onderzoekspijplijnen, gegevensanalyseworkflows en aangepaste toepassingen mogelijk wordt.
 * **Gebruik op meerdere apparaten**: met elke Chloros+-licentie kunnen 2+ apparaten worden geregistreerd. Gebruik uw MAPIR Cloud-account om geregistreerde apparaten te beheren. Voeg ondersteuning voor meer apparaten toe door uw Chloros+-licentie te upgraden.
-* **Aangepaste multispectrale indexformules:** voer aangepaste multispectrale indexen in de Chloros-rastercalculators in, zowel voor verwerking als voor de sandbox voor het bekijken van afbeeldingen.
+* **Aangepaste multispectrale indexformules:** voer aangepaste multispectrale indexen in de Chloros rastercalculators in, zowel voor verwerking als voor de sandbox voor het bekijken van afbeeldingen.
 
 <p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary" data-icon="envira">Chloros+ Prijzen en aanmelden</a></p>
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_grid_mode.gif" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_grid_meta.gif" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
