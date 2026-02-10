@@ -1,10 +1,10 @@
 # Projectinstellingen
 
-Met de projectinstellingen <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> zijbalk in Chloros kunt u alle aspecten van beeldverwerking, kalibratiedoeldetectie, multispectrale indexberekeningen en exportopties voor uw project configureren. Deze instellingen worden samen met uw project opgeslagen en kunnen als sjablonen worden opgeslagen voor hergebruik in meerdere projecten.
+De projectinstellingen <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> zijbalk in Chloros kunt u alle aspecten van beeldverwerking, kalibratiedoeldetectie, multispectrale indexberekeningen en exportopties voor uw project configureren. Deze instellingen worden samen met uw project opgeslagen en kunnen als sjablonen worden opgeslagen voor hergebruik in meerdere projecten.
 
-## Projectinstellingen openen
+## Toegang tot projectinstellingen
 
-Om de projectinstellingen te openen:
+Om toegang te krijgen tot projectinstellingen:
 
 1. Open een project in Chloros
 2. Klik op het tabblad **Projectinstellingen**  <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> in de linkerzijbalk.
@@ -31,10 +31,10 @@ Deze instellingen bepalen hoe Chloros kalibratiedoelen in uw afbeeldingen detect
 * **Type**: Getal
 * **Bereik**: 0 tot 100
 * **Standaard**: 60
-* **Beschrijving**: Regelt de clusteringdrempel voor het groeperen van gebieden met vergelijkbare kleuren bij het detecteren van kalibratiedoelen. Hogere waarden vereisen dat meer vergelijkbare kleuren worden gegroepeerd, wat resulteert in een meer conservatieve detectie van doelen. Lagere waarden staan meer kleurvariatie toe binnen een doelgroep.
+* **Beschrijving**: Regelt de clusterdrempel voor het groeperen van gebieden met vergelijkbare kleuren bij het detecteren van kalibratiedoelen. Bij hogere waarden moeten meer vergelijkbare kleuren worden gegroepeerd, wat resulteert in een conservatievere doeldetectie. Bij lagere waarden is meer kleurvariatie binnen een doelgroep toegestaan.
 * **Wanneer aanpassen**:
-  * Verhoog deze waarde als kalibratiedoelen worden opgesplitst in meerdere detecties.
-  * Verlaag deze waarde als kalibratiedoelen met kleurvariatie niet volledig worden gedetecteerd.
+  * Verhoog als kalibratiedoelen worden opgesplitst in meerdere detecties.
+  * Verlaag als kalibratiedoelen met kleurvariatie niet volledig worden gedetecteerd.
 
 ***
 
@@ -54,25 +54,26 @@ Deze instellingen bepalen hoe Chloros uw afbeeldingen verwerkt en kalibreert.
 * **Type**: Selectievakje
 * **Standaard**: Ingeschakeld (aangevinkt)
 * **Beschrijving**: Schakelt automatische reflectiekalibratie in met behulp van gedetecteerde kalibratiedoelen in uw afbeeldingen. Dit normaliseert de reflectiewaarden in uw dataset en zorgt voor consistente metingen, ongeacht de lichtomstandigheden.
-* **Wanneer uitschakelen**: Schakel alleen uit als u onbewerkte, niet-gekalibreerde afbeeldingen wilt verwerken of als u een andere kalibratieworkflow gebruikt.
+* **Wanneer uitschakelen**: Alleen uitschakelen als u onbewerkte, niet-gekalibreerde afbeeldingen wilt verwerken of als u een andere kalibratieworkflow gebruikt.
 
 ### Debayer-methode
 
 * **Type**: Keuzelijst
 * **Opties**:
-  * Hoge kwaliteit (sneller) - Momenteel de enige beschikbare optie
-* **Standaard**: Hoge kwaliteit (sneller)
-* **Beschrijving**: Selecteert het demosaicing-algoritme dat wordt gebruikt om ruwe Bayer-patroonsensorgegevens om te zetten in full-colour afbeeldingen. De methode &quot;Hoge kwaliteit (sneller)&quot; biedt een optimale balans tussen verwerkingssnelheid en beeldkwaliteit.
-* **Opmerking**: In toekomstige versies van Chloros kunnen extra debayer-methoden worden toegevoegd.
+  * Standaard (snel, gemiddelde kwaliteit)
+  * Textuurgevoelig (langzaam, hoogste kwaliteit) \[Chloros+]
+* **Standaard**: Standaard (snel, gemiddelde kwaliteit)
+* **Beschrijving**: Selecteert het demosaicing-algoritme dat wordt gebruikt om onbewerkte Bayer-patroonsensorgegevens om te zetten in afbeeldingen in kleur. De methode &#x27;Standaard (snel, gemiddelde kwaliteit)&#x27; biedt een optimale balans tussen verwerkingssnelheid en beeldkwaliteit. De methode &quot;Textuurgevoelig (langzaam, hoogste kwaliteit)&quot; \[Chloros+] maakt gebruik van een hoogwaardige randgevoelige debayer in combinatie met een AI/ML-ruisonderdrukkingsmodel dat vrijwel alle debayeringruis verwijdert. Het textuurgevoelige model vereist GPU-geheugen (VRAM) om te kunnen worden uitgevoerd. We raden aan om dit te gebruiken wanneer u &gt;4 GB VRAM beschikbaar hebt voor een snellere verwerking.
+* **Opmerking**: In toekomstige versies van Chloros kunnen aanvullende debayer-methoden worden toegevoegd.
 
 ### Minimaal herkalibratie-interval
 
 * **Type**: Getal
 * **Bereik**: 0 tot 3600 seconden
 * **Standaard**: 0 seconden
-* **Beschrijving**: Stelt het minimale tijdsinterval (in seconden) in tussen het gebruik van kalibratiedoelen. Wanneer deze waarde is ingesteld op 0, gebruikt Chloros elk gedetecteerd kalibratiedoel. Wanneer deze waarde is ingesteld op een hogere waarde, gebruikt Chloros alleen kalibratiedoelen die ten minste dit aantal seconden van elkaar verwijderd zijn, waardoor de verwerkingstijd voor datasets met frequente kalibratiedoelopnames wordt verkort.
+* **Beschrijving**: Stelt de minimale tijdsinterval (in seconden) in tussen het gebruik van kalibratiedoelen. Wanneer deze is ingesteld op 0, gebruikt Chloros elk gedetecteerd kalibratiedoel. Wanneer deze is ingesteld op een hogere waarde, gebruikt Chloros alleen kalibratiedoelen die ten minste dit aantal seconden van elkaar verwijderd zijn, waardoor de verwerkingstijd voor datasets met frequente kalibratiedoelopnames wordt verkort.
 * **Wanneer aanpassen**:
-  * Stel in op 0 voor maximale kalibratienauwkeurigheid wanneer de lichtomstandigheden variëren.
+  * Stel in op 0 voor maximale kalibratienauwkeurigheid bij wisselende lichtomstandigheden.
   * Verhoog (bijvoorbeeld tot 60-300 seconden) voor snellere verwerking wanneer de belichting consistent is en u veel kalibratiedoelafbeeldingen hebt.
 
 ### Tijdzone-offset lichtsensor
@@ -100,30 +101,28 @@ Deze instellingen bepalen hoe Chloros uw afbeeldingen verwerkt en kalibreert.
 * **Zichtbaarheid**: Alleen zichtbaar wanneer &quot;PPK-correcties toepassen&quot; is ingeschakeld EN belichtingsgegevens beschikbaar zijn voor pin 1
 * **Opties**:
   * Cameramodelnamen die in het project zijn gedetecteerd
-  * &quot;Niet gebruiken&quot; - Deze belichtingspin negeren
-* **Standaard**: Automatisch geselecteerd op basis van projectconfiguratie
-* **Beschrijving**: Wijst een specifieke camera toe aan belichtingspin 1 voor PPK-tijdsynchronisatie. De belichtingspin registreert het exacte tijdstip waarop de camerasluiter wordt geactiveerd, wat cruciaal is voor nauwkeurige PPK-geolocatie.
+  * &quot;Niet gebruiken&quot; - Negeer deze belichtingspin
+* **Standaard**: automatisch geselecteerd op basis van projectconfiguratie
+* **Beschrijving**: wijst een specifieke camera toe aan belichtingspin 1 voor PPK-tijdsynchronisatie. De belichtingspin registreert het exacte tijdstip waarop de camerasluiter wordt geactiveerd, wat cruciaal is voor nauwkeurige PPK-geolocatie.
 * **Gedrag bij automatische selectie**:
   * Eén camera + één pin: selecteert automatisch de camera
-  * Eén camera + twee pinnen: pin 1 wordt automatisch toegewezen aan de camera
-  * Meerdere camera&#x27;s: handmatige selectie vereist
+  * Eén camera + twee pinnen: Pin 1 wordt automatisch toegewezen aan de camera
+  * Meerdere camera&#x27;s: Handmatige selectie vereist
 
 ### Belichtingspin 2
 
-* **Type**: selectie via vervolgkeuzelijst
-* **Zichtbaarheid**: alleen zichtbaar wanneer &quot;PPK-correcties toepassen&quot; is ingeschakeld EN belichtingsgegevens beschikbaar zijn voor pin 2
+* **Type**: Keuzelijst
+* **Zichtbaarheid**: Alleen zichtbaar wanneer &quot;PPK-correcties toepassen&quot; is ingeschakeld EN belichtingsgegevens beschikbaar zijn voor pin 2
 * **Opties**:
   * Cameramodelnamen die in het project zijn gedetecteerd
-  * &quot;Niet gebruiken&quot; - deze belichtingspin negeren
-* **Standaard**: automatisch geselecteerd op basis van projectconfiguratie
-* **Beschrijving**: wijst een specifieke camera toe aan belichtingspin 2 voor PPK-tijdsynchronisatie bij gebruik van een opstelling met twee camera&#x27;s.
+  * &quot;Niet gebruiken&quot; - Negeer deze belichtingspin
+* **Standaard**: Automatisch geselecteerd op basis van projectconfiguratie
+* **Beschrijving**: Wijst een specifieke camera toe aan belichtingspin 2 voor PPK-tijdsynchronisatie bij gebruik van een opstelling met twee camera&#x27;s.
 * **Gedrag bij automatische selectie**:
-  * Eén camera + één pin: pin 2 wordt automatisch ingesteld op &quot;Niet gebruiken&quot;
-  * Enkele camera + twee pinnen: Pin 2 wordt automatisch ingesteld op &quot;Niet gebruiken&quot;
+  * Enkele camera + enkele pin: Pin 2 wordt automatisch ingesteld op &quot;Niet gebruiken&quot;
+  * Eén camera + twee pinnen: Pin 2 wordt automatisch ingesteld op &quot;Niet gebruiken&quot;
   * Meerdere camera&#x27;s: Handmatige selectie vereist
-* **Opmerking**: Dezelfde camera kan niet tegelijkertijd aan zowel Pin 1 als Pin 2 worden toegewezen.
-
-***
+* **Opmerking**: Dezelfde camera kan niet tegelijkertijd aan zowel Pin 1 als Pin 2 worden toegewezen.***
 
 ## Index
 
@@ -131,8 +130,8 @@ Met deze instellingen kunt u multispectrale indices configureren voor analyse en
 
 ### Index toevoegen
 
-* **Type**: Speciaal configuratiescherm voor indexen
-* **Beschrijving**: Opent een interactief scherm waarin u multispectrale vegetatie-indexen (NDVI, NDRE, EVI, enz.) kunt selecteren en configureren om tijdens de beeldverwerking te berekenen. U kunt meerdere indices toevoegen, elk met hun eigen visualisatie-instellingen.
+* **Type**: Speciaal configuratiescherm voor indices
+* **Beschrijving**: Opent een interactief paneel waarin u multispectrale vegetatie-indexen (NDVI, NDRE, EVI, enz.) kunt selecteren en configureren om tijdens de beeldverwerking te berekenen. U kunt meerdere indexen toevoegen, elk met hun eigen visualisatie-instellingen.
 * **Beschikbare indices**: Het systeem bevat meer dan 30 vooraf gedefinieerde multispectrale indices, waaronder:
   * NDVI (genormaliseerde vegetatie-index)
   * NDRE (genormaliseerde verschilindex RedEdge)
@@ -148,7 +147,7 @@ Met deze instellingen kunt u multispectrale indices configureren voor analyse en
 ### Aangepaste formules (Chloros+ functie)
 
 * **Type**: Reeks aangepaste formuledfinities
-* **Beschrijving**: Hiermee kunt u aangepaste multispectrale indexformules maken en opslaan met behulp van bandwiskunde. Aangepaste formules worden opgeslagen met uw projectinstellingen en kunnen net als ingebouwde indexen worden gebruikt.
+* **Beschrijving**: Hiermee kunt u aangepaste multispectrale indexformules maken en opslaan met behulp van bandwiskunde. Aangepaste formules worden opgeslagen met uw projectinstellingen en kunnen net als ingebouwde indices worden gebruikt.
 * **Hoe te maken**:
   1. Zoek in het configuratiescherm Index naar de optie voor aangepaste formules.
   2. Definieer uw formule met behulp van bandidentificaties (bijv. NIR, Red, Green, Blue).
@@ -178,16 +177,14 @@ Deze instellingen bepalen het formaat en de kwaliteit van geëxporteerde bewerkt
   * **TIFF (16-bits)**: Aanbevolen voor wetenschappelijke analyse en professionele workflows. Behoudt maximale datakwaliteit zonder compressieartefacten. Het meest geschikt voor multispectrale analyse en verdere verwerking in GIS-software.
   * **TIFF (32-bits, procent)**: Het meest geschikt voor workflows die reflectiewaarden als percentages (0-100%) vereisen. Biedt maximale precisie voor radiometrische metingen.
   * **PNG (8-bit)**: Geschikt voor weergave op het web en algemene visualisatie. Kleinere bestandsgroottes met compressie zonder verlies, maar met een kleiner dynamisch bereik.
-  * **JPG (8-bit)**: Kleinste bestandsgroottes, alleen geschikt voor voorbeelden en weergave op het web. Maakt gebruik van compressie met verlies, wat niet geschikt is voor wetenschappelijke analyse.
-
-***
+  * **JPG (8-bit)**: Kleinste bestandsgroottes, alleen geschikt voor voorbeelden en weergave op het web. Maakt gebruik van compressie met verlies, wat niet geschikt is voor wetenschappelijke analyse.***
 
 ## Projectsjabloon opslaan
 
-Met deze functie kunt u uw huidige projectinstellingen opslaan als een herbruikbaar sjabloon.
+Met deze functie kunt u uw huidige projectinstellingen opslaan als een herbruikbare sjabloon.
 
 * **Type**: Tekstinvoer + knop Opslaan
-* **Beschrijving**: Voer een beschrijvende naam in voor uw instellingssjabloon en klik op het pictogram Opslaan. Het sjabloon slaat al uw huidige projectinstellingen op (doeldetectie, verwerkingsopties, indices en exportformaat) zodat u deze gemakkelijk kunt hergebruiken in toekomstige projecten.
+* **Beschrijving**: Voer een beschrijvende naam in voor uw instellingen-sjabloon en klik op het pictogram Opslaan. De sjabloon slaat al uw huidige projectinstellingen op (doeldetectie, verwerkingsopties, indices en exportformaat) zodat u deze gemakkelijk kunt hergebruiken in toekomstige projecten.
 * **Gebruiksscenario&#x27;s**:
   * Maak sjablonen voor verschillende camerasystemen (RGB, multispectraal, NIR)
   * Sla standaardconfiguraties op voor specifieke gewastypen of analyseworkflows
@@ -211,9 +208,7 @@ Deze instelling bepaalt waar nieuwe projecten standaard worden opgeslagen.
   * Stel in op een netwerkstation voor teamsamenwerking.
   * Wijzig naar een station met meer opslagruimte voor grote datasets.
   * Organiseer projecten op jaar, klant of projecttype in verschillende mappen.
-* **Opmerking**: het wijzigen van deze instelling heeft alleen invloed op NIEUWE projecten. Bestaande projecten blijven op hun oorspronkelijke locatie staan.
-
-***
+* **Opmerking**: het wijzigen van deze instelling heeft alleen invloed op NIEUWE projecten. Bestaande projecten blijven op hun oorspronkelijke locatie staan.***
 
 ## Instellingen behouden
 
@@ -230,11 +225,11 @@ Instellingen worden in de volgende volgorde toegepast:
 
 ### Instellingen en beeldverwerking
 
-De meeste wijzigingen in de instellingen (vooral in de categorieën Verwerking en Exporteren) leiden tot een herverwerking van de beelden om de nieuwe instellingen weer te geven. Sommige instellingen zijn echter &quot;alleen voor export&quot; en vereisen geen onmiddellijke herverwerking:
+De meeste wijzigingen in de instellingen (vooral in de categorieën Verwerking en Export) leiden tot een herverwerking van de afbeeldingen om de nieuwe instellingen weer te geven. Sommige instellingen zijn echter alleen voor export en vereisen geen onmiddellijke herverwerking:
 
 * Projectsjabloon opslaan
-* Werkdirectory
-* Gekalibreerd afbeeldingsformaat (van toepassing bij exporteren)
+* Werkmap
+* Gekalibreerd afbeeldingsformaat (van toepassing bij export)
 
 ***
 

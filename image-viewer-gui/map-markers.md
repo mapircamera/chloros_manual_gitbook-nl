@@ -12,19 +12,19 @@ Het tabblad Kaart geeft uw afbeeldingen weer op een interactieve 2D-kaart op bas
 4. De kaart geeft markeringen weer op de GPS-locatie van elke afbeelding.
 
 {% hint style="info" %}
-**GPS vereist**: alleen afbeeldingen met ingebedde GPS-coördinaten in hun EXIF-metadata worden op de kaart weergegeven. Zorg ervoor dat GPS is ingeschakeld op uw camera tijdens het maken van de opname.
+**GPS vereist**: alleen afbeeldingen met ingebedde GPS-coördinaten in hun EXIF-metadata worden op de kaart weergegeven. Zorg ervoor dat GPS is ingeschakeld op uw camera tijdens het maken van de foto&#x27;s.
 {% endhint %}
 
 ***
 
 ## Afbeeldingen aanpassen vanuit het tabblad Kaart
 
-Het tabblad **Kaart** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> heeft dezelfde functies voor toevoegen  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  en verwijder  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  bestandsfuncties als het tabblad [**Bestandsbrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Het toont ook dezelfde lijst met projectbestanden, maar met andere kolomkoppen:
+Het tabblad **Kaart**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> heeft dezelfde functies voor toevoegen  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  en verwijder  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  bestandsfuncties als het tabblad [**Bestandsbrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Het toont ook dezelfde lijst met projectbestanden, maar met andere kolomkoppen:
 
 ### Bestandsnaam
 
 * Originele bestandsnaam van de camera
-* Behoudt de naamgevingsconventie van de camera (bijv. IMG\_0001.RAW)
+* Handhaaft de naamgevingsconventie van de camera (bijv. IMG\_0001.RAW)
 
 ### Breedtegraad
 
@@ -90,7 +90,7 @@ Het tabblad Kaart ondersteunt twee tegelleveranciers voor de achtergrondkaartbee
 
 U kunt het type kaartlaag kiezen (van links naar rechts):
 
- <img src="../.gitbook/assets/image (23).png" alt="" data-size="line">### Terrein
+ <img src="../.gitbook/assets/image (23).png" alt="" data-size="original">### Terrein
 
 Toont hoogteprofielen en kaarttegels met details (wegen, enz.)
 
@@ -117,9 +117,7 @@ Toont satellietkaarttegels met toegevoegde details (wegen, enz.)
 
 ### Panknoppen
 
-* **Pannen**: klik en sleep om over de kaart te bewegen
-
-***
+* **Pannen**: klik en sleep om over de kaart te bewegen***
 
 ## Gebruiksscenario&#x27;s
 
@@ -131,7 +129,7 @@ Toont satellietkaarttegels met toegevoegde details (wegen, enz.)
 
 ### Beoordeling van grondonderzoek
 
-* Bekijk de ruimtelijke verdeling van opnames vanaf de grond
+* Bekijk de ruimtelijke verdeling van grondopnames
 * Lokaliseer kalibratiedoelbeelden ten opzichte van het onderzoeksgebied
 * Plan extra opnamelocaties
 
@@ -159,7 +157,7 @@ Toont satellietkaarttegels met toegevoegde details (wegen, enz.)
 
 **Mogelijke oorzaken:**
 
-* De GPS van de camera had een slechte satellietfix.
+* De GPS van de camera had een slechte satellietverbinding.
 * GPS-afwijking tijdens het vastleggen.
 
-**Oplossing**: Dit is meestal een probleem met de vastleggingstijd; overweeg het gebruik van PPK/RTK GPS voor precisietoepassingen.
+**Oplossing**: Dit is meestal een probleem met de opnametijd; overweeg het gebruik van PPK/RTK GPS voor precisietoepassingen.

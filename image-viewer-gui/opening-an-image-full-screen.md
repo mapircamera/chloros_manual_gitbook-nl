@@ -15,26 +15,24 @@ De meest gebruikelijke manier om een afbeelding te openen in de Image Viewer:
 
 ### Het tabblad Image Viewer openen
 
-Zodra een afbeelding is geladen in het voorvertoningsgebied:
+Zodra een afbeelding in het voorvertoningsgebied is geladen:
 
 1. Klik op het pictogram **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> in de linkerzijbalk
-2. Het tabblad Afbeeldingenviewer wordt geopend en de geselecteerde afbeelding wordt op volledig scherm weergegeven
+2. Het tabblad Afbeeldingsviewer wordt geopend en de geselecteerde afbeelding wordt op volledig scherm weergegeven
 3. Geavanceerde weergave- en analysetools worden beschikbaar in de linkerzijbalk
 
 ***
 
-## Overzicht van de interface van de Afbeeldingenviewer
+## Overzicht van de interface van de afbeeldingsviewer
 
 ### Hoofdweergavegebied
 
 Het grootste deel van het scherm toont uw afbeelding:
 
-* **Volledige resolutie**: afbeeldingen worden weergegeven op de oorspronkelijke resolutie
+* **Volledige resolutie**: afbeeldingen worden weergegeven in de oorspronkelijke resolutie
 * **Zoombaar**: gebruik de bedieningselementen of het muiswiel om in te zoomen
 * **Pannen**: klik en sleep om te bewegen wanneer u inzoomt
-* **Beeldverhouding behouden**: afbeeldingen worden proportioneel geschaald
-
-***
+* **Beeldverhouding behouden**: afbeeldingen worden proportioneel geschaald***
 
 ## Weergaveopties
 
@@ -44,23 +42,18 @@ Het grootste deel van het scherm toont uw afbeelding:
 
 Navigeer door uw afbeeldingsset met behulp van sneltoetsen of knoppen:
 
-* **Volgende afbeelding**: klik op de knop → of druk op de toets **→** (pijl naar rechts)
-* **Vorige afbeelding**: klik op de knop ← of druk op de toets **←** (pijl naar links)
+* **Volgende afbeelding**: klik op de knop → of druk op de toets**→** (pijl naar rechts)
+* **Vorige afbeelding**: klik op de knop ← of druk op de toets**←** (pijl naar links)
 * **Naar een specifieke afbeelding springen**: ga terug naar de bestandsbrowser en klik op de gewenste miniatuur
 
 #### Zoomknoppen
 
 Pas de vergroting aan om afbeeldingsdetails te bekijken:
 
-**Inzoomen:**
+**Inzoomen:*** Klik op de knop **+** (plus)
+* Druk op de toets **+**of**=*** Scroll met het muiswiel **omhoog**
 
-* Klik op de knop **+** (plus)
-* Druk op de toets **+** of **=**
-* Scroll met het muiswiel **omhoog**
-
-**Uitzoomen:**
-
-* Klik op de knop **−** (min)
+**Uitzoomen:*** Klik op de knop **−** (min)
 * Druk op de toets **−** (min)
 * Scroll met het muiswiel **omlaag**
 
@@ -70,25 +63,17 @@ Wanneer u verder inzoomt dan de schermgrootte:
 
 1. Beweeg de muiscursor over de afbeelding
 2. Klik en **houd de linkermuisknop ingedrukt**
-3. **Sleep** om de afbeelding te verplaatsen
+
+3.**Sleep** om de afbeelding te verplaatsen
 4. Laat los om het pannen te stoppen
 
-**Alternatief**: gebruik de pijltjestoetsen om in kleine stapjes te pannen
-
-***
+**Alternatief**: gebruik de pijltjestoetsen om in kleine stapjes te pannen***
 
 ## Pixelwaarden bekijken
 
 ### Pixelwaarden bij de cursor bekijken
 
-Wanneer u de muiscursor over de afbeelding beweegt, worden de pixelwaarden in realtime weergegeven:
-
-**Locatie van de waardeweergave:**
-
-* **Zwevend getal en rode lijn in de index LUT-gradiëntlegenda aan de rechterkant**
-* **Bij verder inzoomen, zwevende waarde bij de cursor en gemarkeerde pixel**
-* Toont waarden voor pixels **onder de cursor of gemarkeerde pixels**
-* Wordt bijgewerkt wanneer u de muis beweegt
+Wanneer u de muiscursor over de afbeelding beweegt, worden de pixelwaarden in realtime weergegeven:**Locatie van de waardeweergave:*** **Zwevend getal en rode lijn in de index LUT-gradiëntlegenda aan de rechterkant*** **Bij verder inzoomen, zwevende waarde bij de cursor en gemarkeerde pixel*** Toont waarden voor pixel **onder de cursor of gemarkeerd*** Wordt bijgewerkt wanneer u de muis beweegt
 
 ***
 
@@ -120,15 +105,15 @@ Wanneer u de muiscursor over de afbeelding beweegt, worden de pixelwaarden in re
 * Enkelvoudige grijswaardenafbeeldingen
 * Pixelwaarden vertegenwoordigen indexberekeningsresultaten
 * Bereik doorgaans -1 tot +1 voor genormaliseerde indices
-* Kan kleuren-LUT&#x27;s toepassen voor visualisatie
+* Kleuren-LUT&#x27;s kunnen worden toegepast voor visualisatie
 
 ***
 
 ## Index- en LUT-toepassing
 
-Pas multispectrale indices en kleuren-Look-Up Tables toe:
+Multispectrale indices en kleuren-Look-Up Tables toepassen:
 
-1. Zoek **Index/LUT Sandbox** in **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> zijbalk
+1. Zoek **Index/LUT Sandbox**in**Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> zijbalk
 2. Selecteer vegetatie-index (NDVI, NDRE, enz.)
 3. Selecteer multispectrale formule of maak uw eigen aangepaste formule (alleen Chloros+)
 4. Pas kleur-LUT-gradiënt toe voor visualisatie
@@ -149,11 +134,9 @@ Zie [Index/LUT Sandbox](index-lut-sandbox.md) voor gedetailleerde instructies.
 
 ### Zoomen
 
-* **+** of **=**: Inzoomen
+* **+**of**=**: Inzoomen
 * **−**: Uitzoomen
-* **Muiswiel**: In-/uitzoomen
-
-***
+* **Muiswiel**: In-/uitzoomen***
 
 ### Indexberekeningen controleren
 
@@ -166,9 +149,7 @@ Controleer of de indices correct zijn berekend:
    * **GNDVI**: vergelijkbaar met NDVI, maar chlorofylgevoelig
 3. Controleer niet-vegetatie:
    * **Bodem**: bijna 0 of licht negatief
-   * **Water**: negatieve waarden (-0,5 tot 0)
-
-***
+   * **Water**: negatieve waarden (-0,5 tot 0)***
 
 ## Problemen met weergeven oplossen
 
@@ -193,12 +174,12 @@ Controleer of de indices correct zijn berekend:
 
 * Waardebereik buiten de weergavemogelijkheden.
 * 32-bits float-beeld met ongebruikelijke waarden.
-* Fout in indexberekening.
+* Fout bij indexberekening.
 
 **Oplossingen:**
 
 1. Controleer de pixelwaarden - als deze allemaal erg laag of erg hoog zijn, pas dan het weergavebereik aan.
-2. Probeer het bestand te openen in QGIS of een vergelijkbaar programma met automatische bereikaanpassing.
+2. Probeer het bestand te openen in QGIS of een soortgelijk programma met automatische bereikaanpassing.
 3. Controleer het foutopsporingslogboek van de verwerking op fouten.
 
 ### Pixelwaarden lijken onjuist
@@ -222,8 +203,8 @@ Controleer of de indices correct zijn berekend:
 
 Nu u afbeeldingen op volledig scherm kunt bekijken:
 
-* [**Beeldlagen**](image-layers.md) - Meer informatie over multibandvisualisatie
-* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Pas aangepaste indexen en kleurovergangen toe
+* [**Afbeeldingslagen**](image-layers.md) - Meer informatie over multibandvisualisatie
+* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Pas aangepaste indexen en kleurtoewijzing toe
 * [**Multispectrale indexformules**](../project-settings/multispectral-index-formulas.md) - Meer informatie over beschikbare indexen
 
 Voor de verwerkingsworkflow, zie:
