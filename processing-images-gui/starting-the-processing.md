@@ -1,20 +1,20 @@
 # De verwerking starten
 
-Nadat u uw afbeeldingen hebt geïmporteerd, uw kalibratiedoelen hebt gemarkeerd en uw projectinstellingen hebt geconfigureerd, bent u klaar om te beginnen met de verwerking. Deze pagina begeleidt u bij het starten van de Chloros-verwerkingspijplijn.
+Zodra u uw afbeeldingen hebt geïmporteerd, uw kalibratiedoelen hebt gemarkeerd en uw projectinstellingen hebt geconfigureerd, bent u klaar om met de verwerking te beginnen. Op deze pagina wordt uitgelegd hoe u de Chloros-verwerkingspijplijn start.
 
-## Checklist voorafgaand aan de verwerking
+## Checklist voor de voorbewerking
 
-Controleer voordat u op de knop Start klikt of alles gereed is:
+Controleer voordat u op de Start-knop klikt of alles klaar is:
 
-* [ ] **Bestanden geïmporteerd** - Alle afbeeldingen worden weergegeven in de bestandsbrowser
-* [ ] **Doelafbeeldingen gemarkeerd** - Doelkolom gecontroleerd voor kalibratieafbeeldingen
-* [ ] **Cameramodellen gedetecteerd** - De kolom Cameramodel toont de juiste camera&#x27;s
+* [ ] **Bestanden geïmporteerd** - Alle afbeeldingen verschijnen in de bestandsbrowser
+* [ ] **Doelafbeeldingen gemarkeerd** - Doelkolom gecontroleerd op kalibratieafbeeldingen
+* [ ] **Cameramodellen gedetecteerd** - Kolom Cameramodel toont de juiste camera&#x27;s
 * [ ] **Instellingen geconfigureerd** - Projectinstellingen gecontroleerd en aangepast
 * [ ] **Indexen geselecteerd** - Gewenste multispectrale indexen toegevoegd (indien nodig)
 * [ ] **Exportformaat gekozen** - Uitvoerformaat dat geschikt is voor uw workflow
 
-{% hint style=&quot;info&quot; %}
-**Tip**: Klik door een paar afbeeldingen in de bestandsbrowser om te controleren of ze correct zijn geladen voordat u ze verwerkt.
+{% hint style="info" %}
+**Tip**: Klik door een paar afbeeldingen in de bestandsbrowser om te controleren of ze correct zijn geladen voordat u de verwerking start.
 {% endhint %}
 
 ***
@@ -23,26 +23,26 @@ Controleer voordat u op de knop Start klikt of alles gereed is:
 
 ### Zoek de startknop
 
-De knop Start/Afspelen bevindt zich in de bovenste balk van Chloros:
+De start-/afspeelknop bevindt zich in de bovenste balk van Chloros:
 
-* Positie: midden bovenaan het venster
-* Pictogram: **knop Afspelen/Start** <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line">
-* Status: De knop is ingeschakeld (helder) wanneer deze klaar is voor verwerking
+* Positie: bovenaan in het midden van het venster
+* Pictogram: **Afspeel-/startknop** <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line">
+* Status: De knop is ingeschakeld (licht) wanneer deze klaar is voor verwerking
 
 ### Klik om te starten
 
-1. Klik op de **knop Afspelen/Starten** in de bovenste koptekst
+1. Klik op de **Afspeel-/Startknop** in de bovenste balk
 2. De verwerking begint onmiddellijk
-3. De knop wordt tijdens de verwerking uitgeschakeld (grijs)
+3. De knop wordt uitgeschakeld (grijs) tijdens de verwerking
 4. De voortgangsbalk wordt bijgewerkt en toont de verwerkingsstatus
 
-{% hint style=&quot;success&quot; %}
-**Verwerking gestart**: Zodra u op de knop klikt, voert Chloros automatisch alle verwerkingsstappen uit: doel detecteren, debayering, kalibratie, indexberekening en export.
+{% hint style="success" %}
+**Verwerking gestart**: Zodra u klikt, voert Chloros automatisch alle verwerkingsstappen uit: doelherkenning, debayering, kalibratie, indexberekening en export.
 {% endhint %}
 
 ***
 
-## Verwerkingsmodi begrijpen
+## Inzicht in verwerkingsmodi
 
 Chloros werkt in twee verschillende verwerkingsmodi, afhankelijk van uw licentie:
 
@@ -58,43 +58,43 @@ Chloros werkt in twee verschillende verwerkingsmodi, afhankelijk van uw licentie
 
 **Voortgangsbalk toont 2 fasen:**
 
-1.**Doeldetectie** - Scannen naar kalibratiedoelen
+1.**Doel detecteren** - Scannen naar kalibratiedoelen
 2. **Verwerking** - Kalibratie toepassen en afbeeldingen exporteren**Verwerkingstijd:**
 
-* Veel langzamer dan Chloros+ parallelle modus
+* Veel langzamer dan de parallelle modus van Chloros+
 * Geschikt voor kleine tot middelgrote datasets (&lt; 200 afbeeldingen)
 
-### Chloros+ modus (parallelle verwerking)
+### Chloros+-modus (parallelle verwerking)
 
-**Vereist Chloros+ licentie**
+**Vereist Chloros+-licentie**
 
 **Hoe het werkt:**
 
-* Verwerkt meerdere afbeeldingen tegelijkertijd
-* Multithreaded werking (maximaal 16 parallelle workers)
-* Maakt gebruik van meerdere CPU-kernen
-* Optionele GPU (CUDA)-versnelling met NVIDIA-grafische kaarten
+* Verwerkt meerdere afbeeldingen tegelijkertijd met behulp van een [4-thread verwerkingspijplijn](../processing-architecture/processing-pipeline.md)
+* [Dynamic Compute Adaptation](../processing-architecture/dynamic-compute-adaptation.md) selecteert automatisch de optimale strategie voor uw hardware
+* GPU (CUDA)-versnelling met NVIDIA grafische kaarten (desktop en Jetson)
+* Schaalbaar van een Jetson Nano (1 worker) tot een desktop met 12 GB+ GPU (3-4 workers)
 
-**Voortgangsbalk toont 4 fasen:**
+**De voortgangsbalk toont 4 fasen** (overeenkomend met de 4 pijplijn-threads):
 
-1.**Detecteren** - Kalibratiedoelen zoeken
-2. **Analyseren** - Metadata van afbeeldingen onderzoeken en pijplijn voorbereiden
-3. **Kalibreren** - Correcties en kalibraties toepassen
-4. **Exporteren** - Verwerkte afbeeldingen en indexen opslaan**Interactie met voortgangsbalk:*** **Beweeg de muis** over de balk om een gedetailleerd dropdown-paneel met 4 fasen te zien
-* **Klik** op de voortgangsbalk om het dropdown-paneel op zijn plaats te houden
-* **Klik nogmaals** om het paneel te ontgrendelen en te verbergen**Verwerkingstijd:**
+1. **Detecteren** (Thread 1) - Kalibratiedoelen vinden
+2. **Analyseren** (Thread 2) - Beeldmetadata onderzoeken en kalibratie berekenen
+3. **Kalibreren** (Thread 3) - GPU-debayering, vignetteringscorrectie, indexberekening
+4. **Exporteren** (thread 4) - Bewerkte afbeeldingen en indexen opslaan**Interactie met de voortgangsbalk:*** **Beweeg de muis** over de balk om het gedetailleerde dropdown-paneel met 4 fasen te zien
+* **Klik** op de voortgangsbalk om het dropdown-paneel vast te zetten
+* **Klik nogmaals** om het paneel weer vrij te geven en te verbergen**Verwerkingstijd:**
 
-* Aanzienlijk sneller dan de vrije modus
+* Aanzienlijk sneller dan de gratis modus
 * Schaalbaar met het aantal CPU-kernen
 * GPU-versnelling verbetert de snelheid nog verder
 
-{% hint style=&quot;info&quot; %}
+{% hint style="info" %}
 **Chloros+ Snelheid**: Parallelle verwerking kan 5-10 keer sneller zijn dan de sequentiële modus voor grote datasets. Een project met 500 afbeeldingen dat in de gratis modus 2 uur duurt, kan met Chloros+ in 15-20 minuten worden voltooid.
 {% endhint %}
 
 ***
 
-## Wat gebeurt er tijdens de verwerking?
+## Wat gebeurt er tijdens de verwerking
 
 ### Fase 1: Doeldetectie
 
@@ -102,7 +102,7 @@ Chloros werkt in twee verschillende verwerkingsmodi, afhankelijk van uw licentie
 
 * Scant gemarkeerde doelafbeeldingen (of alle afbeeldingen als er geen zijn gemarkeerd)
 * Identificeert de 4 kalibratiepanelen in elk doel
-* Haalt reflectiewaarden uit doelpanelen
+* Haalt reflectiewaarden uit de doelpanelen
 * Registreert tijdstempels van doelen voor kalibratieplanning
 
 **Duur:** 1-30 seconden (met gemarkeerde doelen), 5-30+ minuten (ongemarkeerd)
@@ -113,16 +113,16 @@ Chloros werkt in twee verschillende verwerkingsmodi, afhankelijk van uw licentie
 
 * Converteert RAW-Bayer-patroongegevens naar volledige RGB-afbeeldingen
 * Past een hoogwaardig demosaicing-algoritme toe
-* Behoudt maximale beeldkwaliteit en details
+* Behoudt maximale beeldkwaliteit en detail
 
-**Duur:** varieert afhankelijk van het aantal afbeeldingen en de CPU-snelheid
+**Duur:** Varieert afhankelijk van het aantal afbeeldingen en de CPU-snelheid
 
 ### Fase 3: Kalibratie
 
-**Wat Chloros doet:*** **Vignettecorrectie**: verwijdert lensverduistering aan de randen
-* **Reflectiekalibratie**: normaliseert met behulp van doelreflectiewaarden
+**Wat Chloros doet:*** **Vignetteringscorrectie**: Verwijdert lensverduistering aan de randen
+* **Reflectiekalibratie**: Normaliseert met behulp van doelreflectiewaarden
 * Past correcties toe op alle banden/kanalen
-* Gebruikt het juiste kalibratiedoel voor elke afbeelding op basis van de tijdstempel
+* Gebruikt voor elke afbeelding het juiste kalibratiedoel op basis van de tijdstempel
 
 **Duur:** Het grootste deel van de verwerkingstijd
 
@@ -131,7 +131,7 @@ Chloros werkt in twee verschillende verwerkingsmodi, afhankelijk van uw licentie
 **Wat Chloros doet:**
 
 * Berekent geconfigureerde multispectrale indices (NDVI, NDRE, enz.)
-* Past bandwiskunde toe op gekalibreerde beelden
+* Past bandberekeningen toe op gekalibreerde beelden
 * Genereert indexbeelden voor elke geselecteerde index
 
 **Duur:** Enkele seconden per beeld
@@ -145,17 +145,17 @@ Chloros werkt in twee verschillende verwerkingsmodi, afhankelijk van uw licentie
 * Schrijft bestanden naar submappen van cameramodellen
 * Behoudt originele bestandsnamen met achtervoegsels
 
-**Duur:** Varieert per exportformaat en bestandsgrootte***
+**Duur:** Varieert afhankelijk van exportformaat en bestandsgrootte***
 
 ## Verwerkingsgedrag
 
 ### Automatische verwerkingspijplijn
 
-Eenmaal gestart, wordt de hele pijplijn automatisch uitgevoerd:
+Eenmaal gestart, verloopt de gehele pijplijn automatisch:
 
 * Geen gebruikersinteractie nodig
 * Alle geconfigureerde stappen worden achtereenvolgens uitgevoerd
-* Voortgang wordt in realtime weergegeven
+* Voortgangsupdates worden in realtime weergegeven
 
 ### Computergebruik tijdens verwerking
 
@@ -163,36 +163,36 @@ Eenmaal gestart, wordt de hele pijplijn automatisch uitgevoerd:
 
 * Relatief laag CPU-gebruik (single-threaded)
 * Computer blijft responsief voor andere taken
-* Veilig om Chloros te minimaliseren en in andere toepassingen te werken
+* Veilig om Chloros te minimaliseren en in andere applicaties te werken
 
 **Chloros+ Parallelle modus:**
 
 * Hoog CPU-gebruik (multi-threaded, tot 16 cores)
-* Met GPU-versnelling: hoog GPU-gebruik
-* Computer reageert mogelijk minder goed tijdens verwerking
-* Start geen andere CPU-intensieve taken
+* Met GPU-versnelling: Hoog GPU-gebruik
+* Computer reageert mogelijk minder snel tijdens de verwerking
+* Vermijd het starten van andere CPU-intensieve taken
 
-{% hint style=&quot;warning&quot; %}
-**Prestatietip**: Sluit voor optimale prestaties van Chloros+ andere toepassingen en laat Chloros alle systeembronnen gebruiken.
+{% hint style="warning" %}
+**Prestatietip**: Sluit voor de beste Chloros+ prestaties andere applicaties en laat Chloros de volledige systeembronnen gebruiken.
 {% endhint %}
 
 ### Verwerking kan niet worden gepauzeerd
 
 **Belangrijke beperkingen:**
 
-* Eenmaal gestart, kan de verwerking niet worden gepauzeerd.
-* U kunt de verwerking annuleren, maar de voortgang gaat verloren.
-* Gedeeltelijke resultaten worden niet opgeslagen.
-* Bij annulering moet u opnieuw beginnen.
+* Eenmaal gestart, kan de verwerking niet worden gepauzeerd
+* U kunt de verwerking annuleren, maar de voortgang gaat verloren
+* Gedeeltelijke resultaten worden niet opgeslagen
+* Moet opnieuw worden gestart vanaf het begin indien geannuleerd
 
-**Planningstip:** Overweeg voor zeer grote projecten om in batches te verwerken of CLI te gebruiken voor een betere controle.***
+**Planningsadvies:** Overweeg bij zeer grote projecten om in batches te verwerken of CLI te gebruiken voor betere controle.***
 
-## Uw verwerking controleren
+## Uw verwerking monitoren
 
-Terwijl de verwerking wordt uitgevoerd, kunt u:
+Terwijl de verwerking loopt, kunt u:
 
 * **De voortgangsbalk bekijken** - Bekijk het totale voltooiingspercentage
-* **De huidige fase bekijken** - Detecteren, analyseren, kalibreren of exporteren
+* **De huidige fase bekijken** - Detecteren, Analyseren, Kalibreren of Exporteren
 * **Het tabblad Logboek controleren** - Bekijk gedetailleerde verwerkingsberichten en waarschuwingen
 * **Een voorbeeld van voltooide afbeeldingen bekijken** - Sommige exportbestanden kunnen tijdens de verwerking verschijnen
 
@@ -204,7 +204,7 @@ Zie [De verwerking controleren](monitoring-the-processing.md) voor gedetailleerd
 
 Als u de verwerking moet stoppen:
 
-### Annuleren
+### Hoe te annuleren
 
 1. Zoek de **knop Stoppen/Annuleren** (vervangt de knop Start tijdens de verwerking)
 2. Klik op de knop Stoppen
@@ -216,7 +216,7 @@ Als u de verwerking moet stoppen:
 **Geldige redenen om te annuleren:**
 
 * U realiseert zich dat er onjuiste instellingen zijn gebruikt
-* U bent vergeten doelafbeeldingen te markeren
+* U bent vergeten de doelafbeeldingen te markeren
 * Er zijn verkeerde afbeeldingen geïmporteerd
 * Het systeem werkt te traag of reageert niet
 
@@ -225,25 +225,25 @@ Als u de verwerking moet stoppen:
 * Controleer en los eventuele problemen op
 * Pas de instellingen indien nodig aan
 * Start de verwerking opnieuw vanaf het begin
-* Sluit Chloros volledig en start opnieuw op voor de beste ervaring
+* Sluit Chloros volledig af en start opnieuw op voor de beste ervaring
 
-{% hint style=&quot;warning&quot; %}
-**Geen gedeeltelijke resultaten**: bij annuleren wordt alle voortgang verwijderd. Chloros slaat gedeeltelijk verwerkte afbeeldingen niet op.
+{% hint style="warning" %}
+**Geen gedeeltelijke resultaten**: Annuleren verwijdert alle voortgang. Chloros slaat gedeeltelijk verwerkte afbeeldingen niet op.
 {% endhint %}
 
 ***
 
 ## Geschatte verwerkingstijd
 
-De werkelijke verwerkingstijd varieert sterk, afhankelijk van:
+De werkelijke verwerkingstijd varieert sterk op basis van:
 
 * Aantal afbeeldingen
 * Afbeeldingsresolutie
 * RAW- versus JPG-invoerformaat
-* Verwerkingsmodus (Free vs Chloros+)
+* Verwerkingsmodus (Free versus Chloros+)
 * CPU-snelheid en aantal cores
 * Beschikbaarheid van GPU (alleen Chloros+)
-* Aantal te berekenen indices
+* Aantal te berekenen indexen
 * Complexiteit van het exportformaat
 
 ### Ruwe schattingen (Chloros+, 12 MP-afbeeldingen, moderne CPU)
@@ -256,42 +256,42 @@ De werkelijke verwerkingstijd varieert sterk, afhankelijk van:
 | 500 afbeeldingen  | 2-3 uur   | 45-60 min      | 20-30 min      |
 | 1000 afbeeldingen | 4-6 uur   | 1,5-2 uur      | 40-60 min      |
 
-{% hint style=&quot;info&quot; %}
-**Eerste keer**: De eerste verwerking kan langer duren omdat Chloros caches en profielen aanmaakt. De volgende verwerking van vergelijkbare datasets zal sneller gaan.
+{% hint style="info" %}
+**Eerste keer**: De eerste verwerking kan langer duren omdat Chloros caches en profielen opbouwt. De verwerking van soortgelijke datasets daarna zal sneller verlopen.
 {% endhint %}
 
 ***
 
 ## Veelvoorkomende problemen bij het opstarten
 
-### Startknop uitgeschakeld (grijs weergegeven)
+### Startknop uitgeschakeld (grijs)
 
 **Mogelijke oorzaken:**
 
-* Er zijn geen afbeeldingen geïmporteerd
-* De backend is niet volledig opgestart
-* Eerdere verwerking is nog bezig
-* Het project is niet volledig geladen
+* Geen afbeeldingen geïmporteerd
+* Backend niet volledig opgestart
+* Vorige verwerking loopt nog
+* Project niet volledig geladen
 
 **Oplossingen:**
 
 1. Wacht tot de backend volledig is geïnitialiseerd (controleer het pictogram in het hoofdmenu)
 2. Controleer of de afbeeldingen zijn geïmporteerd in de bestandsbrowser
-3. Start Chloros opnieuw op als de knop nog steeds uitgeschakeld is
+3. Start Chloros opnieuw op als de knop uitgeschakeld blijft
 4. Controleer het foutlogboek op foutmeldingen
 
-### Verwerking start en mislukt onmiddellijk
+### Verwerking start en mislukt vervolgens onmiddellijk
 
 **Mogelijke oorzaken:**
 
-* Geen geldige afbeeldingen in project
+* Geen geldige afbeeldingen in het project
 * Beschadigde afbeeldingsbestanden
 * Onvoldoende schijfruimte
 * Onvoldoende geheugen (RAM)
 
 **Oplossingen:**
 
-1. Controleer het foutopsporingslogboek <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> op foutmeldingen
+1. Controleer het foutlogboek <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> op foutmeldingen
 2. Controleer de beschikbare schijfruimte
 3. Probeer een kleinere subset van afbeeldingen te verwerken
 4. Controleer of de afbeeldingen niet beschadigd zijn
@@ -302,14 +302,14 @@ De werkelijke verwerkingstijd varieert sterk, afhankelijk van:
 
 * Vergeten doelafbeeldingen te markeren
 * Doelafbeeldingen bevatten geen zichtbare doelen
-* Instellingen voor doel detectie te streng
+* Instellingen voor doelherkenning te streng
 
 **Oplossingen:**
 
 1. Bekijk [Doelafbeeldingen kiezen](choosing-target-images.md)
 2. Markeer de juiste afbeeldingen in de kolom Doel
-3. Controleer of de doelen zichtbaar zijn in de gemarkeerde afbeeldingen
-4. Pas indien nodig de instellingen voor doelherkenning aan
+3. Controleer of doelen zichtbaar zijn in gemarkeerde afbeeldingen
+4. Pas de instellingen voor doeldetectie indien nodig aan
 
 ***
 
@@ -318,16 +318,16 @@ De werkelijke verwerkingstijd varieert sterk, afhankelijk van:
 ### Voordat u begint
 
 1. **Test eerst met een kleine subset** - Verwerk 10-20 afbeeldingen om de instellingen te controleren
-2. **Controleer de beschikbare schijfruimte** - Zorg ervoor dat er 2-3 keer de grootte van de dataset vrij is
-3. **Sluit onnodige toepassingen** - Maak systeembronnen vrij
-4. **Controleer de doelafbeeldingen** - Bekijk een voorbeeld van de gemarkeerde doelen om de kwaliteit te controleren
-5. **Sla het project op** - Het project wordt automatisch opgeslagen, maar het is verstandig om het ook handmatig op te slaan.
+2. **Controleer de beschikbare schijfruimte** - Zorg voor 2-3x de grootte van de dataset aan vrije ruimte
+3. **Sluit onnodige applicaties** - Maak systeembronnen vrij
+4. **Controleer de doelafbeeldingen** - Bekijk een voorbeeld van gemarkeerde doelen om de kwaliteit te controleren
+5. **Sla het project op** - Het project wordt automatisch opgeslagen, maar het is een goede gewoonte om het handmatig op te slaan
 
 ### Tijdens de verwerking
 
-1. **Voorkom dat het systeem in slaapstand gaat** - Schakel de energiebesparende modi uit.
-2. **Houd Chloros op de voorgrond** - Of zorg dat het in ieder geval zichtbaar is in de taakbalk.
-3. **Controleer af en toe de voortgang** - Controleer op waarschuwingen of fouten.
+1. **Voorkom dat het systeem in de slaapstand gaat** - Schakel energiebesparingsmodi uit
+2. **Houd Chloros op de voorgrond** - Of zorg er in ieder geval voor dat het zichtbaar is in de taakbalk
+3. **Controleer af en toe de voortgang** - Controleer op waarschuwingen of fouten
 4. **Laad geen andere zware applicaties** - Vooral niet in de parallelle modus van Chloros+
 
 ### Chloros+ GPU-versnelling
@@ -335,9 +335,9 @@ De werkelijke verwerkingstijd varieert sterk, afhankelijk van:
 Als u NVIDIA GPU-versnelling gebruikt:
 
 1. Werk de NVIDIA-stuurprogramma&#x27;s bij naar de nieuwste versie
-2. Zorg ervoor dat de GPU 4 GB+ VRAM heeft
-3. Sluit GPU-intensieve applicaties (games, videobewerking)
-4. Controleer de GPU-temperatuur (zorg voor voldoende koeling)
+2. Zorg ervoor dat de GPU 4 GB of meer VRAM heeft
+3. Sluit GPU-intensieve toepassingen (games, videobewerking)
+4. Houd de GPU-temperatuur in de gaten (zorg voor voldoende koeling)
 
 ***
 
@@ -345,8 +345,8 @@ Als u NVIDIA GPU-versnelling gebruikt:
 
 Zodra de verwerking is gestart:
 
-1. **Controleer de voortgang** - Zie [De verwerking controleren](monitoring-the-processing.md)
-2. **Wacht tot de verwerking is voltooid** - De verwerking verloopt automatisch
-3. **Bekijk de resultaten** - Zie [De verwerking voltooien](finishing-the-processing.md)
+1. **Houd de voortgang in de gaten** - Zie [De verwerking volgen](monitoring-the-processing.md)
+2. **Wacht tot het proces is voltooid** - De verwerking verloopt automatisch
+3. **Bekijk de resultaten** - Zie [De verwerking afronden](finishing-the-processing.md)
 
 Voor informatie over wat u tijdens de verwerking moet doen, zie [De verwerking controleren](monitoring-the-processing.md).

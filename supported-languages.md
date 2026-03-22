@@ -4,9 +4,9 @@ Chloros biedt volledige interface-ondersteuning in **38 talen wereldwijd**, waar
 
 Chloros ondersteunt de volgende talen:
 
-| # | Taal | Native naam | CLI-code |
+| # | Taal | Oorspronkelijke naam | CLI-code |
 |---|----------|-------------|----------|
-| 1 | 🇺🇸 Engels | Engels | `en` |
+| 1 | 🇺🇸 Engels | English | `en` |
 | 2 | 🇪🇸 Spaans | Español | `es` |
 | 3 | 🇵🇹 Portugees | Português | `pt` |
 | 4 | 🇫🇷 Frans | Français | `fr` |
@@ -45,18 +45,18 @@ Chloros ondersteunt de volgende talen:
 | 37 | 🇪🇪 Ests | Eesti | `et` |
 | 38 | 🇸🇮 Sloveens | Slovenščina | `sl` |
 
-## Hoe u de taal kunt wijzigen
+## Hoe de taal te wijzigen
 
 ### In Chloros Desktop/Browser
 
-1. Open de instellingen van de applicatie.
-2. Ga naar het menu voor taalselectie.
-3. Kies de gewenste taal uit de lijst.
-4. De interface wordt onmiddellijk bijgewerkt.
+1. Open de instellingen van de applicatie
+2. Ga naar het taalkeuzemenu
+3. Kies uw gewenste taal uit de lijst
+4. De interface wordt direct bijgewerkt
 
 ### In Chloros CLI
 
-Gebruik de opdracht `language` om de taal van de CLI-interface te bekijken of te wijzigen:
+Gebruik het `language`-commando om de taal van de CLI-interface te bekijken of te wijzigen:
 
 ```bash
 # View current language
@@ -79,7 +79,7 @@ Raadpleeg de [CLI-documentatie](CLI.md) voor meer informatie.
 
 ### In Chloros Python SDK
 
-Stel de taalparameter in bij het initialiseren van de SDK om berichten en uitvoer in de taal van uw voorkeur te krijgen.
+Stel de taalparameter in bij het initialiseren van de SDK om berichten en uitvoer in de door u gewenste taal te ontvangen.
 
 ## Dekking
 
@@ -90,4 +90,4 @@ Alle 38 talen worden volledig ondersteund in:
 * **Chloros CLI** - Opdrachtregelinterface en uitvoerberichten
 * **Chloros Python SDK** - API-berichten en documentatie
 
-Dankzij de taalondersteuning kunnen gebruikers wereldwijd efficiënt en zonder belemmeringen in hun moedertaal werken.
+Dankzij de taalondersteuning kunnen gebruikers wereldwijd efficiënt en zonder barrières in hun moedertaal werken.

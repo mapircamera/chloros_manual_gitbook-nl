@@ -1,65 +1,66 @@
 # Een afbeelding op volledig scherm openen
 
-De Chloros Image Viewer biedt een speciale interface op volledig scherm voor het bekijken, analyseren en bewerken van uw multispectrale afbeeldingen. Of u nu originele afbeeldingen of bewerkte uitvoer bekijkt, de Image Viewer biedt krachtige tools voor inspectie en analyse.
+De Chloros Image Viewer biedt een speciale interface op volledig scherm voor het bekijken, analyseren en bewerken van uw multispectrale afbeeldingen. Of u nu originele afbeeldingen of bewerkte resultaten bekijkt, de Image Viewer biedt krachtige tools voor inspectie en analyse.
 
-## Toegang tot de Image Viewer
+## De Image Viewer openen
 
 ### Vanuit de bestandsbrowser
 
 De meest gebruikelijke manier om een afbeelding te openen in de Image Viewer:
 
-1. Zorg ervoor dat u zich in het tabblad **Bestandsbrowser** bevindt <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Klik op een **afbeeldingsminiatuur** in het afbeeldingenraster
+1. Zorg ervoor dat u zich op het tabblad **Bestandsbrowser** bevindt <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
+2. Klik op een willekeurige **afbeeldingsminiatuur** in het afbeeldingsraster
 3. De afbeelding wordt geopend in het **hoofdvoorvertoningsgebied** (midden van het scherm)
-4. De afbeelding is nu geladen en klaar om op volledig scherm te worden bekeken
+4. De afbeelding is nu geladen en klaar om op volledig scherm te bekijken
 
 ### Het tabblad Image Viewer openen
 
 Zodra een afbeelding in het voorvertoningsgebied is geladen:
 
-1. Klik op het pictogram **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> in de linkerzijbalk
-2. Het tabblad Afbeeldingsviewer wordt geopend en de geselecteerde afbeelding wordt op volledig scherm weergegeven
-3. Geavanceerde weergave- en analysetools worden beschikbaar in de linkerzijbalk
+1. Klik op het **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> in de linkerzijbalk
+2. Het tabblad Afbeeldingsviewer wordt geopend en toont de geselecteerde afbeelding op volledig scherm
+3. Geavanceerde weergave- en analysehulpmiddelen worden beschikbaar in de linkerzijbalk
 
 ***
 
-## Overzicht van de interface van de afbeeldingsviewer
+## Overzicht van de interface van de Afbeeldingsviewer
 
 ### Hoofdweergavegebied
 
 Het grootste deel van het scherm toont uw afbeelding:
 
-* **Volledige resolutie**: afbeeldingen worden weergegeven in de oorspronkelijke resolutie
+* **Volledige resolutie**: Afbeeldingen worden weergegeven in de oorspronkelijke resolutie
 * **Zoombaar**: gebruik de bedieningselementen of het muiswiel om in te zoomen
-* **Pannen**: klik en sleep om te bewegen wanneer u inzoomt
+* **Verschuifbaar**: klik en sleep om te verplaatsen wanneer ingezoomd
 * **Beeldverhouding behouden**: afbeeldingen worden proportioneel geschaald***
 
 ## Weergaveopties
 
 ### Basisnavigatie door afbeeldingen
 
-#### Door afbeeldingen bladeren
+#### Blader door afbeeldingen
 
 Navigeer door uw afbeeldingsset met behulp van sneltoetsen of knoppen:
 
-* **Volgende afbeelding**: klik op de knop → of druk op de toets**→** (pijl naar rechts)
-* **Vorige afbeelding**: klik op de knop ← of druk op de toets**←** (pijl naar links)
-* **Naar een specifieke afbeelding springen**: ga terug naar de bestandsbrowser en klik op de gewenste miniatuur
+* **Volgende afbeelding**: Klik op de →-knop of druk op de**→**-toets (pijl naar rechts)
+* **Vorige afbeelding**: Klik op de ←-knop of druk op de**←**-toets (pijl naar links)
+* **Ga naar een specifieke afbeelding**: Ga terug naar de bestandsbrowser en klik op de gewenste miniatuur
 
 #### Zoomknoppen
 
 Pas de vergroting aan om afbeeldingsdetails te bekijken:
 
-**Inzoomen:*** Klik op de knop **+** (plus)
-* Druk op de toets **+**of**=*** Scroll met het muiswiel **omhoog**
+**Inzoomen:*** Klik op de **+** (plus) knop
+* Druk op de **+**of**=** toets
+* Scroll met het muiswiel **omhoog**
 
-**Uitzoomen:*** Klik op de knop **−** (min)
-* Druk op de toets **−** (min)
+**Uitzoomen:*** Klik op de **−** (min) knop
+* Druk op de **−** (min) toets
 * Scroll met het muiswiel **omlaag**
 
-#### Pannen bij zoomen
+#### Pannen bij ingezoomd
 
-Wanneer u verder inzoomt dan de schermgrootte:
+Wanneer u verder hebt ingezoomd dan de schermgrootte:
 
 1. Beweeg de muiscursor over de afbeelding
 2. Klik en **houd de linkermuisknop ingedrukt**
@@ -67,56 +68,56 @@ Wanneer u verder inzoomt dan de schermgrootte:
 3.**Sleep** om de afbeelding te verplaatsen
 4. Laat los om het pannen te stoppen
 
-**Alternatief**: gebruik de pijltjestoetsen om in kleine stapjes te pannen***
+**Alternatief**: Gebruik de pijltjestoetsen om in kleine stapjes te pannen***
 
 ## Pixelwaarden bekijken
 
 ### Pixelwaarden bij de cursor bekijken
 
-Wanneer u de muiscursor over de afbeelding beweegt, worden de pixelwaarden in realtime weergegeven:**Locatie van de waardeweergave:*** **Zwevend getal en rode lijn in de index LUT-gradiëntlegenda aan de rechterkant*** **Bij verder inzoomen, zwevende waarde bij de cursor en gemarkeerde pixel*** Toont waarden voor pixel **onder de cursor of gemarkeerd*** Wordt bijgewerkt wanneer u de muis beweegt
+Terwijl u de muiscursor over de afbeelding beweegt, worden de pixelwaarden in realtime weergegeven:**Locatie van de waardeweergave:*** **Zwevend getal en rode lijn in de legenda van de LUT-gradiënt aan de rechterkant*** **Bij verder inzoomen, zwevende waarde bij de cursor en gemarkeerde pixel*** Toont waarden voor de pixel **onder de cursor of gemarkeerd*** Wordt bijgewerkt terwijl u de muis beweegt
 
 ***
 
-## Beeldtypes die u kunt bekijken
+## Afbeeldingstypen die u kunt bekijken
 
 ### JPG
 
-**JPG-beelden van camera:**
+**JPG-afbeeldingen van de camera:**
 
-* Geef JPG-gegevens weer zoals in het voorbeeld
-* Toon originele, ongewijzigde waarden
-* Handig om de beeldkwaliteit te controleren vóór verwerking
+* Geeft JPG-gegevens weer zoals in het voorbeeld
+* Toont originele, ongecorrigeerde waarden
+* Handig voor het controleren van de beeldkwaliteit vóór verwerking
 
-### RAW (origineel)
+### RAW (Origineel)
 
-### RAW (reflectie)
+### RAW (Reflectantie)
 
 **Na verwerking:**
 
 * Vignettering gecorrigeerd
-* Reflectie gekalibreerd
+* Reflectantie gekalibreerd
 * Multi-band TIFF (Red, Green, NIR, enz.)
 * Wetenschappelijke gegevens klaar voor analyse
 
-### RAW (index)
+### RAW (Index)
 
 **NDVI, NDRE, GNDVI, enz. (\_NDVI.tif-bestanden):**
 
-* Enkelvoudige grijswaardenafbeeldingen
-* Pixelwaarden vertegenwoordigen indexberekeningsresultaten
+* Grijswaardenbeelden met één band
+* Pixelwaarden vertegenwoordigen de resultaten van de indexberekening
 * Bereik doorgaans -1 tot +1 voor genormaliseerde indices
-* Kleuren-LUT&#x27;s kunnen worden toegepast voor visualisatie
+* Er kunnen kleur-LUT&#x27;s worden toegepast voor visualisatie
 
 ***
 
-## Index- en LUT-toepassing
+## Toepassing van index en LUT
 
-Multispectrale indices en kleuren-Look-Up Tables toepassen:
+Pas multispectrale indices en kleur-Look-Up Tables toe:
 
 1. Zoek **Index/LUT Sandbox**in**Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> zijbalk
 2. Selecteer vegetatie-index (NDVI, NDRE, enz.)
 3. Selecteer multispectrale formule of maak uw eigen aangepaste formule (alleen Chloros+)
-4. Pas kleur-LUT-gradiënt toe voor visualisatie
+4. Pas kleur-LUT-verloop toe voor visualisatie
 5. Pas waardebereiken en drempels aan
 
 Zie [Index/LUT Sandbox](index-lut-sandbox.md) voor gedetailleerde instructies.
@@ -127,9 +128,9 @@ Zie [Index/LUT Sandbox](index-lut-sandbox.md) voor gedetailleerde instructies.
 
 ### Navigatie
 
-* **→** (pijl naar rechts): volgende afbeelding
-* **←** (pijl naar links): vorige afbeelding
-* **Home**: eerste afbeelding in de lijst
+* **→** (Pijl naar rechts): Volgende afbeelding
+* **←** (Pijl naar links): Vorige afbeelding
+* **Home**: Eerste afbeelding in de lijst
 * **End**: Laatste afbeelding in de lijst
 
 ### Zoomen
@@ -144,14 +145,14 @@ Controleer of de indices correct zijn berekend:
 
 1. Open NDVI of een andere indexafbeelding
 2. Controleer de vegetatiegebieden:
-   * **NDVI**: Moet 0,4-0,9 weergeven voor gezonde planten
+   * **NDVI**: Moet 0,4-0,9 aangeven voor gezonde planten
    * **NDRE**: Hogere waarden voor krachtige groei
-   * **GNDVI**: vergelijkbaar met NDVI, maar chlorofylgevoelig
+   * **GNDVI**: Vergelijkbaar met NDVI, maar gevoelig voor chlorofyl
 3. Controleer niet-vegetatie:
-   * **Bodem**: bijna 0 of licht negatief
-   * **Water**: negatieve waarden (-0,5 tot 0)***
+   * **Bodem**: Bijna 0 of licht negatief
+   * **Water**: Negatieve waarden (-0,5 tot 0)***
 
-## Problemen met weergeven oplossen
+## Problemen met het bekijken oplossen
 
 ### Afbeelding kan niet worden geopend
 
@@ -163,39 +164,39 @@ Controleer of de indices correct zijn berekend:
 
 **Oplossingen:**
 
-1. Probeer het bestand te openen in een externe viewer om de integriteit van het bestand te controleren.
-2. Controleer of het bestandsformaat overeenkomt met het verwachte type.
-3. Sluit andere toepassingen om geheugen vrij te maken.
-4. Probeer een kleiner/ander beeld.
+1. Probeer het bestand in een externe viewer te openen om de integriteit te controleren
+2. Controleer of het bestandsformaat overeenkomt met het verwachte type
+3. Sluit andere applicaties om geheugen vrij te maken
+4. Probeer een kleinere/andere afbeelding
 
-### Zwart-wit beeldweergave
+### Afbeelding wordt zwart of wit weergegeven
 
 **Mogelijke oorzaken:**
 
-* Waardebereik buiten de weergavemogelijkheden.
-* 32-bits float-beeld met ongebruikelijke waarden.
-* Fout bij indexberekening.
+* Waardebereik buiten weergavemogelijkheden
+* 32-bits float-afbeelding met ongebruikelijke waarden
+* Fout bij indexberekening
 
 **Oplossingen:**
 
-1. Controleer de pixelwaarden - als deze allemaal erg laag of erg hoog zijn, pas dan het weergavebereik aan.
-2. Probeer het bestand te openen in QGIS of een soortgelijk programma met automatische bereikaanpassing.
-3. Controleer het foutopsporingslogboek van de verwerking op fouten.
+1. Controleer de pixelwaarden – als deze allemaal erg laag of erg hoog zijn, pas dan het weergavebereik aan
+2. Probeer het bestand te openen in QGIS of een soortgelijk programma met automatische bereikaanpassing
+3. Controleer het foutlogboek van de verwerking op fouten
 
 ### Pixelwaarden lijken onjuist
 
 **Mogelijke oorzaken:**
 
-* Verkeerde afbeelding weergeven (origineel versus verwerkt)
+* Verkeerde afbeelding wordt bekeken (origineel versus verwerkt)
 * Kalibratie is niet correct toegepast
-* Lichtsensorgegevens zijn niet opgenomen in de invoer
-* Percentagemodus is onjuist ingesteld
+* Gegevens van de lichtsensor zijn niet opgenomen in de invoer
+* De procentmodus is onjuist ingeschakeld
 
 **Oplossingen:**
 
-1. Controleer of u de verwerkte uitvoer bekijkt (controleer de bestandsextensie)
-2. Controleer de status van de knop voor de percentagemodus
-3. Vergelijk met bekende goede afbeeldingen uit dezelfde dataset
+1. Controleer of u de verwerkte uitvoer bekijkt (controleer de extensie van de bestandsnaam)
+2. Controleer de status van de knop voor de procentmodus
+3. Vergelijk met afbeeldingen uit dezelfde dataset waarvan bekend is dat ze goed zijn
 
 ***
 
@@ -204,9 +205,9 @@ Controleer of de indices correct zijn berekend:
 Nu u afbeeldingen op volledig scherm kunt bekijken:
 
 * [**Afbeeldingslagen**](image-layers.md) - Meer informatie over multibandvisualisatie
-* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Pas aangepaste indexen en kleurtoewijzing toe
-* [**Multispectrale indexformules**](../project-settings/multispectral-index-formulas.md) - Meer informatie over beschikbare indexen
+* [**Index/LUT-sandbox**](index-lut-sandbox.md) - Pas aangepaste indices en kleurtoewijzingen toe
+* [**Multispectrale indexformules**](../project-settings/multispectral-index-formulas.md) - Begrijp de beschikbare indices
 
-Voor de verwerkingsworkflow, zie:
+Zie voor de verwerkingsworkflow:
 
-* [**Afbeeldingen verwerken (GUI)**](../processing-images-gui/adding-files-to-a-project.md) - Volledige verwerkingsgids
+* [**Beelden verwerken (GUI)**](../processing-images-gui/adding-files-to-a-project.md) - Volledige verwerkingsgids

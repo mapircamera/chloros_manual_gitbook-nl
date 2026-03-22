@@ -1,11 +1,11 @@
 # Projectinstellingen aanpassen
 
-Voordat u uw afbeeldingen verwerkt, is het belangrijk om uw projectinstellingen te configureren zodat deze aansluiten bij uw workflowvereisten. Het paneel Projectinstellingen <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> bieden uitgebreide controle over kalibratie, verwerkingsopties, multispectrale indices en exportformaten.
+Voordat u uw beelden gaat verwerken, is het belangrijk om uw projectinstellingen af te stemmen op uw workflow. Het paneel Projectinstellingen <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> biedt uitgebreide controle over kalibratie, verwerkingsopties, multispectrale indices en exportformaten.
 
 ## Projectinstellingen openen
 
 1. Open uw project in Chloros
-2. Klik op het pictogram **Projectinstellingen** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> in de linkerzijbalk
+2. Klik op het **Projectinstellingen** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> in de linkerzijbalk
 3. Het paneel Projectinstellingen toont alle configuratieopties
 
 {% hint style="info" %}
@@ -14,139 +14,140 @@ Voordat u uw afbeeldingen verwerkt, is het belangrijk om uw projectinstellingen 
 
 ***
 
-## Snelle installatie voor veelvoorkomende workflows
+## Snelle configuratie voor veelvoorkomende workflows
 
 ### Standaardinstellingen (aanbevolen voor de meeste gebruikers)
 
-Voor typische MAPIR Survey3 cameraworkflows werken de standaardinstellingen goed:
+Voor typische MAPIR Survey3-cameraworkflows werken de standaardinstellingen goed:
 
-* ✅ **Vignettecorrectie**: ingeschakeld
-* ✅ **Reflectiekalibratie**: ingeschakeld (vereist afbeeldingen van MAPIR-doelen)
-* ✅ **Debayer-methode**: Standaard (snel, gemiddelde kwaliteit)
+* ✅ **Vignetcorrectie**: Ingeschakeld
+* ✅ **Reflectiekalibratie**: Ingeschakeld (vereist afbeeldingen van MAPIR-doelen)
+* ✅ **Debayer-methode**: Standaard (Snel, gemiddelde kwaliteit)
 * ✅ **Exportformaat**: TIFF (16-bits)
 
-Importeer gewoon uw afbeeldingen en begin met de verwerking met deze standaardinstellingen.
+Importeer gewoon uw afbeeldingen en begin met verwerken met deze standaardinstellingen.
 
 ***
 
 ## Overzicht projectinstellingen
 
-Het paneel Projectinstellingen is onderverdeeld in verschillende categorieën. Hieronder vindt u een overzicht van elke sectie. Raadpleeg [Projectinstellingen](../project-settings/project-settings.md) voor de volledige documentatie.
+Het paneel Projectinstellingen is onderverdeeld in verschillende categorieën. Hieronder vindt u een samenvatting van elke sectie. Zie [Projectinstellingen](../project-settings/project-settings.md) voor de volledige documentatie.
 
-### Doeldetectie
+### Doelherkenning
 
 Bepaalt hoe Chloros kalibratiedoelen in uw afbeeldingen identificeert.
 
-**Belangrijkste instellingen:*** **Minimaal kalibratiemonstergebied**: groottedrempel voor doelwitdetectie (standaard: 25 pixels)
-* **Minimale doelwitclustering**: gelijkenisdrempel voor het groeperen van doelwitgebieden (standaard: 60)**Wanneer aanpassen:**
+**Belangrijkste instellingen:*** **Minimaal kalibratiesamplegebied**: Drempelwaarde voor doelherkenning (standaard: 25 pixels)
+* **Minimale doelclustering**: Drempelwaarde voor het groeperen van doelgebieden (standaard: 60)**Wanneer aanpassen:**
 
-* Vergroot het monstergebied als er valse detecties worden gedaan
-* Verklein het als er geen doelen worden gedetecteerd
-* Pas de clustering aan als doelen worden opgesplitst in meerdere detecties
+* Vergroot het samplegebied als er valse detecties optreden
+* Verklein het gebied als er geen doelen worden gedetecteerd
+* Pas de clustering aan als doelen in meerdere detecties worden opgesplitst
 
 ### Verwerking
 
 Belangrijkste opties voor beeldverwerking en kalibratie.
 
-**Belangrijkste instellingen:*** **Vignettecorrectie**: Compenseert voor lensverduistering aan de randen ✅ Aanbevolen
+**Belangrijkste instellingen:*** **Vignetcorrectie**: Compenseert lensverduistering aan de randen ✅ Aanbevolen
 * **Reflectiekalibratie**: Normaliseert waarden met behulp van kalibratiedoelen ✅ Aanbevolen
-* **Debayer-methode**: algoritme voor het converteren van RAW naar 3-kanaals multispectraal
-* **Minimaal herkalibratie-interval**: tijd tussen het gebruik van kalibratiedoelen (0 = alles gebruiken)**Geavanceerde instellingen:*** **Tijdzone-offset lichtsensor**: voor PPK-tijdsynchronisatie (standaard: 0)
-* **PPK-correcties toepassen**: gebruikt GPS-/belichtingspindata uit .daq-bestanden
-* **Belichtingspin 1/2**: wijst camera&#x27;s toe aan belichtingspinnen voor opstellingen met twee camera&#x27;s
+* **Debayer-methode**: Algoritme voor het converteren van RAW naar 3-kanaals multispectraal
+* **Minimaal herkalibratie-interval**: Tijd tussen het gebruik van kalibratiedoelen (0 = alles gebruiken)**Geavanceerde instellingen:*** **Tijdzone-offset lichtsensor**: Voor PPK-tijdsynchronisatie (standaard: 0)
+* **PPK-correcties toepassen**: Gebruikt GPS/belichtingspin-gegevens uit .daq-bestanden
+* **Belichtingspin 1/2**: Wijst camera&#x27;s toe aan belichtingspinnen voor opstellingen met twee camera&#x27;s
 
 ### Debayer-methode
 
-We bieden momenteel 2 debayering-methoden in Chloros:
+We bieden momenteel 2 debayering-methoden aan in Chloros:
 
-#### Standaard (snel, gemiddelde kwaliteit)
+#### Standaard (Snel, gemiddelde kwaliteit)
 
-Standaard debayer verwerkt snel, maar vertoont debayering-kleurruis, wat resulteert in minder nauwkeurige en meer ruisende beelden.
+Standaard debayer verwerkt snel, maar vertoont debayering-kleurruis, wat resulteert in minder nauwkeurige en ruisigere beelden.
 
-#### Texture Aware (langzaam, hoogste kwaliteit) \[Chloros+ alleen]
+#### Texture Aware (Langzaam, Hoogste kwaliteit) \[Alleen Chloros+]
 
-Texture Aware maakt gebruik van een hoogwaardige edge-aware debayer in combinatie met een AI/ML-ruisonderdrukkingsmodel dat bijna alle debayering-ruis verwijdert. Het Texture Aware-model vereist GPU-geheugen (VRAM) om te kunnen werken. We raden aan om het te gebruiken wanneer u &gt;4 GB VRAM beschikbaar hebt voor een snellere verwerking.
+Texture Aware maakt gebruik van een hoogwaardige randbewuste debayer in combinatie met een AI/ML-ruisonderdrukkingsmodel dat bijna alle debayering-ruis verwijdert. Het Texture Aware-model heeft GPU-geheugen (VRAM) nodig om te draaien. We raden aan dit te gebruiken wanneer u &gt;4 GB VRAM beschikbaar hebt voor snellere verwerking.
 
-### Index (multispectrale indices)
+### Index (Multispectrale indices)
 
 Configureer welke vegetatie-indices moeten worden berekend en geëxporteerd.
 
-**Indices toevoegen:**
+**Hoe indices toevoegen:**
 
 1. Klik op de knop**&quot;Index toevoegen&quot;**
 
-2. Selecteer een index in het vervolgkeuzemenu (NDVI, NDRE, GNDVI, enz.)
+2. Selecteer een index uit het dropdownmenu (NDVI, NDRE, GNDVI, enz.)
 3. Configureer de visualisatie-instellingen (LUT-kleuren, waardebereiken)
 4. Voeg indien nodig meerdere indices toe
 
 **Populaire indices:*** **NDVI**: Algemene gezondheid van de vegetatie (meest gebruikelijk)
-* **NDRE**: Vroege stressdetectie met RedEdge
+* **NDRE**: Vroege stressdetectie in combinatie met RedEdge
 * **GNDVI**: Gevoelig voor chlorofylconcentratie
-* **OSAVI**: Werkt goed met zichtbare bodem
-* **EVI**: Regio&#x27;s met hoge bladoppervlakte-index (LAI)**Aangepaste formules (alleen Chloros+):**
+* **OSAVI**: Werkt goed bij zichtbare bodem
+* **EVI**: Gebieden met hoge bladoppervlakte-index (LAI)**Aangepaste formules (alleen Chloros+):**
 
 * Maak aangepaste multispectrale indexformules
-* Gebruik bandwiskunde met alle beeldkanalen
+* Gebruik bandberekeningen met alle beeldkanalen
 * Sla aangepaste formules op voor hergebruik
 
 Zie [Multispectrale indexformules](../project-settings/multispectral-index-formulas.md) voor alle beschikbare indices en formules.
 
 ### Exporteren
 
-Regelt het uitvoerbestandsformaat en de kwaliteit.
+Bepaalt het bestandsformaat en de kwaliteit van de uitvoer.
 
-**Beschikbare formaten:*** **TIFF (16-bits)**: aanbevolen voor GIS en wetenschappelijke analyse (bereik 0-65.535)
-* **TIFF (32-bits, procent)**: reflectiewaarden met drijvende komma (bereik 0,0-1,0)
-* **PNG (8-bit)**: Verliesvrije compressie voor visualisatie (bereik 0-255)
-* **JPG (8-bit)**: Kleinste bestanden, compressie met verlies (bereik 0-255)***
+**Beschikbare formaten:*** **TIFF (16-bits)**: Aanbevolen voor GIS en wetenschappelijke analyse (bereik 0-65.535)
+* **TIFF (32-bits, procent)**: Reflectiewaarden met drijvende komma (bereik 0,0-1,0)
+* **PNG (8-bits)**: Verliesloze compressie voor visualisatie (bereik 0-255)
+* **JPG (8-bits)**: Kleinste bestanden, compressie met verlies (bereik 0-255)***
 
 ## Instellingen opslaan en laden
 
-### Projectsjabloon opslaan
+### Project-sjabloon opslaan
 
 Maak herbruikbare sjablonen voor consistente workflows:
 
 1. Configureer alle gewenste instellingen in het paneel Projectinstellingen
-2. Scrol naar het gedeelte **&quot;Projectsjabloon opslaan&quot;** onderaan
-3. Voer een beschrijvende sjabloonnaam in (bijv. &quot;Survey3N\_RGN\_Agriculture&quot;)
-4. Klik op het pictogram Opslaan
+2. Scrol naar de sectie **&quot;Projectsjabloon opslaan&quot;** onderaan
+3. Voer een beschrijvende sjabloonnaam in (bijv. &quot;Survey3N\_RGN\_Landbouw&quot;)
+4. Klik op het opslagpictogram
 
 **Voordelen:**
 
-* Pas identieke instellingen toe op meerdere projecten.
-* Deel configuraties met teamleden.
-* Zorg voor consistentie bij herhaalde enquêtes.
+* Pas identieke instellingen toe op meerdere projecten
+* Deel configuraties met teamleden
+* Zorg voor consistentie bij herhaalde enquêtes
 
-### Sjabloon laden in nieuw project
+### Sjabloon laden bij nieuw project
 
-Bij het maken van een nieuw project:
+Bij het aanmaken van een nieuw project:
 
-1. Selecteer **&quot;Nieuw project&quot;** in het hoofdmenu.
-2. Kies de optie **&quot;Laden vanuit sjabloon&quot;**.
-3. Selecteer uw opgeslagen sjabloon.
-4. Alle instellingen worden automatisch toegepast.
+1. Selecteer **&quot;Nieuw project&quot;** in het hoofdmenu
+2. Kies de optie **&quot;Laden vanuit sjabloon&quot;**
+
+3. Selecteer uw opgeslagen sjabloon
+4. Alle instellingen worden automatisch toegepast
 
 ### Werkmap
 
-De instelling **&quot;Projectmap opslaan&quot;** geeft aan waar nieuwe projecten standaard worden aangemaakt:
+De instelling **&quot;Projectmap opslaan&quot;** bepaalt waar nieuwe projecten standaard worden aangemaakt:
 
 * **Standaardlocatie**: `C:\Users\[Username]\Chloros Projects`
-* **Locatie wijzigen**: klik op het pictogram Bewerken en selecteer een nieuwe map
+* **Locatie wijzigen**: Klik op het bewerkingspictogram en selecteer een nieuwe map
 * **Wanneer wijzigen**:
   * Netwerkschijf voor teamsamenwerking
   * Andere schijf met meer opslagruimte
-  * Georganiseerde mappenstructuur op jaar/klant
+  * Georganiseerde mappenstructuur per jaar/klant
 
 ***
 
-## PPK (Post-Processed Kinematic) instellen
+## PPK (Post-Processed Kinematic) instellingen
 
-Als u MAPIR DAQ-recorders met GPS gebruikt voor nauwkeurige geolocatie:
+Bij gebruik van MAPIR DAQ-recorders met GPS voor nauwkeurige geolocatie:
 
 ### Vereisten
 
 * MAPIR DAQ met GPS (GNSS)-module
-* .daq-logbestand met belichtingspin-invoer
+* .daq-logbestand met belichtingspinnen
 * Camera aangesloten op DAQ-belichtingspinnen tijdens opnamesessie
 
 ### Configuratiestappen
@@ -155,13 +156,13 @@ Als u MAPIR DAQ-recorders met GPS gebruikt voor nauwkeurige geolocatie:
 2. Schakel in Projectinstellingen het selectievakje **&quot;PPK-correcties toepassen&quot;** in
 3. Stel indien nodig **&quot;Tijdzone-offset lichtsensor&quot;** in (standaard: 0 voor UTC)
 4. Wijs camera&#x27;s toe aan belichtingspinnen:
-   * **Enkele camera**: automatisch toegewezen aan pin 1
-   * **Dubbele camera&#x27;s**: wijs elke camera handmatig toe aan de juiste pin**Toewijzing belichtingspinnen:*** **Belichtingspin 1**: selecteer het cameramodel in de vervolgkeuzelijst
-* **Belichtingspin 2**: selecteer de tweede camera of &quot;Niet gebruiken&quot;
+   * **Enkele camera**: Wordt automatisch toegewezen aan pin 1
+   * **Dubbele camera&#x27;s**: Wijs elke camera handmatig toe aan de juiste pin**Toewijzing belichtingspinnen:*** **Belichtingspin 1**: Selecteer het cameramodel uit de vervolgkeuzelijst
+* **Belichtingspin 2**: Selecteer de tweede camera of &quot;Niet gebruiken&quot;
 * Dezelfde camera kan niet aan beide pinnen worden toegewezen
 
 {% hint style="warning" %}
-**Belangrijk**: Belichtingspinnen moeten correct worden toegewezen aan hun respectievelijke camera&#x27;s. Een onjuiste toewijzing leidt tot onjuiste geolocatiegegevens.
+**Belangrijk**: Belichtingspinnen moeten correct aan hun respectievelijke camera&#x27;s worden toegewezen. Een onjuiste toewijzing leidt tot verkeerde geolocatiegegevens.
 {% endhint %}
 
 ***
@@ -174,17 +175,17 @@ Bij het verwerken van beelden van meerdere MAPIR-camera&#x27;s in één project:
 
 1. Chloros detecteert automatisch elk cameramodel
 2. Elke camera krijgt het juiste verwerkingsprofiel
-3. PPK: wijs elke camera handmatig toe aan de juiste belichtingspin
+3. PPK: Wijs elke camera handmatig toe aan de juiste belichtingspin
 4. Alle camera&#x27;s gebruiken hetzelfde exportformaat en dezelfde indexen
 
-**Voorbeeld**: Survey3W RGN + Survey3N OCN dubbele camera-opstelling
+**Voorbeeld**: Survey3W RGN + Survey3N OCN dual-camera rig
 
-### Time-lapse- of multi-date-onderzoeken
+### Time-lapse- of multi-date-metingen
 
-Voor herhaalde onderzoeken van hetzelfde gebied in de loop van de tijd:
+Voor herhaalde metingen van hetzelfde gebied in de loop van de tijd:
 
 1. Maak een sjabloon met uw standaardinstellingen
-2. Gebruik elke sessie een consistente kalibratiedoelopstelling
+2. Gebruik bij elke sessie een consistente kalibratiedoelopstelling
 3. Verwerk elke datum als een afzonderlijk project
 4. Gebruik identieke instellingen voor vergelijkbare resultaten
 5. Exporteer in hetzelfde formaat voor temporele analyse
@@ -193,19 +194,19 @@ Voor herhaalde onderzoeken van hetzelfde gebied in de loop van de tijd:
 
 Voor projecten met veel afbeeldingen (500+):
 
-* Overweeg om het project op te splitsen in kleinere projecten op basis van datum of gebied.
-* Gebruik Chloros+ parallelle verwerking voor snellere resultaten.
-* Overweeg CLI of API voor batchautomatisering.
-* Pas het minimale herkalibratie-interval aan om de detectietijd van het doel te verkorten.
+* Overweeg om op te splitsen in kleinere projecten per datum of gebied
+* Gebruik Chloros+ parallelle verwerking voor snellere resultaten
+* Overweeg CLI of API voor batchautomatisering
+* Pas het minimale herkalibratie-interval aan om de detectietijd van doelen te verkorten
 
 ***
 
 ## Uw instellingen controleren
 
-Controleer deze belangrijke instellingen voordat u begint met verwerken:
+Controleer de volgende belangrijke instellingen voordat u begint met verwerken:
 
 * [ ] Cameramodel correct gedetecteerd in bestandsbrowser
-* [ ] Vignettecorrectie ingeschakeld
+* [ ] Vignetcorrectie ingeschakeld
 * [ ] Reflectiekalibratie ingeschakeld
 * [ ] Ten minste één kalibratiedoelafbeelding geïmporteerd
 * [ ] Gewenste multispectrale indices toegevoegd
@@ -218,8 +219,8 @@ Controleer deze belangrijke instellingen voordat u begint met verwerken:
 
 Zodra uw instellingen zijn geconfigureerd:
 
-1. **Kalibratiedoelafbeeldingen markeren** - Zie [Doelafbeeldingen kiezen](choosing-target-images.md)
-2. **Verwerking starten** - Zie [De verwerking starten](starting-the-processing.md)
-3. **Voortgang controleren** - Zie [De verwerking controleren](monitoring-the-processing.md)
+1. **Markeer kalibratiedoelafbeeldingen** - Zie [Doelafbeeldingen kiezen](choosing-target-images.md)
+2. **Start de verwerking** - Zie [De verwerking starten](starting-the-processing.md)
+3. **Volg de voortgang** - Zie [De verwerking volgen](monitoring-the-processing.md)
 
 Raadpleeg de referentiedocumentatie [Projectinstellingen](../project-settings/project-settings.md) voor volledige details over alle beschikbare instellingen.
