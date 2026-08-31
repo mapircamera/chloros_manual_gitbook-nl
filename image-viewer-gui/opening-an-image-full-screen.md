@@ -1,213 +1,225 @@
 # Een afbeelding op volledig scherm openen
 
-De Chloros Image Viewer biedt een speciale interface op volledig scherm voor het bekijken, analyseren en bewerken van uw multispectrale afbeeldingen. Of u nu originele afbeeldingen of bewerkte resultaten bekijkt, de Image Viewer biedt krachtige tools voor inspectie en analyse.
+<figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption><p>Een afbeelding geopend op volledig scherm, met de laagselector rechtsboven</p></figcaption></figure>
 
-## De Image Viewer openen
+De Chloros Image Viewer is de interface op volledig scherm voor het bekijken, inspecteren en meten van uw afbeeldingen. Hier kunt u **echte pixelwaarden** aflezen — DN per kanaal, reflectiepercentage of stralingsintensiteit in W/m²/sr/nm — in plaats van het uitgerekte voorbeeld dat op het scherm wordt weergegeven.
+
+## De afbeeldingsviewer openen
 
 ### Vanuit de bestandsbrowser
 
-De meest gebruikelijke manier om een afbeelding te openen in de Image Viewer:
+1. Open het tabblad **Bestandsbrowser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
+2. Klik op een willekeurige **miniatuur** in het [afbeeldingsraster](image-grid.md)
+3. De afbeelding wordt op volledig scherm geopend in het tabblad **Afbeeldingsviewer**
 
-1. Zorg ervoor dat u zich op het tabblad **Bestandsbrowser** bevindt <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Klik op een willekeurige **afbeeldingsminiatuur** in het afbeeldingsraster
-3. De afbeelding wordt geopend in het **hoofdvoorvertoningsgebied** (midden van het scherm)
-4. De afbeelding is nu geladen en klaar om op volledig scherm te bekijken
+De afbeelding wordt geopend in het product dat in het raster werd weergegeven. Als het raster is ingesteld op `RAW (Reflectance)`, is dat de laag waarin je terechtkomt.
 
-### Het tabblad Image Viewer openen
+### De zijbalk van de afbeeldingsviewer openen
 
-Zodra een afbeelding in het voorvertoningsgebied is geladen:
+Klik op het **Image Viewer**-<img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">-pictogram in de linkerzijbalk om het analysepaneel uit te schuiven. Dit bevat, van boven naar beneden:
 
-1. Klik op het **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> in de linkerzijbalk
-2. Het tabblad Afbeeldingsviewer wordt geopend en toont de geselecteerde afbeelding op volledig scherm
-3. Geavanceerde weergave- en analysehulpmiddelen worden beschikbaar in de linkerzijbalk
+* de afbeeldingsnaam en het cameramodel
+* de knop **Afbeelding(en) exporteren/opslaan** (alleen als er een index of LUT actief is)
+* de selectievakjes **Index**en**LUT** en het configuratiepaneel voor de index — zie [Index/LUT Sandbox](index-lut-sandbox.md)
+* het paneel **Cursorwaarden**: uitlezing per kanaal, laaghistogram en de GSD-regelaar***
 
-***
+## Navigeren en zoomen
 
-## Overzicht van de interface van de Afbeeldingsviewer
+### Door afbeeldingen bladeren
 
-### Hoofdweergavegebied
+* **Volgende afbeelding**: de →-knop of de**→**-toets (pijl naar rechts)
+* **Vorige afbeelding**: de ←-knop of de**←**-toets (pijl naar links)
+* **Naar een specifieke afbeelding springen**: ga terug naar het raster en klik op de bijbehorende miniatuur
 
-Het grootste deel van het scherm toont uw afbeelding:
-
-* **Volledige resolutie**: Afbeeldingen worden weergegeven in de oorspronkelijke resolutie
-* **Zoombaar**: gebruik de bedieningselementen of het muiswiel om in te zoomen
-* **Verschuifbaar**: klik en sleep om te verplaatsen wanneer ingezoomd
-* **Beeldverhouding behouden**: afbeeldingen worden proportioneel geschaald***
-
-## Weergaveopties
-
-### Basisnavigatie door afbeeldingen
-
-#### Blader door afbeeldingen
-
-Navigeer door uw afbeeldingsset met behulp van sneltoetsen of knoppen:
-
-* **Volgende afbeelding**: Klik op de →-knop of druk op de**→**-toets (pijl naar rechts)
-* **Vorige afbeelding**: Klik op de ←-knop of druk op de**←**-toets (pijl naar links)
-* **Ga naar een specifieke afbeelding**: Ga terug naar de bestandsbrowser en klik op de gewenste miniatuur
-
-#### Zoomknoppen
-
-Pas de vergroting aan om afbeeldingsdetails te bekijken:
-
-**Inzoomen:*** Klik op de **+** (plus) knop
-* Druk op de **+**of**=** toets
-* Scroll met het muiswiel **omhoog**
-
-**Uitzoomen:*** Klik op de **−** (min) knop
-* Druk op de **−** (min) toets
-* Scroll met het muiswiel **omlaag**
-
-#### Pannen bij ingezoomd
-
-Wanneer u verder hebt ingezoomd dan de schermgrootte:
-
-1. Beweeg de muiscursor over de afbeelding
-2. Klik en **houd de linkermuisknop ingedrukt**
-
-3.**Sleep** om de afbeelding te verplaatsen
-4. Laat los om het pannen te stoppen
-
-**Alternatief**: Gebruik de pijltjestoetsen om in kleine stapjes te pannen***
-
-## Pixelwaarden bekijken
-
-### Pixelwaarden bij de cursor bekijken
-
-Terwijl u de muiscursor over de afbeelding beweegt, worden de pixelwaarden in realtime weergegeven:**Locatie van de waardeweergave:*** **Zwevend getal en rode lijn in de legenda van de LUT-gradiënt aan de rechterkant*** **Bij verder inzoomen, zwevende waarde bij de cursor en gemarkeerde pixel*** Toont waarden voor de pixel **onder de cursor of gemarkeerd*** Wordt bijgewerkt terwijl u de muis beweegt
-
-***
-
-## Afbeeldingstypen die u kunt bekijken
-
-### JPG
-
-**JPG-afbeeldingen van de camera:**
-
-* Geeft JPG-gegevens weer zoals in het voorbeeld
-* Toont originele, ongecorrigeerde waarden
-* Handig voor het controleren van de beeldkwaliteit vóór verwerking
-
-### RAW (Origineel)
-
-### RAW (Reflectantie)
-
-**Na verwerking:**
-
-* Vignettering gecorrigeerd
-* Reflectantie gekalibreerd
-* Multi-band TIFF (Red, Green, NIR, enz.)
-* Wetenschappelijke gegevens klaar voor analyse
-
-### RAW (Index)
-
-**NDVI, NDRE, GNDVI, enz. (\_NDVI.tif-bestanden):**
-
-* Grijswaardenbeelden met één band
-* Pixelwaarden vertegenwoordigen de resultaten van de indexberekening
-* Bereik doorgaans -1 tot +1 voor genormaliseerde indices
-* Er kunnen kleur-LUT&#x27;s worden toegepast voor visualisatie
-
-***
-
-## Toepassing van index en LUT
-
-Pas multispectrale indices en kleur-Look-Up Tables toe:
-
-1. Zoek **Index/LUT Sandbox**in**Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> zijbalk
-2. Selecteer vegetatie-index (NDVI, NDRE, enz.)
-3. Selecteer multispectrale formule of maak uw eigen aangepaste formule (alleen Chloros+)
-4. Pas kleur-LUT-verloop toe voor visualisatie
-5. Pas waardebereiken en drempels aan
-
-Zie [Index/LUT Sandbox](index-lut-sandbox.md) voor gedetailleerde instructies.
-
-***
-
-## Sneltoetsen
-
-### Navigatie
-
-* **→** (Pijl naar rechts): Volgende afbeelding
-* **←** (Pijl naar links): Vorige afbeelding
-* **Home**: Eerste afbeelding in de lijst
-* **End**: Laatste afbeelding in de lijst
+De zoom- en verschuifstand blijven behouden terwijl u tussen afbeeldingen schakelt, zodat u door een reeks kunt bladeren terwijl u op hetzelfde deel van het beeld blijft.
 
 ### Zoomen
 
-* **+**of**=**: Inzoomen
-* **−**: Uitzoomen
-* **Muiswiel**: In-/uitzoomen***
+Zoomen gebeurt met het **muiswiel**, in stappen van 15%, waarbij de cursor als referentiepunt dient — het punt onder de aanwijzer blijft onder de aanwijzer. Het bereik wordt bepaald door de afbeelding en de venstergrootte: je kunt niet verder uitzoomen dan ‘aanpassen aan venster’, en de bovengrens wordt bepaald door de oorspronkelijke resolutie van de afbeelding.
 
-### Indexberekeningen controleren
+Er zijn geen speciale zoomboetoetsen in de volledig-scherm-viewer. (In het raster: **Ctrl + `+` / `−`** past de grootte van de miniaturen aan — een andere bedieningsfunctie.)
 
-Controleer of de indices correct zijn berekend:
+### Pannen bij ingezoomd beeld
 
-1. Open NDVI of een andere indexafbeelding
-2. Controleer de vegetatiegebieden:
-   * **NDVI**: Moet 0,4-0,9 aangeven voor gezonde planten
-   * **NDRE**: Hogere waarden voor krachtige groei
-   * **GNDVI**: Vergelijkbaar met NDVI, maar gevoelig voor chlorofyl
-3. Controleer niet-vegetatie:
-   * **Bodem**: Bijna 0 of licht negatief
-   * **Water**: Negatieve waarden (-0,5 tot 0)***
+Klik met de linkermuisknop op de afbeelding, houd deze ingedrukt en sleep. Het pannen is beperkt, zodat de afbeelding niet buiten het scherm kan worden gesleept.
 
-## Problemen met het bekijken oplossen
+### Inspectie per pixel bij hoge zoomfactor
 
-### Afbeelding kan niet worden geopend
+Zodra de effectieve vergroting **60×** overschrijdt, tekent Chloros een gemarkeerd kader rond de afzonderlijke weergegeven pixel onder de cursor en een zwevende waarde ernaast.
 
-**Mogelijke oorzaken:**
+De „effectieve“ vergroting houdt rekening met de GSD-blokgrootte: bij een blokgrootte van 8 verschijnt de markering al bij een vergroting van 7,5× in plaats van 60×, omdat één weergegeven pixel al 8 × 8 bronpixels beslaat. Als je weer uitzoomt tot onder de drempelwaarde, verdwijnt de markering.
 
-* Bestand beschadigd tijdens verwerking
-* Niet-ondersteund bestandsformaat
-* Onvoldoende geheugen voor grote afbeelding
+### Sneltoetsen
 
-**Oplossingen:**
+| Toets                             | Waar       | Actie                              |
+| ------------------------------- | ----------- | ----------------------------------- |
+| **→**                           | Volledig scherm | Volgende afbeelding                          |
+| **←**                           | Volledig scherm | Vorige afbeelding                      |
+| **Ctrl + R**                    | Volledig scherm | De index/LUT-sandbox resetten         |
+| **Ctrl + `+`**/**Ctrl + `=`** | Raster        | Grotere miniaturen (4 px per druk op de toets)  |
+| **Ctrl + `−`**                  | Raster        | Kleinere miniaturen (4 px per druk op de toets) |***
 
-1. Probeer het bestand in een externe viewer te openen om de integriteit te controleren
-2. Controleer of het bestandsformaat overeenkomt met het verwachte type
-3. Sluit andere applicaties om geheugen vrij te maken
-4. Probeer een kleinere/andere afbeelding
+## Cursorwaarden
 
-### Afbeelding wordt zwart of wit weergegeven
+Beweeg de cursor over de afbeelding en het paneel **Cursorwaarden** geeft de waarde weer van elk kanaal eronder.
 
-**Mogelijke oorzaken:**
+{% hint style="success" %}
+**Dit zijn de werkelijke getallen van het bestand.** Het canvas op het scherm is een uitgerekt 8-bits voorbeeld en kan deze waarden niet weergeven; daarom neemt Chloros een steekproef uit het daadwerkelijke productbestand voor de weergave. Dat is de reden waarom een 12-bits raw-frame waarden boven 255 weergeeft en waarom een float32-radiance-laag fysieke eenheden weergeeft.
+{% endhint %}
 
-* Waardebereik buiten weergavemogelijkheden
-* 32-bits float-afbeelding met ongebruikelijke waarden
-* Fout bij indexberekening
+### Wat de kolommen betekenen
 
-**Oplossingen:**
+Het paneel past zich aan de laag aan die u bekijkt:
 
-1. Controleer de pixelwaarden – als deze allemaal erg laag of erg hoog zijn, pas dan het weergavebereik aan
-2. Probeer het bestand te openen in QGIS of een soortgelijk programma met automatische bereikaanpassing
-3. Controleer het foutlogboek van de verwerking op fouten
+| Laag die u bekijkt              | Weergegeven kolommen    | Opmerkingen                                                                                           |
+| ---------------------------------- | ---------------- | ----------------------------------------------------------------------------------------------- |
+| Reflectie                        | **DN**en**%** | Het percentage wordt berekend op basis van de eigen schaal van dat bestand — zie hieronder                                      |
+| Straling                           | **W/m²/sr/nm**   | Fysieke waarden als drijvende-kommagetallen; geen DN-kolom, omdat een DN hier geen betekenis heeft                           |
+| Ruw / Debayered / voorbeeld / JPG    | **DN**           | Digitale gehele getallen                                                                         |
+| 32-bits export van reflectiepercentages | alleen **%**       | De opgeslagen float is geen DN, dus als deze naar een geheel getal zou worden afgerond, zou er een zinloze waarde zoals `0` of `1` worden weergegeven |
 
-### Pixelwaarden lijken onjuist
+Elke rij is gelabeld met de kanaalnaam van het filter van je camera — `Red / Green / NIR` voor RGN, `Orange / Cyan / NIR` voor OCN, `NIR / Green / Blue` voor NGB, `Red / Green / Blue` voor RGB, en de naam van de enkele band voor RE-, NIR- en mono-M3M-camera’s. Elk label is voorzien van een gekleurde stip die overeenkomt met de kanaalcirkels die in de indexformule-editor worden gebruikt.
 
-**Mogelijke oorzaken:**
+Opgeslagen **index- en LUT**-afbeeldingen vormen een speciaal geval: ze bevatten kleurkaartcomponenten in plaats van spectrale banden, dus hun rijen zijn gelabeld als `Red / Green / Blue` (of `Index` voor een indexbestand met één kanaal) in plaats van met de filternamen van de camera.
 
-* Verkeerde afbeelding wordt bekeken (origineel versus verwerkt)
-* Kalibratie is niet correct toegepast
-* Gegevens van de lichtsensor zijn niet opgenomen in de invoer
-* De procentmodus is onjuist ingeschakeld
+Wanneer een index actief is in de sandbox, verschijnt er onder de kanalen een extra rij met de **indexwaarde** op de cursor, samen met de naam van de index en een witte stip die overeenkomt met de markering op het histogram.
 
-**Oplossingen:**
+### Het reflectentiepercentage maakt gebruik van de eigen schaal van elk bestand
 
-1. Controleer of u de verwerkte uitvoer bekijkt (controleer de extensie van de bestandsnaam)
-2. Controleer de status van de knop voor de procentmodus
-3. Vergelijk met afbeeldingen uit dezelfde dataset waarvan bekend is dat ze goed zijn
+{% hint style="warning" %}
+**Ga er niet vanuit dat 65535 = 100% is.** Chloros slaat reflectie op verschillende schalen op, afhankelijk van welke camera het heeft geproduceerd, en de viewer bepaalt per bestand de juiste schaal.
+{% endhint %}
+
+| Bron                  | DN die overeenkomt met reflectie 1,0 | Hoe het wordt geïdentificeerd                                                                                                                               |
+| ----------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **LATTICE**(M3C / M3M) |**32768**                      | XMP-tag `Chloros:PixelScale=32768` wordt in elke LATTICE-reflectantie-export geschreven. Dankzij de 2× headroom kan het bestand ρ boven 1,0 bevatten zonder clipping |
+| **Survey3**|**65535**                      | Geen Chloros XMP-schaal-tag — de Survey3-kalibratie schrijft ρ × dtype-max en clipt bij 1,0                                                               |
+
+De viewer, de index/LUT-sandbox en de indexexport berekenen de schaal allemaal via dezelfde implementatie, dus een waarde die je bij de cursor afleest, is dezelfde waarde die de indexberekening heeft gebruikt.
+
+Twee gevolgen die het vermelden waard zijn:
+
+* Een **32-bits procent**TIFF slaat DN/65535 op als een float, en een**8-bits** PNG/JPG-export slaat DN × 255/65535 op — de viewer zet beide weer terug voordat er een percentage wordt weergegeven.
+* Eén geval kan niet worden hersteld: een **8-bits TIFF-export van een opname met een 8-bits bron** wordt begrensd tot 0–255 in plaats van opnieuw geschaald, en bevat opzettelijk geen schaaltag. Voor die bestanden geeft het paneel alleen de DN weer, zonder procentkolom. Dit is het eerlijke antwoord, geen bug.***
+
+## Het laaghistogram
+
+Onder de cursorrijen bevindt zich een live histogram van de laag die u bekijkt, in **256 bins**. Standaard wordt één gecombineerde curve getekend, gewogen volgens `(R + 2G + B) / 4` — dezelfde meetruimte die de LATTICE-camera-histogrammen gebruiken. Als u**RGB** in, wordt deze vervangen door krommen per kanaal in de kanaalkleuren, die additief worden gemengd zodat overlappingen leesbaar blijven. Mono-lagen geven altijd de enkele kromme weer.
+
+De horizontale as is in de eigen eenheid van de laag:
+
+| Laag       | As-eenheid  | Maximum as                                               |
+| ----------- | ---------- | ---------------------------------------------------------- |
+| Reflectantie | procent    | 125% — de headroom van het product staat ρ boven 1,0 toe           |
+| Stralingskracht    | W/m²/sr/nm | De eigen piek van het frame, afgerond naar twee significante cijfers |
+| 8-bits gegevens  | DN         | 255                                                        |
+| 12-bits gegevens | DN         | 4095                                                       |
+| 16-bits gegevens | DN         | 65535                                                      |
+
+Wanneer de as in DN staat en op een van deze drie bovengrenzen uitkomt, weet Chloros ook de bitdiepte van wat u bekijkt.
+
+Boven het histogram bevinden zich drie knoppen:
+
+| Knop     | Standaard | Effect                                                                                                                                                                                                                                                                                   |
+| ---------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **CURSOR** | Aan      | Tekent markeringslijnen op het histogram op de exacte waarden die in de bovenstaande rijen worden weergegeven, zodat je kunt zien waar de pixel onder je cursor zich bevindt in de verdeling van het beeld. In de modus RGB is er één markering per kanaal in een eigen kleur; anders is er één witte markering bij de gecombineerde waarde |
+| **INDEX**| Aan      | Wordt alleen weergegeven terwijl een index actief is. Schakelt het histogram om van de bronbanden naar de**indexwaardeverdeling**, waarbij de twee clippedrempels worden weergegeven als oranje stippellijnen en de indexwaarde van de cursor als een witte lijn                                                          |
+| **RGB**| Uit     | Schakelt over van de gecombineerde curve naar curven per kanaal. Op een monosensor geeft deze knop**MONO** weer en is hij uitgeschakeld — er is slechts één kanaal om weer te geven                                                                                                                                  |
+
+Het histogram wordt berekend op basis van de **blokken die je ziet**, niet op basis van de bronpixels erachter: als je de GSD-blokgrootte wijzigt, wordt de verdeling opnieuw berekend, zodat het histogram, de cursormarkering en het weergegeven beeld altijd met elkaar overeenkomen.***
+
+## GSD-blokgrootte
+
+Onderaan het paneel bevindt zich de **GSD (px)**-regelaar: een invoerveld, een schuifbalk van**1 tot 256**en een**RESET**-knop.
+
+Hiermee wordt de _weergegeven_ afbeelding grover gemaakt door een N × N-blok bronpixels te middelen tot één weergegeven pixel. `1` is de oorspronkelijke resolutie.
+
+* Dit heeft invloed op **de weergave op volledig scherm, de rasterminiaturen, de cursorweergave en beide histogrammen** — alles wat de afbeelding weergeeft, gebruikt dezelfde basisresolutie.
+* Dit geldt **alleen voor de weergave**. De verwerking en export blijven ongewijzigd. Er is één bewuste uitzondering: een export via de [Index/LUT Sandbox](index-lut-sandbox.md) slaat op wat je op dat moment ziet, dus deze behoudt de huidige blokgrootte, en het exportpaneel waarschuwt je wanneer de blokgrootte groter is dan 1.
+* De waarde wordt **per project** opgeslagen als `viewer_display.gsd_bin` in `project.json`, zodat deze behouden blijft bij het sluiten en opnieuw openen.
+* De cursorweergave geeft de blokwaarde weer, niet de bronpixel, wanneer de blokgrootte groter is dan 1 — de weergegeven waarde is het gemiddelde van het blok onder je cursor.
+
+{% hint style="info" %}
+**Waarom „blokgrootte“ en niet centimeters per pixel?** Voor een waarde in cm/px is een hoogte boven de grond nodig. De EXIF-gegevens van een enkel beeld bevatten de GPS-hoogte boven gemiddeld zeeniveau, niet boven het terrein waarop de camera was gericht; daarom geeft Chloros geen afstand tot de grond weer die het niet op betrouwbare wijze kan afleiden. De blokgrootte in bronpixels is dezelfde uitwijkoplossing die de MAPIR-cloudtools gebruiken wanneer de grondmonstersafstand onbekend is.
+{% endhint %}
+
+***
+
+## Beeldtypen die je kunt bekijken
+
+Het laagmenu rechtsboven in de viewer toont alle versies van het huidige beeld. Welke items worden weergegeven, hangt af van de camera en van wat er is verwerkt — zie [Beeldlagen](image-layers.md) voor de volledige lijst en hoe het keuzemenu werkt.
+
+### Survey3
+
+* **JPG** — het eigen voorbeeldbestand van de camera
+* **RAW (Origineel)** — het bronbestand `.RAW`, gedebayerd voor weergave, zonder correcties
+* **RAW (Doel)** — een frame waarvan is vastgesteld dat het een kalibratiedoel bevat
+* **RAW (Reflectantie)** — het gekalibreerde reflectantieproduct (65535 = ρ 1,0)
+* **Vignettering gecorrigeerd**/**Sensorrespons** — het niet-gekalibreerde fallback-product
+* **Witgebalanceerd** — het witgebalanceerde product
+* **RAW (`<INDEX>`-index)**en**`<INDEX>` LUT** — berekende indexafbeeldingen
+
+### LATTICE
+
+LATTICE-opnames maken gebruik van hetzelfde dropdown-menu, met de namen van de niveaus in de pijplijn:
+
+| Laag                 | Wat deze bevat                                                        |
+| --------------------- | -------------------------------------------------------------------- |
+| **RAW (Origineel)**    | Het bron-RAW-frame zoals vastgelegd                                     |
+| **RAW (Debayered)**   | Het lineaire, debayered beeld                                           |
+| **RAW (Voorbeeld)**     | Het weergavevoorbeeld — valsekleurenuitrekking voor multispectrale camera’s |
+| **Witbalans**    | Het weergavevoorbeeld voor RGB-mastercamera’s (witbalans + gamma)   |
+| **RAW (Straling)**    | Float32 spectrale straling in W/m²/sr/nm                              |
+| **RAW (Reflectantie)** | uint16 reflectantie, 32768 = ρ 1,0                                    |
+
+Straling en reflectantie zijn uitsluitend multispectraal: een RGB-mastercamera heeft geen radiometrie per band, dus die lagen worden er niet voor gegenereerd.
+
+***
+
+## Index en LUT-toepassing
+
+Pas multispectrale indices en kleuren-Look-Up Tables toe vanuit de zijbalk:
+
+1. Open de **Image Viewer**-<img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">-zijbalk
+2. Vink **Index** aan
+3. Kies het filter van je camera en een indexformule, en sleep vervolgens de kanaalcirkels naar de vakjes van de formule
+4. Voeg een LUT toe en kies een verloop, drempelwaarden en een clippingmodus
+5. Bekijk de waarden bij de cursor en sla het resultaat op met **Export/Save Image(s)**Zie [Index/LUT Sandbox](index-lut-sandbox.md) voor de volledige handleiding.***
+
+## Probleemoplossing
+
+### De afbeelding kan niet worden geopend
+
+**Mogelijke oorzaken**: het bestand is na het importeren verplaatst of verwijderd; het product is nooit opgeslagen; onvoldoende geheugen voor een zeer grote afbeelding.**Wat te doen**:
+
+1. Controleer of het bestand van de laag nog steeds in de uitvoerstructuur van het project staat
+2. Open het bestand in een externe viewer om te controleren of het intact is
+3. Sluit andere toepassingen om geheugen vrij te maken
+
+### De afbeelding is zwart, wit of heeft bizarre kleuren
+
+**Mogelijke oorzaken**: de beelduitrekking heeft niets om mee te werken (een vrijwel constant frame); een float32-laag met ongebruikelijke waarden; een index die geen geldige gegevens heeft opgeleverd.**Wat te doen**:
+
+1. Lees de cursorwaarden af — als elk kanaal op of rond nul ligt, zit het probleem in de gegevens, niet in de weergave
+2. Controleer het histogram: een enkele piek aan één uiteinde geeft aan dat het frame is afgekapt of leeg is
+3. Controleer het verwerkingslogboek voor de run die de laag heeft geproduceerd
+
+### De waarden lijken onjuist
+
+**Mogelijke oorzaken**: je bevindt je op een andere laag dan je denkt; je vergelijkt een percentage met een ruwe DN; je vergelijkt een LATTICE-bestand met een Survey3-bestand met dezelfde deler.**Wat te doen**:
+
+1. Controleer de geselecteerde laag in de vervolgkeuzelijst — de eenheden in het paneel volgen die van de laag
+2. Gebruik voor reflectie de **%**-kolom in plaats van de DN zelf te delen; als je toch moet delen, gebruik dan de `Chloros:PixelScale` van dat bestand (32768 voor LATTICE, indien afwezig betekent dit 65535 voor Survey3)
+3. Stel de GSD-blokgrootte weer in op 1 — boven 1 lees je een blokgemiddelde af, geen pixel
+4. Controleer of de reflectanciekalibratie daadwerkelijk is uitgevoerd voor dat frame; een niet-gekalibreerd fallback-product (Sensor Response / Vignette Corrected) is geen reflectantie
 
 ***
 
 ## Volgende stappen
 
-Nu u afbeeldingen op volledig scherm kunt bekijken:
+* [**Beeldlagen**](image-layers.md) — elke laagnaam, indien aanwezig, en wat de waarden ervan betekenen
+* [**Index/LUT-Sandbox**](index-lut-sandbox.md) — indexvisualisaties samenstellen, afstemmen en exporteren
+* [**Kaartmarkeringen**](map-markers.md) — dezelfde beeldset op een kaart
+* [**Multispectrale indexformules**](../project-settings/multispectral-index-formulas.md) — de indexreferentie
 
-* [**Afbeeldingslagen**](image-layers.md) - Meer informatie over multibandvisualisatie
-* [**Index/LUT-sandbox**](index-lut-sandbox.md) - Pas aangepaste indices en kleurtoewijzingen toe
-* [**Multispectrale indexformules**](../project-settings/multispectral-index-formulas.md) - Begrijp de beschikbare indices
-
-Zie voor de verwerkingsworkflow:
-
-* [**Beelden verwerken (GUI)**](../processing-images-gui/adding-files-to-a-project.md) - Volledige verwerkingsgids
+Zie [Beelden verwerken (GUI)](../processing-images-gui/adding-files-to-a-project.md) voor de verwerkingsworkflow.

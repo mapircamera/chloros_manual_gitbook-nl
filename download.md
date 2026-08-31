@@ -18,18 +18,18 @@ Download de nieuwste versie van Chloros om aan de slag te gaan met multispectral
 | **Processor**        | Intel Core i5 of gelijkwaardig                          | Intel Core i7 of beter                              |
 | **Geheugen (RAM)**     | 8 GB                                                  | 16 GB of meer                                         |
 | **Grafische kaart**    | Compatibel met DirectX 11                                | NVIDIA GPU met 4 GB+ VRAM                            |
-| **Opslagruimte**          | 6 GB vrije ruimte                                       | SSD met 10 GB+ vrije ruimte                            |
+| **Opslagruimte**          | 6 GB vrije ruimte                                       | SSD met 10 GB of meer vrije ruimte                            |
 | **Beeldscherm**          | 1920x1080                                            | 2560x1440 of hoger                                  |
-| **Internet**         | Vereist voor \[optioneel] Chloros+ licentieactivering | Vereist voor \[optioneel] Chloros+ licentieactivering |
+| **Internet**         | Vereist voor \[optioneel\] Chloros+ licentieactivering | Vereist voor \[optioneel\] Chloros+ licentieactivering |
 
-#### Linux amd64 (x86\_64)
+#### Linux amd64 (x86_64)
 
-| Vereiste       | Minimaal                    | Aanbevolen               |
+| Vereisten       | Minimaal                    | Aanbevolen               |
 | ----------------- | -------------------------- | ------------------------- |
-| **Distributie**  | Ubuntu 20.04+ / Debian 11+ | Ubuntu 22.04+             |
-| **Processor**     | x86\_64 (Intel/AMD)        | Intel Core i7 of beter   |
+| **Distributie**  | Ubuntu 22.04 LTS+ / Debian 12+ | Ubuntu 24.04 LTS      |
+| **Processor**     | x86_64 (Intel/AMD)        | Intel Core i7 of beter   |
 | **Geheugen (RAM)**  | 8 GB                        | 16 GB of meer              |
-| **Grafische kaart** | Geen (CPU-verwerking)      | NVIDIA GPU met 4 GB+ VRAM |
+| **Grafische kaart** | Geen (verwerking via CPU)      | NVIDIA GPU met 4 GB+ VRAM |
 | **Opslagruimte**       | 2 GB vrije ruimte             | SSD met 10 GB+ vrije ruimte       |
 | **Python**        | Python 3.7+ (voor SDK)      | Python 3.10+              |
 
@@ -43,14 +43,18 @@ Download de nieuwste versie van Chloros om aan de slag te gaan met multispectral
 | **Python**       | Python 3.7+ (voor SDK)        | Python 3.10+                    |
 
 {% hint style="info" %}
-**GPU-versnelling**: Chloros+-gebruikers met NVIDIA GPU&#x27;s kunnen CUDA-versnelling gebruiken voor aanzienlijk snellere verwerking. Dit werkt zowel op Windows (desktop-GPU&#x27;s) als op Linux (desktop-GPU&#x27;s en NVIDIA Jetson). Chloros+-gebruikers profiteren ook van multithreaded verwerking voor maximale snelheid.
+**GPU-versnelling**: Gebruikers van Chloros+ met NVIDIA-GPU&#x27;s kunnen CUDA-versnelling gebruiken voor aanzienlijk snellere verwerking. Dit werkt zowel op Windows (desktop-GPU’s) als op Linux (desktop-GPU’s en NVIDIA Jetson). Gebruikers van Chloros+ profiteren bovendien van multithreaded verwerking voor maximale snelheid.
 {% endhint %}
 
 ***
 
 ## Download Chloros
 
-### Laatste stabiele release (23 maart 2026): Versie 1.1.0
+### Nieuwste stabiele release: versie 1.2.0
+
+<!-- NOLAN: replace installer links + release date for 1.2.0 — the three download buttons below still point at the 1.1.0 Google Drive files, and the release date needs to be added to the heading above. -->
+
+
 
 ### <a href="https://drive.google.com/uc?export=download&#x26;id=1HjwrUY4M7HGxDbMybO7iPe_6JoHnUGr4" class="button primary">Download Chloros voor Windows (.exe)</a>
 
@@ -69,18 +73,18 @@ Download de nieuwste versie van Chloros om aan de slag te gaan met multispectral
 1. Download het bovenstaande .exe-bestand
 2. Dubbelklik op het installatieprogramma om de installatie te starten
 3. Volg de aanwijzingen van de installatiewizard
-4. Kies de installatiemap (standaard: `C:\Program Files\[USER]\Chloros\`)
+4. Kies de installatiemap (standaard: `C:\Program Files\MAPIR\Chloros\`)
 5. Voltooi de installatie en start Chloros of Chloros CLI
-6. Meld u aan met uw [MAPIR Cloud Chloros+ account](https://cloud.mapir.camera/pricing) (of ga verder met de gratis versie)
+6. Meld je aan met je [MAPIR Cloud Chloros+-account](https://cloud.mapir.camera/pricing) (of ga verder met de gratis versie)
 
 {% hint style="success" %}
-Het installatieprogramma voegt automatisch `chloros-cli` toe aan de PATH van uw systeem voor toegang via de opdrachtregel.
+Het installatieprogramma voegt automatisch `chloros-cli` toe aan de PATH van je systeem voor toegang via de opdrachtregel.
 {% endhint %}
 
 #### Linux amd64 (.deb-pakket — CLI + Backend)
 
 * **Bestandstype**: .deb (Debian/Ubuntu-pakket)
-* **Architectuur**: x86\_64 (amd64)
+* **Architectuur**: x86_64 (amd64)
 
 ```bash
 sudo dpkg -i chloros-amd64.deb
@@ -99,16 +103,24 @@ chloros-cli --version  # Verify installation
 
 Zie [Linux Installatie](linux/linux-installation.md) voor gedetailleerde installatie-instructies en [NVIDIA Jetson-handleiding](linux/nvidia-jetson-guide.md) voor Jetson-specifieke richtlijnen.
 
-#### Python SDK (Alle platforms)
+#### Python SDK (alle platforms)
+
+Elk installatieprogramma bevat een bijbehorend `chloros_sdk`-wiel, zodat de SDK-versie altijd overeenkomt met de geïnstalleerde GUI/CLI/backend. Op Windows installeert het installatieprogramma het automatisch in uw systeem Python; op Linux plaatst `.deb` het wheel in `/usr/lib/chloros/sdk/` en geeft het installatiecommando weer:
+
+```bash
+pip install --user /usr/lib/chloros/sdk/chloros_sdk-*.whl
+```
+
+Voor hosts die alleen pip gebruiken (waarop geen Chloros-pakket is geïnstalleerd), is de SDK ook beschikbaar op PyPI:
 
 ```bash
 pip install chloros-sdk
 ```
 
-Zie [API : Python SDK](api-python-sdk.md) voor documentatie.
+Zie [API : Python SDK](api-python-sdk.md) en de [SDK-referentie](reference/sdk-reference.md) voor documentatie.
 
 {% hint style="info" %}
-**Linux-gebruikers**: Het `.deb`-pakket installeert de CLI en de backend. De Python SDK wordt apart geïnstalleerd via pip. Er is geen GUI voor Linux — alle interactie verloopt via CLI of SDK.
+**Linux-gebruikers**: Het `.deb`-pakket installeert het CLI en de backend. Er is geen GUI voor Linux — alle interactie verloopt via CLI of SDK.
 {% endhint %}
 
 ***
@@ -123,14 +135,14 @@ Voor ontwikkelaars en automatiseringsworkflows installeert u de Chloros Python S
 pip install chloros-sdk
 ```
 
-**Documentatie**: [API: Python SDK](api-python-sdk.md)**Vereisten**: Chloros moet geïnstalleerd zijn (Windows-installatieprogramma of Linux `.deb`-pakket), Chloros+ licentie-login vereist***
+**Documentatie**: [API: Python SDK](api-python-sdk.md)**Vereisten**: Chloros moet geïnstalleerd zijn (Windows-installatieprogramma of Linux `.deb`-pakket), Chloros+ licentie-inlog vereist***
 
 ## Wat zit erbij
 
 ### Windows-installatieprogramma
 
 * ✅ **Chloros GUI** - Volledig uitgeruste grafische interface
-* ✅ **Chloros CLI** - Opdrachtregelinterface (vereist Chloros+ licentie)
+* ✅ **Chloros CLI** - Opdrachtregelinterface (vereist een Chloros+ licentie)
 * ✅ **Chloros Backend** - Verwerkingsengine
 * ✅ **Cameraprofielen** - Vooraf geconfigureerde MAPIR-camerasjablonen
 
@@ -139,49 +151,49 @@ pip install chloros-sdk
 * ✅ **Chloros CLI** - Opdrachtregelinterface (vereist Chloros+ licentie)
 * ✅ **Chloros Backend** - Verwerkingsengine
 * ✅ **Cameraprofielen** - Vooraf geconfigureerde MAPIR-camerasjablonen
-* ❌ Geen GUI — Linux is alleen headless CLI/SDK
+* ❌ Geen grafische gebruikersinterface — Linux is uitsluitend een headless CLI/SDK
 
 ### Python SDK (pip, alle platforms)
 
-* ✅ **Chloros SDK** - Python API (vereist Chloros+ licentie)***
+* ✅ **Chloros SDK** - Python API (vereist een Chloros+-licentie)***
 
 ## Upgrade naar Chloros+
 
 Ontgrendel geavanceerde functies met een Chloros+-abonnement:
 
 * 🚀 **Multi-threaded verwerking** - Verwerk afbeeldingen parallel
-* ⚡ **GPU (CUDA) versnelling** - Maak gebruik van de kracht van NVIDIA GPU&#x27;s
-* 💻 **CLI-toegang** - Automatiseer met opdrachtregelprogramma&#x27;s
+* ⚡ **GPU (CUDA)-versnelling** - Maak gebruik van de kracht van NVIDIA-GPU&#x27;s
+* 💻 **Toegang tot CLI** - Automatiseer met opdrachtregelprogramma&#x27;s
 * 🐍 **Python SDK** - Programmatische toegang tot API
 * 📱 **Meerdere apparaten** - Gebruik op 2-10+ apparaten (afhankelijk van het abonnement)
-* **🐻 Geavanceerde textuurbewuste debayer-methode** - een hoogwaardige randbewuste debayer gecombineerd met een AI/ML-ruisonderdrukkingsmodel dat bijna alle debayer-ruis verwijdert.
+* **🐻 Geavanceerde textuurbewuste debayermethode** - een hoogwaardige, randbewuste debayer in combinatie met een AI/ML-ruisonderdrukkingsmodel dat vrijwel alle debayerruis verwijdert.
 * 🧮 **Aangepaste formules** - Maak aangepaste multispectrale indices
 
 <p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Bekijk Chloros+ abonnementen en prijzen</a></p>***
 
-## Hulp bij installatie
+## Hulp bij de installatie
 
 ### Probleemoplossing
 
 **Installatie mislukt met foutmelding:**
 
-* Zorg ervoor dat u beheerdersrechten hebt
+* Zorg ervoor dat je beheerdersrechten hebt
 * Schakel antivirussoftware tijdelijk uit
-* Controleer of u voldoet aan de minimale systeemvereisten
+* Controleer of je voldoet aan de minimale systeemvereisten
 
-**Toepassing start niet (Windows):**
+**De applicatie start niet (Windows):**
 
-* Controleer of Windows 10/11 (64-bits) is geïnstalleerd
-* Werk grafische stuurprogramma&#x27;s bij
-* Controleer Windows Event Viewer voor foutdetails
-* Neem contact op met de ondersteuning met foutlogboeken
+* Controleer of Windows 10/11 (64-bit) is geïnstalleerd
+* Werk de grafische stuurprogramma’s bij
+* Controleer de Windows Gebeurtenisviewer voor foutdetails
+* Neem contact op met de ondersteuning en stuur de foutenlogboeken mee
 
 **CLI start niet (Linux):**
 
 * Controleer of het `.deb`-pakket correct is geïnstalleerd: `dpkg -l | grep chloros`
 * Controleer de machtigingen: `sudo chmod +x /usr/bin/chloros-cli`
-* Voer diagnostiek uit: `chloros-cli selftest`
-* Controleer op ontbrekende bibliotheken: `ldd /usr/lib/chloros/chloros-backend | grep "not found"`
+* Voer een diagnose uit: `chloros-cli selftest`
+* Controleer of er bibliotheken ontbreken: `ldd /usr/lib/chloros/chloros-backend | grep "not found"`
 
 **Problemen met licentieactivering:**
 
@@ -197,31 +209,15 @@ Hulp nodig bij de installatie of configuratie?
 * 📧 **E-mail**: info@mapir.camera
 * 🌐 **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **Documentatie**: [Aan de slag](./)
-* ❓ **FAQ**: [Veelgestelde vragen](faq.md)***
+* ❓ **Veelgestelde vragen**: [Veelgestelde vragen](faq.md)***
 
-## Wijzigingslogboek
+## Software-updates
 
-<details>
+Chloros controleert op updates, geeft aan wanneer er een nieuwe versie beschikbaar is en linkt naar deze downloadpagina — u voert de update uit door het nieuwe, ondertekende installatieprogramma uit te voeren. Uw instellingen en projecten blijven behouden na updates. Op Linux en Jetson controleert `chloros-cli update` of er een nieuwere versie is en biedt het aan om de bijbehorende `.deb` te downloaden en te installeren (dit commando is alleen beschikbaar in Linux).
 
-<summary>Versie 1.1.0 (nieuwste)</summary>
+***
 
-**Releasedatum: maart 2026**
-
-**Nieuwe functies*** **Linux-ondersteuning** — Native CLI en SDK voor Linux amd64 (x86\_64) en arm64 (NVIDIA Jetson JetPack 6). Installeer via `.deb`-pakketten.
-* **NVIDIA Jetson-ondersteuning** — Geoptimaliseerde verwerking voor Jetson Nano-, Orin Nano-, Orin NX- en AGX Orin-edge-apparaten.
-* **Dynamische rekenaanpassing** — Automatische hardwaredetectie en optimalisatie van de verwerkingsstrategie. Chloros past zich aan uw hardware aan, van een Jetson Nano tot een werkstation met meerdere GPU&#x27;s.
-* **4-thread verwerkingspijplijn** — Gelijktijdige detectie-, kalibratie-, verwerkings- en exportthreads met dynamische GPU-geheugentoewijzing.
-* **Nieuwe CLI-commando&#x27;s** — `selftest` (systeemdiagnostiek) en `update` (Linux-updatebeheer).
-* **Nieuwe CLI-procesvlaggen** — `--debayer` (standaard/textuurbewust), `--indices` (indices specificeren), `--target` (zoek eerst in de doelsubmap voor snellere detectie).
-* **Nieuwe GUI-menu-items** — Bestanden toevoegen, Map toevoegen en Verwerking starten/stoppen zijn nu toegankelijk via het dropdown-menu van het hoofdmenu.**Verbeteringen**
-
-* Automatische detectie van cross-platform backend (Windows- en Linux-paden)
-* Verbeterde SDK `get_status()` met voortgangsregistratie per thread
-* Nieuwe SDK-uitzonderingen: `ChlorosConfigurationError`, `ChlorosAuthenticationError`
-* Thermisch beheer en adaptieve throttling voor NVIDIA Jetson
-* Automatisch geheugenbeheer met OOM-fallback naar getilde GPU-verwerking
-
-</details>
+## Wijzigingslogboek**Versie 1.2.0 (nieuwste)**— zie**Wat is er nieuw in Chloros 1.2.0** op de pagina [Aan de slag](./) voor de volledige lijst met functies.
 
 <details>
 
@@ -229,7 +225,7 @@ Hulp nodig bij de installatie of configuratie?
 
 **Releasedatum: 10 februari 2026**
 
-**Nieuwe functies*** **Texture Aware Debayer-methode \[Alleen Chloros+] -** Texture Aware maakt gebruik van een hoogwaardige, randbewuste debayer in combinatie met een AI/ML-ruisonderdrukkingsmodel dat vrijwel alle debayering-ruis verwijdert.
+**Nieuwe functies*** **Texture Aware-debayer-methode \[Alleen Chloros+] -** Texture Aware maakt gebruik van een hoogwaardige, randgevoelige debayer in combinatie met een AI/ML-ruisonderdrukkingsmodel dat vrijwel alle debayer-ruis verwijdert.
 * **Ondersteuning voor T4P-kalibratiedoelen*** **Snellere Chloros+ GPU-verwerking, beter geheugenbeheer**
 
 **Bugfixes*** Volledig nieuwe frontend (GUI), zou nu op alle Windows-computers moeten werken.
@@ -242,14 +238,14 @@ Hulp nodig bij de installatie of configuratie?
 
 **Releasedatum: 5 januari 2026**
 
-**Nieuwe functies*** **Schakelaar voor afbeelding/metadata**: Schakelaar toegevoegd in de bestandsbrowser om de metadata van de geselecteerde afbeelding in een tabel te bekijken in plaats van in het afbeeldingsraster
-* **Zoomschuifregelaar voor afbeeldingsraster**: Nieuwe UI-schuifregelaar om de grootte van de miniaturen aan te passen (ondersteunt ook CTRL + muiswiel)
-* **Knoppen voor het exporteren van het afbeeldingsraster**: Knoppen in de bovenste rij om miniaturen te wisselen van JPG naar verwerkte exports (Targets, Reflectance, Index, LUT)
+**Nieuwe functies*** **Schakelaar voor afbeeldingen/metadata**: Schakelaar toegevoegd in de bestandsbrowser om de metadata van de geselecteerde afbeelding in een tabel te bekijken in plaats van in het afbeeldingsraster
+* **Zoomschuifbalk voor afbeeldingsraster**: Nieuwe UI-schuifbalk om de grootte van de miniaturen aan te passen (ondersteunt ook CTRL + muiswiel)
+* **Knoppen voor het exporteren van het afbeeldingsraster**: Knoppen in de bovenste rij om miniaturen om te schakelen van JPG naar bewerkte exportformaten (Targets, Reflectance, Index, LUT)
 * **Tabblad Kaart**: Nieuwe interactieve 2D-kaart met GPS-locatiemarkeringen voor afbeeldingen
-  * Ondersteunt Google Maps en ESRI-kaarttegels (selecteert automatisch de beste tegeldienst op basis van beschikbaarheid per zoomniveau)
-  * Voorbeeld van miniatuur bij muisaanwijzer op kaartmarkeringen
+  * Ondersteunt Google Maps en ESRI-kaarttegels (selecteert automatisch de beste tegeldienst op basis van de beschikbaarheid per zoomniveau)
+  * Voorbeeld van miniatuurafbeelding bij kaartmarkeringen wanneer de muis eroverheen beweegt
 
-**Bugfixes*** Verbeterde ondersteuning voor het installeren van Chloros op niet-Engelstalige computers
+**Bugfixes*** Verbeterde ondersteuning voor het installeren van Chloros op computers met een andere taal dan Engels
 
 </details>
 
@@ -259,17 +255,17 @@ Hulp nodig bij de installatie of configuratie?
 
 **Releasedatum: 20 december 2025**
 
-**Nieuwe functies*** Eerste lancering
+**Nieuwe functies*** Eerste release
 
-**Verbeteringen*** Eerste lancering
+**Verbeteringen*** Eerste release
 
-**Bugfixes*** Eerste lancering
+**Bugfixes*** Eerste release
 
-**Bekende problemen*** Eerste lancering
+**Bekende problemen*** Eerste release
 
 </details>***
 
-## Licentieovereenkomst**Eigendomssoftware** - Copyright (c) 2026 MAPIR Inc.
+## Licentieovereenkomst**Eigen software** - Copyright (c) 2026 MAPIR Inc.
 
 Ongeautoriseerd gebruik, verspreiding of wijziging is verboden.
 

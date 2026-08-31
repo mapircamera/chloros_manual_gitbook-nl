@@ -1,335 +1,200 @@
 # Afbeeldingslagen
 
-Met het vervolgkeuzemenu ‘Afbeeldingslagen’ in de Chloros-afbeeldingsviewer kunt u snel schakelen tussen verschillende versies van dezelfde afbeelding – van de originele opnames tot bewerkte reflectie-uitvoer en berekende indexafbeeldingen.
+Met het **laagmenu** rechtsboven in de afbeeldingsviewer kun je schakelen tussen alle versies van de afbeelding die je bekijkt — van de bronopname via elk bewerkt product tot de berekende indexafbeeldingen — zonder de viewer te verlaten.
 
 ## Wat zijn afbeeldingslagen?
 
-In Chloros verwijzen **lagen** naar de verschillende afbeeldingsuitvoer die beschikbaar is voor één bronafbeelding. Wanneer u afbeeldingen verwerkt, maakt Chloros meerdere versies aan:
+Een „laag“ in Chloros is één **productbestand**dat aan één bronafbeelding is gekoppeld. Bij het importeren krijgt u de bronbestanden; tijdens de verwerking wordt er voor elk product dat tijdens de run is gegenereerd een laag toegevoegd. Geëxporteerde bestanden behouden de bestandsnaam van de bron — het is de**map** die het product identificeert, en de laagnaam is het label dat Chloros aan die map toekent.
 
-* **Originele afbeeldingen** (JPG- en RAW-bestanden van uw camera)
-* **Reflectantie gekalibreerde** uitvoer (als reflectantiecalibratie was ingeschakeld)
-* **Doelafbeeldingen** (als de afbeelding kalibratiedoelen bevat)
-* **Indexafbeeldingen** (NDVI, NDRE, GNDVI, enz. als indexen waren geconfigureerd)
+<!-- SCREENSHOT-NEEDED: Image Viewer full screen with the layer dropdown open on a processed LATTICE multispectral image, showing the full list: TIFF base, RAW (Original), RAW (Debayered), RAW (Preview), RAW (Radiance), RAW (Reflectance), and one RAW (NDVI Index) entry. -->
 
-Met de **Layer Selector-dropdown** rechtsboven in de Image Viewer kunt u direct tussen deze versies schakelen zonder de viewer te verlaten.***
+***
 
-## Beschikbare laagtypen
+## De lagenlijst
 
-### JPG
+### Altijd aanwezig
 
-* De originele JPG-voorbeeldafbeelding van uw camera
-* Altijd beschikbaar voor alle afbeeldingen
-* Onbewerkt, zoals vastgelegd door de camera
-* Het snelst te laden en weer te geven
+| Laag | Wat het is |
+| --- | --- |
+| **JPG**(of**PNG**/**TIFF**) | Het basisbestand dat bij de opname is binnengekomen. Survey3 importeert een `.JPG` naast elke `.RAW`; LATTICE-opnames leveren een PNG of TIFF weergavevoorbeeld mee. Gelabeld voor wat daadwerkelijk is geïmporteerd |
+| **RAW (Origineel)** | Het bron-raw-frame, gedebayerd voor weergave zonder toegepaste correcties. Beschikbaar vanaf het moment van import — het hoeft niet te worden verwerkt |
 
-**Wanneer te bekijken:**
+Een LATTICE-opname waarvan het basisbestand **het**RAW-frame**is**, heeft geen aparte basisvermelding: `RAW (Original)` dekt dit al.
 
-* Snel voorbeeld van de originele opname
-* Controleren van de compositie en kadrering van de afbeelding
-* Controleren van de opnamekwaliteit vóór verwerking
+### Survey3-verwerkingsproducten
 
-### RAW (Origineel)
-
-* De originele RAW-sensorgegevens van uw camera
-* Debayered zonder dat er nabewerking is toegepast
-* Hogere bitdiepte dan JPG (meestal 12-bits of 14-bits sensorgegevens)
-
-**Wanneer te bekijken:**
-
-* De kwaliteit van de originele sensorgegevens inspecteren
-* Controleren op sensorproblemen of artefacten
-* Resultaten voor en na verwerking vergelijken
-
-### RAW (Doel)
-
-* Verschijnt alleen bij afbeeldingen waarvan is vastgesteld dat ze kalibratiedoelen bevatten
-* Toont de originele RAW-afbeelding met gedetecteerd doel
-* Wordt gebruikt om te verifiëren of de doelherkenning succesvol was
-
-**Wanneer te bekijken:**
-
-* Bevestigen dat kalibratiedoelen correct zijn gedetecteerd
-* De beeldkwaliteit van het doel controleren
-* Problemen met kalibratie oplossen
+| Laag | Geschreven naar | Bestaat wanneer |
+| --- | --- | --- |
+| **RAW (Doel)** | — | Het frame werd geïdentificeerd als een frame dat een kalibratiedoel bevat |
+| **RAW (Reflectantie)** | `Reflectance_Calibrated_Images/` | De reflectantiekalibratie is succesvol uitgevoerd op dit frame |
+| **Vignettering gecorrigeerd**| `Vignette_Corrected_Images/` | Het frame kon niet worden gekalibreerd op basis van reflectie**en** *vignetteringscorrectie* was ingeschakeld |
+| **Sensorrespons**| `Sensor_Response_Images/` | Het frame kon niet op reflectie worden gekalibreerd**en** *vignetteringscorrectie* was uitgeschakeld |
+| **Witbalans** | `White_Balanced_Images/` | Er is een product met witbalans opgeslagen |
 
 {% hint style="info" %}
-**Doellaag**: Deze laag verschijnt alleen in de vervolgkeuzelijst voor afbeeldingen die kalibratiedoelen bevatten. Gewone opnameafbeeldingen hebben deze optie niet.
+**Vignetcorrectie en sensorrespons zijn alternatieven, nooit beide tegelijk.** Per run bestaat er precies één niet-gekalibreerd fallback-product voor elk cameramodel, en de schakelaar *Vignetcorrectie* bepaalt welk product dat is. Zie [Projectinstellingen](../project-settings/project-settings.md).
 {% endhint %}
 
-### RAW (Reflectantie)
+### LATTICE-niveaus
 
-* De gekalibreerde reflectantie-uitvoerbeeld
-* Vignettering gecorrigeerd (indien ingeschakeld tijdens verwerking)
-* Reflectantie gekalibreerd met behulp van doelgegevens (indien ingeschakeld)
-* Multiband TIFF met alle camerakanaal
-* Pixelwaarden vertegenwoordigen procentuele reflectantie (bij gebruik van de procentuele modus)
-* Klaar om te bewerken met de [Index/LUT Sandbox](index-lut-sandbox.md)
+LATTICE legt de fan-out in één verwerkingsstap vast in deze niveaus. Welke er beschikbaar zijn, hangt af van de exportschakelaars per product in de projectinstellingen en van wat van toepassing is op de camera.
 
-**Wanneer te bekijken:**
+| Laag | Geschreven naar | Van toepassing op |
+| --- | --- | --- |
+| **RAW (Debayered)** | `Debayered_Images/` | RGB en multispectraal |
+| **RAW (Voorbeeld)** | `Preview_Images/` | Multispectraal (valse kleuren-uitrekking) |
+| **Witbalans** | `Preview_Images/` | RGB-mastercamera’s — het RGB-voorbeeld is onder deze naam geregistreerd, zodat het aansluit bij de gelijknamige Survey3-laag |
+| **RAW (straling)** | `Radiance_Images/` | Alleen multispectraal |
+| **RAW (reflectantie)** | `Reflectance_Calibrated_Images/` | Alleen multispectraal, en alleen wanneer een bijpassend `.daq`-downwelling-record of een in-frame-doel dat de kwaliteitscontrole heeft doorstaan het frame bestrijkt |
 
-* Het inspecteren van gekalibreerde resultaten
-* Het controleren van de kalibratiekwaliteit
-* Het controleren van pixelwaarden op wetenschappelijke nauwkeurigheid
-* Het vergelijken met het origineel om kalibratie-effecten te zien
+RGB-mastercamera&#x27;s hebben geen radiometrie per band, dus straling en reflectie worden voor deze camera&#x27;s overgeslagen als **niet van toepassing** — dit wordt in het logboek vermeld in plaats van dat er stilzwijgend een fout wordt gerapporteerd.
 
-{% hint style="success" %}
-**Aanbevolen**: Gebruik de RAW (Reflectie)-laag bij het controleren van pixelwaarden voor wetenschappelijke metingen en analyses.
-{% endhint %}
+### Index-, LUT- en sandbox-lagen
 
-### RAW (NDVI Index)... en soortgelijke
+| Laagpatroon | Voorbeeld | Waar het vandaan komt |
+| --- | --- | --- |
+| **RAW (`<INDEX>` Index)** | `RAW (NDVI Index)` | Eén per index die is geconfigureerd in de projectinstellingen, berekend tijdens de verwerking |
+| **`<INDEX>` LUT** | `NDVI LUT` | De kleurgemapte versie van een index |
+| **Sandbox (`<Name>` `<Index\|LUT>` `<NNN>`)** | `Sandbox (NDVI LUT 003)` | Eén per exportrun van [Index/LUT Sandbox](index-lut-sandbox.md) |
 
-* Berekende vegetatie-indexafbeelding (NDVI in dit voorbeeld)
-* De indexnaam verandert afhankelijk van welke index tijdens de verwerking is geconfigureerd
-* Voorbeelden: RAW (NDVI Index), RAW (NDRE Index), RAW (GNDVI Index), enz.
-* Grijswaardenafbeelding met één band die de resultaten van de indexberekening weergeeft
-* Er verschijnt één laag voor elke index die is geconfigureerd in de projectinstellingen
-
-**Mogelijke indexnamen:**
-
-* RAW (NDVI Index)
-* RAW (NDRE Index)
-* RAW (GNDVI Index)
-* RAW (OSAVI-index)
-* RAW (EVI-index)
-* RAW (SAVI-index)
-* En nog veel meer... (zie [Formules voor multispectrale indexen](../project-settings/multispectral-index-formulas.md))
-
-**Wanneer te bekijken:**
-
-* Het onderzoeken van de resultaten van indexberekeningen
-* Het controleren van indexwaardebereiken
-* Het identificeren van gebieden van belang
-* Het verifiëren van indexbeelden voordat deze worden gebruikt in GIS of analyse
+Als dezelfde indexnaam meer dan eens met verschillende instellingen is geconfigureerd, krijgen de tweede en volgende een nummer in de naam (`RAW (NDVI2 Index)`), zodat de lagen van elkaar te onderscheiden blijven.
 
 ***
 
 ## De laagselector gebruiken
 
-### De vervolgkeuzelijst openen
+1. Open een afbeelding op volledig scherm door op een miniatuur in het raster te klikken
+2. Klik op de **laagkeuzelijst** rechtsboven in de viewer
+3. Kies een laag — de afbeelding wordt onmiddellijk bijgewerkt
 
-1. Open een afbeelding in volledig scherm (klik op een willekeurige miniatuur in de afbeeldingsviewer)
-2. Zoek de **laag-dropdown** in de rechterbovenhoek van de viewer
-3. De dropdown toont de momenteel geselecteerde laag (bijv. &quot;JPG&quot;)
-4. Klik op de dropdown om alle beschikbare lagen te zien
+In het keuzemenu staan **JPG, RAW (Origineel), RAW (Doel), RAW (Reflectantie)** als eerste, in die volgorde, en daarachter wordt de rest weergegeven in de volgorde waarin de producten zijn geregistreerd.
 
-### Van laag wisselen
+### Laagvoorkeur bij het navigeren
 
-1. Klik op de laag-dropdown om de lijst te openen
-2. Alle beschikbare lagen voor de huidige afbeelding worden getoond
-3. Klik op een willekeurige laagnaam om naar die versie te wisselen
-4. De afbeelding wordt onmiddellijk bijgewerkt om de geselecteerde laag weer te geven
+Als je op **←**/**→** drukt, ga je naar de volgende afbeelding en wordt geprobeerd je op dezelfde laag te houden:
 
-**Snel wisselen:**
+1. **Eerst exacte overeenkomst** — als de volgende afbeelding een laag met dezelfde naam heeft, krijg je die te zien. Hierdoor blijf je op `RAW (NDVI Index)` terwijl je door een hele set bladert
+2. **Vervolgens een overeenkomst op type** — een indexlaag zoekt naar elke indexlaag, een LUT naar elke LUT, reflectantie naar reflectantie, doel naar doel, origineel naar origineel, basis naar basis
+3. **Vervolgens, alleen voor exportlagen** — de naam blijft behouden, zelfs als de lagenlijst nog niet is bijgewerkt, omdat het bestand al op de schijf staat. Hierdoor kun je producten bekijken terwijl ze nog worden geschreven tijdens een run
+4. **Anders** — de eerste beschikbare laag, wat normaal gesproken de basisafbeelding is
 
-* Het dropdown-menu onthoudt uw laatste selectie
-* Wanneer u naar de volgende afbeelding navigeert, probeert Chloros hetzelfde laagtype weer te geven
-* Als die laag niet bestaat op de volgende afbeelding, wordt standaard JPG weergegeven
+De sidecar-bestanden `.daq` en `.csv` in het project worden overgeslagen bij navigatie met de pijltjestoetsen, zodat je bij het doorlopen van afbeeldingen nooit bij een opname van de lichtsensor terechtkomt.
 
-### Beschikbaarheid van lagen
-
-Niet alle lagen zijn beschikbaar voor elke afbeelding:
-
-**Altijd beschikbaar:*** ✅ JPG (elke afbeelding heeft een JPG-voorbeeld)
-
-**Voorwaardelijk beschikbaar:**
-
-* ⚠️ RAW (Origineel) - Alleen als de afbeelding is vastgelegd in de RAW- of RAW+JPG-modus
-* ⚠️ RAW (Doel) - Alleen als de afbeelding gedetecteerde kalibratiedoelen bevat
-* ⚠️ RAW (Reflectantie) - Alleen na verwerking met reflectantiekalibratie ingeschakeld
-* ⚠️ RAW (\[Index] Index) - Alleen na verwerking met geconfigureerde indices
+Zoomen en pannen worden ook over de afbeeldingen heen overgedragen, waardoor het eenvoudig is om dezelfde veldpositie voor en na te vergelijken.
 
 ***
 
-## Laagpersistentie
+## Pixelwaarden per laag begrijpen
 
-### Navigeren tussen afbeeldingen
+Het [paneel Cursorwaarden](opening-an-image-full-screen.md#cursor-values) geeft de werkelijke waarde per kanaal onder je cursor weer, in de eenheid waarin die laag is opgeslagen. De kolommen veranderen per laag:
 
-Wanneer u naar een andere afbeelding navigeert (met de pijltjestoetsen of door op miniaturen te klikken):**De laagvoorkeur blijft behouden:**
+| Laag | Weergegeven eenheid | Opmerkingen |
+| --- | --- | --- |
+| Basis (JPG / PNG / TIFF-voorbeeld) | DN, 0–255 | Weergavewaarden, gammagecorrigeerd op RGB. Alleen visuele inspectie |
+| RAW (Origineel) | DN | Ruwe digitale sensorgegevens. De histogram-as geeft de diepte aan: 255 (8-bit), 4095 (12-bit) of 65535 (16-bit) |
+| RAW (Debayered) | DN | Lineair, geen weergave-uitrekking |
+| RAW (Voorbeeld) / Witbalans | DN | Weergaveproduct — uitgerekt of gamma-gecorrigeerd. Niet bedoeld voor metingen |
+| RAW (Stralingsintensiteit) | **W/m²/sr/nm** | Float32 fysieke stralingsintensiteit. Geen DN-kolom |
+| RAW (reflectie) | DN **en %** | Percentage berekend op basis van de eigen schaal van dat bestand — zie hieronder |
+| Index / LUT / sandbox-exporten | Indexwaarde, of RGB-componenten | Een indexbestand met één kanaal rapporteert de indexwaarde; een LUT-bestand met kleuraanpassing rapporteert Red/Green/Blue-componenten |
 
-* Als u &quot;RAW (Reflectantie)&quot; bekijkt, toont de volgende afbeelding &quot;RAW (Reflectantie)&quot; (indien beschikbaar)
-* Als u &quot;RAW (NDVI Index)&quot; bekijkt, toont de volgende afbeelding &quot;RAW (NDVI Index)&quot; (indien beschikbaar)
-* Als dezelfde laag niet bestaat, wordt standaard JPG weergegeven
+### Reflectie: de schaal geldt per bestand
 
-**Voorbeeldworkflow:**
+{% hint style="warning" %}
+**&quot;Delen door 65.535&quot; is alleen correct voor Survey3.** De reflectie van LATTICE wordt op een andere schaal opgeslagen, en het door elkaar gebruiken van de twee delers is de meest voorkomende manier om reflectiewaarden te krijgen die precies de helft zijn van wat ze zouden moeten zijn.
+{% endhint %}
 
-1. Open afbeelding 1, schakel over naar RAW (NDVI Index)
-2. Druk op → om afbeelding 2 te bekijken
-3. Afbeelding 2 toont automatisch de RAW (NDVI Index) laag
-4. Ga verder met navigeren - alle afbeeldingen tonen de NDVI-laag
-5. Zeer efficiënt voor het bekijken van indexresultaten over vele afbeeldingen
+| Bron | DN die gelijk is aan reflectie 1,0 | Geïdentificeerd door |
+| --- | --- | --- |
+| **LATTICE**(M3C / M3M) |**32768** | De XMP-tag `Chloros:PixelScale=32768` die in elke LATTICE-reflectantie-export is opgenomen. De 2× headroom betekent dat ρ boven 1,0 weergegeven kan worden in plaats van afgekapt te worden |
+| **Survey3**|**65535** | Geen Chloros XMP-schaaltag — de kalibratie schrijft ρ × dtype-max en klipt bij 1,0 |
 
-***
+Voor GIS en scripting: lees `Chloros:PixelScale` uit het bestand en deel erdoor. Als de tag ontbreekt, is het bestand Survey3-schaal (65535). De viewer, de index/LUT-sandbox en de indexexport berekenen de schaal allemaal op dezelfde manier, dus het getal dat je bij de cursor ziet, is het getal dat de indexberekening heeft gebruikt.
 
-## Veelvoorkomende workflows
+Formaatspecifieke opslag bovenop die schaal:
 
-### Workflow 1: Voor/na-vergelijking
+* **TIFF (32-bit, procent)** slaat DN / 65535 op als een float
+* **PNG (8-bit)**en**JPG (8-bit)** slaan DN × 255 / 65535 op
+* Een **8-bits TIFF-export van een opname met een 8-bits bron** wordt begrensd tot 0–255 in plaats van op schaal gebracht, en bevat bewust geen schaaltag. Het paneel geeft voor die bestanden alleen de DN weer, zonder procentkolom
 
-**Doel**: Vergelijk de originele afbeelding met de gekalibreerde afbeelding
+### Indexwaardebereiken
 
-1. Open de bewerkte afbeelding in de afbeeldingsviewer
-2. Selecteer **RAW (Origineel)** in de vervolgkeuzelijst
-3. Let op de vignettering en de niet-gekalibreerde waarden
-4. Schakel over naar **RAW (Reflectantie)** in de vervolgkeuzelijst
-5. Vergelijk - vignettering verwijderd, waarden gekalibreerd
+| Indexfamilie | Typisch bereik | Waarde |
+| --- | --- | --- |
+| Genormaliseerd verschil (NDVI, GNDVI, NDRE, ENDVI…) | −1 tot +1 | Gezonde vegetatie doorgaans 0,4–0,9; kale grond rond 0; water negatief |
+| Bodemgecorrigeerd (SAVI, OSAVI, MSAVI2…) | ruwweg −1 tot +1,5 | Vergelijkbare waarde als NDVI, waarbij de bodemachtergrond is onderdrukt |
+| Verhouding (GRVI, GCI, MSR, CIRE…) | onbeperkt boven | Verhoudingen stijgen onbeperkt naarmate de noemerband naar nul gaat |
+| EVI / LAI | 0 tot ~1, 0 tot ~3,5 | Wolken en andere verzadigde pixels zorgen ervoor dat beide waarden buiten het bereik vallen — maskeer deze eerst |
 
-### Werkstroom 2: Indexbeoordeling
-
-**Doel**: Snel de NDVI-resultaten in de dataset bekijken
-
-1. Open de eerste bewerkte afbeelding
-2. Selecteer **RAW (NDVI Index)** in het dropdown-menu
-3. Gebruik de pijltoetsen om naar de volgende afbeelding te gaan
-4. De NDVI-laag blijft automatisch staan
-5. Ga door alle afbeeldingen heen en controleer de NDVI-patronen
-6. Schakel over naar **RAW (NDRE Index)** om te vergelijken
-
-### Workflow 3: Doelverificatie
-
-**Doel**: Controleer of alle doelafbeeldingen correct zijn gedetecteerd
-
-1. Navigeer naar een doelafbeelding
-2. Selecteer **RAW (Target)** in de vervolgkeuzelijst
-3. Controleer of de kalibratiedoelen duidelijk zichtbaar zijn en gedetecteerd worden
-4. Navigeer naar de volgende doelafbeelding
-5. Herhaal de verificatie voor alle doelen
-
-### Workflow 4: Controle van pixelwaarden
-
-**Doel**: Controleer de reflectiewaarden op wetenschappelijke nauwkeurigheid
-
-1. Open de bewerkte afbeelding
-2. Selecteer de laag **RAW (Reflectance)**
-
-3. Schakel de modus**Pixel Percent** in (knop in de werkbalk rechtsboven)
-4. Beweeg de cursor over vegetatiegebieden
-5. Controleer of de pixelwaarden binnen de verwachte bereiken liggen (30-70% voor NIR, 5-15% voor Red)
-6. Controleer bodem- en watergebieden op juiste waarden
+Zie [Formules voor multispectrale indexen](../project-settings/multispectral-index-formulas.md) voor de exacte formule achter elke voorinstelling.
 
 ***
 
-## Inzicht in pixelwaarden per laag
+## Veelgebruikte workflows
 
-Verschillende lagen tonen verschillende pixelwaarde-bereiken:
+### Vergelijking voor en na
 
-### JPG-laag
+1. Selecteer **RAW (Origineel)** en let op de vignettering en de niet-gekalibreerde waarden
+2. Schakel over naar **RAW (Reflectantie)**
 
-* **Bereik**: 0-255 (8-bit)
-* **Betekenis**: Weergavewaarden, gammagecorrigeerd
-* **Gebruik**: Alleen visuele inspectie, niet voor wetenschappelijke metingen
+3. Vergelijk — vignettering verwijderd, waarden gekalibreerd. Zoom en pan blijven behouden, zodat je naar hetzelfde gebied kijkt
 
-### RAW (Origineel)
+### Eén index over een hele reeks bekijken
 
-* **Bereik**: 0-65535 (16-bit)
-* **Betekenis**: Ruwe digitale sensorgegevens
-* **Gebruik**: Controle van sensorprestaties, niet gekalibreerd
+1. Open de eerste bewerkte afbeelding en selecteer de indexlaag
+2. Druk herhaaldelijk op **→** — de indexlaag volgt je van afbeelding naar afbeelding
+3. Houd het histogram in de zijbalk in de gaten terwijl je doorloopt: een frame waarvan de verdeling een sprong vertoont, is het waard om nader te bekijken
 
-### RAW (Reflectantie)
+### Kalibratiedoelen controleren
 
-* **Bereik**: 0-65.535 (16-bits TIFF) of 0,0-1,0 (32-bits Percent)
-* **Betekenis**: Gekalibreerd reflectiepercentage
-* **Gebruik**: Wetenschappelijke metingen en analyse**Voor 16-bits TIFF:**Deel door 65.535 om het reflectiepercentage te verkrijgen**Voor 32-bits Percent:** Waarden geven direct het percentage weer (0,5 = 50% reflectie)
+1. Selecteer **RAW (Target)** op een doelbeeld
+2. Controleer of het doel duidelijk zichtbaar is en wordt gedetecteerd
+3. Ga naar het volgende doelbeeld — de doellaag volgt mee
 
-### RAW (indexbeelden)
+### Controleer de nauwkeurigheid van de reflectiewaarden
 
-* **Bereik**: Varieert per index (meestal -1,0 tot +1,0 voor genormaliseerde indices)
-* **Betekenis**: Resultaat van de indexberekening
-* **Voorbeelden**:
-  * NDVI: -1 tot +1 (vegetatie meestal 0,4 tot 0,9)
-  * NDRE: -1 tot +1 (stressdetectie)
-  * EVI: 0 tot 1 (verbeterde vegetatie)
+1. Selecteer **RAW (Reflectance)**
+
+2. Lees de kolom**%** in het paneel ‘Cursorwaarden’ — deze is al correct geschaald voor dat bestand
+3. Controleer of de waarden kloppen met bekende materialen in het beeld: gezonde vegetatie heeft een hoge waarde voor NIR en een lage waarde voor rood; een kalibratiedoel moet een waarde vertonen die dicht bij de gepubliceerde reflectiewaarde ligt
 
 ***
-
-## Tips en best practices
-
-### Efficiënt wisselen tussen lagen
-
-* **Toetsenbord sneltoetsen**: Hoewel er geen sneltoetsen zijn voor lagen, werken de navigatiepijltjes (←/→) voor alle lagen
-* **Consistente workflows**: Kies één laag (bijv. NDVI) en bekijk de volledige dataset voordat u naar een andere laag overschakelt
-* **Snelle vergelijkingen**: Schakel tussen Original en Reflectance om de verwerkingskwaliteit te controleren
-
-### Overwegingen met betrekking tot prestaties
-
-* **JPG laadt het snelst**: Gebruik dit voor snelle navigatie door veel afbeeldingen
-* **RAW-lagen laden langzamer**: Hogere resolutie en bitdiepte
-* **Indexlagen**: Vergelijkbare snelheid als Reflectance-lagen
-* **De eerste keer laden is het langzaamst**: Daaropvolgende weergaven van dezelfde laag worden in de cache opgeslagen en zijn sneller
-
-### Kwaliteitscontrole
-
-* **Controleer altijd RAW (Origineel)**: Controleer de kwaliteit van de brongegevens voordat u de verwerkte resultaten vertrouwt
-* **Vergelijk lagen**: Gebruik het wisselen tussen lagen om te controleren of de verwerking correct is verlopen
-* **Controleer indexbereiken**: Gebruik de modus Pixelpercentage met indexlagen om te controleren of de waarden redelijk zijn***
 
 ## Probleemoplossing
 
-### Laag niet beschikbaar
+### Een laag die ik verwachtte, staat niet in de vervolgkeuzelijst
 
-**Probleem**: Verwachte laag verschijnt niet in de vervolgkeuzelijst**Mogelijke oorzaken:**
+**Mogelijke oorzaken**
 
-* Afbeelding is niet verwerkt (alleen JPG en RAW (origineel) beschikbaar)
-* Reflectantiecalibratie was uitgeschakeld tijdens de verwerking
-* Specifieke index was niet geconfigureerd in de projectinstellingen
-* Afbeelding is een afbeelding die alleen voor doelen is bedoeld (er worden geen indices gegenereerd voor doelen)
+* De afbeelding is nooit verwerkt — alleen de basislaag en `RAW (Original)` bestaan
+* De exportschakelaar van het product is uitgeschakeld in de projectinstellingen
+* Het product is niet van toepassing op die camera (straling en reflectie op een RGB-master; elke index op een enkelbandige M3M-monochromecamera)
+* De reflectankalibratie had geen gegevens om mee te werken — geen `.daq`-dekking in neerwaartse richting en geen in-frame doel dat de kwaliteitscontrole heeft doorstaan — dus viel het frame terug op ‘Vignette Corrected’ of ‘Sensor Response’
 
-**Oplossingen:**
+**Wat te doen**
 
-1. Controleer of de afbeelding is verwerkt (kijk in de uitvoermap of er verwerkte bestanden staan)
-2. Controleer de projectinstellingen om te zien of de indices zijn geconfigureerd
-3. Verwerk opnieuw met de gewenste indices ingeschakeld
+1. Controleer het logboek van de run: Chloros geeft aan wanneer een aangevraagd exportproduct onmogelijk was en waarom
+2. Controleer de exportschakelaars per product in [Projectinstellingen](../project-settings/project-settings.md)
+3. Controleer of de productmap bestaat in de uitvoerstructuur van het project
+4. Voer de bewerking opnieuw uit met het product ingeschakeld
 
-### Verkeerde laag weergegeven
+### De lagenlijst lijkt verouderd
 
-**Probleem**: Afbeelding wordt geopend in een onverwachte laag**Oorzaak**: De laagvoorkeur van de vorige afbeelding is overgenomen, maar die laag bestaat niet in de huidige afbeelding**Oplossing**: Chloros schakelt automatisch over naar JPG wanneer de voorkeurslaag niet beschikbaar is – dit is normaal gedrag
+Chloros scant de productmappen van het project opnieuw terwijl een run bezig is en herstelt ontbrekende laagregistraties op basis van wat er daadwerkelijk op de schijf staat, dus een laag waarvan de export is voltooid, verschijnt vanzelf in een poll. Als je even wegklikt van de afbeelding en weer teruggaat, wordt een nieuwe weergave geforceerd.
 
-### Kalibratiedoelen niet zichtbaar
+### De reflectiewaarden lijken de helft te zijn van wat ze zouden moeten zijn
 
-**Probleem**: RAW-laag (Target) toont geen doelherkenning**Mogelijke oorzaken:**
+U deelt vrijwel zeker een LATTICE-bestand door 65535. Gebruik `Chloros:PixelScale` (32768), of bekijk de **%**-kolom, waarin dit al is toegepast.
 
-* Doelen werden niet gedetecteerd tijdens de verwerking
-* Afbeelding bevat eigenlijk geen doelen
-* Instellingen voor doelherkenning zijn te streng
+### Indexlaag bestaat maar de afbeelding is leeg
 
-**Oplossingen:**
-
-1. Controleer het foutlogboek op berichten met &quot;Target found&quot;
-2. Controleer of de afbeelding daadwerkelijk zichtbare kalibratiedoelen bevat
-3. Pas de instellingen voor doelherkenning aan in Projectinstellingen
-4. Zie [Doelafbeeldingen kiezen](../processing-images-gui/choosing-target-images.md)
-
-***
-
-## Gerelateerde functies
-
-### Hulpmiddelen voor de afbeeldingsviewer
-
-Bij het bekijken van een laag kunt u gebruikmaken van:
-
-* **Zoomknoppen**: Vergroot om details te bekijken
-* **Pannen**: Klik en sleep om door de ingezoomde afbeelding te navigeren
-* **Pixelwaarde-inspectie**: Bekijk waarden op de cursorlocatie
-* **Navigatiepijlen**: Schakel tussen afbeeldingen terwijl de laag behouden blijft
-* **Pixelpercentage-modus**: Schakel tussen DN- en procentweergave
-
-Zie [Een afbeelding op volledig scherm openen](opening-an-image-full-screen.md) voor de volledige documentatie van de afbeeldingsviewer.
-
-### Index/LUT-sandbox
-
-Voor interactieve index-tests en visualisatie:
-
-* **Realtime indexberekening**: Test verschillende indexformules
-* **LUT-kleurtoewijzing**: Pas kleurverlopen toe op grijswaardenindexen
-* **Visualisaties exporteren**: Sla gekleurde indexafbeeldingen op
-
-Zie [Index/LUT-sandbox](index-lut-sandbox.md) voor meer informatie.
+De index heeft banden nodig die je laag niet heeft — bijvoorbeeld een index die een derde kanaal leest, toegepast op een bestand met één of twee kanalen. Schakel over naar een multibandlaag (reflectantie of debayered), of kies een index die past bij het filter van de camera.
 
 ***
 
 ## Volgende stappen
 
-Nu u beeldlagen begrijpt:
-
-* [**Een afbeelding op volledig scherm openen**](opening-an-image-full-screen.md) - Volledige handleiding voor de afbeeldingsviewer
-* [**Index/LUT-sandbox**](index-lut-sandbox.md) - Interactieve indexvisualisatie
-* [**Multispectrale indexformules**](../project-settings/multispectral-index-formulas.md) - Referentie van beschikbare indices
-* [**De verwerking afronden**](../processing-images-gui/finishing-the-processing.md) - Inzicht in verwerkte uitvoer
+* [**Een afbeelding op volledig scherm openen**](opening-an-image-full-screen.md) — cursoraflezing, histogram en GSD-regeling
+* [**Index/LUT-sandbox**](index-lut-sandbox.md) — interactieve indexvisualisatie en export
+* [**Formules voor multispectrale indexen**](../project-settings/multispectral-index-formulas.md) — de indexreferentie
+* [**De verwerking afronden**](../processing-images-gui/finishing-the-processing.md) — de structuur van de uitvoermap waarnaar deze lagen verwijzen

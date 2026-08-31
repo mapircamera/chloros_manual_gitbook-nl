@@ -1,143 +1,125 @@
 # Kaartmarkeringen
 
-Op het tabblad Kaart worden uw beelden op basis van hun GPS-coördinaten weergegeven op een interactieve 2D-kaart. Dit biedt een geografisch overzicht van uw opnamesessie en helpt u de ruimtelijke dekking in beeld te brengen. Het is ook handig bij het importeren van uw beelden om snel alle beelden te verwijderen die u niet hoeft te verwerken.
+Het tabblad Kaart geeft je afbeeldingen weer op een interactieve 2D-kaart op basis van hun GPS-coördinaten. Het biedt je een geografisch overzicht van een opnamesessie en is de snelste manier – direct na het importeren – om afbeeldingen te verwijderen die je niet wilt bewerken.
 
 <figure><img src="../.gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
 
 ## Het tabblad Kaart openen
 
 1. Open of maak een project aan in Chloros
-2. Importeer afbeeldingen die GPS-metadata bevatten
-3. Klik op het tabblad **Kaart** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> in de linkerzijbalk
-4. De kaart toont markeringen op de GPS-locatie van elke afbeelding
+2. Importeer foto&#x27;s die GPS-metadata bevatten
+3. Klik op het tabblad **Kaart** <img src="../.gitbook/assets/image (3) (1).png" alt="" data-size="line"> in de linkerzijbalk
+4. Op de kaart wordt bij de GPS-locatie van elke foto een markering weergegeven
 
 {% hint style="info" %}
-**GPS vereist**: Alleen afbeeldingen met ingebedde GPS-coördinaten in hun EXIF-metadata worden op de kaart weergegeven. Zorg ervoor dat GPS op uw camera is ingeschakeld tijdens het maken van de opname.
+**GPS vereist**: alleen afbeeldingen met GPS-coördinaten in hun EXIF-metadata verschijnen op de kaart. Een afbeelding zonder coördinaten blijft wel in het project aanwezig en wordt nog steeds normaal verwerkt — er staat alleen geen markering bij.
 {% endhint %}
 
 ***
 
-## Afbeeldingen aanpassen via het tabblad Kaart
+## Afbeeldingen aanpassen via het tabblad &#x27;Kaart&#x27;
 
-Het tabblad **Kaart**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> heeft dezelfde knop voor toevoegen  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  en verwijder  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  bestandsknoppen als het [**Bestandsbrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Het toont ook dezelfde lijst met projectbestanden, maar met andere kolomkoppen:
+Het tabblad **Kaart**<img src="../.gitbook/assets/image (3) (1).png" alt="" data-size="line"> heeft dezelfde knoppen voor het toevoegen <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> en verwijderen <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line"> van bestanden als het tabblad [**Bestandsbrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">. Het toont dezelfde lijst met projectbestanden, met geografische kolommen:
 
-### Bestandsnaam
-
-* Originele bestandsnaam van de camera
-* Houdt de naamgevingsconventie van de camera aan (bijv. IMG\_0001.RAW)
-
-### Breedtegraad
-
-* De breedtegraad van de afbeelding
-
-### Lengtegraad
-
-* De lengtegraad van de afbeelding
-
-### Hoogte
-
-* De hoogte van de afbeelding
+| Kolom        | Inhoud                                                           |
+| ------------- | ------------------------------------------------------------------ |
+| **Naam**      | De bestandsnaam zoals deze uit de camera kwam                             |
+| **Breedtegraad** | Decimale graden, zes decimalen                                |
+| **Lengtegraad** | Decimale graden, zes decimalen                                |
+| **Hoogte**  | Meters, één decimaal — `-` wanneer de afbeelding geen hoogte bevat |
 
 {% hint style="info" %}
-Als u op de kolomkoppen van de tabel klikt, worden de rijgegevens ook gesorteerd
+Klik op een kolomkop om op die kolom te sorteren; klik nogmaals om de volgorde om te keren.
+{% endhint %}
+
+{% hint style="warning" %}
+**Hoogte is de hoogte boven zeeniveau, niet de hoogte boven de grond.** De waarde is afkomstig van de EXIF-tag `GPSAltitude` van de afbeelding, die is gekoppeld aan het gemiddelde zeeniveau. Het is niet de vlieghoogte boven het terrein, en Chloros zal hieruit geen grondresolutie afleiden — boven een veld op 300 m boven zeeniveau registreert een drone op 100 m AGL hier ongeveer 400 m. Gebruik de kolom om uitschieters op te sporen en een consistente vlieghoogte te controleren, niet als een AGL-meting.
 {% endhint %}
 
 ***
 
 ## Afbeeldingsmarkeringen
 
-Elke afbeelding met GPS-gegevens wordt weergegeven door een markering op de kaart:
+Elke afbeelding met GPS-gegevens krijgt een markering op de bijbehorende coördinaten.
 
 ### Weergave van markeringen
 
-* Markeringen geven de exacte GPS-coördinaten aan waar elke afbeelding is gemaakt
-* Geclusterde markeringen kunnen bij uitzoomen worden gegroepeerd
-* Zoom in om individuele afbeeldingslocaties te zien
-
-{% hint style="success" %}
-SUPER-ZOOM: Wanneer u het maximale zoomniveau van de kaarttegelprovider bereikt, wordt de tegel bij verder inzoomen vergroot, waardoor u markeringen kunt zien die dicht bij elkaar liggen.
-{% endhint %}
+* Markeringen bevinden zich op de exacte coördinaten die voor elke opname zijn geregistreerd
+* Markeringen die dicht bij elkaar liggen, kunnen visueel overlappen wanneer je uitzoomt — zoom in om ze van elkaar te scheiden
+* Geselecteerde en gemarkeerde markeringen worden boven de rest weergegeven
 
 ### Voorbeeld bij aanwijzen
 
-* **Beweeg uw muis** over een markering om een miniatuurvoorbeeld van die afbeelding te zien
-* Dit maakt snelle visuele identificatie mogelijk zonder de kaartweergave te verlaten
-* Handig voor het vinden van specifieke afbeeldingen binnen een grote opnamesessie
+* **Beweeg de muis** over een marker om een miniatuur van die afbeelding met de bestandsnaam te laten verschijnen
+* **Klik**op een markering om de afbeelding te selecteren en het pop-upvenster**vast te zetten** — het blijft staan totdat u ergens anders klikt. Zolang een pop-upvenster is vastgezet, verdwijnt het niet wanneer u met de muis over andere markeringen beweegt
+* Dit is de snelste manier om één bepaald beeld in een grote sessie te vinden zonder de kaart te verlaten
 
-***
-
-## Kaarttegelproviders
+<figure><img src="../.gitbook/assets/image (36).png" alt=""><figcaption><p>Het tabblad ‘Kaart’ geeft alle afbeeldingen met geotags in het project weer</p></figcaption></figure>### Superzoom
 
 {% hint style="success" %}
-**Automatische selectie**: Chloros kiest automatisch de tegeldienst die het beste zoomniveau biedt voor uw huidige kaartlocatie. U kunt desgewenst handmatig tussen aanbieders schakelen.
+**SUPERZOOM**: wanneer je de maximale zoomfactor bereikt waarvoor de tegelprovider beeldmateriaal heeft, worden de tegels bij verder inzoomen nog groter in plaats van dat het inzoomen stopt, zodat je markeringen die bijna op elkaar liggen van elkaar kunt onderscheiden.
 {% endhint %}
 
-Het tabblad Kaart ondersteunt twee tegelaanbieders voor de achtergrondkaartbeelden:
-
-### Google Maps
-
-* Standaard satelliet- en kaartbeelden van Google
-* Het beste voor algemene wereldwijde dekking
-
-### ESRI
-
-* Satelliet- en luchtfoto&#x27;s van ESRI ArcGIS
-* Biedt vaak beelden met een hogere resolutie in bepaalde regio&#x27;s
+* Superzoom werkt alleen wanneer je **op** de maximale zoomfactor van de aanbieder voor die locatie zit en de tegels volledig zijn geladen. Daaronder werkt het zoomen normaal
+* Het bereik is **1× tot 32×** bovenop de eigen maximale zoomfactor van de aanbieder
+* Een indicator in de hoek geeft de huidige superzoom weer als percentage, en een **×**-knop ernaast brengt je met één klik terug naar de normale zoomstand
+* Uitzoomen gaat altijd door naar de kaart zelf, zodat je nooit vast komt te zitten in superzoom
+* Zoomen en pannen tijdens superzoom geeft de resulterende verschuiving door aan de kaart, zodat het gebied buiten het midden waarnaar je bent verplaatst, doorgaat met het opvragen van tegels in plaats van leeg te worden
+* Markeringen worden weergegeven als vectorelementen in plaats van gerasterd, zodat ze op elk superzoomniveau scherp blijven
 
 ***
+
+## Aanbieders van kaarttegels
+
+{% hint style="success" %}
+**Automatische selectie**: Chloros kiest de tegelservice die het beste zoomniveau biedt voor de locatie van je afbeeldingen. Je kunt op elk moment handmatig wisselen.
+{% endhint %}
+
+| Aanbieder        | Opmerkingen                                                                                                                                                             |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Google Maps** | Brede wereldwijde dekking; ondersteunt alle vier de tegelsoorten                                                                                                            |
+| **Esri ArcGIS**| Vaak luchtfoto&#x27;s met een hogere resolutie in bepaalde regio&#x27;s. De tegelsoort**Terrain** wordt niet aangeboden voor Esri en de bijbehorende knop is uitgeschakeld zolang Esri is geselecteerd |***
 
 ## Soorten kaarttegels
 
-U kunt het type kaartlaag kiezen (van links naar rechts):
+Kies het type kaartlaag met de knoppen (van links naar rechts):
 
- <img src="../.gitbook/assets/image (23).png" alt="" data-size="original">### Terrein
+![](&lt;../.gitbook/assets/image (14).png&gt;)
 
-Toont hoogteprofielen en kaarttegels met details (wegen, enz.)
+| Type                 | Toont                                                                |
+| -------------------- | -------------------------------------------------------------------- |
+| **Terrein**          | Hoogte-schaduw met kaartdetails (wegen, labels). Alleen Google       |
+| **Kaart**              | Standaard straatkaarttegels — de optie met de laagste bandbreedte              |
+| **Satelliet**        | Gedetailleerde satellietbeelden, geen labels — de optie met de hoogste bandbreedte |
+| **Hybride** (standaard) | Satellietbeelden met daaroverheen getekende wegen en labels                |
 
-### Kaart
+Het tabblad Kaart wordt geopend op **Hybride**. Uw keuze wordt doorgevoerd bij het wisselen van aanbieder, voor zover de aanbieder dit ondersteunt.***
 
-Toont standaard (lagere bandbreedte) kaarttegels met details (wegen, enz.)
+## Navigatie op de kaart
 
-### Satelliet
-
-Toont gedetailleerde (hogere bandbreedte) satellietkaarttegels
-
-### Hybride
-
-Toont satellietkaarttegels met toegevoegde details (wegen, enz.)
-
-***
-
-## Kaartnavigatie
-
-### Zoomknoppen
-
-* **In-/uitzoomen**: Gebruik het scrollwiel van de muis of de zoomknoppen
-* **Volledig scherm**: De kaart op volledig scherm weergeven
-
-### Pan-knoppen
-
-* **Pannen**: Klik en sleep om over de kaart te bewegen***
+* **Zoomen**: het scrollwieltje van de muis of de zoomknoppen op de kaart
+* **Pannen**: klikken en slepen
+* **Volledig scherm**: met de knop voor volledig scherm wordt de kaart over het hele venster weergegeven***
 
 ## Toepassingen
 
-### Visualisatie van vliegroutes
+### Vliegpad beoordelen
 
-* Bekijk het dekkingsgebied van drone-opnamesessies
-* Identificeer hiaten in de beelddekking
-* Controleer de uitvoering van de vliegroute
+* Bekijk in één oogopslag het dekkingsgebied van een dronesessie
+* Spoor hiaten op waar een passage is overgeslagen
+* Controleer of de vlucht het geplande patroon heeft gevolgd
 
-### Beoordeling van grondonderzoek
+### Beoordeling van grondmetingen
 
-* Bekijk de ruimtelijke verdeling van opnames vanaf de grond
-* Lokaliseer kalibratiedoelbeelden ten opzichte van het onderzoeksgebied
-* Plan aanvullende opnamelocaties
+* Bekijk hoe de opnames vanaf de grond zijn verdeeld
+* Lokaliseer kalibratiedoelkaders ten opzichte van het meetgebied
+* Bepaal waar aanvullende opnames nodig zijn
 
 ### Kwaliteitscontrole
 
-* Identificeer snel beelden die op onverwachte locaties zijn vastgelegd
-* Controleer de GPS-nauwkeurigheid in de dataset
-* Vergelijk beeldlocaties met veldnotities
+* Vind beelden die op een onverwachte plek zijn vastgelegd en verwijder deze vóór de verwerking
+* Sorteer op hoogte om een beeld te herkennen dat op de verkeerde hoogte is vastgelegd, of een beeld waarbij de GPS-positie onnauwkeurig was
+* Vergelijk de locaties van de beelden met de veldnotities
 
 ***
 
@@ -145,19 +127,24 @@ Toont satellietkaarttegels met toegevoegde details (wegen, enz.)
 
 ### Er verschijnen geen markeringen
 
-**Mogelijke oorzaken:**
+**Mogelijke oorzaken**
 
-* Beelden bevatten geen GPS-metadata
-* GPS was uitgeschakeld op de camera tijdens het vastleggen
-* EXIF-gegevens zijn verwijderd door externe software
+* De foto’s bevatten geen GPS-metadata
+* GPS was tijdens het maken van de opname uitgeschakeld op de camera
+* EXIF-gegevens zijn door andere software verwijderd vóór het importeren
 
-**Oplossing**: Controleer of GPS is ingeschakeld op uw camera en importeer de originele bestanden opnieuw
+**Wat te doen**: controleer of GPS op de camera is ingeschakeld en importeer de originele bestanden opnieuw. Je kunt controleren of een specifiek bestand coördinaten bevat door het op te zoeken in de bestandstabel op het tabblad Kaart — een foto zonder coördinaten heeft daar geen rij.
 
-### Markeringen op verkeerde locatie
+### Markeringen staan op de verkeerde plaats
 
-**Mogelijke oorzaken:**
+**Mogelijke oorzaken**: een slechte satellietpositie op het moment van opname, of GPS-afwijking tijdens de sessie.**Wat te doen**: dit is een probleem dat zich tijdens de opname heeft voorgedaan en dat Chloros achteraf niet kan corrigeren. Gebruik voor nauwkeurig werk een PPK/RTK-GPS-workflow — zie de instelling**PPK-correcties toepassen** in [Projectinstellingen](../project-settings/project-settings.md).
 
-* De GPS van de camera had een slechte satellietpositie
-* GPS-afwijking tijdens het vastleggen
+### De kaart is leeg of het laden van tegels stopt
 
-**Oplossing**: Dit is meestal een probleem met het tijdstip van vastleggen; overweeg het gebruik van PPK/RTK GPS voor precisietoepassingen
+De tegelaanbieders zijn online diensten. Als er geen tegels meer binnenkomen, controleer dan de netwerkverbinding van het apparaat en probeer vervolgens van aanbieder te wisselen. Als je sterk had ingezoomd, druk dan op de resetknop **×** om terug te keren naar een normaal zoomniveau en laat de kaart opnieuw tegels opvragen.***
+
+## Gerelateerde pagina’s
+
+* [**Afbeeldingenraster**](image-grid.md) — dezelfde afbeeldingsset als miniaturen
+* [**Een afbeelding op volledig scherm openen**](opening-an-image-full-screen.md) — één afbeelding in detail bekijken
+* [**Bestanden aan een project toevoegen**](../processing-images-gui/adding-files-to-a-project.md) — de knoppen voor het toevoegen en verwijderen van bestanden die dit tabblad deelt

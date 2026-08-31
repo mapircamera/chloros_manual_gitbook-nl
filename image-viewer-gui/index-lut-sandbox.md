@@ -1,373 +1,291 @@
-# Index/LUT-Sandbox
+# Index/LUT-sandbox
 
-De Index/LUT-Sandbox is een interactieve werkruimte binnen de Chloros Image Viewer waarmee u in realtime kunt experimenteren met multispectrale indexberekeningen en kleurvisualisaties. Met deze krachtige tool kunt u verschillende indices testen, waardebereiken verfijnen en publicatieklare visualisaties maken zonder uw volledige dataset opnieuw te verwerken.
+De Index/LUT-sandbox is de interactieve werkruimte in de zijbalk van de Chloros Image Viewer. Je kiest een formule, koppelt de kanalen van je camera eraan, geeft het een kleur met een kleurverloop en stelt het waardebereik in — en het beeld wordt live bijgewerkt terwijl je bezig bent. Sinds versie 1.2.0 kun je ook **wat je hebt gemaakt opslaan**, voor één afbeelding of voor het hele project, zonder het opnieuw te verwerken.
 
-## Wat is de Index/LUT Sandbox?
+## Waarvoor dient de Sandbox?
 
-### Doel
-
-De Sandbox biedt:
-
-* **Realtime indexberekening** - Pas direct elke vegetatie-index toe
-* **Interactieve LUT-aanpassing** - Verfijn kleurgradiënten en -bereiken
-* **Workflowoptimalisatie** - Bepaal de beste instellingen vóór batchverwerking
-
-### Sandbox versus projectverwerking
-
-**Index/LUT Sandbox (interactief):**
-
-* Eén afbeelding per keer
-* Directe feedback
-* Experimenteel en iteratief
-* Geen permanente wijzigingen aan bestanden
-* Perfect voor verkenning en testen
-
-**Projectverwerking (batch):**
-
-* Volledige dataset in één keer
-* Vooraf geconfigureerde instellingen
-* Permanente uitvoerbestanden
-* Tijdrovend
-* Het beste wanneer de instellingen definitief zijn
+| Index/LUT Sandbox (interactief)        | Projectverwerking (batch)       |
+| -------------------------------------- | -------------------------------- |
+| Eén afbeelding per keer, directe feedback  | De volledige dataset in één keer     |
+| Experimenteel en iteratief             | Vooraf geconfigureerde instellingen          |
+| Rendert live; slaat alleen op wanneer je dat vraagt  | Schrijft altijd productbestanden      |
+| Perfect om de juiste instellingen te vinden | Het beste als de instellingen definitief zijn |
 
 {% hint style="success" %}
-**Beste workflow**: Gebruik de Sandbox om te experimenteren en de optimale index- en LUT-instellingen te vinden, en pas die instellingen vervolgens toe tijdens de projectverwerking voor uw volledige dataset.
+**De gebruikelijke workflow**: pas de instellingen aan in de Sandbox totdat de visualisatie eruitziet zoals je wilt, en exporteer vervolgens rechtstreeks vanuit de Sandbox, of kopieer dezelfde index- en LUT-instellingen naar [Projectinstellingen](../project-settings/project-settings.md), zodat deze bij de volgende verwerkingsrun in elke afbeelding worden verwerkt.
 {% endhint %}
 
 ***
 
-## Werken met de Index/LUT-Sandbox
+## De Sandbox openen
 
-### Vooraf berekende indices begrijpen
+1. Klik op een afbeelding in het raster — deze wordt op volledig scherm geopend in het tabblad **Afbeeldingsviewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">
+2. Klik op het pictogram **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> om de linkerzijbalk uit te schuiven als deze nog niet geopend is
+3. Kies een multibandlaag uit de laagkeuzelijst rechtsboven — **RAW (Reflectance)** is de gebruikelijke keuze, omdat indexwaarden die zijn berekend op basis van gekalibreerde reflectantie, tussen afbeeldingen onderling vergelijkbaar zijn
 
-In Chloros kunnen indices worden toegepast tijdens de projectverwerking. Om te bepalen welke index- en LUT-instellingen u wilt toepassen op exporten, kunt u het beste de afbeeldingsviewer-sandbox gebruiken.
+De zijbalk toont, van boven naar beneden:
 
-Met de sandbox kunt u:
+* de afbeeldingsnaam en het cameramodel
+* de knop **Afbeelding(en) exporteren/opslaan**— verschijnt zodra**Index**of**LUT** is aangevinkt
+* de selectievakjes **Index**en**LUT**
+* het configuratiepaneel voor de index
+* het paneel **Cursorwaarden** met de uitlezing, het histogram en de GSD-regelaar
 
-* **Nieuwe indexen en kleurverloop (LUT&#x27;s) toepassen** om de gegevens te visualiseren
-* **Visualisatie-instellingen** interactief aanpassen
-* **Bekijken** van reeds berekende indexafbeeldingen
-* **Inspecteren** van pixelwaarden op alle zoomniveaus
+{% hint style="warning" %}
+**Niet beschikbaar voor monochrome camera’s.** Bij een LATTICE M3M-beeld met één band zijn beide selectievakjes uitgeschakeld, met de tooltip _&quot;Niet beschikbaar voor monochrome (M3M) sensoren&quot;_ — een multiband-index is niet gedefinieerd op één band. Om indexen te berekenen op basis van M3M-camera&#x27;s, combineert u twee of meer beelden tot een uitgelijnde multiband-stack en gebruikt u de LATTICE-indexengine.
+{% endhint %}
 
-### De Sandbox openen
+***
 
-De Index/LUT-Sandbox is toegankelijk via het tabblad in de **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> :
+## Een index toepassen
 
-1. Klik op een afbeelding in het afbeeldingsraster van de bestandsbrowser; deze wordt geopend in het tabblad **Image Viewer**<img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> 2. Klik op**het tabblad Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> om de linker pop-out zijbalk te openen als deze nog niet open is
+1. Vink het vakje **Index** bovenaan de zijbalk aan
+2. Kies het filter van je camera uit de vervolgkeuzelijst aan de linkerkant (`RGN`, `OCN`, `NGB`, `RGB`, `RE`, `NIR`)
+3. Kies een indexformule uit de rechter keuzelijst — 27 ingebouwde formules, plus eventuele aangepaste formules die je hebt opgeslagen
+4. De formule wordt hieronder als wiskundige uitdrukking weergegeven, met een lege cirkel bij elke bandpositie. **Sleep een gekleurde kanaalcirkel naar een vak** om deze te koppelen
+5. Zodra elk vak dat de formule gebruikt is gekoppeld, wordt de afbeelding bijgewerkt en worden de indexwaarden weergegeven
+6. Beweeg de cursor over de afbeelding om waarden af te lezen; het paneel **Cursorwaarden** voegt een indexrij toe met de waarde onder de cursor
 
-### Een afbeelding selecteren om een Index/LUT op toe te passen
+Dubbelklik op een gekoppeld vakje om het te wissen. Een onvolledige formule is een normale toestand tijdens het slepen, geen fout — de afbeelding wordt simpelweg niet bijgewerkt totdat de formule compleet is.
 
-Om met een index te werken in de Image Viewer <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> :
+De kanaalcirkels zijn kleurgecodeerd: rood = Red, groen = Green, blauw = Blue, oranje = Orange, cyaan = Cyan, paars = NIR, magenta = RE. Dezelfde kleuren worden gebruikt voor de kanaalstippen en histogramcurves in het paneel ‘Cursorwaarden’.
 
-1. **Open een afbeelding** uit het hoofdraster door erop te klikken
-2. Het tabblad **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tabblad wordt dan geopend
-3. Klik op de **Layer dropdown** (rechtsboven in de viewer)
-4. Selecteer de laag uit de dropdown:
-   * RAW (Reflectance)
-
-### Een index toepassen op een afbeelding
-
-Zodra de afbeelding op volledig scherm staat en de **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> is geopend:
-
-1. Vink het vakje Index bovenaan de zijbalk aan
-2. Kies het filter van uw camera uit het linker dropdown-menu
-3. Kies de gewenste indexformule uit het rechter dropdown-menu
-4. Sleep de kleurcirkels van het filterkanaal naar de locaties in de indexformule hieronder
-5. Zodra de formule geldig is, wordt de afbeelding bijgewerkt en worden de indexwaarden weergegeven
-6. Beweeg uw muiscursor om de waarden op de locatie van de cursor te zien
-7. Zoom in om individuele pixels en de bijbehorende waarden te zien
-
-Elke index heeft een specifiek waardebereik en een specifieke betekenis:
-
-#### NDVI Voorbeeld
+### Voorbeeld van NDVI
 
 ```
 
 Formula: (NIR - Red) / (NIR + Red)
 
-For Survey3W RGN camera:
-NIR = 850nm band
-Red = 661nm band
+For a Survey3W RGN camera:
+  NIR = 850 nm band
+  Red = 661 nm band
 
-Result range: -1.0 to +1.0
-Typical vegetation: 0.4 to 0.9
-Stressed vegetation: 0.2 to 0.4
-Bare soil: 0.0 to 0.2
-Water: -0.1 to 0.1
+Result range:          -1.0 to +1.0
+Typical vegetation:     0.4 to 0.9
+Stressed vegetation:    0.2 to 0.4
+Bare soil:              0.0 to 0.2
+Water:                 -0.1 to 0.1
 ```
 
-Zie [Multispectrale indexformules](../project-settings/multispectral-index-formulas.md) voor volledige documentatie over indexformules.
+Zie [Multispectrale indexformules](../project-settings/multispectral-index-formulas.md) voor de volledige formule-referentie — alle drie de voorinstellingslijsten en welke namen waar werken.
 
-***
+### Met ‘Index’ aangevinkt maar zonder LUT
 
-## Werken met LUT&#x27;s (Look-Up Tables)
+De afbeelding wordt weergegeven in **grijstinten**, uitgerekt tussen de twee drempelwaarden. Dit is opzettelijk: de indexafbeelding bestaat uit scalaire gegevens, en grijstinten geven deze het meest getrouw weer. Voeg een LUT toe als je kleur wilt.***
 
-### Wat is een LUT?
+## Werken met LUT’s (Look-Up Tables)
 
-Een **Look-Up Table (LUT)** zet numerieke indexwaarden om in kleuren voor visualisatie:
+Een **Look-Up Table** koppelt indexwaarden aan kleuren: invoer NDVI 0,65, uitvoer een bepaalde groene kleur. Het verandert de gegevens niet — het verandert de manier waarop je ze interpreteert.
 
-* **Invoer**: Indexpixelwaarde (bijv. NDVI 0,65)
-* **Uitvoer**: RGB kleur (bijv. felgroen)
-* **Doel**: Patronen gemakkelijker zichtbaar en interpreteerbaar maken**Grijswaarden- versus kleuren-LUT:**
+### Een LUT toevoegen
 
-* Grijswaarden: Wetenschappelijk en neutraal, toont ruwe gegevens
-* Kleuren-LUT: Intuïtief en indrukwekkend, benadrukt patronen en verschillen
+1. Klik op de <img src="../.gitbook/assets/image (1) (1) (1).png" alt="" data-size="line"> **&quot;+ LUT toevoegen&quot;**-knop onder de formule
+2. Kies een kleurverloop
+3. Stel het minimum en maximum voor clipping in
+4. Kies een clippingmodus
+5. Vink het vakje **LUT** in de zijbalk aan om deze weer te geven
 
-{% hint style="success" %}
-**Visualisatiekracht**: Door een kleuren-LUT toe te passen op een grijswaarden-indexafbeelding wordt het aanzienlijk eenvoudiger om patronen, afwijkingen en interessante gebieden in één oogopslag te herkennen.
-{% endhint %}
-
-### Een LUT toepassen op een indexafbeelding
-
-Zodra u een indexafbeelding hebt die
-
-1. Klik op de <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> &quot;+LUT toevoegen&quot;-knop
-2. Selecteer het kleurverloop
-3. Pas de minimale en maximale eindpunten van de clipping aan
-4. Pas de clippingmodus aan
-5. Vink het vakje Index aan in de zijbalk van de **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> om de LUT toe te passen
+Het LUT-selectievakje blijft uitgeschakeld totdat er daadwerkelijk een LUT is geconfigureerd in de index.
 
 ### Een kleurverloop kiezen
 
-**Een verloop selecteren:**
+Beweeg de muis over de **verloopbalk**om de lijst met voorinstellingen te openen — Chloros bevat**zeven** voorinstellingen voor kleurverlopen:
 
-1. Zoek in het LUT-paneel de**gekleurde verloopbalk**
+| # | Verloop                            | Vorm                                                               |
+| - | ----------------------------------- | ------------------------------------------------------------------- |
+| 1 | Red → Geel → Green (**standaard**)  | Divergerend — komt overeen met de gebruikelijke intuïtie over vegetatie: groen = gezond |
+| 2 | Paars → Geel → Green             | Divergerend, met een duidelijk laagste punt                                  |
+| 3 | Bruin → Wit → Blue                | Divergerend rond een licht middenpunt                                   |
+| 4 | Zwart → Paars → Roze → Lichtgeel | Opeenvolgend, van donker naar licht                                           |
+| 5 | Red → Geel → Blue                 | Afwijkend rond een licht middenpunt                                   |
+| 6 | Paars → Blue → Green → Geel      | Opeenvolgend, van donker naar licht                                           |
+| 7 | Orange → Wit → Paars             | Divergerend rond een licht middenpunt                                   |
 
-2. Beweeg uw muis eroverheen om de beschikbare verloopvoorinstellingen te bekijken
-3. Selecteer het gewenste verloop
-4. De afbeelding **wordt onmiddellijk bijgewerkt** met nieuwe kleuren wanneer het vakje Index is aangevinkt
+Een **divergerend**kleurverloop plaatst een neutrale kleur in het midden van je venster, wat goed werkt wanneer het middelpunt een bepaalde betekenis heeft (een drempelwaarde, een basisdatum). Een**sequentieel** kleurverloop verloopt monotoon van donker naar licht, wat goed werkt voor een hoeveelheid die alleen ‘meer’ en ‘minder’ kent.
 
-{% hint style="success" %}
-**Aanbevolen werkwijze**: Voor vegetatie-indexen zoals NDVI is het verloop Red-Geel-Green het meest intuïtief, omdat het overeenkomt met natuurlijke kleurassociaties (groen = gezond, geel = matig, rood = gestrest).
-{% endhint %}
+Elke voorinstelling heeft zeven kleurstops. Klik op een voorinstelling en de afbeelding wordt onmiddellijk bijgewerkt (als het vakje LUT is aangevinkt).
 
-### Kleurklassen aanpassen
+### De kleurstops bewerken
 
-De **Classes-regelaar**bepaalt hoeveel afzonderlijke kleurstappen er in uw kleurverloop verschijnen:**Opties voor het aantal klassen:*** **2-5 klassen**: Zeer brede categorieën, duidelijke zones
-* **6-10 klassen**: Evenwichtig, goed voor classificatie
-* **11-20 klassen**: Vloeiende kleurverlopen, continu uiterlijk
-* **20+ klassen**: Bijna continu, maximale vloeiendheid**Aanpassen:**
+Onder de verloopbalk bevindt zich een rij kleurstalen, één per stop:
 
-1. Zoek in het LUT-paneel de**kleurstalen onder de verloopbalk**
+* **Een kleur wijzigen**: klik op een kleurstaal om de kleurenkiezer te openen (kleurenwiel, RGB/HSV-schuifregelaars of een hex-code zoals `#FF0000`)
+* **Een stop toevoegen**: klik op de**+**-knop aan het einde van de rij — er wordt een witte stop toegevoegd
+* **Een stop verwijderen**:**dubbelklik** op het staal
+* **Een bewerkt verloop bewaren**: klik op het opslagpictogram naast de verloopbalk om je bewerkte verloop toe te voegen aan de lijst met voorinstellingen, zodat je het later opnieuw kunt selecteren
 
-2. Pas het aantal klassen aan door er met de +-knop klassen toe te voegen
-3. Verwijder klassen door te dubbelklikken op een kleurstaal
-4. Het verloop wordt **in realtime** bijgewerkt op de afbeelding**Effect op de visualisatie:*** **Minder klassen** (3-5): Creëert duidelijke zones, vereenvoudigde classificatie, gemakkelijker te onderscheiden categorieën
-* **Gemiddeld aantal klassen** (6-10): Evenwichtige aanpak, geschikt voor de meeste toepassingen
-* **Meer klassen** (15-20): Vloeiende overgangen, gedetailleerde variatie, fotografisch uiterlijk**Wanneer te gebruiken:*** **Weinig klassen (3-5)**: Presentatiedia&#x27;s, classificatiekaarten, eenvoudige rapporten
-* **Gemiddeld aantal klassen (6-10)**: Algemene analyse, evenwichtige details, standaardrapporten
-* **Veel klassen (15-20)**: Wetenschappelijke analyse, gedetailleerde inspectie, uitvoer van publicatiekwaliteit
+Het verloop dat je voor een index hebt geconfigureerd, wordt samen met die index opgeslagen in de projectinstellingen, zodat het behouden blijft wanneer je het project sluit en opnieuw opent.
 
-### Waardebereiken verfijnen
+**Minder stopplaatsen**zorgen voor duidelijke zones die als een classificatie worden geïnterpreteerd;**meer stopplaatsen** zorgen voor vloeiende, bijna fotografische overgangen. Drie tot vijf stopplaatsen zijn geschikt voor presentatiedia’s en classificatiekaarten; zes tot tien zijn geschikt voor algemene analyse; vijftien of meer zijn geschikt voor gedetailleerde inspectie- en publicatiefiguren.
 
-De **waarderange-regelaars**bepalen welke indexwaarden worden toegewezen aan welke kleuren in uw kleurverloop:**Regelaars voor het bereik in het LUT-paneel:*** **Minimale waarde**: Ondergrens van de kleurschaal
-* **Maximale waarde**: Bovengrens van de kleurschaal
-* **Tussenliggende waarden**: Worden automatisch verdeeld tussen min en max (op basis van het aantal klassen)
+### Het waardebereik instellen
 
-#### Min./max. waarden aanpassen
+De drempelregelaar is een **schuifregelaar met twee handvatten**die loopt van −1 tot +1, met aan elk uiteinde een bewerkbaar tekstvak voor exacte waarden en een**AUTO**-knop.
 
-**Om waardebereiken aan te passen:**
+* Sleep een van de schuifregelaars, of typ een getal in het bijbehorende vakje en druk op Enter
+* **AUTO**stelt het bereik in op het**2e en 98e percentiel** van de geldige indexwaarden van de afbeelding — een goed uitgangspunt dat uitschieters negeert. Chloros rondt het resultaat adaptief af, tot 4 decimalen voor een zeer smal bereik, 3 voor een smal bereik en 2 in alle andere gevallen
+* Elke handmatige aanpassing heeft voorrang op AUTO totdat u opnieuw op AUTO drukt
 
-1. Zoek in het LUT-paneel de invoervelden**Min. waarde**en**Max. waarde**
+Voorbeeld NDVI-vensters:
 
-2. Klik op het veld**Min. waarde**
+| Doel                                    | Min  | Max |
+| --------------------------------------- | ---- | --- |
+| Alles weergeven                         | −1,0 | 1,0 |
+| Alleen vegetatie, bodem en water uitsluiten | 0,2  | 0,9 |
+| Alleen gezonde vegetatie                 | 0,5  | 0,9 |
+| Stress benadrukken                        | 0,2  | 0,5 |
 
-3. Typ de gewenste minimumwaarde (bijv. `0.2`)
-4. Druk op **Enter** of klik buiten het veld
-5. Herhaal dit voor het veld **Max. waarde** (bijv. `0.9`)
-6. De visualisatie **wordt onmiddellijk bijgewerkt**{% hint style="info" %}**Automatische schaalverdeling**: Wanneer u voor het eerst een LUT toepast, stelt Chloros automatisch de min/max in op het werkelijke gegevensbereik in de afbeelding. U kunt dit bereik vervolgens verkleinen om u te concentreren op specifieke waardebereiken die van belang zijn.
-{% endhint %}
+Door het venster te verkleinen, wordt het contrast binnen het gebied dat je wilt bekijken verhoogd en wordt al het andere buiten het bereik geduwd — waar de **Clipping Mode** bepaalt wat ermee gebeurt.***
 
-**Voorbeeld van bereikaanpassingen in NDVI:*** **Volledig bereik**: `-1.0` tot `1.0` (toon alle mogelijke waarden)
-* **Gericht op vegetatie**: `0.2` tot `0.9` (sluit kale grond en water uit)
-* **Alleen gezonde vegetatie**: `0.5` tot `0.9` (markeer alleen krachtige planten)
-* **Stressdetectie**: `0.2` tot `0.5` (benadruk probleemgebieden)
-* **Aangepast bereik**: Pas aan op basis van uw waargenomen pixelwaarden**Waarom bereiken aanpassen?*** **Verhoog het contrast** in uw interessegebied
-* **Sluit irrelevante waarden uit** (bijv. watermassa&#x27;s, kale grond)
-* **Standaardiseer de visualisatie** over meerdere afbeeldingen of datums
-* **Benadruk subtiele verschillen** binnen een smal waardebereik
+## Clipping-modi
 
-### Waarden buiten het bereik uitsnijden
+Wanneer de indexwaarde van een pixel buiten het min/max-venster valt, bepaalt de Clipping Mode hoe deze wordt weergegeven.
 
-Wanneer pixelwaarden buiten het door u gedefinieerde min/max-bereik vallen, kunt u met behulp van **uitsnijdmodi** bepalen hoe deze worden weergegeven.
+| Label in het dropdown-menu                  | Opgeslagen waarde      | Pixels buiten het bereik worden weergegeven als                                                                                                |
+| ------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Minimum &amp; Maximum** (standaard) | `clip`            | De dichtstbijzijnde eindkleur van het verloop — waarden onder het minimum krijgen de eerste kleur, waarden boven het maximum krijgen de laatste |
+| **Transparante achtergrond**      | `transparent`     | Volledig transparant (echte alfa)                                                                                                  |
+| **Indexachtergrond**| `indexColor`      | Grijswaarden, uitgerekt over het**volledige** indexbereik van de afbeelding, zodat structuren buiten dit bereik nog steeds in grijs zichtbaar zijn                |
+| **Originele achtergrond**         | `backgroundColor` | De onderliggende afbeelding zelf, zodat de kleuroverlay bovenop de echte scène ligt                                                |
 
-#### **Beschikbare opties voor clippingmodi:**
-
-#### 1. Minimum en Maximum
-
-* Pixels **onder het minimum**→ weergeven met de**eerste kleur** in het kleurverloop (bijv. rood)
-* Pixels **boven het maximum**→ weergeven met de**laatste kleur** in het kleurverloop (bijv. groen)
-* **Toepassing**: benadruk uitersten, toon het volledige gegevensbereik met verzadigde kleuren aan de grenzen
-* **Voorbeeld**: NDVI-waarden onder 0,2 worden allemaal rood weergegeven, waarden boven 0,9 worden allemaal groen weergegeven
-
-#### 2. Transparante achtergrond
-
-* Pixels **buiten het bereik**worden**volledig transparant*** Alleen pixels **binnen het bereik** vertonen een kleurverloop
-* **Toepassing**: GIS-overlay, specifieke waardebereiken isoleren, alleen gebieden van belang markeren
-* **Voorbeeld**: Toon alleen NDVI 0,4-0,7 in kleur, al het andere transparant
-
-{% hint style="warning" %}
-**Beperking van transparantie**: Transparante pixels worden in de viewer weergegeven als de achtergrondkleur. Bij export tijdens verwerking blijft de transparantie behouden in het PNG-formaat, maar niet in JPG.
-{% endhint %}
-
-#### 3. Indexachtergrond
-
-* Pixels **buiten het bereik**worden weergegeven in**grijstinten** (met ruwe indexwaarden)
-* Pixels **binnen het bereik**tonen een**kleurenverloop*** **Toepassing**: Subtiele markering, behoud van context terwijl aandachtsgebieden worden benadrukt
-* **Voorbeeld**: Markeer gestresste vegetatie met kleur (NDVI 0,3-0,5) terwijl gezonde gebieden in grijs worden weergegeven
-
-#### 4. Originele achtergrond
-
-* Pixels **buiten het bereik**geven het**originele multispectrale beeld** weer
-* Pixels **binnen het bereik**tonen een**kleurenverloop*** **Toepassing**: Meest intuïtief - combineert de natuurlijke beeldcontext met een analytische kleuroverlay
-* **Voorbeeld**: Bekijk het daadwerkelijke uiterlijk van het veld/gewas met daaroverheen kleurgecodeerde stressgebieden
-
-### De juiste clippingmodus kiezen
-
-| Clippingmodus              | Meest geschikt voor                                   | Visualisatiestijl          |
-| -------------------------- | ------------------------------------------ | ---------------------------- |
-| **Minimum en maximum**    | Volledige gegevensweergave, wetenschappelijke analyse     | Alle pixels gekleurd           |
-| **Transparante achtergrond** | GIS-overlays, specifieke bereiken isoleren    | Kleur binnen bereik, leeg daarbuiten |
-| **Indexachtergrond**       | Subtiele nadruk, behoud van gegevenscontext  | Kleur op bereik, grijs daarbuiten  |
-| **Originele achtergrond**    | Rapporten, presentaties, intuïtieve analyse | Kleur op bereik, foto daarbuiten |
-
-### Aangepaste LUT-kleuren maken
-
-Voor volledige controle over uw visualisatie kunt u **aangepaste kleurverlopen** maken door individuele kleurstops te bewerken.**Een aangepast verloop maken:**
-
-1. Zoek in het LUT-paneel de**verloopvoorbeeldbalk**
-
-2. Zoek de**kleurstaalvierkanten** onder het verloop
-3. **Klik op een kleurstop** om deze te selecteren
-4. Er wordt een **kleurenkiezer** geopend
-5. Kies een nieuwe kleur met behulp van:
-   * **Kleurenwiel**: Visuele kleurselectie
-   * **RGB/HSV-schuifregelaars**: Nauwkeurige kleurcontrole
-   * **Hex-code invoeren**: Exacte kleurspecificatie (bijv. `#FF0000` voor rood)
-6. Klik buiten de kleurenkiezer **om de nieuwe kleur toe te passen**
-
-7. Het verloop**wordt onmiddellijk bijgewerkt** op de afbeelding**Kleurstops toevoegen of verwijderen:*** **Een stop toevoegen**: Klik op het +-pictogram om een nieuw kleurstaal aan het einde toe te voegen
-* **Een stop verwijderen**: Dubbelklik op het kleurvakje om het kleurstaal te verwijderen**Aanpassingsstrategieën:*** **Verloop omkeren**: Draai de kleurvolgorde om om de betekenis om te keren (bijv. groen = laag, rood = hoog)
-* **Merkkleuren**: Stem het kleurenpalet van uw organisatie af op rapporten
-* **Geschikt voor kleurenblinden**: Gebruik combinaties van oranje-blauw of paars-geel
-* **Afdrukoptimalisatie**: Kies kleuren die zowel bij afdrukken in kleur als in grijstinten goed werken
-* **Meerdere drempels**: Gebruik verschillende kleuren bij specifieke drempelwaarden voor classificatie
+| Modus                       | Het meest geschikt voor                               | Uiterlijk                                      |
+| -------------------------- | -------------------------------------- | ----------------------------------------- |
+| **Minimum &amp; Maximum**      | Volledige gegevensweergave, wetenschappelijke analyse | Elke pixel gekleurd                      |
+| **Transparante achtergrond** | GIS-overlays, een waardeband isoleren   | Kleur binnen het venster, niets daarbuiten |
+| **Indexachtergrond**       | Nadruk met behoud van gegevenscontext    | Kleur binnen, grijs buiten               |
+| **Originele achtergrond**    | Rapporten en presentaties              | Kleur binnen, foto buiten         |
 
 {% hint style="info" %}
-**Aangepaste kleurverlopen opslaan**: Aangepaste kleurverlopen kunnen worden opgeslagen en hergebruikt. Klik op het opslagpictogram in het LUT-paneel om uw aangepaste kleurenschema&#x27;s te bewaren voor toekomstig gebruik.
+**Pixels zonder gegevens zijn altijd transparant, in elke modus.** Een pixel waarvan de index niet eindig is (een deling door 0) of precies −1,0 of +1,0 is (verzadigingssentinels, waarbij de ene band nul aangeeft terwijl de andere dat niet doet) wordt behandeld als ‘geen gegevens’ in plaats van als een extreme waarde. Hierdoor blijven overbelichte delen en donkere schaduwen buiten je kleurschaal, in plaats van dat ze worden weergegeven als de meest extreme waarde in het beeld. Dezelfde regel bepaalt welke pixels worden gebruikt voor de AUTO-drempels en het indexhistogram, zodat deze drie met elkaar overeenkomen.
+{% endhint %}
+
+De transparantie blijft behouden wanneer het bestand wordt geëxporteerd als PNG. Dit kan niet worden weergegeven in JPG.
+
+***
+
+## Waarden aflezen tijdens het afstemmen
+
+Het paneel **Cursorwaarden** onder het configuratiepaneel is het meetinstrument voor de Sandbox:
+
+* Beweeg de cursor over de afbeelding en lees de bronwaarden per kanaal af, plus de indexwaarde in de betreffende rij
+* Schakel de knop **INDEX** boven het histogram in om de verdeling van de indexwaarden in het frame te zien, waarbij je twee clipdrempels als oranje stippellijnen worden weergegeven en de waarde van de cursor als een witte lijn — dit is de snelste manier om een venster te kiezen dat daadwerkelijk je gegevens bevat
+* Schakel **CURSOR** in om markeringslijnen te zien bij de waarden onder de aanwijzer
+* Zoom in tot meer dan 60× (minder als er een GSD-blokgrootte is ingesteld) om afzonderlijke weergegeven pixels met een zwevende waarde te markeren
+
+Een praktische werkwijze:
+
+1. Noteer de waarden boven gezonde vegetatie, gestresste vegetatie, kale grond en water
+2. Kijk waar die clusters zich op het indexhistogram bevinden
+3. Stel min/max in om het cluster dat voor jou van belang is te omkaderen
+4. Kies een uitsnijdmodus — _Original Background_ houdt de scène eromheen zichtbaar
+
+***
+
+## Exporteren vanuit de Sandbox
+
+Alles hierboven is een live voorbeeld totdat je het opslaat. De knop **Afbeelding(en) exporteren/opslaan** bovenaan de zijbalk opent een venster dat over de zijbalk schuift (in plaats van de afbeelding te bedekken, zodat je nog steeds kunt zien waarover je een beslissing neemt).
+
+<figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>### Opties
+
+| Optie                          | Effect                                                                                                                                            |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Toepassen op huidige afbeelding**      | Slaat precies de getoonde afbeelding op, met deze instellingen                                                                                                |
+| **Toepassen op alle projectafbeeldingen** | Voert dezelfde configuratie opnieuw uit op elke afbeelding in het project. Afbeeldingen zonder de banden die deze index nodig heeft, worden overgeslagen en niet als fouten behandeld |
+| **Index/LUT-gradiëntbalk**      | Schrijft ook per export een afzonderlijke legenda-afbeelding, met het waardenbereik aangegeven                                                                     |
+| **Indexhistogram**             | Schrijft ook per export een afzonderlijke histogramafbeelding, met de minimum- en maximumwaarden van de gegevens en de clippingdrempels                                               |
+
+Als de **GSD-blokgrootte** op het tabblad ‘Afbeelding’ hoger is dan 1, wordt dit in het venster aangegeven voordat u de bewerking bevestigt: bij het exporteren wordt opgeslagen wat u ziet, inclusief blokgemiddelden. Stel de GSD-regelaar eerst terug op 1 als u de volledige resolutie wilt behouden.
+
+### Waar de bestanden naartoe gaan
+
+Elke klik op **Exporteren**wijst een**nieuwe, nooit eerder gebruikte map** toe:
+
+```
+<project folder>/Sandbox_Exports/<IndexName>_<Index|LUT>_<NNN>/
+```
+
+Voorbeelden: `Sandbox_Exports/NDVI_LUT_001/`, en vervolgens `Sandbox_Exports/NDVI_LUT_002/` voor de volgende run. De nummering wordt bepaald door te scannen wat er al op de schijf staat, zodat deze behouden blijft bij herstarts en wanneer je mappen handmatig verwijdert. Er wordt nooit iets overschreven — het hele doel van de Sandbox is om de ene poging te vergelijken met de vorige.
+
+In de map, per afbeelding:
+
+| Bestand                                                   | Inhoud                                                   |
+| ------------------------------------------------------ | ---------------------------------------------------------- |
+| `<source name>_<IndexName>_<Index\|LUT>.png`           | De gerenderde afbeelding, pixel voor pixel zoals de viewer deze weergeeft |
+| `<source name>_<IndexName>_<Index\|LUT>_legend.png`    | Het bijbehorende bestand met de kleurverloopbalk, indien aangevraagd                     |
+| `<source name>_<IndexName>_<Index\|LUT>_histogram.png` | Het bijbehorende bestand met het indexhistogram, indien aangevraagd                  |
+
+De twee bijlagen worden altijd in **volledige resolutie** opgeslagen, zelfs wanneer het hoofdbeeld blokgewijs is gemiddeld: een blokgrootte is gelijk aan de schermresolutie, en beide bijlagen geven de werkelijke indexwaarden per pixel weer. Ze geven ook meer informatie weer dan de versies op het scherm — beide vermelden zowel het stretch-venster _als_ de werkelijke minimum- en maximumwaarden van de gegevens, zodat een opgeslagen legenda maanden later nog steeds leesbaar is zonder dat het project geopend is.
+
+### Voortgang en resultaten
+
+Het exporteren van een heel project duurt enkele minuten, dus de uitvoer rapporteert via een live voortgangskanaal in plaats van het systeem te blokkeren:
+
+* Een voortgangsbalk toont `current / total` en het bestand dat wordt geschreven
+* Wanneer het proces is voltooid, geeft het venster weer hoeveel afbeeldingen zijn geëxporteerd, hoeveel zijn overgeslagen en het pad naar de uitvoermap
+* Overgeslagen afbeeldingen worden vermeld met de reden (maximaal vijf worden weergegeven, daarna een regel „+N meer“). De gebruikelijke reden is een laag die niet over de kanalen beschikt die deze index nodig heeft
+* Als **geen** enkele afbeelding in het project de index kan gebruiken, meldt de bewerking een fout in plaats van een lege map achter te laten
+
+Er kan slechts één sandbox-export tegelijk worden uitgevoerd. Het starten van een tweede bewerking terwijl er al een bezig is, wordt geweigerd met een duidelijke melding, in plaats van dat twee bewerkingen om hetzelfde projectbestand gaan strijden.
+
+### Het raster neemt de run over
+
+Elke voltooide run verschijnt als een eigen knop in de [afbeeldingsraster](image-grid.md) werkbalk, met het label `<IndexName> <Index|LUT> <NNN>`. Zo vergelijk je uitvoeringen: exporteer twee keer met verschillende gradiënten of drempelwaarden en schakel vervolgens tussen de twee knoppen in het raster.
+
+***
+
+## Aangepaste indexformules (Chloros+)
+
+{% hint style="info" %}
+**Waar kun je ze aanmaken**: in de zijbalk van de Sandbox, of in**Projectinstellingen** vóór de verwerking. Beide schrijven naar dezelfde lijst op projectniveau.
+{% endhint %}
+
+1. Open de rekenmachine voor aangepaste formules via het dropdownmenu voor indexformules (hiervoor moet je zijn ingelogd met een geldig Chloros+-abonnement)
+2. Schrijf de formule met behulp van de **band-slot-symbolen** `x`, `y`, `z`, `a`, `b`, `c` — dit zijn geen bandnamen
+3. Beschikbare operators: `+`, `-`, `*`, `/`, `^` en `()` voor groepering
+4. Beschikbare functies: `sqrt()`, `log()`, `ln()`, `abs()`, `sign()`, `log1p()`, `log2()`
+5. Geef het een naam en sla het op — het verschijnt onderaan de formule-keuzelijst en je koppelt de slots door kanaalcirkels te verslepen, precies zoals bij een ingebouwde preset
+
+```
+
+Modified NDVI with an offset:   (y-x)/(y+x+0.5)
+Simple ratio:                   y/x
+Three-band difference:          (y-x)/(y+x-z)
+Squared ratio:                  (y/x)^2
+```
+
+{% hint style="warning" %}
+**Aangepaste formules zijn alleen beschikbaar via de GUI.** De optie CLI/SDK `--indices` breidt de 22 ingebouwde presetnamen uit en slaat al het andere stilzwijgend over, inclusief je aangepaste formules. Om een aangepaste formule in batches te verwerken, configureert u deze in de projectinstellingen en voert u de verwerking uit, of gebruikt u de exportoptie ‘Toepassen op alle projectafbeeldingen’ in de Sandbox.
 {% endhint %}
 
 ***
 
-## Interactieve workflow
+## Probleemoplossing
 
-### Real-time updates
+### &quot;Deze laag heeft niet de kanalen die deze index nodig heeft&quot;
 
-Alle LUT-aanpassingen in de sandbox werken **onmiddellijk en interactief** door in de afbeelding:
+De formule leest een kanaalpositie die de huidige laag niet heeft — bijvoorbeeld een index met drie slots op een bestand met één of twee kanalen. Schakel over naar een multibandlaag (reflectantie of debayered), of kies een index die past bij het filter van je camera.
 
-* **Van laag wisselen** → Afbeelding verandert onmiddellijk
-* **Verloop selecteren** → Kleuren worden direct bijgewerkt
-* **Waardebereik aanpassen** → Contrast verandert in realtime
-* **Klassen wijzigen** → De vloeiendheid van het verloop wordt onmiddellijk bijgewerkt
-* **Clipping aanpassen** → Weergave van de achtergrond verandert onmiddellijk
-* **Kleuren bewerken** → Aangepast verloop wordt onmiddellijk toegepast**Geen &quot;Toepassen&quot;-knop nodig** - alle wijzigingen zijn live en interactief!
+### &quot;Kon de backend voor beeldverwerking niet bereiken&quot;
 
-{% hint style="success" %}
-**Live feedback**: Dankzij de onmiddellijke visuele feedback kunt u snel experimenteren met verschillende instellingen totdat u de optimale visualisatie voor uw analysebehoeften hebt gevonden.
-{% endhint %}
+De backend reageert niet. Controleer het tabblad Log; als de backend opnieuw wordt opgestart, herstelt de Sandbox zichzelf zodra deze weer beschikbaar is.
 
-### Iteratieve verfijningsworkflow
+### Het beeld veranderde niet toen ik een cirkel versleepte
 
-**Typische LUT-optimalisatieworkflow:**
+De formule is nog niet compleet. Een onvolledige formule wordt behandeld als een normale toestand tijdens het verslepen — er wordt niets weergegeven en er wordt geen fout gemeld. Vul elk veld in dat de formule gebruikt.
 
-1.**Selecteer indexlaag** (bijv. RAW (Reflectantie))
-2. **Pas index toe** - Kies camerafilter en indexformule, sleep gekleurde cirkels naar de juiste locatie in de indexformule
-3. **Pas LUT-verloop toe** - Begin met de voorinstelling Red-Yellow-Green
-4. **Controleer pixelwaarden** - Beweeg de cursor rond, let op de waardebereiken
-5. **Pas min/max aan** - Beperk het bereik om je te concentreren op vegetatie (bijv. 0,2 tot 0,9)
-6. **Kies clipping** - Probeer &quot;Original Background&quot; voor context
-7. **Verfijn kleuren** - Pas het verloop indien nodig aan voor specifieke nadruk
-8. **Rond instellingen af**- Documenteer instellingen en kopieer naar Projectinstellingen voor exportverwerking
+### De hele afbeelding heeft één kleur
 
-### Controle van pixelwaarden
+Je clipvenster ligt waarschijnlijk ver buiten de gegevens. Druk op **AUTO**om het uit te lijnen op het 2e/98e percentiel, of schakel het**INDEX**-histogram in om te zien waar de gegevens zich daadwerkelijk bevinden.
 
-Inzicht in de werkelijke pixelwaarden is cruciaal voor het instellen van effectieve LUT-bereiken:**Hoe waarden te controleren:**
+### De geëxporteerde kleuren komen niet overeen met wat ik zag
 
-1. Pixelwaarden worden weergegeven wanneer voor de afbeelding het vakje Index of zowel Index als LUT**is aangevinkt**.
-2. **Beweeg uw cursor** over verschillende delen van de afbeelding
-3. **Bekijk de pixelwaarden** die in de legenda worden weergegeven terwijl u de muisaanwijzer erover beweegt
-4. Zoom in om individuele pixels te zien die zijn gemarkeerd met een zwevende waarde
-5. **Noteer** de waardebereiken voor verschillende kenmerken:
-   * **Gezonde vegetatie**: bijv. NDVI 0,55-0,85
-   * **Gestresste vegetatie**: bijv. NDVI 0,30-0,50
-   * **Kale grond**: bijv. NDVI 0,05-0,25
-   * **Water** (indien aanwezig): bijv. NDVI -0,05 tot 0,10**Pixelwaarden gebruiken om LUT-bereiken in te stellen:**Pas na inspectie van de pixelwaarden uw LUT-min/max dienovereenkomstig aan:**Voorbeeldscenario:*** **Waarneming**: Bodemwaarden = 0,05-0,25, Gestresst = 0,25-0,50, Gezond = 0,50-0,85
-* **Doel**: Alleen de gezondheid van de planten visualiseren (bodem uitsluiten)
-* **LUT-instellingen**: Min = `0.25`, Max = `0.85`
-* **Clipping**: &quot;Original Background&quot; om de bodem in natuurlijke kleur te zien
-* **Resultaat**: Kleurverloop is alleen van toepassing op vegetatie, bodem wordt weergegeven als origineel beeld
-
-{% hint style="info" %}
-**Dynamisch bereik**: Verschillende gewassen, seizoenen en groeifasen hebben verschillende waardebereiken. Controleer altijd de pixelwaarden in uw specifieke dataset voordat u LUT-bereiken instelt.
-{% endhint %}
-
-***
-
-## Aangepaste indices (Chloros+)
-
-### Aangepaste indexformules maken
-
-{% hint style="info" %}
-**Waar aan te maken**: Aangepaste indices kunnen worden geconfigureerd in**Projectinstellingen** vóór de verwerking, evenals in de zijbalk van de Image Viewer-sandbox.
-{% endhint %}
-
-**Een aangepaste index maken:**
-
-1.**Open Projectinstellingen** (vóór de verwerking) of de zijbalk van de Image Viewer-sandbox
-2. Ga naar de **vervolgkeuzelijst met indexformules**
-
-3. Zoek naar de optie**&quot;Aangepast&quot;** (u moet zijn ingelogd met een Chloros+-licentie)
-4. **Definieer uw formule** met behulp van bandvariabelen:
-   * Bandnamen: `NIR`, `Red`, `Green`, `Blue`, `RedEdge`, enz.
-   * Operatoren: `+`, `-`, `*`, `/`, `^` (exponent)
-   * Functies: `sqrt()`, `abs()`, enz. (indien ondersteund)
-   * Haakjes: `()` voor de volgorde van bewerkingen
-5. **Geef uw index een naam** (bijv. &quot;MyIndex&quot; of &quot;CustomNDVI&quot;)
-6. **Sla de configuratie op**
-
-**Voorbeelden van aangepaste formules:**
-
-```
-
-Modified NDVI with offset:
-(NIR - Red) / (NIR + Red + 0.5)
-
-Simple ratio:
-NIR / Red
-
-Complex multi-band:
-(NIR - Red) / (NIR + Red - Blue)
-
-Exponential index:
-(NIR / Red) ^ 2
-```
-
-{% hint style="warning" %}
-**Formulevalidatie**: Zorg ervoor dat uw formule gebruikmaakt van banden die beschikbaar zijn in uw camera. RedEdge is bijvoorbeeld alleen beschikbaar op camera&#x27;s met een RedEdge-filter.
-{% endhint %}
+Dat zou wel moeten — het exportpad is een bewuste weerspiegeling van het live-voorbeeld, inclusief de alfa in clipping-modus, en het blokgemiddelde wordt _na_ de inkleuring toegepast, precies zoals de viewer dat doet. Als ze verschillen, controleer dan of de GSD-blokgrootte niet is veranderd tussen het bekijken en het exporteren.
 
 ***
 
 ## Volgende stappen
 
-Nu u de Index/LUT Sandbox begrijpt:
-
-* **Toepassen op verwerking**: Gebruik de gevonden instellingen in [Projectinstellingen](../project-settings/project-settings.md)
-* **Batchverwerking**: Pas geoptimaliseerde indexen toe op volledige datasets
-* **Meer informatie**: Lees [Multispectrale indexformules](../project-settings/multispectral-index-formulas.md)
-
-Gerelateerde documentatie:
-
-* [**Beeldlagen**](image-layers.md) - Laagbeheer en visualisatie
-* [**Een afbeelding op volledig scherm openen**](opening-an-image-full-screen.md) - Basisprincipes van de afbeeldingsviewer
-* [**Afbeeldingen verwerken (GUI)**](../processing-images-gui/adding-files-to-a-project.md) - Volledige verwerkingsworkflow
+* [**Beeldlagen**](image-layers.md) — op welke laag een index moet worden uitgevoerd, en wat de waarden betekenen
+* [**Een afbeelding op volledig scherm openen**](opening-an-image-full-screen.md) — de cursorweergave, het histogram en de GSD-regeling in detail
+* [**Formules voor multispectrale indexen**](../project-settings/multispectral-index-formulas.md) — alle voorinstellingen, op elk oppervlak
+* [**Projectinstellingen**](../project-settings/project-settings.md) — de ingestelde parameters opslaan voor een verwerkingsrun

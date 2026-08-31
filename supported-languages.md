@@ -1,6 +1,6 @@
 # Ondersteunde talen
 
-Chloros biedt volledige interface-ondersteuning in **38 talen wereldwijd**, waardoor het toegankelijk is voor gebruikers over de hele wereld. U kunt direct van taal wisselen in alle interfaces: Desktop, Browser, CLI en Python SDK.
+Chloros biedt volledige interface-ondersteuning in **38 talen wereldwijd**, waardoor het toegankelijk is voor gebruikers over de hele wereld. Je kunt direct van taal wisselen, zowel in de desktop-GUI als in de CLI.
 
 Chloros ondersteunt de volgende talen:
 
@@ -47,16 +47,16 @@ Chloros ondersteunt de volgende talen:
 
 ## Hoe de taal te wijzigen
 
-### In Chloros Desktop/Browser
+### In Chloros Desktop
 
 1. Open de instellingen van de applicatie
-2. Ga naar het taalkeuzemenu
-3. Kies uw gewenste taal uit de lijst
-4. De interface wordt direct bijgewerkt
+2. Ga naar het menu voor taalselectie
+3. Kies de gewenste taal uit de lijst
+4. De interface wordt onmiddellijk bijgewerkt
 
 ### In Chloros CLI
 
-Gebruik het `language`-commando om de taal van de CLI-interface te bekijken of te wijzigen:
+Gebruik de opdracht `language` om de taal van de CLI-interface te bekijken of te wijzigen:
 
 ```bash
 # View current language
@@ -77,17 +77,13 @@ chloros-cli language --list
 
 Raadpleeg de [CLI-documentatie](CLI.md) voor meer informatie.
 
-### In Chloros Python SDK
-
-Stel de taalparameter in bij het initialiseren van de SDK om berichten en uitvoer in de door u gewenste taal te ontvangen.
-
 ## Dekking
 
 Alle 38 talen worden volledig ondersteund in:
 
-* **Chloros Desktop** - Volledige GUI-vertaling
-* **Chloros Browser** - Webinterface in alle talen
-* **Chloros CLI** - Opdrachtregelinterface en uitvoerberichten
-* **Chloros Python SDK** - API-berichten en documentatie
+* **Chloros Desktop** – Volledige vertaling van de grafische gebruikersinterface
+* **Chloros CLI** – Opdrachtregelinterface en uitvoerberichten
+
+De Python SDK API en de bijbehorende [referentiedocumentatie](reference/sdk-reference.md) worden in het Engels aangeboden.
 
 Dankzij de taalondersteuning kunnen gebruikers wereldwijd efficiënt en zonder barrières in hun moedertaal werken.

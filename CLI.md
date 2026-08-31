@@ -1,1204 +1,345 @@
 # CLI : Opdrachtregel
 
-<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>De **Chloros CLI** biedt krachtige opdrachtregeltoegang tot de Chloros-beeldverwerkingsengine, waardoor automatisering, scripting en headless-werking voor uw beeldverwerkingsworkflows mogelijk worden.
+> **Volledige referentie:**[CLI Reference](reference/cli-reference.md) documenteert**elke vlag van elke subopdracht** en is geoptimaliseerd voor AI-assistenten — plak de URL in uw assistent en vraag om een werkende opdracht: `https://mapir.gitbook.io/chloros/reference/cli-reference`
+>
+> **Tip voor AI-tools:** elke pagina van deze handleiding is beschikbaar als onbewerkte Markdown door `.md` toe te voegen aan de URL (bijv. `https://mapir.gitbook.io/chloros/reference/cli-reference.md`), en `https://mapir.gitbook.io/chloros/llms.txt` indexeert de volledige handleiding voor gebruik door LLM’s.
 
-### Belangrijkste kenmerken
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
+<!-- SCREENSHOT-UPDATE: banner shows CLI 1.1.0; reshoot the CLI welcome/banner output on the 1.2.0 build so the version line reads "Chloros CLI 1.2.0" -->
 
-* 🚀 **Automatisering** - Batchverwerking van meerdere datasets via scripts
-* 🔗 **Integratie** - Integreer in bestaande workflows en pijplijnen
-* 💻 **Headless-werking** - Draai zonder GUI
-* 🌍 **Meertalig** - Ondersteuning voor 38 talen
-* ⚡ **Parallelle verwerking** - [Dynamic Compute Adaptation](processing-architecture/dynamic-compute-adaptation.md) optimaliseert automatisch voor uw hardware
 
-### Vereisten
+## Wat deCLI
+is
 
-| Vereiste          | Details                                                             |
-| -------------------- | ------------------------------------------------------------------- |
-| **Besturingssysteem** | Windows 10/11 (64-bit), Linux x86_64 (amd64), Linux arm64 (NVIDIA Jetson JetPack 6) |
-| **Licentie**          | Chloros+ ([betaald abonnement vereist](https://cloud.mapir.camera/pricing)) |
-| **Geheugen**           | Minimaal 8 GB RAM (16 GB aanbevolen)                                  |
-| **Internet**         | Vereist voor licentieactivering                                     |
-| **Schijfruimte**       | Varieert afhankelijk van de projectgrootte                                              |
+`chloros-cli` is de command-line front-end voor dezelfde verwerkingsengine die de desktop-appChloros
+gebruikt. Het is een thin-HTTP
+-client bovenop deChloros
+-backend (een lokale server op `127.0.0.1:5000`) — de meeste commando’s starten de backend automatisch, dus een enkel `chloros-cli process …`-oproep is alles wat een script nodig heeft.
 
-{% hint style="warning" %}
-**Licentievereiste**: Voor CLI is een betaald Chloros+-abonnement vereist. Standaard (gratis) abonnementen hebben geen toegang tot CLI. Ga naar [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) om te upgraden.
-{% endhint %}
-
-## Snel aan de slag
-
-### Installatie
-
-#### Windows
-
-De CLI wordt automatisch meegeleverd met het Chloros-installatieprogramma:
-
-1. Download en voer **Chloros Installer.exe** uit
-2. Voltooi de installatiewizard
-3. CLI geïnstalleerd in: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
-
-{% hint style="success" %}
-Het installatieprogramma voegt automatisch `chloros-cli` toe aan de PATH van uw systeem. Start uw terminal opnieuw op na de installatie.
-{% endhint %}
-
-#### Linux
-
-Installeer het `.deb`-pakket voor uw architectuur:
+Het draait op **Windows
+10/11 (x64)**en**Linux
+(x86_64, en NVIDIA Jetson arm64 op JetPack 6)**, in elke terminal, zonder dat een GUI nodig is. Controleer je installatie met:
 
 ```bash
-# Linux amd64
+chloros-cli --version    # prints "Chloros CLI 1.2.0"
+```
+
+De commandofamilies in één oogopslag:
+
+* **Verwerking &amp; account** — `process`, `login`, `logout`, `status`, `export-status`, `language` (38 talen — zie [Ondersteunde talen](supported-languages.md)), `set-project-folder` / `get-project-folder` / `reset-project-folder`, `selftest`, `update` (alleenLinux
+/Jetson)
+* **Live hardware** — `lattice` (LATTICE-camerabesturing, meer dan 45 subcommando’s), `daq pool-*` (DAQ-lichtsensoren), `time-sync` (PTP)
+* **Automatisering** — `project` (een opgeslagenChloros
+-project zonder beeldscherm uitvoeren, inclusief YAML-opnamevoorschriften)
+
+Algemene opties die de moeite waard zijn om te kennen: `--port N` (backend-poort, standaard `5000`), `-v/--verbose`, `--restart` (de backend geforceerd opnieuw opstarten), `--backend-exe PATH`. Zie de [CLI
+-referentie](reference/cli-reference.md) voor de volledige lijst.
+
+***
+
+## Installatie
+
+CLI
+**wordt meegeleverd in hetChloros
+-installatieprogramma** op elk platform — er is geen aparteCLI
+-download. Download het installatieprogramma via de [Download](download.md)-pagina.
+
+###Windows
+
+
+Het installatieprogramma plaatst deCLI
+in:
+
+```
+
+C:\Program Files\Chloros\cli\chloros-cli.exe
+```
+
+en voegt die map toe aan je systeem `PATH` — **open een nieuwe terminal**na de installatie, zodat de bijgewerkte `PATH` wordt opgepikt. Het installatieprogramma plaatst ook opstart-scripts (`Chloros_CLI.bat` / `Chloros_CLI.ps1`) in de installatiemap, plus een**Chloros
+CLI
+** snelkoppeling in het Startmenu, die elk een terminal openen met `chloros-cli` klaar voor gebruik.
+
+###Linux
+
+
+Installeer de `.deb` voor uw architectuur:
+
+```bash
+# Linux x86_64
 sudo dpkg -i chloros-amd64.deb
 
-# Linux arm64 (NVIDIA Jetson, JetPack 6)
+# NVIDIA Jetson (arm64, JetPack 6)
 sudo dpkg -i chloros-arm64-jp6.deb
 ```
 
-Raadpleeg [Linux Installatie](linux/linux-installation.md) voor gedetailleerde informatie over de installatie van Linux.
+Hiermee wordt `chloros-cli` tot en met `/usr/bin/chloros-cli` (reeds op `PATH`) en de backend naar `/usr/lib/chloros/chloros-backend`, samen met de Arena-SDK
+-runtime die nodig is voor LATTICE-camera’s. Zie [Linux
+Installatie](linux/linux-installation.md) voor meer informatie.
 
-### Eerste installatie
+### Controleren
 
-Activeer uw Chloros+ licentie voordat u de CLI gebruikt:
+```bash
+chloros-cli --version    # "Chloros CLI 1.2.0"
+chloros-cli selftest     # 7-step diagnostic: backend, API, GPU/CUDA, denoiser models
+chloros-cli status       # license tier + logged-in user
+```
 
-**Windows:**
+***
 
-```powershell
-# Login with your Chloros+ account
-chloros-cli login user@example.com 'your_password'
+## Inloggen en licenties
 
-# Check license status
+CLI
+(enPython
+SDK
+) vereist een **betaaldChloros
++ abonnement**— elk betaald abonnement biedt deze toegang; het gratis abonnement niet. De beperking wordt**server-side** afgedwongen door de backend, niet door hetCLI
+-programma: een aanroep terwijl je bent uitgelogd wordt afgewezen met `401 AUTH_REQUIRED`, en een aanvraag terwijl je bent ingelogd op het gratis abonnement met de foutcode `403 PLAN_UPGRADE_REQUIRED`, ongeacht of deze afkomstig is van `chloros-cli`, deSDK
+of een zelfgeschrevenHTTP
+-client. Upgrade via [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing).
+
+Log **één keer per machine** in:
+
+```bash
+chloros-cli login user@example.com 'YourPassword'
 chloros-cli status
-
-# Process your first project
-chloros-cli process "C:\Images\Dataset001"
 ```
 
-**Linux:**
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+<!-- SCREENSHOT-UPDATE: login success output predates 1.2.0; reshoot `chloros-cli login` followed by `chloros-cli status` on the 1.2.0 build showing the license tier line -->
 
-```bash
-# Login with your Chloros+ account
-chloros-cli login user@example.com 'your_password'
-
-# Check license status
-chloros-cli status
-
-# Process your first project
-chloros-cli process ~/images/dataset001
-```
-
-### Basisgebruik
-
-Verwerk een map met standaardinstellingen:
-
-**Windows:**
-
-```powershell
-chloros-cli process "C:\Images\Dataset001"
-```
-
-**Linux:**
-
-```bash
-chloros-cli process ~/images/dataset001
-```
-
-***
-
-## Commando-overzicht
-
-### Algemene syntaxis
-
-```
-chloros-cli [global-options] <command> [command-options]
-```
-
-***
-
-## Commando&#x27;s
-
-### `process` - Afbeeldingen verwerken
-
-Verwerk afbeeldingen in een map met kalibratie.
-
-**Syntaxis:**
-
-```bash
-chloros-cli process <input-folder> [options]
-```
-
-**Voorbeelden:**
-
-```bash
-# Windows
-chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
-
-# Linux
-chloros-cli process ~/datasets/survey_001 --vignette --reflectance
-```
-
-#### Opties voor het verwerkingscommando
-
-| Optie                | Type    | Standaard        | Beschrijving                                                                            |
-| --------------------- | ------- | -------------- | -------------------------------------------------------------------------------------- |
-| `<input-folder>`      | Pad    | _Vereist_     | Map met RAW/JPG multispectrale afbeeldingen                                         |
-| `-o, --output`        | Pad    | Hetzelfde als invoer  | Uitvoermap voor verwerkte afbeeldingen                                                     |
-| `-n, --project-name`  | Tekst  | Automatisch gegenereerd | Aangepaste projectnaam                                                                    |
-| `--vignette`          | Vlag    | Ingeschakeld        | Vignetcorrectie inschakelen                                                             |
-| `--no-vignette`       | Vlag    | -              | Vignetcorrectie uitschakelen                                                            |
-| `--reflectance`       | Vlag    | Ingeschakeld        | Reflectiekalibratie inschakelen                                                         |
-| `--no-reflectance`    | Vlag    | -              | Reflectiekalibratie uitschakelen                                                        |
-| `--ppk`               | Vlag    | Uitgeschakeld       | Pas PPK-correcties toe op basis van .daq-lichtsensorgegevens                                      |
-| `--format`            | Keuze  | TIFF (16-bits)  | Uitvoerformaat: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
-| `--min-target-size`   | Geheel getal | Auto           | Minimale doelgrootte in pixels voor detectie van kalibratiepaneel                          |
-| `--target-clustering` | Geheel getal | Auto           | Drempelwaarde voor clustering van doelen (0-100)                                                    |
-| `--debayer`           | Keuze  | `standard`     | Debayer-methode: `standard` of `texture-aware` (alleen Chloros+)                          |
-| `--target`, `--targets` | Vlag  | Uitgeschakeld       | Zoek alleen naar kalibratiedoelen in een submap &quot;target&quot; of &quot;targets&quot; (versnelt de verwerking) |
-| `--indices`           | Lijst    | Geen           | Te berekenen vegetatie-indexen (bijv. `--indices NDVI NDRE GNDVI`)                    |
-| `--exposure-pin-1`    | Tekst  | Geen           | Belichting vergrendelen voor cameramodel (Pin 1)                                                 |
-| `--exposure-pin-2`    | Tekst  | Geen           | Belichting vergrendelen voor cameramodel (Pin 2)                                                 |
-| `--recal-interval`    | Geheel getal | Auto           | Herkalibratie-interval in seconden                                                      |
-| `--timezone-offset`   | Geheel getal | 0              | Tijdzone-offset in uren                                                               |
-
-***
-
-### `login` - Account verifiëren
-
-Log in met uw Chloros+ inloggegevens om CLI-verwerking in te schakelen.
-
-**Syntaxis:**
-
-```bash
-chloros-cli login <email> <password>
-```
-
-**Voorbeeld:**
-
-```bash
-chloros-cli login user@example.com 'MyP@ssw0rd123'
-```
 
 {% hint style="warning" %}
-**Speciale tekens**: Gebruik enkele aanhalingstekens rond wachtwoorden die tekens zoals `$`, `!` of spaties bevatten.
+**Wachtwoorden met speciale tekens**(`$`, `!`, spaces): wrap the password in**single quotes**, as shown above. In PowerShell double quotes, `$$` wordt door de shell vervormd; deCLI
+detecteert dit bij een 401-fout en probeert het automatisch opnieuw, maar met enkele aanhalingstekens wordt het probleem volledig vermeden).
 {% endhint %}
 
-**Uitvoer:**<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
+De sessie wordt opgeslagen in de cache in `~/.chloros/user_session.json` en blijft offline werken gedurende de respijtperiode van het abonnement (30 dagen voor maandabonnementen, tot de vervaldatum voor jaarabonnementen). `chloros-cli status` werkt zelfs zonder betaald abonnement, dus de reden voor een weigering is altijd zichtbaar.
 
-### `logout` - Inloggegevens wissen
+{% hint style="danger" %}
+**Headless taken plannen? Log eerst in.**Een commando dat een backend start (`process`, `status`, `export-status`, …) die wordt uitgevoerd**zonder een in de cache opgeslagen sessie**, mislukt niet direct — het komt terecht in een interactieve `Email:` / `Password:`-prompt op stdin. Een onbemande cron-taak of CI-stap zal daarom**vastlopen in afwachting van invoer**. Voer `chloros-cli login EMAIL 'PASSWORD'` één keer uit op de machine voordat je iets inplant.
+{% endhint %}
 
-Wis opgeslagen inloggegevens en log uit bij uw account.
+***
 
-**Syntaxis:**
+## Je eerste verwerkingsrun
+
+Richt `process` op een map met opnames — het detecteert automatischSurvey3
+(`.raw` + `.jpg`), LATTICE (`.tif`/`.tiff`), `.dng` of een combinatie daarvan:
 
 ```bash
-chloros-cli logout
+chloros-cli process "C:\Images\flight_001"          # Windows
+chloros-cli process ~/images/flight_001              # Linux
 ```
 
-**Voorbeeld:**
+De voortgang wordt per pijplijn-thread live weergegeven (Detecteren, Analyseren, Verwerken, Exporteren), en een succesvolle run wordt afgesloten met een rapportage van het aantal afbeeldingsproducten dat is opgeslagen (`Image products written: N`).
 
-```bash
-chloros-cli logout
+
+
+<!-- SCREENSHOT-NEEDED: terminal capture of a `chloros-cli process` run on a LATTICE captures folder completing successfully — per-thread progress lines visible and the final "Image products written: N" summary line -->
+### Waar de uitvoer terechtkomt
+
+`process` schrijft naar een **projectmap**, niet naar uw invoermap:
+
+* Zonder `-o`: het project wordt aangemaakt in je standaardprojectmap (gedeeld met de GUI; beheer deze met `get-project-folder` / `set-project-folder`, fallback `~/Chloros Projects`), met de naam `-n/--project-name` of een tijdstempel (`YYYYMMDD_HHMMSS`) indien weggelaten.
+* Met `-o PATH`: die map **is** de projectmap. Als deze map al een `project.json` bevat, wordt er een map met het achtervoegsel `_1`/`_2`… aangemaakt in plaats van de bestaande te overschrijven.
+
+Binnen het project worden producten gegroepeerd **op camera en vervolgens op bestandsformaat**:
+
+```
+<project>/
+├── project.json
+├── calibration_data.json
+└── LATT-M3M-L41-F550/                  # one folder per camera model+lens+filter
+    ├── tiff16/
+    │   ├── Reflectance_Calibrated_Images/
+    │   ├── Debayered_Images/
+    │   ├── Preview_Images/
+    │   └── NDVI_Index_Images/           # one folder per requested index
+    └── tiff32/
+        └── Radiance_Images/             # float32 radiance always lands here
 ```
 
-**Uitvoer:**
-
-```
-✓ Logout successful
-ℹ Credentials cleared from cache
-```
+De cameramap is `LATT-<sensor>-<lens>-F<filter>` voor LATTICE (overeenkomend met de EXIF-gegevens van de opname `Model`) en `<model>_<filter>` (bijv. `Survey3N_RGN`) voorSurvey3
+. De map voor het bestandsformaat volgt op `--format`: `tiff16`, `tiff8`, `png8`, `jpg8` of `tiff32` voor `TIFF (32-bit, Percent)`.
 
 {% hint style="info" %}
-**SDK-gebruikers**: De Python SDK biedt ook een programmatische `logout()`-methode voor het wissen van inloggegevens binnen Python-scripts. Raadpleeg de [Python SDK documentatie](api-python-sdk.md#logout) voor meer informatie.
+**Elk geëxporteerd product behoudt de naam van het BRON-bestand.**Een Radiance-export van `capture_..._raw.tif` heet nog steeds `capture_..._raw.tif` — het staat alleen in de map `tiff32/Radiance_Images/`.**De map identificeert het product, niet de bestandsnaam**, dus gebruik een glob-patroon voor de map, niet voor het achtervoegsel `*radiance*`.
 {% endhint %}
 
-***
+### De opties die je daadwerkelijk zult gebruiken
 
-### `status` - Licentiestatus controleren
+| Vlag | Standaard | Wat het doet |
+| --- | --- | --- |
+| `-o, --output PATH` | standaard projectmap | Locatie van de projectmap (zie hierboven). |
+| `-n, --project-name NAME` | tijdstempel | Projectnaam. |
+| `--format FMT` | `TIFF (16-bit)` | Een van `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)`. |
+| `--indices NAME [NAME ...]` | geen | Te exporteren vegetatie-indexen (zie [Vegetatie-indexen](#vegetation-indices)). |
+| `--debayer {standard,texture-aware}` | `standard` | `texture-aware` = neurale debayer, langzamer, hoogste kwaliteit (Chloros
++, NVIDIA GPU). |
+| `--vignette / --no-vignette` | aan | Vignetcorrectie. |
+| `--reflectance / --no-reflectance` | aan | Reflectantiecalibratie; voor LATTICE is dit ook de schakelaar voor het reflectantieproduct. |
+| `--input-level {auto,raw,debayered,processed}` | `auto` | Het startpunt van de pijplijn voor LATTICE-TIFF’s afdwingen. |
 
-Geef de huidige licentie- en authenticatiestatus weer.
-
-**Syntaxis:**
-
-```bash
-chloros-cli status
-```
-
-**Voorbeeld:**
-
-```bash
-chloros-cli status
-```
-
-**Uitvoer:**
-
-```
-╔══════════════════════════════════════╗
-║     LICENSE & ACCOUNT INFORMATION    ║
-╚══════════════════════════════════════╝
-
-📧 Email: user@example.com
-📋 Plan: Chloros+ Professional
-🔓 API/CLI Access: Enabled
-✓ Status: Active
-```
+Voor al het overige — afstemming van doeldetectie, PPK, belichtingspinnen, vlaggen voor array-uitlijning — zie de [sectie `process` van deCLI
+-referentie](reference/cli-reference.md).
 
 ***
 
-### `export-status` - Exportvoortgang controleren
+## Kiezen wat je wilt exporteren (LATTICE-producten)
 
-Controleer de exportvoortgang van Thread 4 tijdens of na de verwerking.
+De LATTICE-verwerking wordt **in één doorloop**over alle toepasselijke producten verdeeld. Vier schakelaars per product staan**standaard allemaal op AAN**; gebruik het formulier `--no-` om er één uit te schakelen:
 
-**Syntaxis:**
+| Schakelaar | Product |
+| --- | --- |
+| `--debayered` | Lineaire demosaïc → `Debayered_Images/` |
+| `--preview` | Voorbeeld weergeven (witbalans + gamma; valsekleuruitrekking voor multispectraal) → `Preview_Images/` |
+| `--radiance` | float32 straling, W/m²/sr/nm → `Radiance_Images/` (altijd `tiff32/`) |
+| `--reflectance` | uint16 reflectantie, Pix4D-ready → `Reflectance_Calibrated_Images/` |
 
-```bash
-chloros-cli export-status
-```
-
-**Voorbeeld:**
-
-```bash
-chloros-cli export-status
-```
-
-**Toepassing:** Roep deze opdracht aan terwijl de verwerking loopt om de voortgang van de export te controleren.***
-
-### `language` - Beheer van de interfacetaal
-
-Bekijk of wijzig de interfacetaal van CLI.
-
-**Syntaxis:**
+RGB
+Mastercamera’s zenden uitsluitend debayered + preview uit — radiance/reflectance per band is niet relevant voor een breedbandsensor, dus die schakelaars hebben voor hen geen effect.Survey3
+`.raw` negeert de schakelaars en volgt het standaardreflectance/target-pad.
 
 ```bash
-# Show current language
-chloros-cli language
-
-# List all available languages
-chloros-cli language --list
-
-# Set a specific language
-chloros-cli language <language-code>
+# Radiance only — no DAQ downwelling needed
+chloros-cli process ~/captures/lattice_flight --no-debayered --no-preview --no-reflectance
 ```
 
-**Voorbeelden:**
-
-```bash
-# View current language
-chloros-cli language
-
-# List all 38 supported languages
-chloros-cli language --list
-
-# Change to Spanish
-chloros-cli language es
-
-# Change to Japanese
-chloros-cli language ja
-```
-
-#### Ondersteunde talen (38 in totaal)
-
-| Code    | Taal              | Oorspronkelijke naam      |
-| ------- | --------------------- | ---------------- |
-| `en`    | Engels               | English          |
-| `es`    | Spaans               | Español          |
-| `pt`    | Portugees            | Português        |
-| `fr`    | Frans                | Français         |
-| `de`    | Duits                | Deutsch          |
-| `it`    | Italiaans               | Italiano         |
-| `ja`    | Japans              | 日本語              |
-| `ko`    | Koreaans                | 한국어              |
-| `zh`    | Chinees (vereenvoudigd)  | 简体中文             |
-| `zh-TW` | Chinees (traditioneel) | 繁體中文             |
-| `ru`    | Russisch               | Русский          |
-| `nl`    | Nederlands                 | Nederlands       |
-| `ar`    | Arabisch                | العربية          |
-| `pl`    | Pools                | Polski           |
-| `tr`    | Turks               | Türkçe           |
-| `hi`    | Hindi                 | हिंदी            |
-| `id`    | Indonesisch            | Bahasa Indonesia |
-| `vi`    | Vietnamees            | Tiếng Việt       |
-| `th`    | Thais                  | ไทย              |
-| `sv`    | Zweeds               | Svenska          |
-| `da`    | Deens                | Dansk            |
-| `no`    | Noors             | Norsk            |
-| `fi`    | Fins               | Suomi            |
-| `el`    | Grieks                 | Ελληνικά         |
-| `cs`    | Tsjechisch                | Čeština          |
-| `hu`    | Hongaars             | Magyar           |
-| `ro`    | Roemeens              | Română           |
-| `uk`    | Oekraïens             | Українська       |
-| `pt-BR` | Braziliaans Portugees  | Português Brasileiro |
-| `zh-HK` | Kantonees             | 粵語             |
-| `ms`    | Maleis                 | Bahasa Melayu    |
-| `sk`    | Slowaaks                | Slovenčina       |
-| `bg`    | Bulgaars             | Български        |
-| `hr`    | Kroatisch              | Hrvatski         |
-| `lt`    | Litouws            | Lietuvių         |
-| `lv`    | Lets               | Latviešu         |
-| `et`    | Ests              | Eesti            |
-| `sl`    | Sloveens             | Slovenščina      |
-
-{% hint style="success" %}
-**Automatische persistentie**: Uw taalvoorkeur wordt opgeslagen in `~/.chloros/cli_language.json` en blijft behouden tijdens alle sessies.
-{% endhint %}
-
-***
-
-### `set-project-folder` - Standaardprojectmap instellen
-
-Wijzig de locatie van de standaardprojectmap (gedeeld met GUI op Windows).
-
-**Syntaxis:**
-
-```bash
-chloros-cli set-project-folder <folder-path>
-```
-
-**Voorbeelden:**
-
-```bash
-# Windows
-chloros-cli set-project-folder "C:\Projects\2025"
-
-# Linux
-chloros-cli set-project-folder ~/projects/2025
-```
-
-***
-
-### `get-project-folder` - Projectmap weergeven
-
-Geef de huidige locatie van de standaardprojectmap weer.
-
-**Syntaxis:**
-
-```bash
-chloros-cli get-project-folder
-```
-
-**Voorbeeld:**
-
-```bash
-chloros-cli get-project-folder
-```
-
-**Uitvoer:**
-
-```
-
-# Windows
-ℹ Current project folder: C:\Projects\2025
-
-# Linux
-ℹ Current project folder: /home/user/.local/share/chloros/projects
-```
-
-***
-
-### `reset-project-folder` - Terugzetten naar standaard
-
-De projectmap terugzetten naar de standaardlocatie.
-
-**Syntaxis:**
-
-```bash
-chloros-cli reset-project-folder
-```
-
-***
-
-### `selftest` - Systeemdiagnostiek uitvoeren
-
-Voer 7 diagnostische controles uit om uw systeemconfiguratie te verifiëren.
-
-**Syntaxis:**
-
-```bash
-chloros-cli selftest
-```
-
-**Uitgevoerde diagnostiek:**
-
-1. Versiecontrole
-2. Beschikbaarheid van poort (5000)
-3. Opstarten van backend
-4. API-connectiviteitstest
-5. Systeeminformatie en GPU-detectie
-6. Verificatie van denoiser-modellen
-7. Controle op beschikbaarheid van CUDA
+**`--reflectance-source {auto,target,daq}`** (standaard `auto`) kiest de reflectantiereferentie: `auto` maakt een QA-goedgekeurd [kalibratiedoel](calibration-targets.md) binnen het beeld als absolute referentie en valt terug op de DAQ-lichtsensor-downwelling-verdeling (ρ = π·L/E) wanneer er geen doel aanwezig is; `target` is strikt (geen DAQ-vervanging); `daq` is DAQ-autoritatief. Per-eenheid gemeten doelscans kunnen worden geleverd met `--target-reflectance-dir`.
 
 {% hint style="info" %}
-**Handig voor probleemoplossing**: Voer `selftest` uit na de installatie om te controleren of uw systeem correct is geconfigureerd, met name op Linux/Jetson waar de GPU- en CUDA-instellingen mogelijk moeten worden geverifieerd.
+**Reflectiepixels uitlezen:**de DN-waarde ρ = 1,0 is**per bron** — LATTICE-bestanden stempelen `Chloros:PixelScale=32768` in XMP;Survey3
+-bestanden gebruiken 65535 (en bevatten geen `Chloros:*`-tags). Lees de tag en deel erdoor in plaats van uit te gaan van een constante. Details en het ene opzettelijke randgeval zonder schaal staan in de [CLI
+-referentie](reference/cli-reference.md).
+{% endhint %}
+
+**De verwerking begint altijd bij `raw`.** Afgeleide producten (exportbestanden van debayering, straling of reflectie) worden nooit teruggevoerd door de pijplijn — het opnieuw importeren en verwerken ervan zou de kalibratieberekeningen dubbel toepassen, dusChloros
+slaat ze over en geeft dit aan. `--input-level` is de bewuste nooduitgang voor het geval je echt een startpunt moet forceren.
+
+***
+
+## Wanneer een run mislukt
+
+Vanaf versie 1.2.0 meldt `process` luidkeels een fout in plaats van „succesvol“ te zijn zonder iets te tonen:
+
+* Een run die **producten heeft aangevraagd maar er geen heeft geschreven**— alleen `project.json` en `calibration_data.json` — geeft `Processing finished but wrote no image products.` weer en**stopt met een waarde anders dan nul**, zodat scripts dit kunnen detecteren. De gebruikelijke oorzaken: de invoermap werd niet herkend als een opname (controleer de indeling en `--input-level`), of elk aangevraagd product was niet van toepassing op die camera’s (bijv. het vragen om radiance/reflectance van camera’s die alleenRGB
+ondersteunen).
+* Een **opzettelijke run met alleen metadata** (alle producten uitgeschakeld, geen `--indices`) is nog steeds geslaagd — een lege afbeeldingsuitvoer is daar het juiste resultaat.
+* Voer de run opnieuw uit met `--verbose` en controleer het backend-logboek op regels met `[LATTICE-EXPORT]` / `[EXPORT-CHECK]`, die uitleg geven over het overslaan van afzonderlijke camera&#x27;s.
+
+Uitvoercodes: `0` succes · `1` algemene fout · `2` argumentfout · `130` onderbroken door Ctrl+C.
+
+***
+
+## Vegetatie-indexen
+
+Voer `--indices` uit met een of meer vooraf ingestelde namen; elke index komt in zijn eigen `<INDEX>_Index_Images/`-map terecht:
+
+```bash
+chloros-cli process ~/images/flight_001 --indices NDVI NDRE GNDVI
+```
+
+De 22 vooraf ingestelde namen die `process --indices` accepteert:
+
+`NDVI` `GNDVI` `NDRE` `OSAVI` `SAVI` `MSAVI2` `EVI` `MSR` `TDVI` `LAI` `GCI` `GRVI` `GSAVI` `GOSAVI` `NLI` `MNLI` `RDVI` `WDRVI` `CVI` `ENDVI` `GLI` `VARI`
+
+{% hint style="warning" %}
+**Er zijn drie indexlijsten — haal ze niet door elkaar.**De vervolgkeuzelijst „Projectinstellingen“ van de GUI bevat 27 formules (voegt `FCI1`, `FCI2`, `GARI`, `GEMI`, `LCI` — deze vijf zijn uitsluitend voor de GUI en zijn**niet** geldig voor `--indices`). Het live/offline-commando `lattice index --preset` maakt gebruik van een eigen, afzonderlijke lijst met 22 voorinstellingen. Formules en bandberekeningen zijn gedocumenteerd in [Multispectrale indexformules](project-settings/multispectral-index-formulas.md).
 {% endhint %}
 
 ***
 
-### `update` - Controleren op updates (alleen Linux)
+## DAQ-lichtsensoren: een korte kennismaking
 
-Controleer op en installeer CLI-updates op Linux-systemen.
-
-**Syntaxis:**
+De `daq pool-*`-familie stuurtMAPIR
+DAQ-spectrale sensoren (DAQ-U via USB, DAQ-M via BLE, DAQ-E via Ethernet) aan via de permanente pool van de backend — de GUI,CLI
+enSDK
+delen allemaal één live-handle. **`pool-*` is het ondersteunde DAQ-pad in de meegeleverdeCLI
+**; andere `daq`-subcommando’s waarnaar mogelijk wordt verwezen, zijn eenMAPIR
+-intern oppervlak dat uitsluitend als bron dient en afsluit met een expliciete foutmelding die u doorverwijst naar `pool-*`.
 
 ```bash
-# Check for updates without installing
-chloros-cli update --check
+# 1. Open a pooled session (pick the line matching your sensor)
+chloros-cli daq pool-connect                              # smart-detect
+chloros-cli daq pool-connect --port COM3                  # DAQ-U on a specific COM port
+chloros-cli daq pool-connect --mac AA:BB:CC:DD:EE:FF      # DAQ-M by BLE MAC
+chloros-cli daq pool-connect --eth-host daq-e-xxx.local   # DAQ-E by hostname (reliable)
 
-# Check for and install updates
-chloros-cli update
+# 2. List pooled sensors and their ids
+#    (DAQ-U ids look like 'CB-7C-A8-2E-5F'; DAQ-E ids like 'daq-e-def330')
+chloros-cli daq pool-list
+
+# 3. Read the latest calibrated spectrum (W/m²/nm)
+chloros-cli daq pool-latest --sensor-id CB-7C-A8-2E-5F
+
+# 4. Record a calibrated .daq file for 60 s
+chloros-cli daq pool-record --sensor-id CB-7C-A8-2E-5F --duration 60 \
+  -o ~/Documents/spectra --device-name "field-A"
+
+# 5. Release
+chloros-cli daq pool-disconnect --sensor-id CB-7C-A8-2E-5F
 ```
 
-| Optie    | Beschrijving                        |
-| --------- | ---------------------------------- |
-| `--check` | Alleen controleren op updates, niet installeren |
+`pool-record` zonder `--duration` draait tot `pool-record --stop`; de standaard uitvoermap is `~/Documents/DAQ Live View/` **op de machine van de backend**. Het cap-correctieprofiel wordt gekozen op het moment van verbinding (`--cap-id`, backend-standaard `sunshine_cosine`) en kan live worden gewisseld met `pool-set-cap` — cap-profielen en het gekalibreerde bereik van de sensor worden behandeld in de DAQ-hoofdstukken van deze handleiding.
 
-{% hint style="info" %}
-Deze opdracht is alleen beschikbaar op Linux. Op Windows worden updates geleverd via het installatieprogramma.
+{% hint style="warning" %}
+**DAQ-E op een host met meerdere netwerkkaarten:** de eerste automatische detectie van `pool-connect --eth` na het opstarten kan mislukken, zelfs als de sensor in orde is. `--eth-host <ip-or-hostname>` is de betrouwbare variant — gebruik deze wanneer de detectie geen resultaten oplevert.
 {% endhint %}
 
 ***
 
-## Algemene opties
+## LATTICE-camera’s, PTP &amp; projectautomatisering
 
-Deze opties zijn van toepassing op alle commando&#x27;s:
-
-| Optie            | Type    | Standaard       | Beschrijving                                      |
-| ----------------- | ------- | ------------- | ------------------------------------------------ |
-| `--backend-exe`   | Pad    | Automatisch gedetecteerd | Pad naar uitvoerbaar backend-bestand                       |
-| `--port`          | Geheel getal | 5000          | Poortnummer van backend API                          |
-| `--restart`       | Vlag    | -             | Backend geforceerd opnieuw opstarten (beëindigt bestaande processen) |
-| `--version`       | Vlag    | -             | Versie-informatie weergeven en afsluiten                |
-| `--help`          | Vlag    | -             | Helpinformatie weergeven en afsluiten                   |
-
-{% hint style="info" %}
-**Automatische detectie van backend**: Het pad `--backend-exe` wordt automatisch gedetecteerd per platform:
-* **Windows**: `C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe`
-* **Linux (.deb)**: `/usr/lib/chloros/chloros-backend`
-* **Linux (handmatig)**: `/opt/mapir/chloros/backend/chloros-backend`
-{% endhint %}
-
-**Voorbeeld met algemene opties:**
-
-**Windows:**
-
-```powershell
-chloros-cli --port 5001 process "C:\Datasets\Survey_001"
-```
-
-**Linux:**
+De `lattice`-familie (meer dan 45 subcommando’s) dekt het volledige werk met LATTICE-camera’s: detectie, afzonderlijke opnames, permanente gesynchroniseerde arrays met de ‘smart-prep connect’-workflow van de GUI, live browser-preview, uitlijning, indexberekeningen en host-NIC-diagnostiek. Een voorproefje:
 
 ```bash
-chloros-cli --port 5001 process ~/datasets/survey_001
+chloros-cli lattice info                                          # discover cameras
+chloros-cli lattice capture -o output/                            # one frame, all export types
+chloros-cli lattice array-connect --serials SN1,SN2,SN3,SN4       # persistent synced array
+chloros-cli lattice array-capture --processing reflectance -o out/
 ```
+
+Daarnaast: `chloros-cli time-sync` rapporteert over de PTP-grandmaster die op deChloros
+-host draait (LATTICE-camera’s en DAQ-E-sensoren werken hier als slaves mee voor apparaatoverschrijdende tijdstempels), en `chloros-cli project` opent een opgeslagenChloros
+-project en stuurt de bijbehorende camera’s, arrays en sensoren headless aan — inclusief gescripte YAML-opnameprocedures.
+
+Deze drie families (`lattice`, `project`, `daq pool-*`) zijn ook de enige die `CHLOROS_BACKEND_URL` ondersteunen voor het aansturen van een **externe** backend; de kerncommando’s zijn altijd gericht op de lokale machine.
+
+Volledige stap-voor-stap-handleidingen zijn te vinden in de LATTICE-hoofdstukken van deze handleiding; elke vlag staat in de [CLI
+-referentie](reference/cli-reference.md).
 
 ***
 
-## Handleiding voor verwerkingsinstellingen
-
-### Parallelle verwerking en dynamische rekenaanpassing
-
-Chloros 1.1.0 bevat [Dynamic Compute Adaptation](processing-architecture/dynamic-compute-adaptation.md) — de verwerkingsengine **detecteert automatisch uw hardware** en selecteert de optimale strategie:
-
-| Platform | Strategie | Werkers | Pijplijn | Opmerkingen |
-| --- | --- | --- | --- | --- |
-| **Jetson Nano 8GB** | `GPU_SINGLE` | 1 | `tiled_gpu` | Geheugenefficiënt, geserialiseerd |
-| **Jetson Orin NX 16 GB** | `GPU_PARALLEL` | 3 | `fused_gpu` | Gelijktijdige GPU-verwerking |
-| **Desktop met 8 GB GPU** | `GPU_SINGLE` | 3 | `tiled_gpu` | Goede desktopprestaties |
-| **Desktop met 12 GB+ GPU** | `GPU_PARALLEL` | 3-4 | `fused_gpu` | Optimale desktopprestaties |
-| **Systeem met alleen CPU** | `CPU_PARALLEL` | cores - 1 | `cpu_fallback` | Geen GPU vereist |
-
-{% hint style="success" %}
-**Geen handmatige configuratie nodig!** Chloros detecteert automatisch uw CPU, GPU, RAM en (op Jetson) thermische sensoren, en configureert vervolgens automatisch de optimale verwerkingspijplijn.
-{% endhint %}
-
-### Debayer-methoden
-
-| Methode | CLI-vlag | Kwaliteit | Snelheid | Licentie |
-| --- | --- | --- | --- | --- |
-| **Standaard (Snel, Gemiddelde kwaliteit)** | `--debayer standard` | Goed | Snel | Gratis / Chloros+ |
-| **Textuurbewust (Langzaam, Hoogste kwaliteit)** | `--debayer texture-aware` | Hoogste | Langzaam | Alleen Chloros+ |
-
-De standaard debayer-methode is **Standaard**. De**Textuurbewuste** methode maakt gebruik van een AI/ML-ruisonderdrukkingsmodel voor de hoogste uitvoerkwaliteit, maar vereist een Chloros+ licentie en een NVIDIA GPU.
-
-```bash
-# Use Texture Aware debayer (Chloros+ only)
-chloros-cli process ~/datasets/field_a --debayer texture-aware
-```
-
-### Vignettecorrectie
-
-**Wat het doet:** Corrigeert lichtverval aan de randen van het beeld (donkere hoeken die vaak voorkomen in camerabeelden).
-
-* **Standaard ingeschakeld** - De meeste gebruikers kunnen dit beter ingeschakeld laten
-* Gebruik `--no-vignette` om uit te schakelen
-
-{% hint style="success" %}
-**Aanbeveling**: Schakel vignetcorrectie altijd in om een gelijkmatige helderheid over het hele beeld te garanderen.
-{% endhint %}
-
-### Reflectiekalibratie
-
-Zet ruwe sensorwaarden om in gestandaardiseerde reflectiepercentages met behulp van kalibratiepanelen.
-
-* **Standaard ingeschakeld** - Essentieel voor vegetatieanalyse
-* Vereist kalibratiedoelpanelen in beelden
-* Gebruik `--no-reflectance` om uit te schakelen
-
-{% hint style="info" %}
-**Vereisten**: Zorg ervoor dat kalibratiepanelen goed belicht en zichtbaar zijn in uw beelden voor een nauwkeurige reflectanceconversie.
-{% endhint %}
-
-### PPK-correcties
-
-**Wat het doet:** Past Post-Processed Kinematic-correcties toe met behulp van DAQ-A-SD-loggegevens voor verbeterde GPS-nauwkeurigheid.
-
-* **Standaard uitgeschakeld**
-* Gebruik `--ppk` om in te schakelen
-* Vereist .daq-bestanden in de projectmap van de MAPIR DAQ-A-SD-lichtsensor.
-
-### Uitvoerformaten
-
-<table><thead><tr><th width="197">Formaat</th><th width="130.20001220703125">Bitdiepte</th><th width="116.5999755859375">Bestandsgrootte</th><th>Meest geschikt voor</th></tr></thead><tbody><tr><td><strong>TIFF (16-bits)</strong> ⭐</td><td>16-bits geheel getal</td><td>Groot</td><td>GIS-analyse, fotogrammetrie (aanbevolen)</td></tr><tr><td><strong>TIFF (32-bit, Percent)</strong></td><td>32-bits drijvende komma</td><td>Zeer groot</td><td>Wetenschappelijke analyse, onderzoek</td></tr><tr><td><strong>PNG (8-bit)</strong></td><td>8-bits geheel getal</td><td>Middel</td><td>Visuele inspectie, delen via het web</td></tr><tr><td><strong>JPG (8-bit)</strong></td><td>8-bits geheel getal</td><td>Klein</td><td>Snel voorbeeld, gecomprimeerde uitvoer</td></tr></tbody></table>***
-
-## Automatisering &amp; scripting
-
-### PowerShell-batchverwerking (Windows)
-
-Verwerk automatisch meerdere datasetsmappen op Windows:
-
-```powershell
-# process_all_datasets.ps1
-
-$datasets = Get-ChildItem "C:\Datasets\2025" -Directory
-
-foreach ($dataset in $datasets) {
-    Write-Host "Processing $($dataset.Name)..." -ForegroundColor Cyan
-    
-    chloros-cli process $dataset.FullName `
-        --vignette `
-        --reflectance
-    
-    if ($LASTEXITCODE -eq 0) {
-        Write-Host "✓ $($dataset.Name) complete" -ForegroundColor Green
-    } else {
-        Write-Host "✗ $($dataset.Name) failed" -ForegroundColor Red
-    }
-}
-
-Write-Host "All datasets processed!" -ForegroundColor Green
-```
-
-### Windows Batchscript (Windows)
-
-Eenvoudige lus voor batchverwerking op Windows:
-
-```batch
-@echo off
-echo Starting batch processing...
-
-for /d %%i in (C:\Datasets\2025\*) do (
-    echo.
-    echo ========================================
-    echo Processing: %%i
-    echo ========================================
-    chloros-cli process "%%i"
-    
-    if %ERRORLEVEL% EQU 0 (
-        echo SUCCESS: %%i processed
-    ) else (
-        echo ERROR: %%i failed
-    )
-)
-
-echo.
-echo All datasets processed!
-pause
-```
-
-### Bash-batchverwerking (Linux)
-
-Verwerk meerdere datasetsmappen op Linux:
-
-```bash
-#!/bin/bash
-# process_all_datasets.sh
-
-for dataset in ~/datasets/2026/*/; do
-    name=$(basename "$dataset")
-    echo "Processing $name..."
-
-    chloros-cli process "$dataset" \
-        --vignette \
-        --reflectance
-
-    if [ $? -eq 0 ]; then
-        echo "✓ $name complete"
-    else
-        echo "✗ $name failed"
-    fi
-done
-
-echo "All datasets processed!"
-```
-
-### Python-automatiseringsscript (platformonafhankelijk)
-
-Geavanceerde automatisering met foutafhandeling (werkt op Windows en Linux):
-
-```python
-import subprocess
-import os
-import sys
-from pathlib import Path
-from datetime import datetime
-
-def process_dataset(input_folder):
-    """Process a folder using Chloros CLI"""
-    cmd = ['chloros-cli', 'process', str(input_folder)]
-    
-    # Execute command
-    result = subprocess.run(
-        cmd, 
-        capture_output=True, 
-        text=True,
-        encoding='utf-8'
-    )
-    
-    return result.returncode == 0, result.stdout, result.stderr
-
-def main():
-    """Process all datasets in a directory"""
-    # Adjust path for your platform
-    # Windows: Path('C:/Datasets/2025')
-    # Linux:   Path.home() / 'datasets' / '2025'
-    datasets_dir = Path('C:/Datasets/2025')
-    log_file = Path('processing_log.txt')
-    
-    successful = []
-    failed = []
-    
-    # Start processing
-    print(f"Starting batch processing: {datetime.now()}")
-    print(f"Scanning: {datasets_dir}")
-    print("=" * 60)
-    
-    for dataset_folder in sorted(datasets_dir.iterdir()):
-        if not dataset_folder.is_dir():
-            continue
-        
-        print(f"\nProcessing: {dataset_folder.name}")
-        
-        success, stdout, stderr = process_dataset(dataset_folder)
-        
-        if success:
-            print(f"✓ {dataset_folder.name} - SUCCESS")
-            successful.append(dataset_folder.name)
-        else:
-            print(f"✗ {dataset_folder.name} - FAILED")
-            failed.append(dataset_folder.name)
-            
-            # Log error details
-            with open(log_file, 'a', encoding='utf-8') as f:
-                f.write(f"\n=== {dataset_folder.name} - {datetime.now()} ===\n")
-                f.write(f"STDOUT:\n{stdout}\n")
-                f.write(f"STDERR:\n{stderr}\n")
-    
-    # Print summary
-    print("\n" + "=" * 60)
-    print(f"SUMMARY - Completed: {datetime.now()}")
-    print(f"  Successful: {len(successful)}")
-    print(f"  Failed: {len(failed)}")
-    
-    if failed:
-        print(f"\nFailed folders:")
-        for folder in failed:
-            print(f"  - {folder}")
-        print(f"\nCheck {log_file} for error details")
-        sys.exit(1)
-    else:
-        print("\nAll datasets processed successfully!")
-        sys.exit(0)
-
-if __name__ == '__main__':
-    main()
-```
-
-***
-
-## Verwerkingsworkflow
-
-### Standaardworkflow
-
-1. **Invoer**: Map met RAW/JPG-beeldparen
-2. **Detectie**: CLI scant automatisch naar ondersteunde beeldbestanden
-3. **Verwerking**: Parallelle modus schaalt mee met uw CPU-kernen (Chloros+)
-4. **Uitvoer**: Maakt submappen per cameramodel aan met verwerkte afbeeldingen
-
-### Voorbeeld van de uitvoerstructuur
-
-```
-
-MyProject/
-├── project.json                             # Project metadata
-├── 2025_0203_193056_008.JPG                # Original JPG
-├── 2025_0203_193055_007.RAW                # Original RAW
-└── Survey3N_RGN/                           # Processed outputs ✓
-    ├── 2025_0203_193056_008_Reflectance.tif   # Calibrated reflectance
-    ├── 2025_0203_193056_008_Target.tif        # Target detection
-    └── ...
-```
-
-### Geschatte verwerkingstijden
-
-Typische verwerkingstijden voor 100 afbeeldingen (elk 12 MP):
-
-| Platform | Modus | Geschatte tijd | Opmerkingen |
-| --- | --- | --- | --- |
-| **Desktop 12 GB+ GPU** | `GPU_PARALLEL` | 5-10 min | Snelste optie |
-| **Desktop 8 GB GPU** | `GPU_SINGLE` | 10-15 min | Goede prestaties |
-| **Jetson Orin NX 16 GB** | `GPU_PARALLEL` | 15-25 min | Edge computing |
-| **Jetson Nano 8 GB** | `GPU_SINGLE` | 30-60 min | Beperkt geheugen |
-| **Alleen CPU** | `CPU_PARALLEL` | 20-40 min | Geen GPU vereist |
-
-{% hint style="info" %}
-**Prestatietip**: De verwerkingstijd varieert afhankelijk van het aantal afbeeldingen, de resolutie, de debayer-methode en de hardware. Texture Aware debayer duurt aanzienlijk langer dan Standard. Zie [Dynamic Compute Adaptation](processing-architecture/dynamic-compute-adaptation.md) voor meer informatie.
-{% endhint %}
-
-***
-
-## Probleemoplossing
-
-### CLI niet gevonden
-
-**Windows-fout:**
-
-```
-'chloros-cli' is not recognized as an internal or external command
-```
-
-**Windows Oplossingen:**
-
-1. Controleer de installatielocatie:
-
-```powershell
-dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
-```
-
-2. Gebruik het volledige pad als het niet in PATH staat:
-
-```powershell
-"C:\Program Files\Chloros\resources\cli\chloros-cli.exe" process "C:\Datasets\Field_A"
-```
-
-3. Voeg handmatig toe aan PATH:
-   * Open Systeemeigenschappen → Omgevingsvariabelen
-   * Bewerk de PATH-variabele
-   * Voeg toe: `C:\Program Files\Chloros\resources\cli`
-   * Start de terminal opnieuw op
-
-**Linux Fout:**
-
-```
-chloros-cli: command not found
-```
-
-**Linux Oplossingen:**
-
-1. Controleer de installatie:
-
-```bash
-which chloros-cli
-dpkg -L chloros-amd64  # or chloros-arm64-jp6
-```
-
-2. Herlaad uw shell:
-
-```bash
-source ~/.bashrc
-```
-
-3. Controleer de machtigingen:
-
-```bash
-sudo chmod +x /usr/bin/chloros-cli
-```
-
-***
-
-### Backend kan niet worden gestart**Fout:**
-
-```
-
-Backend failed to start within 30 seconds
-```
-
-**Oplossingen:**
-
-1. Controleer of de backend al actief is (sluit deze eerst)
-2. Controleer of de firewall niet blokkeert (Windows) of controleer de beschikbaarheid van de poort (Linux: `lsof -i :5000`)
-3. Probeer een andere poort:
-
-```bash
-# Windows
-chloros-cli --port 5001 process "C:\Datasets\Field_A"
-
-# Linux
-chloros-cli --port 5001 process ~/datasets/field_a
-```
-
-4. Forceer een herstart van de backend:
-
-```bash
-# Windows
-chloros-cli --restart process "C:\Datasets\Field_A"
-
-# Linux
-chloros-cli --restart process ~/datasets/field_a
-```
-
-5. Controleer op Linux of het uitvoerbare bestand van de backend bestaat:
-
-```bash
-ls -la /usr/lib/chloros/chloros-backend
-```
-
-***
-
-### Licentie-/authenticatieproblemen**Fout:**
-
-```
-
-Chloros+ license required for CLI access
-```
-
-**Oplossingen:**
-
-1. Controleer of u een actief Chloros+-abonnement hebt
-2. Log in met uw inloggegevens:
-
-```bash
-chloros-cli login user@example.com 'password'
-```
-
-3. Controleer de licentiestatus:
-
-```bash
-chloros-cli status
-```
-
-4. Neem contact op met de ondersteuning: info@mapir.camera
-
-***
-
-### Geen afbeeldingen gevonden**Fout:**
-
-```
-
-No images found in the specified folder
-```
-
-**Oplossingen:**
-
-1. Controleer of de map ondersteunde formaten bevat (.RAW, .TIF, .JPG)
-2. Controleer of het pad naar de map correct is (gebruik aanhalingstekens voor paden met spaties)
-3. Zorg ervoor dat u leesrechten voor de map hebt
-4. Controleer of de bestandsextensies correct zijn
-
-***
-
-### Verwerking loopt vast of hangt**Oplossingen:**
-
-1. Controleer de beschikbare schijfruimte (zorg dat er voldoende is voor de uitvoer)
-2. Sluit andere toepassingen om geheugen vrij te maken
-3. Verminder het aantal afbeeldingen (verwerk in batches)
-
-***
-
-### Poort al in gebruik**Fout:**
-
-```
-
-Port 5000 is already in use
-```
-
-**Oplossingen:**
-
-**Windows:**
-
-```powershell
-chloros-cli --port 5001 process "C:\Datasets\Field_A"
-```
-
-**Linux:**
-
-```bash
-# Find what's using port 5000
-lsof -i :5000
-
-# Use a different port
-chloros-cli --port 5001 process ~/datasets/field_a
-```
-
-***
-
-## Veelgestelde vragen
-
-### V: Heb ik een licentie nodig voor de CLI?
-
-**A:**Ja! Voor de CLI is een betaalde**Chloros+ licentie** vereist.
-
-* ❌ Standaard (gratis) abonnement: CLI uitgeschakeld
-* ✅ Chloros+ (betaalde) abonnementen: CLI volledig ingeschakeld
-
-Abonneren via: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
-
-***
-
-### V: Kan ik de CLI gebruiken op een server zonder GUI?**A:** Ja! De CLI draait volledig headless. Dit is het belangrijkste gebruiksscenario op Linux.**Windows-server:**
-* Windows-server 2016 of later
-* Visual C++ Redistributable geïnstalleerd
-
-**Linux-server:**
-* Ubuntu 20.04+ / Debian 11+ (amd64) of JetPack 6 (arm64)
-* Installeren via het `.deb`-pakket
-
-**Beide platforms:**
-* Minimaal 8 GB RAM (16 GB aanbevolen)
-* Eenmalige licentieactivering: `chloros-cli login user@example.com 'password'`
-
-***
-
-### V: Waar worden bewerkte afbeeldingen opgeslagen?**A:**Standaard worden bewerkte afbeeldingen opgeslagen in**dezelfde map als de invoer**, in submappen met het cameramodel (bijv. `Survey3N_RGN/`).
-
-Gebruik de optie `-o` om een andere uitvoermap op te geven:
-
-```bash
-# Windows
-chloros-cli process "C:\Input" -o "D:\Output"
-
-# Linux
-chloros-cli process ~/input -o ~/output
-```
-
-***
-
-### V: Kan ik meerdere mappen tegelijk verwerken?**A:** Niet direct in één opdracht, maar u kunt scripts gebruiken om mappen achtereenvolgens te verwerken. Zie het gedeelte [Automatisering en scripting](CLI.md#automation--scripting).***
-
-### V: Hoe sla ik de uitvoer van CLI op in een logbestand?**PowerShell:**
-
-```powershell
-chloros-cli process "C:\Datasets\Field_A" | Tee-Object -FilePath "processing.log"
-```
-
-**Batch:**
-
-```batch
-chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
-```
-
-**Linux Bash:**
-
-```bash
-chloros-cli process ~/datasets/field_a 2>&1 | tee processing.log
-```
-
-***
-
-### V: Wat gebeurt er als ik tijdens de verwerking op Ctrl+C druk?**A:** De CLI zal:
-
-1. De verwerking op een nette manier stoppen
-2. De backend afsluiten
-3. Afsluiten met code 130
-
-Gedeeltelijk verwerkte afbeeldingen kunnen in de uitvoermap achterblijven.
-
-***
-
-### V: Kan ik de verwerking van CLI automatiseren?**A:** Absoluut! De CLI is ontworpen voor automatisering. Zie [Automatisering &amp; scripting](CLI.md#automation--scripting) voor PowerShell (Windows), Batch (Windows), Bash (Linux) en Python (platformonafhankelijk).***
-
-### V: Hoe controleer ik de CLI-versie?**A:**
-
-```bash
-chloros-cli --version
-```
-
-**Uitvoer:**
-
-```
-
-Chloros CLI 1.1.0
-```
+## Probleemoplossing: Top 5
+
+| Symptoom | Oplossing |
+| --- | --- |
+| `Login required`, of een geplande taak loopt vast bij een `Email:`-prompt | Voer `chloros-cli login EMAIL 'PASSWORD'` één keer uit op deze machine — commando’s zonder een in de cache opgeslagen sessie worden dan interactief uitgevoerd in plaats van direct te mislukken. |
+| `backend unreachable` | Start de desktop-appChloros
+, of voer het backend-binaire bestand rechtstreeks uit (`chloros-backend`). Als u `lattice`/`project`/`daq pool-*` op een backend op afstand richt, controleer dan `CHLOROS_BACKEND_URL`. |
+| Array-verbinding geblokkeerd: `FRAMES WILL DROP` / `Reduce ROI to enable` | De ontvangstring van de host-NIC is teruggezet naar de standaardinstellingen — de belangrijkste oorzaak waarom een eerder werkende rig geen verbinding meer wil maken, meestal na een update van het NIC-stuurprogramma. Voer `chloros-cli lattice network --fix` uit vanaf een **terminal met verhoogde rechten** (of stel `ReceiveBufferLen=256`, `PendingReceives=64` in); zie het hoofdstuk *Host NIC Setup &amp; Tuning* in de handleiding. |
+| Het `daq`-subcommando stopt met de melding: &quot;vereist het volledige DAQ-pakket…&quot; | Te verwachten bij geleverde builds — de gecompileerdeCLI
+bevat alleen de `daq pool-*`-familie, die het tot stand brengen van verbindingen, streamen, opnemen en cap-selectie omvat. Gebruik `pool-*` (of `chloros_sdk.connect_daq_sensor()` vanPython
+). |
+| Jetson geeft een swap-waarschuwing weer bij grote mappen | Voeg file-backed swap toe — deCLI
+geeft de exacte `fallocate`/`swapon`-opdrachten weer die moeten worden uitgevoerd. |
 
 ***
 
 ## Hulp krijgen
 
-### Help via de opdrachtregel
-
-Bekijk helpinformatie rechtstreeks in de CLI:
-
 ```bash
-# General help
-chloros-cli --help
-
-# Command-specific help
-chloros-cli process --help
-chloros-cli login --help
-chloros-cli language --help
+chloros-cli --help              # top-level help
+chloros-cli process --help      # per-command help
+chloros-cli lattice --help
+chloros-cli daq --help          # lists the pool-* subcommands
 ```
 
-### Ondersteuningskanalen
-
-* **E-mail**: info@mapir.camera
-* **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* **Prijzen**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)***
-
-## Volledige voorbeelden
-
-### Voorbeeld 1: Basisverwerking
-
-Verwerking met standaardinstellingen (vignettering, reflectie):
-
-**Windows:**
-
-```powershell
-chloros-cli process "C:\Datasets\Field_A_2025_01_15"
-```
-
-**Linux:**
-
-```bash
-chloros-cli process ~/datasets/field_a_2025_01_15
-```
-
-***
-
-### Voorbeeld 2: Wetenschappelijke uitvoer van hoge kwaliteit
-
-32-bits float TIFF:
-
-**Windows:**
-
-```powershell
-chloros-cli process "C:\Datasets\Field_A" ^
-  --format "TIFF (32-bit, Percent)" ^
-  --vignette ^
-  --reflectance
-```
-
-**Linux:**
-
-```bash
-chloros-cli process ~/datasets/field_a \
-  --format "TIFF (32-bit, Percent)" \
-  --vignette \
-  --reflectance
-```
-
-***
-
-### Voorbeeld 3: Snelle verwerking van voorbeelden
-
-8-bits PNG zonder kalibratie voor snelle beoordeling:
-
-**Windows:**
-
-```powershell
-chloros-cli process "C:\Datasets\Field_A" ^
-  --format "PNG (8-bit)" ^
-  --no-vignette ^
-  --no-reflectance
-```
-
-**Linux:**
-
-```bash
-chloros-cli process ~/datasets/field_a \
-  --format "PNG (8-bit)" \
-  --no-vignette \
-  --no-reflectance
-```
-
-***
-
-### Voorbeeld 4: PPK-gecorrigeerde verwerking
-
-Pas PPK-correcties toe met reflectantie:
-
-**Windows:**
-
-```powershell
-chloros-cli process "C:\Datasets\Field_A" ^
-  --ppk ^
-  --reflectance
-```
-
-**Linux:**
-
-```bash
-chloros-cli process ~/datasets/field_a \
-  --ppk \
-  --reflectance
-```
-
-***
-
-### Voorbeeld 5: Aangepaste uitvoerlocatie
-
-Verwerk naar een andere locatie met een specifiek formaat:
-
-**Windows:**
-
-```powershell
-chloros-cli process "C:\Input\Raw_Images" ^
-  -o "D:\Output\Processed" ^
-  --format "TIFF (16-bit)"
-```
-
-**Linux:**
-
-```bash
-chloros-cli process ~/input/raw_images \
-  -o ~/output/processed \
-  --format "TIFF (16-bit)"
-```
-
-***
-
-### Voorbeeld 6: Authenticatiewerkstroom
-
-Volledige authenticatiestroom (hetzelfde op alle platforms):
-
-```bash
-# Step 1: Login
-chloros-cli login user@example.com 'MyP@ssw0rd'
-
-# Step 2: Verify status
-chloros-cli status
-
-# Step 3: Process images
-# Windows: chloros-cli process "C:\Datasets\Field_A"
-# Linux:   chloros-cli process ~/datasets/field_a
-chloros-cli process ~/datasets/field_a
-
-# Step 4: Logout (optional, when switching accounts)
-chloros-cli logout
-```
-
-***
-
-### Voorbeeld 7: Meertalig gebruik
-
-Interfacetaal wijzigen (hetzelfde op alle platforms):
-
-```bash
-# List available languages
-chloros-cli language --list
-
-# Change to Spanish
-chloros-cli language es
-
-# Process with Spanish interface
-# Windows: chloros-cli process "C:\Vuelos\Campo_A"
-# Linux:   chloros-cli process ~/vuelos/campo_a
-chloros-cli process ~/vuelos/campo_a
-
-# Change back to English
-chloros-cli language en
-```
+* **Elke vlag, elk subcommando:** [CLI
+Referentie](reference/cli-reference.md)
+* **Equivalent inPython
+:** [Python
+SDK
+](api-python-sdk.md) en de [SDK
+Referentie](reference/sdk-reference.md)
+* **Ondersteuning:** info@mapir.camera · [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
