@@ -1,27 +1,67 @@
 # Chloros gebruiken met AI-assistenten
 
-Deze handleiding is bedoeld voor twee doelgroepen: mensen en de AI-assistenten waarmee mensen steeds vaker werken. Op elke pagina staan exacte waarden, standaardinstellingen en kopieer-en-plakbare commando’s, zodat een assistent (Claude, ChatGPT, Copilot, een programmeeragent, …) in één keer werkende Chloros-automatisering kan schrijven.
+Deze handleiding is geschreven voor twee doelgroepen: mensen en de AI-assistenten waarmee mensen steeds vaker werken. Op elke pagina staan exacte waarden, standaardinstellingen en kopieer- en plakbare commando&#x27;s, zodat een assistent (Claude, ChatGPT, Copilot, een programmeeragent, …) in één keer werkende Chloros-automatisering kan schrijven.
 
 Chloros-versie: **
 
-1.2.0**. CLI/SDK-platforms: Windows 10/11 x64 en Linux (x86_64 / Jetson aarch64).
+1.3.0**. CLI-/SDK-platforms: Windows 10/11 x64 en Linux (x86_64 / Jetson aarch64).
 
-## Wat moet je aan je assistent geven?
+## Wat je je assistent moet geven
 
-| Bron | URL | Waarvoor dient het? |
+| Bron | URL | Waarvoor dient het |
 | --- | --- | --- |
 | **llms.txt** | `https://mapir.gitbook.io/chloros/llms.txt` | Machinaal leesbare index van elke pagina in deze handleiding. |
-| **CLI-referentie** | `https://mapir.gitbook.io/chloros/reference/cli-reference` | Het volledige `chloros-cli`-opdrachtoverzicht: elke opdracht, vlag, standaardinstelling, exitcode en regel voor de uitvoermap. Geschreven voor gebruik door LLM. |
-| **SDK-referentie** | `https://mapir.gitbook.io/chloros/reference/sdk-reference` | De volledige `chloros_sdk` Python API: klassen, signaturen, uitzonderingen en uitgewerkte voorbeelden. Geschreven voor gebruik door LLM-gebruikers. |
-| **Elke pagina als onbewerkte Markdown** | voeg `.md` toe aan de pagina URL | bijv. `https://mapir.gitbook.io/chloros/reference/sdk-reference.md` geeft de pagina weer als ruwe Markdown — ideaal om in een contextvenster te plakken of op te halen via een agent. |
+| **Referentie CLI** | `https://mapir.gitbook.io/chloros/reference/cli-reference` | Het volledige `chloros-cli`-opdrachtaanbod: elke opdracht, vlag, standaardinstelling, exitcode en regel voor de uitvoermap. Geschreven voor gebruik door LLM. |
+| **SDK-referentie** | `https://mapir.gitbook.io/chloros/reference/sdk-reference` | De volledige `chloros_sdk` Python-API: klassen, signaturen, uitzonderingen en uitgewerkte voorbeelden. Geschreven voor gebruik door LLM. |
+| **Elke pagina als onbewerkte Markdown** | voeg `.md` toe aan de URL van de pagina | bijv. `https://mapir.gitbook.io/chloros/reference/sdk-reference.md` geeft de pagina weer als onbewerkte Markdown — ideaal om in een contextvenster te plakken of op te halen via een agent. |
 
-Links in de handleiding: [CLI Referentie](reference/cli-reference.md) · [SDK Referentie](reference/sdk-reference.md).
+Links in de handleiding: [CLI-referentie](reference/cli-reference.md) · [SDK-referentie](reference/sdk-reference.md).
 
 {% hint style="info" %}
 De twee referentiepagina’s staan op zichzelf: een assistent die een van beide heeft gelezen, heeft de rest van de handleiding niet nodig om een correct script te schrijven.
 {% endhint %}
 
-## Promptrecepten
+## Laat je assistent Chloros rechtstreeks uitvoeren: `chloros-mcp`
+
+Bij alles hierboven moet je assistent een script of een commando *schrijven*. Met `chloros-mcp` stuurt een assistent die het [Model Context Protocol](https://modelcontextprotocol.io) (MCP) spreekt, zoals Claude Desktop, Claude Code of Cursor, Chloros zelf aan. Je vraagt het in gewone taal en het roept de tools van de server aan:
+
+* **Beelden verwerken:** maak een project aan, importeer een map met opnames, kies instellingen, verwerk de beelden en rapporteer wat de run heeft geëxporteerd.
+* **Hardware bedienen:** LATTICE-camera’s, arrays en DAQ-lichtsensoren aansluiten, een voorbeeld bekijken, belichting en kleur instellen, opnames maken, registreren en firmware bijwerken.
+
+```text
+You:  Process the flight in D:\Flights\2026-10-17 to reflectance and NDVI.
+
+You:  Show me what the array sees, then capture reflectance every 10 seconds
+      for 5 minutes.
+```
+
+De tools van de server omvatten wat de [Python SDK](api-python-sdk.md) doet. Ze worden samen met de SDK geïnstalleerd, dus er hoeft meestal niets extra’s te worden geïnstalleerd: op Windows plaatst het Chloros-installatieprogramma `chloros-mcp.exe` in de `Scripts`-map van je Python, en de Linux-versie `.deb` plaatst `chloros-mcp` in `/usr/bin`.
+
+**Claude-code:**
+
+```bash
+claude mcp add chloros -- chloros-mcp
+```
+
+**Claude Desktop:**voeg dit toe aan `claude_desktop_config.json` (open dit via**Instellingen &gt; Ontwikkelaar &gt; Configuratie bewerken**) en start vervolgens Claude Desktop opnieuw op.**Cursor** gebruikt dezelfde invoer in `~/.cursor/mcp.json`.
+
+```json
+{
+  "mcpServers": {
+    "chloros": {"command": "chloros-mcp"}
+  }
+}
+```
+
+Als de client aangeeft dat de server niet kon worden gestart, staat `chloros-mcp` waarschijnlijk niet in de `PATH` die hij ziet: geef in plaats daarvan het volledige pad op (`where chloros-mcp` op Windows, `which chloros-mcp` op Linux).
+
+Chloros moet op dezelfde computer zijn geïnstalleerd en je moet daar zijn aangemeld, in de app of via `chloros-cli login`, op een betaald Chloros+-abonnement (Copper of hoger). De server kan niet voor je inloggen.
+
+{% hint style="info" %}
+Clientconfiguratie voor elke app, opties, elke tool en hoe een run zich gedraagt: [MCP-server (AI-assistenten)](reference/sdk-reference.md#mcp-server-ai-assistants) in de SDK-referentie.
+{% endhint %}
+
+## Prompt-recepten
 
 Kopieer, vul de `<placeholders>` in en plak deze in je assistent.
 
@@ -37,7 +77,7 @@ Then write a script for <Windows PowerShell | bash> that:
    "Where the outputs land" folder rules.
 ```
 
-### 2. Een map met opnames in batchbewaking zetten
+### 2. Een map met opnames in batch bekijken
 
 ```
 
@@ -73,23 +113,24 @@ Read https://mapir.gitbook.io/chloros/reference/cli-reference.md (section
 ```
 
 {% hint style="warning" %}
-DAQ-scripting vanaf de opdrachtregel verloopt altijd via de `daq pool-*`-reeks (`pool-connect`, `pool-list`, `pool-latest`, `pool-stream`, `pool-record`, `pool-set-cap`, `pool-disconnect`). Andere `daq`-subcommando’s die je assistent zou kunnen bedenken, zijn niet beschikbaar in de geleverde builds en resulteren in een foutmelding.
+DAQ-scripting vanaf de opdrachtregel verloopt altijd via de `daq pool-*`-familie (`pool-connect`, `pool-list`, `pool-latest`, `pool-stream`, `pool-record`, `pool-set-cap`, `pool-disconnect`). Andere `daq`-subcommando’s die je assistent mogelijk bedenkt, zijn niet beschikbaar in de meegeleverde builds en worden met een foutmelding afgesloten.
 {% endhint %}
 
 ## Waarom door AI geschreven scripts goed werken met Chloros
 
-Dit zijn allemaal echte, geverifieerde gedragingen van Chloros 1.2.0 — ze elimineren de klassieke faalpatronen van door machines geschreven automatisering:
+Dit zijn stuk voor stuk echte, geverifieerde gedragingen van Chloros 1.3.0 — ze elimineren de klassieke faalpatronen van door machines geschreven automatisering:
 
-* **Geen ingewikkelde instellingen.**De ‘smart-connect’-hulpprogramma’s van SDK (`connect_camera`, `connect_array`, `connect_daq_sensor`) en de verwerkingsinstap punten (`ChlorosLocal`, `process_folder`)**starten de lokale backend automatisch op**. Een gegenereerd script heeft geen geopende GUI of handmatig gestarte server nodig — het enige wat nodig is, is dat het desktop/CLI-pakket is geïnstalleerd.
-* **De hele pijplijn bestaat uit één aanroep.** `chloros_sdk.process_folder("path", indices=["NDVI"])` voert import → kalibratie → reflectantie → indexexport van begin tot eind uit. Minder oppervlakte, minder plaatsen waar een gegenereerd script fout kan gaan.
-* **Runs zonder uitvoer voeren een zelfdiagnose uit.** Na `process()` wordt de samenvatting van de run aan het resultaat toegevoegd, en elke verwerkingstip (bijv. *waarom* een run geen output opleverde) wordt ook opnieuw verstuurd als een Python `UserWarning` — dus zelfs een script dat het resultaatdict nooit controleert, geeft de diagnose weer.
-* **De CLI mislukt op opvallende wijze.**Een `chloros-cli process`-run die producten heeft aangevraagd maar er geen heeft geschreven, geeft `Processing finished but wrote no image products.` weer en**stopt met een waarde anders dan nul**, zodat shellscripts en CI dit detecteren met een eenvoudige controle van de exitcode. Succesvolle uitvoeringen melden `Image products written: N`.
+* **Geen ingewikkelde installatieprocedure.**De smart-connect-helpers van de SDK (`connect_camera`, `connect_array`, `connect_daq_sensor`) en de verwerkings-entrypoints (`ChlorosLocal`, `process_folder`)**starten de lokale backend automatisch**. Een gegenereerd script heeft geen geopende GUI of handmatig gestarte server nodig — het enige wat nodig is, is dat het desktop-/CLI-pakket is geïnstalleerd.
+* **De hele pijplijn bestaat uit één aanroep.** `chloros_sdk.process_folder("path", indices=["NDVI"])` voert import → kalibratie → reflectantie → indexexport van begin tot eind uit. Minder oppervlakte, minder plekken waar een gegenereerd script fout kan gaan.
+* **Runs zonder uitvoer voeren zelfdiagnose uit.** Na `process()` wordt het overzicht van de run aan het resultaat toegevoegd, en elke verwerkingshint (bijv. *waarom* een run geen uitvoer opleverde) wordt ook opnieuw gegenereerd als een Python-script `UserWarning` — dus zelfs een script dat het resultaatdict nooit controleert, toont de diagnose.
+* **De CLI-uitvoer mislukt opvallend.**Een `chloros-cli process`-run die producten heeft aangevraagd maar er geen heeft geschreven, geeft `Processing finished but wrote no image products.` weer en**stopt met een waarde anders dan nul**, zodat shellscripts en CI dit detecteren met een eenvoudige controle van de exitcode. Succesvolle uitvoeringen rapporteren `Image products written: N`, plus `(plus M clamp masks)` wanneer maskers zijn geschreven. Capture-commando’s noemen eveneens elk bestand dat ze niet konden schrijven en beëindigen met `1`.
+* **Relatieve paden betekenen wat een script verwacht.** Bij een lokale backend wordt een relatief uitvoerpad (`-o out/` in de CLI, `output_dir="out/"` in de SDK) omgezet naar de map van waaruit het commando of script wordt uitgevoerd.
 
-Een asymmetrie die een assistent moet weten: de `process()` van de SDK genereert opzettelijk **geen** foutmelding bij een run zonder producten — in plaats daarvan rapporteert deze via de samenvatting/tips. Als een Python-pijplijn moet stoppen bij een lege run, controleer dan de samenvatting (recept 2 doet dit).
+Een verschil dat een assistent moet weten: de `process()` van de SDK genereert opzettelijk **geen** foutmelding bij een run zonder resultaat — in plaats daarvan wordt dit gemeld via de samenvatting/tips. Als een Python-pijplijn moet stoppen bij een lege run, controleer dan de samenvatting (recept 2 doet dit).
 
 ## Waarschuwingen
 
-* **Chloros+ aanmelding vereist.**De CLI en SDK vereisen een**betaalde** Chloros+-abonnement, dat server-side wordt afgedwongen: verzoeken mislukken met `401 AUTH_REQUIRED` als je niet bent ingelogd en met `403 PLAN_UPGRADE_REQUIRED` op het gratis abonnement. Voer `chloros-cli login` één keer per machine uit voordat je de gegenereerde scripts uitvoert. Zie [Chloros+ Inloggen](chloros+-login.md).
-* **Capture-opdrachten sturen echte hardware aan.** De commando’s `lattice` / `daq` / `project` en de sessieobjecten SDK maken verbinding met, streamen en activeren fysieke camera’s en sensoren. Controleer een gegenereerd script voordat het voor het eerst wordt uitgevoerd, en voer het uit terwijl er iemand bij de hardware aanwezig is.
-* **Controleer steekproefsgewijs de uitvoer.** Controleer de productmappen en enkele pixelwaarden voordat u de resultaten publiceert. Met name TIFF-bestanden met reflectiegegevens worden per bron geschaald — raadpleeg de `Chloros:PixelScale` XMP-tag (LATTICE: 32768 = reflectie 1,0; Survey3: 65535) in plaats van een deler aan te nemen. Beide referentiepagina’s documenteren dit onder “Reflectiepixels lezen”.
-* **Kleine valkuilen die de gegenereerde code in de war brengen:**`pool-record` schrijft naar het bestandssysteem van de**backend-host** (standaard `~/Documents/DAQ Live View/`); op machines met meerdere netwerkinterfaces verdient `daq pool-connect --eth-host <ip-or-hostname>` de voorkeur boven automatische detectie; en gebruik `http://127.0.0.1:5000` (nooit `localhost`) overal waar een backend URL voorkomt.
+* **Chloros+-login vereist.**De CLI en SDK vereisen een**betaald** Chloros+-abonnement, wat server-side wordt afgedwongen: verzoeken mislukken met foutcode `401 AUTH_REQUIRED` wanneer je niet bent ingelogd en met `403 PLAN_UPGRADE_REQUIRED` bij het gratis abonnement. Voer `chloros-cli login` één keer per machine uit voordat je de gegenereerde scripts uitvoert. Zie [Chloros+-aanmelding](chloros+-login.md).
+* **Capture-opdrachten sturen echte hardware aan.** `lattice` / `daq` / `project`-opdrachten, de SDK-sessieobjecten en de tools van `chloros-mcp` maken verbinding met, streamen en activeren fysieke camera’s en sensoren. Controleer een gegenereerd script voordat je het voor het eerst uitvoert en voer het uit terwijl je bij de hardware aanwezig bent.
+* **Controleer steekproefsgewijs de uitvoer.** Controleer de productmappen en enkele pixelwaarden voordat je de resultaten publiceert. Met name reflectantie-TIFF’s worden per bron geschaald — lees de `Chloros:PixelScale` XMP-tag (LATTICE-bestanden bevatten deze: 32768 = 1,0 reflectantie; Survey3-bestanden niet, en gebruiken 65535 = 1,0) in plaats van uit te gaan van een deler. Beide referentiepagina’s documenteren dit onder “Reflectantiepixels lezen”.
+* **Kleine valkuilen die de gegenereerde code in de war brengen:**`pool-record` schrijft naar het bestandssysteem van de**backend-host** (standaard `~/Documents/DAQ Live View/`); op machines met meerdere netwerkinterfaces verdient `daq pool-connect --eth-host <ip-or-hostname>` de voorkeur boven automatische detectie; gebruik `http://127.0.0.1:5000` (nooit `localhost`) overal waar een backend-URL voorkomt; een script dat de uitvoerstructuur van een project doorloopt, moet `clamp_masks/`-mappen overslaan (de `*_clampmask.tif`-bestanden daarin zijn maskers, geen afbeeldingen — zie [Uitvoerbeeldformaten](output-image-formats.md#clamp-masks)); en houd op Windows, waar lange paden zijn uitgeschakeld, projectmappen kort — een projectmap die dieper ligt dan ongeveer 130 tekens wordt geweigerd voordat de verwerking begint.
