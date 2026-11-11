@@ -170,7 +170,7 @@ with chloros_sdk.connect_camera("213800234") as cam:
 
 ### Gesynchroniseerde array — `connect_array`
 
-`connect_array` is het aanbevolen startpunt voor opstellingen met meerdere camera&#x27;s. Het voert dezelfde smart-prep-stroom uit als de GUI: netwerkanalyse, automatische selectie van synchronisatieniveau, PTP-tijdsynchronisatie, selectie van pixelformaat per camera, AE-seeding en het activeren van de GPIO-trigger. De **eerste seriële poort is de master** (deze activeert de hardware-triggerpuls); de overige zijn slaves.
+`connect_array` is het aanbevolen startpunt voor opstellingen met meerdere camera's. Het voert dezelfde smart-prep-stroom uit als de GUI: netwerkanalyse, automatische selectie van synchronisatieniveau, PTP-tijdsynchronisatie, selectie van pixelformaat per camera, AE-seeding en het activeren van de GPIO-trigger. De **eerste seriële poort is de master** (deze activeert de hardware-triggerpuls); de overige zijn slaves.
 
 ```python
 with chloros_sdk.connect_array(

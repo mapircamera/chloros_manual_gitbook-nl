@@ -83,7 +83,7 @@ pip install /usr/lib/chloros/sdk/chloros_sdk-*.whl
 pip install chloros-sdk
 ```
 
-Optionele extra&#x27;s, voor een pip-installatie (een virtualenv of PyPI):
+Optionele extra's, voor een pip-installatie (een virtualenv of PyPI):
 
 | Extra | Commando | Voegt toe |
 | --- | --- | --- |
@@ -195,7 +195,7 @@ Chloros zijn inloggegevens en CLI-configuratie in één platformonafhankelijke m
 | `/lib/systemd/system/chloros-backend@.service` | Opt-in ‘always-on’ backend-service die de backend uitvoert als de door u opgegeven gebruiker (geïnstalleerd, **niet ingeschakeld**) — deze moet u inschakelen, zie [Always-On PTP](#always-on-ptp-for-headless-hosts) |
 | `/lib/systemd/system/chloros-backend.service` | Dezelfde service die de backend als **root**uitvoert (geïnstalleerd,**niet ingeschakeld**), behouden zodat een machine waarop deze is ingeschakeld blijft draaien |
 | `/var/log/chloros/` | Het gedetailleerde logboek van de root-service, leesbaar voor de groep `adm` (wordt verwijderd wanneer het pakket volledig wordt verwijderd) |
-| `/usr/share/applications/chloros-cli.desktop` | &quot;Chloros CLI&quot;-menu-item dat een terminal opent |
+| `/usr/share/applications/chloros-cli.desktop` | "Chloros CLI"-menu-item dat een terminal opent |
 
 **Firewall (nieuw in 1.3.0).** Als `ufw` of `firewalld` actief is op het moment van installatie, opent het pakket de UDP-poorten `5002` (DAQ-E-gegevens), `5353` (mDNS-detectie), `319` en `320` (PTP), en verwijdert deze regels wanneer het pakket wordt verwijderd. Als er een firewall is geïnstalleerd maar niet actief is, voegt het niets toe en geeft het de poorten weer die moeten worden toegestaan mocht u deze later inschakelen. Het opent geen TCP-poort: een DAQ-E-firmware-update, waarbij de sensor via TCP verbinding maakt met deze computer om de afbeelding op te halen, mislukt met foutcode `… device never connected back on TCP <port> …` wanneer een actieve firewall die verbinding blokkeert.
 
@@ -237,7 +237,7 @@ chloros-cli daq pool-list
 chloros-cli daq pool-latest --sensor-id daq-e-a1b2c3 --json
 ```
 
-`--sensor-id` is vereist voor `pool-latest`, `pool-stream`, `pool-record` en `pool-set-cap`; `pool-list` toont de ID&#x27;s die momenteel in de pool aanwezig zijn.
+`--sensor-id` is vereist voor `pool-latest`, `pool-stream`, `pool-record` en `pool-set-cap`; `pool-list` toont de ID's die momenteel in de pool aanwezig zijn.
 
 {% hint style="info" %}
 **`--eth-host` slaat de detectiefase over.** `pool-connect --eth` vindt een DAQ-E via mDNS, met een ARP-fallback die werkt vanuit een lege ARP-cache; door het IP-adres of de hostnaam van de sensor door te geven met `--eth-host` wordt er rechtstreeks verbinding mee gemaakt.

@@ -14,27 +14,15 @@ Van links naar rechts bevat de bovenste koptekst:
 
 * **Nieuw project**— een nieuw project aanmaken. Als je projectsjablonen hebt opgeslagen, verschijnt er een vervolgkeuzemenu**Sjabloon selecteren**, zodat het nieuwe project begint met de instellingen van een sjabloon.
 * **Project openen**— een bestaand project openen. De lijst bevat een knop**Projectmap openen** waarmee je de projectmap in je bestandsverkenner opent.
-* **Project dupliceren** — kopieer het momenteel geopende project onder een nieuwe naam (een vrije naam zoals &quot;MijnProject (2)&quot; wordt voorgesteld) en open de kopie. _(zichtbaar nadat een project is geopend)_
+* **Project dupliceren** — kopieer het momenteel geopende project onder een nieuwe naam (een vrije naam zoals "MijnProject (2)" wordt voorgesteld) en open de kopie. _(zichtbaar nadat een project is geopend)_
 * **Bestanden toevoegen** — voeg afzonderlijke afbeeldingsbestanden toe aan het huidige project _(zichtbaar nadat een project is geopend)_
 * **Map toevoegen** — voeg een of meer mappen met afbeeldingen toe aan het huidige project _(zichtbaar nadat een project is geopend)_
 * **Verwerking starten / Verwerking stoppen** — start of stop de beeldverwerkingspijplijn _(beschikbaar nadat bestanden zijn toegevoegd)_
-* **Verbinden met camera** — ga naar het [tabblad Camera&#x27;s](lattice/) om een LATTICE-camera of -array aan te sluiten. Werkt ook zonder dat er een project is geopend.
+* **Verbinden met camera** — ga naar het [tabblad Camera's](lattice/) om een LATTICE-camera of -array aan te sluiten. Werkt ook zonder dat er een project is geopend.
 * **Verbinding maken met lichtsensor** — ga naar het [tabblad Lichtsensoren](daq/) om een DAQ-lichtsensor aan te sluiten. Werkt ook zonder dat er een project is geopend.
 
 {% hint style="info" %}
-**Alleen Windows**: De Chloros
-
-Desktop GUI is beschikbaar op Windows
-
-. Linux
-
--gebruikers dienen de documentatie over de [CLI
-
-](CLI.md) en de [Python
-
-SDK
-
-](api-python-sdk.md) te raadplegen voor verwerking zonder grafische interface.
+**Alleen Windows**: De Chloros Desktop GUI is beschikbaar op Windows. Linux-gebruikers dienen de documentatie over de [CLI](CLI.md) en de [Python SDK](api-python-sdk.md) te raadplegen voor verwerking zonder grafische interface.
 {% endhint %}
 
 ### <img src=".gitbook/assets/image (2) (1) (1).png" alt="" data-size="line">
@@ -49,15 +37,9 @@ Voortgangsbalk <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
 
 
 
-In de gratis Chloros
+In de gratis Chloros-modus, waarin alle bestanden achtereenvolgens worden verwerkt, toont de voortgangsbalk 2 fasen: Doeldetectie en Verwerking.
 
--modus, waarin alle bestanden achtereenvolgens worden verwerkt, toont de voortgangsbalk 2 fasen: Doeldetectie en Verwerking.
-
-In de betaalde Chloros
-
-+-modus, waarin alle bestanden gelijktijdig worden verwerkt, toont de voortgangsbalk 4 fasen: Detecteren, Analyseren, Kalibreren, Exporteren. Als u de muiscursor boven de voortgangsbalk van Chloros
-
-+ houdt, verschijnt er een uitklapbaar paneel met de vier voortgangsbalkfasen, zodat u de voortgang kunt volgen. Als u op de bovenste voortgangsbalk klikt, wordt het uitklapbare paneel vastgezet; als u nogmaals klikt, wordt het weer vrijgegeven.
+In de betaalde Chloros+-modus, waarin alle bestanden gelijktijdig worden verwerkt, toont de voortgangsbalk 4 fasen: Detecteren, Analyseren, Kalibreren, Exporteren. Als u de muiscursor boven de voortgangsbalk van Chloros+ houdt, verschijnt er een uitklapbaar paneel met de vier voortgangsbalkfasen, zodat u de voortgang kunt volgen. Als u op de bovenste voortgangsbalk klikt, wordt het uitklapbare paneel vastgezet; als u nogmaals klikt, wordt het weer vrijgegeven.
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 
@@ -81,9 +63,9 @@ Wanneer u op een afbeelding in de hoofdafbeeldingsviewer klikt, wordt deze op vo
 
 Bekijk uw afbeeldingen op een interactieve 2D-kaart op basis van hun GPS-coördinaten. Ondersteunt Google Maps en ESRI-tegelproviders, waarbij automatisch de beste dienst voor uw locatie wordt geselecteerd. Beweeg de muis over markeringen om miniatuurvoorbeelden van afbeeldingen te zien.
 
-#### <img src=".gitbook/assets/image (17).png" alt="" data-size="line"> [Camera&#x27;s](lattice/)
+#### <img src=".gitbook/assets/image (17).png" alt="" data-size="line"> [Camera's](lattice/)
 
-Maak verbinding met LATTICE-camera&#x27;s en bedien ze live — één voor één of als gesynchroniseerde opstellingen met meerdere camera&#x27;s. Het tabblad toont live voorbeeldtegels met overlays en histogrammen, instellingen per camera en per opstelling, en opname-instellingen waarmee u kunt kiezen welke camera’s en exportformaten „Capture All“ genereert. Beschikbaar zodra de backend gereed is; zie de [LATTICE-sectie](lattice/) voor de volledige handleiding.
+Maak verbinding met LATTICE-camera's en bedien ze live — één voor één of als gesynchroniseerde opstellingen met meerdere camera's. Het tabblad toont live voorbeeldtegels met overlays en histogrammen, instellingen per camera en per opstelling, en opname-instellingen waarmee u kunt kiezen welke camera’s en exportformaten „Capture All“ genereert. Beschikbaar zodra de backend gereed is; zie de [LATTICE-sectie](lattice/) voor de volledige handleiding.
 
 #### <img src=".gitbook/assets/image (23).png" alt="" data-size="line"> [Lichtsensoren](daq/)
 

@@ -1,17 +1,14 @@
 # Dynamische aanpassing van rekenkracht
 
-Chloros
-1.3.0 maakt gebruik van hardwaredetectie en automatische selectie van verwerkingsstrategieën. De verwerkingsengine past zich aan uw hardware aan — van een Jetson Orin Nano tot een werkstation met meerdere GPU’s — zonder dat er handmatige configuratie nodig is.
+Chloros 1.3.0 maakt gebruik van hardwaredetectie en automatische selectie van verwerkingsstrategieën. De verwerkingsengine past zich aan uw hardware aan — van een Jetson Orin Nano tot een werkstation met meerdere GPU’s — zonder dat er handmatige configuratie nodig is.
 
 ***
 
 ## Hoe het werkt
 
-Wanneer Chloros
-opstart, maakt het een profiel van uw systeem:
+Wanneer Chloros opstart, maakt het een profiel van uw systeem:
 
-1. **Detecteert het besturingssysteem** — Windows
-of Linux
+1. **Detecteert het besturingssysteem** — Windows of Linux
 2. **Identificeert CPU-kernen en totaal RAM-geheugen**
 
 3.**Detecteert de aanwezigheid van een GPU** — NVIDIA CUDA-ondersteuning, VRAM, model
@@ -24,19 +21,16 @@ Het gedetecteerde profiel wordt voor de sessie in het geheugen en op schijf in d
 
 | Platform | Profiel in cache |
 | --- | --- |
-| **Linux
-/ Jetson** | `~/.config/chloros/system_config.json` (houdt rekening met `XDG_CONFIG_HOME`) |
+| **Linux / Jetson** | `~/.config/chloros/system_config.json` (houdt rekening met `XDG_CONFIG_HOME`) |
 | **Windows** | `%LOCALAPPDATA%\Chloros\config\system_config.json` |
 
-Verwijder dat bestand om een nieuwe detectie te forceren — handig na het toevoegen van een GPU of meer RAM. Chloros
-voert ook automatisch een nieuwe detectie uit wanneer de cache is geschreven door een incompatibele oudere versie.
+Verwijder dat bestand om een nieuwe detectie te forceren — handig na het toevoegen van een GPU of meer RAM. Chloros voert ook automatisch een nieuwe detectie uit wanneer de cache is geschreven door een incompatibele oudere versie.
 
 ***
 
 ## Rekenstrategieën
 
-Chloros
-selecteert een van de drie rekenstrategieën op basis van uw hardware:
+Chloros selecteert een van de drie rekenstrategieën op basis van uw hardware:
 
 | Strategie | Geselecteerd wanneer | Werkers | Uitvoerder | Pijplijn |
 | --- | --- | --- | --- | --- |
@@ -50,11 +44,7 @@ Praktijkvoorbeelden van de `GPU_PARALLEL`-formule voor het aantal workers: 12 GB
 **De GPU-strategieën vereisen een PyTorch-versie die gebruik kan maken van CUDA.** Een machine waarop PyTorch geen bruikbaar CUDA-apparaat heeft, krijgt `CPU_PARALLEL`, ongeacht de GPU. Het Jetson-pakket 1.3.0 maakt gebruik van de CUDA-build van PyTorch uit JetPack 6, dus een Jetson komt in aanmerking zodra de CUDA- en cuDNN-bibliotheken van JetPack zijn geïnstalleerd. Een Jetson met minder dan 12 GB RAM verwerkt altijd één afbeelding tegelijk, in het proces (geregistreerd als `GPU_SINGLE`).
 {% endhint %}
 
-GPU-strategieën draaien een pool van werkprocessen, elk een afzonderlijk OS-proces met een eigen CUDA-context, die Chloros
-start door zijn eigen geïnstalleerde backend-programma opnieuw te starten (niet via Python
-’s `multiprocessing`, waarvan het opstarten van werkprocessen niet werkt binnen de verpakte applicatie). De CPU-strategie maakt gebruik van een threadpool (Python
-’s `ThreadPoolExecutor`). Chloros
-maakt geen gebruik van gedistribueerde frameworks van derden (zoals Ray).
+GPU-strategieën draaien een pool van werkprocessen, elk een afzonderlijk OS-proces met een eigen CUDA-context, die Chloros start door zijn eigen geïnstalleerde backend-programma opnieuw te starten (niet via Python’s `multiprocessing`, waarvan het opstarten van werkprocessen niet werkt binnen de verpakte applicatie). De CPU-strategie maakt gebruik van een threadpool (Python’s `ThreadPoolExecutor`). Chloros maakt geen gebruik van gedistribueerde frameworks van derden (zoals Ray).
 
 ### Soorten pijplijnen
 
@@ -75,8 +65,7 @@ Stel de omgevingsvariabele `CHLOROS_STRATEGY` in om een specifieke strategie af 
 CHLOROS_STRATEGY=CPU_PARALLEL chloros-cli process ~/datasets/flight001
 ```
 
-Bij het vergelijken van de variabele wordt geen onderscheid gemaakt tussen hoofdletters en kleine letters; alles wat niet een van de drie namen is, wordt genegeerd en de automatische detectie verloopt normaal. Bij een overschrijving kiest Chloros
-nog steeds het aantal workers voor je:
+Bij het vergelijken van de variabele wordt geen onderscheid gemaakt tussen hoofdletters en kleine letters; alles wat niet een van de drie namen is, wordt genegeerd en de automatische detectie verloopt normaal. Bij een overschrijving kiest Chloros nog steeds het aantal workers voor je:
 
 | Overschrijving | Gebruikt aantal workers |
 | --- | --- |
@@ -124,8 +113,7 @@ Discrete GPU’s reserveren slechts 0,5 GB voor het systeem, omdat ze geen syste
 
 ## Dynamische toewijzing van GPU-geheugen
 
-Chloros
-maakt gebruik van een [verwerkingspijplijn met 4 threads](processing-pipeline.md):
+Chloros maakt gebruik van een [verwerkingspijplijn met 4 threads](processing-pipeline.md):
 
 * **Thread 1** (Detectie) — Afbeelding laden, EXIF-gegevens parseren, doelwitdetectie
 * **Thread 2** (Kalibratie) — Berekening van de reflectiekalibratie
@@ -152,26 +140,23 @@ De waarde die daadwerkelijk tijdens de uitvoering wordt gebruikt, is de **laagst
 
 ## Texture Aware-verwerking
 
-De Texture Aware-debayer (**alleen Chloros
-+** — `--debayer texture-aware`) voert een AI/ML-ruisonderdrukkingsmodel uit dat ongeveer 1,75 GB VRAM in FP16 per kopie nodig heeft, dus gebruikt het veel meer GPU-geheugen dan de standaardmethode:
+De Texture Aware-debayer (**alleen Chloros+** — `--debayer texture-aware`) voert een AI/ML-ruisonderdrukkingsmodel uit dat ongeveer 1,75 GB VRAM in FP16 per kopie nodig heeft, dus gebruikt het veel meer GPU-geheugen dan de standaardmethode:
 
 * Systemen met **minder dan 7 GB VRAM**verwerken Textuurbewust in een**synchrone lus, één afbeelding tegelijk** — er is geen ruimte voor meerdere modelkopieën en een werkpool zou alleen maar voor conflicten zorgen
 * Systemen met **7 GB of meer VRAM** kunnen Texture Aware gelijktijdig verwerken, zij het met een lager aantal workers in vergelijking met de standaardmethode
 * Op **Jetson** wordt Texture Aware altijd aan één enkele worker gekoppeld
 * Zonder **bruikbare CUDA-GPU** maakt de run gebruik van de standaard debayer, en logt de backend één regel met de melding `[DEBAYER] … needs a CUDA GPU …` waarin wordt uitgelegd waarom
-* Op Jetsons met laag stroomverbruik (Nano, Orin Nano) past de CLI
-een GPU-frequentiebeperking toe wanneer je Texture Aware aanvraagt — zie de [NVIDIA Jetson-handleiding](../linux/nvidia-jetson-guide.md#gpu-frequency-cap-for-texture-aware-on-nano-and-orin-nano)
+* Op Jetsons met laag stroomverbruik (Nano, Orin Nano) past de CLI een GPU-frequentiebeperking toe wanneer je Texture Aware aanvraagt — zie de [NVIDIA Jetson-handleiding](../linux/nvidia-jetson-guide.md#gpu-frequency-cap-for-texture-aware-on-nano-and-orin-nano)
 
 ***
 
 ## Warmtebeheer (Jetson)
 
-Jetson-apparaten hebben thermische beperkingen, vooral bij gebruik in gesloten ruimtes of in vliegtuigen. Chloros
-houdt de ingebouwde temperatuursensoren van de Jetson in de gaten en schaalt de batchgroottes automatisch:
+Jetson-apparaten hebben thermische beperkingen, vooral bij gebruik in gesloten ruimtes of in vliegtuigen. Chloros houdt de ingebouwde temperatuursensoren van de Jetson in de gaten en schaalt de batchgroottes automatisch:
 
 | Temperatuur | Reactie |
 | --- | --- |
-| **&lt; 70 °C** | Normale werking — volle snelheid |
+| **< 70 °C** | Normale werking — volle snelheid |
 | **70 °C** (Waarschuwing) | Batchgrootte wordt geleidelijk verkleind (100% → 50% tussen 70 °C en 80 °C) |
 | **80 °C** (Kritiek) | Agressieve beperking (50% → 0% tussen 80 °C en 90 °C) |
 | **90 °C** (Uitschakeling) | GPU-verwerking volledig stoppen |
@@ -182,11 +167,9 @@ Op desktopsystemen met voldoende koeling wordt thermische beperking zelden geact
 
 ## Omgaan met geheugendruk
 
- Chloros
-houdt het GPU-geheugen tijdens de verwerking continu in de gaten en reageert op drie niveaus.
+ Chloros houdt het GPU-geheugen tijdens de verwerking continu in de gaten en reageert op drie niveaus.
 
-**Batchgrootte.** Een batch begint bij 8 afbeeldingen vermenigvuldigd met de platformvermenigvuldigingsfactor uit de bovenstaande tabellen. Chloros
-controleert vervolgens het vrije VRAM, reserveert 20% daarvan voor de eigen overhead van PyTorch en gaat uit van ongeveer 100 MB GPU-geheugen per afbeelding van 12 MP — de batchgrootte is de kleinste van de twee: de limiet afgeleid van het geheugen of de platformbasis. Deze daalt nooit onder 1.
+**Batchgrootte.** Een batch begint bij 8 afbeeldingen vermenigvuldigd met de platformvermenigvuldigingsfactor uit de bovenstaande tabellen. Chloros controleert vervolgens het vrije VRAM, reserveert 20% daarvan voor de eigen overhead van PyTorch en gaat uit van ongeveer 100 MB GPU-geheugen per afbeelding van 12 MP — de batchgrootte is de kleinste van de twee: de limiet afgeleid van het geheugen of de platformbasis. Deze daalt nooit onder 1.
 
 **Pre-emptieve vermindering.**Bij een**VRAM-bezettingsgraad van meer dan 85%** worden de batchgroottes verkleind voordat er iets misgaat.**Beperking van de toewijzing per thread.** Naarmate het actuele gebruik stijgt, wordt het GPU-budget van elke thread teruggeschroefd: ×0,75 bij een gebruik van meer dan 80%, ×0,5 bij meer dan 90%. De drempels van de monitor zijn 70% (conservatief), 85% (normale bedrijfslimiet) en 95% (OOM-risico).**OOM-terugtrekking en herstel.** Als er toch een out-of-memory-gebeurtenis plaatsvindt:
 
@@ -194,8 +177,7 @@ controleert vervolgens het vrije VRAM, reserveert 20% daarvan voor de eigen over
 * worden de toewijzingen aan actieve threads teruggebracht tot 70% van hun huidige waarde en schakelt de toewijzer over naar zijn conservatieve strategie, die weer wordt versoepeld na een reeks succesvolle toewijzingen
 * onder zware druk schakelt de pijplijn terug van `fused_gpu` naar `tiled_gpu`, en als laatste redmiddel naar `cpu_fallback`
 
-**Host-RAM (Jetson).** Vóór de verwerking schat de CLI
-het maximale hostgeheugen in op basis van het aantal afbeeldingen en de debayer-modus, en geeft een waarschuwing als het RAM-geheugen plus de door bestanden ondersteunde swapruimte waarschijnlijk onvoldoende is. Daarbij worden de exacte commando’s weergegeven om swapruimte toe te voegen — zie de [NVIDIA Jetson-handleiding](../linux/nvidia-jetson-guide.md#swap-warning-and-recommendations).
+**Host-RAM (Jetson).** Vóór de verwerking schat de CLI het maximale hostgeheugen in op basis van het aantal afbeeldingen en de debayer-modus, en geeft een waarschuwing als het RAM-geheugen plus de door bestanden ondersteunde swapruimte waarschijnlijk onvoldoende is. Daarbij worden de exacte commando’s weergegeven om swapruimte toe te voegen — zie de [NVIDIA Jetson-handleiding](../linux/nvidia-jetson-guide.md#swap-warning-and-recommendations).
 
 ***
 
@@ -219,22 +201,17 @@ Controle 7 geeft `CUDA: <bool>, Denoiser: <bool>` weer — beide moeten waar zij
 
 ### Backend-logs
 
-De strategie en het aantal workers worden bij het begin van elke run binnen de backend gekozen — er is geen CLI
--banner die deze weergeeft. Wanneer iets zich onverwacht gedraagt (een GPU-pad dat terugvalt, een OOM, een denoiser die niet wil laden), is het backend-logboek voor die sessie de plek waar dit zichtbaar wordt:
+De strategie en het aantal workers worden bij het begin van elke run binnen de backend gekozen — er is geen CLI-banner die deze weergeeft. Wanneer iets zich onverwacht gedraagt (een GPU-pad dat terugvalt, een OOM, een denoiser die niet wil laden), is het backend-logboek voor die sessie de plek waar dit zichtbaar wordt:
 
 | Platform | Locatie logbestand |
 | --- | --- |
-| **Linux
-/ Jetson** | `~/.cache/chloros/logs/backend_<YYYYMMDD_HHMMSS>.log` (één bestand per start) |
-| **Linux
-, via CLI
-gestarte backend** | eveneens `~/.chloros/backend.log` |
+| **Linux / Jetson** | `~/.cache/chloros/logs/backend_<YYYYMMDD_HHMMSS>.log` (één bestand per start) |
+| **Linux, via CLI gestarte backend** | eveneens `~/.chloros/backend.log` |
 | **Windows** | `%LOCALAPPDATA%\Chloros\logs\` |
 
 ### Live voortgang
 
-Tijdens een run toont de CLI
-de live voortgang per thread (Detecteren, Analyseren, Verwerken, Exporteren), gestreamd via Server-Sent Events — de praktische indicatie of Thread 3 de bottleneck is. Zie [Verwerkingspijplijn](processing-pipeline.md).
+Tijdens een run toont de CLI de live voortgang per thread (Detecteren, Analyseren, Verwerken, Exporteren), gestreamd via Server-Sent Events — de praktische indicatie of Thread 3 de bottleneck is. Zie [Verwerkingspijplijn](processing-pipeline.md).
 
 ***
 
@@ -242,8 +219,5 @@ de live voortgang per thread (Detecteren, Analyseren, Verwerken, Exporteren), ge
 
 * [Verwerkingspijplijn](processing-pipeline.md) — Inzicht in de 4-thread-pijplijnarchitectuur
 * [NVIDIA Jetson-handleiding](../linux/nvidia-jetson-guide.md) — Jetson-specifieke implementatie en optimalisatie
-* [CLI
-: opdrachtregel](../CLI.md) — De CLI
--handleiding
-* [CLI
--referentie](../reference/cli-reference.md) — Uitgebreide lijst met opdrachten voor versie 1.3.0
+* [CLI: opdrachtregel](../CLI.md) — De CLI-handleiding
+* [CLI-referentie](../reference/cli-reference.md) — Uitgebreide lijst met opdrachten voor versie 1.3.0

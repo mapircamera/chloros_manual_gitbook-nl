@@ -7,7 +7,7 @@ Het tabblad Kaart geeft je afbeeldingen weer op een interactieve 2D-kaart op bas
 ## Het tabblad Kaart openen
 
 1. Open of maak een project aan in Chloros
-2. Importeer foto&#x27;s die GPS-metadata bevatten
+2. Importeer foto's die GPS-metadata bevatten
 3. Klik op het tabblad **Kaart** <img src="../.gitbook/assets/image (3) (1).png" alt="" data-size="line"> in de linkerzijbalk
 4. Op de kaart wordt bij de GPS-locatie van elke foto een markering weergegeven
 
@@ -17,7 +17,7 @@ Het tabblad Kaart geeft je afbeeldingen weer op een interactieve 2D-kaart op bas
 
 ***
 
-## Afbeeldingen aanpassen via het tabblad &#x27;Kaart&#x27;
+## Afbeeldingen aanpassen via het tabblad 'Kaart'
 
 Het tabblad **Kaart**<img src="../.gitbook/assets/image (3) (1).png" alt="" data-size="line"> heeft dezelfde knoppen voor het toevoegen <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> en verwijderen <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line"> van bestanden als het tabblad [**Bestandsbrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">. Het toont dezelfde lijst met projectbestanden, met geografische kolommen:
 
@@ -78,13 +78,13 @@ Elke afbeelding met GPS-gegevens krijgt een markering op de bijbehorende coördi
 | Aanbieder        | Opmerkingen                                                                                                                                                             |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Google Maps** | Brede wereldwijde dekking; ondersteunt alle vier de tegelsoorten                                                                                                            |
-| **Esri ArcGIS**| Vaak luchtfoto&#x27;s met een hogere resolutie in bepaalde regio&#x27;s. De tegelsoort**Terrain** wordt niet aangeboden voor Esri en de bijbehorende knop is uitgeschakeld zolang Esri is geselecteerd |***
+| **Esri ArcGIS**| Vaak luchtfoto's met een hogere resolutie in bepaalde regio's. De tegelsoort**Terrain** wordt niet aangeboden voor Esri en de bijbehorende knop is uitgeschakeld zolang Esri is geselecteerd |***
 
 ## Soorten kaarttegels
 
 Kies het type kaartlaag met de knoppen (van links naar rechts):
 
-![](&lt;../.gitbook/assets/image (14).png&gt;)
+![](<../.gitbook/assets/image (14).png>)
 
 | Type                 | Toont                                                                |
 | -------------------- | -------------------------------------------------------------------- |

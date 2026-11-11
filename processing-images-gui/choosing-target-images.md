@@ -160,7 +160,7 @@ Als Chloros uw doelen niet correct detecteert, pas dan deze instellingen aan in 
 **Mogelijke oorzaken:**
 
 * Doelafbeeldingen zijn niet gemarkeerd in de bestandsbrowser
-* Doel is te klein in beeld (&lt; 30% van de afbeelding)
+* Doel is te klein in beeld (< 30% van de afbeelding)
 * Slechte belichting (schaduwen, schittering)
 * Instellingen voor doeldetectie zijn te streng
 

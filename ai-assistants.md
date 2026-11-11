@@ -1,6 +1,6 @@
 # Chloros gebruiken met AI-assistenten
 
-Deze handleiding is geschreven voor twee doelgroepen: mensen en de AI-assistenten waarmee mensen steeds vaker werken. Op elke pagina staan exacte waarden, standaardinstellingen en kopieer- en plakbare commando&#x27;s, zodat een assistent (Claude, ChatGPT, Copilot, een programmeeragent, …) in één keer werkende Chloros-automatisering kan schrijven.
+Deze handleiding is geschreven voor twee doelgroepen: mensen en de AI-assistenten waarmee mensen steeds vaker werken. Op elke pagina staan exacte waarden, standaardinstellingen en kopieer- en plakbare commando's, zodat een assistent (Claude, ChatGPT, Copilot, een programmeeragent, …) in één keer werkende Chloros-automatisering kan schrijven.
 
 Chloros-versie: **
 
@@ -43,7 +43,7 @@ De tools van de server omvatten wat de [Python SDK](api-python-sdk.md) doet. Ze 
 claude mcp add chloros -- chloros-mcp
 ```
 
-**Claude Desktop:**voeg dit toe aan `claude_desktop_config.json` (open dit via**Instellingen &gt; Ontwikkelaar &gt; Configuratie bewerken**) en start vervolgens Claude Desktop opnieuw op.**Cursor** gebruikt dezelfde invoer in `~/.cursor/mcp.json`.
+**Claude Desktop:**voeg dit toe aan `claude_desktop_config.json` (open dit via**Instellingen > Ontwikkelaar > Configuratie bewerken**) en start vervolgens Claude Desktop opnieuw op.**Cursor** gebruikt dezelfde invoer in `~/.cursor/mcp.json`.
 
 ```json
 {

@@ -12,7 +12,7 @@ De onderstaande indexformules maken gebruik van een combinatie van de gemiddelde
 
 <table><thead><tr><th align="center">Survey3-filterkleur</th><th width="196.199951171875" align="center">Survey3-filternaam</th><th width="159.800048828125" align="center">Transmissiebereik (FWHM)</th><th align="center">Gemiddelde transmissie</th></tr></thead><tbody><tr><td align="center">Blue</td><td align="center">NGB - Blue</td><td align="center">468-483 nm</td><td align="center">475 nm</td></tr><tr><td align="center">Cyan</td><td align="center">OCN- Cyan</td><td align="center">476–512 nm</td><td align="center">494 nm</td></tr><tr><td align="center">Green</td><td align="center">RGN | NGB - Green</td><td align="center">543–558 nm</td><td align="center">547 nm</td></tr><tr><td align="center">Orange</td><td align="center">OCN - Orange</td><td align="center">598–640 nm</td><td align="center">619 nm</td></tr><tr><td align="center">Red</td><td align="center">RGN - Red</td><td align="center">653–668 nm</td><td align="center">661 nm</td></tr><tr><td align="center">RedEdge</td><td align="center">Re-RedEdge</td><td align="center">712–735 nm</td><td align="center">724 nm</td></tr><tr><td align="center">NIR1</td><td align="center">OCN - NIR1</td><td align="center">798-848 nm</td><td align="center">823 nm</td></tr><tr><td align="center">NIR2</td><td align="center">RGN | NGB | NIR - NIR2</td><td align="center">835–865 nm</td><td align="center">850 nm</td></tr></tbody></table>
 
-Wanneer deze formules worden gebruikt, kan de naam eindigen op &quot;\_1&quot; of &quot;\_2&quot;, wat aangeeft welk NIR-filter, NIR1 of NIR2, is gebruikt.
+Wanneer deze formules worden gebruikt, kan de naam eindigen op "\_1" of "\_2", wat aangeeft welk NIR-filter, NIR1 of NIR2, is gebruikt.
 
 Voor LATTICE M3C-camera’s (Bayer drievoudige banddoorlaat) gebruikt dezelfde indexengine de M3C-filterbanden:
 
@@ -23,7 +23,7 @@ Voor LATTICE M3C-camera’s (Bayer drievoudige banddoorlaat) gebruikt dezelfde i
 | FOCN | Orange 615 nm / 21 nm | Cyan 490 nm / 38 nm | NIR 808 nm / 14 nm |
 | FNGB | Blue 475 nm / 30 nm | Green 550 nm / 30 nm | NIR 850 nm / 30 nm |
 
-LATTICE M3M-camera&#x27;s zijn enkelbandig (één smalbandfilter per camera), dus er worden geen multibandindexen berekend voor een afzonderlijk M3M-beeld. Om indices te berekenen met M3M, combineer je twee of meer camera&#x27;s tot een uitgelijnde multiband-stack en gebruik je de LATTICE-indexengine (`chloros-cli lattice index`, of de live Index Calculator in de GUI).
+LATTICE M3M-camera's zijn enkelbandig (één smalbandfilter per camera), dus er worden geen multibandindexen berekend voor een afzonderlijk M3M-beeld. Om indices te berekenen met M3M, combineer je twee of meer camera's tot een uitgelijnde multiband-stack en gebruik je de LATTICE-indexengine (`chloros-cli lattice index`, of de live Index Calculator in de GUI).
 
 ***
 
@@ -38,7 +38,7 @@ De Chloros-camera’s hebben **drie** indexvlakken, en de bijbehorende vooraf in
 | `chloros-cli process --indices NDVI,NDRE` | Surface 2 | 22 |
 | SDK `process_folder(indices=[...])` | Surface 2 | 22 |
 | `chloros-cli lattice index --preset` | Surface 3 | 22 (een andere 22) |
-| Tabblad Camera&#x27;s: live indexcalculator | Surface 3 | 22 (een andere 22) |
+| Tabblad Camera's: live indexcalculator | Surface 3 | 22 (een andere 22) |
 
 Surface 1 en 2 werken met **één afbeelding tegelijk van één camera**, met behulp van de symboolslots `x`/`y`/`z`(/`a`) die zijn gekoppeld aan de filterkanalen van die camera. Oppervlak 3 werkt met een**uitgelijnde multiband-stack** — meerdere LATTICE-camera’s die in één kubus zijn gecoördineerd — en verwijst naar kanalen met kleine letters.
 
@@ -165,7 +165,7 @@ $$
 
 In de GUI en de CLI/SDK-lijst met voorinstellingen is de symboolformule `(z/y)*(x/y)`, waarbij x=Red, y=Green, z=NIR (de banden van een RGN-camera); de voorinstelling van de LATTICE-indexengine is `nir * red / green**2`. Elk oppervlak berekent dezelfde index.
 
-_Referentie: Vincini, M., E. Frazzi en P. D&#x27;Alessio. „A Broad-Band Leaf Chlorophyll Vegetation Index at the Canopy Scale.” Precision Agriculture 9 (2008): 303-319._
+_Referentie: Vincini, M., E. Frazzi en P. D'Alessio. „A Broad-Band Leaf Chlorophyll Vegetation Index at the Canopy Scale.” Precision Agriculture 9 (2008): 303-319._
 
 ***
 
@@ -207,7 +207,7 @@ $$
 
 Beboste gebieden zullen lagere FCI1-waarden hebben vanwege de lagere reflectie van bomen en de aanwezigheid van schaduwen binnen het bladerdak.
 
-_Referentie: Becker, Sarah J., Craig S.T. Daughtry en Andrew L. Russ. &quot;Robuuste bosbedekkingsindexen voor multispectrale beelden.&quot; Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505-512._
+_Referentie: Becker, Sarah J., Craig S.T. Daughtry en Andrew L. Russ. "Robuuste bosbedekkingsindexen voor multispectrale beelden." Photogrammetric Engineering & Remote Sensing 84.8 (2018): 505-512._
 
 ***
 
@@ -223,7 +223,7 @@ $$
 
 Beboste gebieden zullen lagere FCI2-waarden vertonen vanwege de lagere reflectie van bomen en de aanwezigheid van schaduwen binnen het bladerdak.
 
-_Referentie: Becker, Sarah J., Craig S.T. Daughtry en Andrew L. Russ. &quot;Robuuste bosbedekkingsindexen voor multispectrale beelden.&quot; Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505-512._
+_Referentie: Becker, Sarah J., Craig S.T. Daughtry en Andrew L. Russ. "Robuuste bosbedekkingsindexen voor multispectrale beelden." Photogrammetric Engineering & Remote Sensing 84.8 (2018): 505-512._
 
 ***
 
@@ -273,7 +273,7 @@ $$
 
 Het gebruik van brede NIR- en groene golflengten zorgt voor een betere voorspelling van het chlorofylgehalte en biedt tegelijkertijd meer gevoeligheid en een hogere signaal-ruisverhouding.
 
-_Referentie: Gitelson, A., Y. Gritz en M. Merzlyak. &quot;Relaties tussen het chlorofylgehalte in bladeren en spectrale reflectie, en algoritmen voor niet-destructieve chlorofylmeting in bladeren van hogere planten.&quot; Journal of Plant Physiology 160 (2003): 271-282._
+_Referentie: Gitelson, A., Y. Gritz en M. Merzlyak. "Relaties tussen het chlorofylgehalte in bladeren en spectrale reflectie, en algoritmen voor niet-destructieve chlorofylmeting in bladeren van hogere planten." Journal of Plant Physiology 160 (2003): 271-282._
 
 ***
 
@@ -287,7 +287,7 @@ $$
 
 GLI-waarden variëren van -1 tot +1. Negatieve waarden staan voor bodem en niet-levende elementen, terwijl positieve waarden staan voor groene bladeren en stengels.
 
-_Referentie: Louhaichi, M., M. Borman en D. Johnson. &quot;Ruimtelijk gelokaliseerde platform- en luchtfotografie voor het documenteren van de effecten van begrazing op tarwe.&quot; Geocarto International 16, nr. 1 (2001): 65-70._
+_Referentie: Louhaichi, M., M. Borman en D. Johnson. "Ruimtelijk gelokaliseerde platform- en luchtfotografie voor het documenteren van de effecten van begrazing op tarwe." Geocarto International 16, nr. 1 (2001): 65-70._
 
 ***
 
@@ -323,7 +323,7 @@ $$
 GRVI = {NIR \over Green }
 $$
 
-_Referentie: Sripada, R., et al. &quot;Luchtfotografie in kleur en infrarood voor het bepalen van de stikstofbehoefte van maïs in het vroege groeiseizoen.&quot; Agronomy Journal 98 (2006): 968-977._
+_Referentie: Sripada, R., et al. "Luchtfotografie in kleur en infrarood voor het bepalen van de stikstofbehoefte van maïs in het vroege groeiseizoen." Agronomy Journal 98 (2006): 968-977._
 
 ***
 
@@ -369,7 +369,7 @@ $$
 LCI = {NIR2 - RedEdge \over NIR2 + Red}
 $$
 
-_Referentie: Datt, B. &quot;Remote Sensing of Water Content in Eucalyptus Leaves.&quot; Journal of Plant Physiology 154, nr. 1 (1999): 30-36._
+_Referentie: Datt, B. "Remote Sensing of Water Content in Eucalyptus Leaves." Journal of Plant Physiology 154, nr. 1 (1999): 30-36._
 
 ***
 
@@ -441,7 +441,7 @@ $$
 NLI = {NIR^{2} - Red \over NIR^{2} + Red  }
 $$
 
-_Referentie: Goel, N., en W. Qin. &quot;Invloeden van de bladerdakarchitectuur op de relaties tussen diverse vegetatie-indexen en LAI en Fpar: een computersimulatie.&quot; Remote Sensing Reviews 10 (1994): 309-347._
+_Referentie: Goel, N., en W. Qin. "Invloeden van de bladerdakarchitectuur op de relaties tussen diverse vegetatie-indexen en LAI en Fpar: een computersimulatie." Remote Sensing Reviews 10 (1994): 309-347._
 
 ***
 
@@ -465,7 +465,7 @@ $$
 RDVI = {(NIR- Red) \over \sqrt{(NIR + Red)}  }
 $$
 
-_Referentie: Roujean, J., en F. Breon. &quot;Schatting van de door vegetatie geabsorbeerde PAR op basis van bidirectionele reflectiemetingen.&quot; Remote Sensing of Environment 51 (1995): 375-384._
+_Referentie: Roujean, J., en F. Breon. "Schatting van de door vegetatie geabsorbeerde PAR op basis van bidirectionele reflectiemetingen." Remote Sensing of Environment 51 (1995): 375-384._
 
 ***
 
@@ -489,7 +489,7 @@ $$
 TDVI = 1.5 * {(NIR- Red) \over \sqrt{NIR^{2} + Red + 0.5}  }
 $$
 
-_Referentie: Bannari, A., H. Asalhi en P. Teillet. „Transformed Difference Vegetation Index (TDVI) for Vegetation Cover Mapping” In Proceedings of the Geoscience and Remote Sensing Symposium, IGARSS &#x27;02, IEEE International, Volume 5 (2002)._
+_Referentie: Bannari, A., H. Asalhi en P. Teillet. „Transformed Difference Vegetation Index (TDVI) for Vegetation Cover Mapping” In Proceedings of the Geoscience and Remote Sensing Symposium, IGARSS '02, IEEE International, Volume 5 (2002)._
 
 ***
 
@@ -517,6 +517,6 @@ De wegingscoëfficiënt (_a_) kan variëren van 0,1 tot 0,2. Een waarde van 0,2 
 
 _Referenties_
 
-_Gitelson, A. &quot;Wide Dynamic Range Vegetation Index for Remote Quantification of Biophysical Characteristics of Vegetation.&quot; Journal of Plant Physiology 161, nr. 2 (2004): 165-173._
+_Gitelson, A. "Wide Dynamic Range Vegetation Index for Remote Quantification of Biophysical Characteristics of Vegetation." Journal of Plant Physiology 161, nr. 2 (2004): 165-173._
 
-_Henebry, G., A. Viña en A. Gitelson. &quot;The Wide Dynamic Range Vegetation Index and its Potential Utility for Gap Analysis.&quot; Gap Analysis Bulletin 12: 50-56._
+_Henebry, G., A. Viña en A. Gitelson. "The Wide Dynamic Range Vegetation Index and its Potential Utility for Gap Analysis." Gap Analysis Bulletin 12: 50-56._

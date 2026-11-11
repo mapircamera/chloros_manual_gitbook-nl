@@ -86,8 +86,8 @@ Elke `.daq`-bestandsnaam bevat de sensor-ID en een tijdstempel.
 
 * [**Het tabblad DAQ in Chloros**](gui.md) — de volledige GUI-handleiding: het aansluiten van elk model, instellingen per sensor, spectrumgrafieken, live colorimetrische gegevens, reflectantie met twee sensoren en opname.
 * [**Snelstart CLI (pool-\*)**](cli-quick-start.md) — DAQ-sensoren aansturen vanuit `chloros-cli daq pool-*`, het ondersteunde commandoregelpad.
-* [**Cap-profielen &amp; gekalibreerd bereik**](caps-and-range.md) — welke caps er per model bestaan, hoe je ze kunt definiëren en het gekalibreerde spectrale bereik in detail.
-* [**Opname &amp; het .daq-formaat**](recording.md) — het `.daq` SQLite-formaat en opnameworkflows.
+* [**Cap-profielen & gekalibreerd bereik**](caps-and-range.md) — welke caps er per model bestaan, hoe je ze kunt definiëren en het gekalibreerde spectrale bereik in detail.
+* [**Opname & het .daq-formaat**](recording.md) — het `.daq` SQLite-formaat en opnameworkflows.
 * [**DAQ-E-netwerken en tijdsynchronisatie**](ethernet-ptp.md) — DAQ-E-transportmodi en PTP-tijdsynchronisatie.
 * [**Reflectiewerkprocessen**](reflectance.md) — het gebruik van DAQ-downwelling-gegevens om reflectie te berekenen.
 * Zie voor volledige documentatie op vlaggenniveau de [CLI-referentie](../reference/cli-reference.md) (sectie `chloros-cli daq`) en de [SDK-referentie](../reference/sdk-reference.md) (`chloros_sdk.connect_daq_sensor()`), beide geschreven om direct door AI-assistenten te kunnen worden gebruikt.

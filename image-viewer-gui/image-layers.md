@@ -4,11 +4,7 @@ Met het **laagmenu** rechtsboven in de afbeeldingsviewer kun je schakelen tussen
 
 ## Wat zijn afbeeldingslagen?
 
-Een „laag“ in Chloros
-
-is één **productbestand**dat aan één bronafbeelding is gekoppeld. Bij het importeren krijgt u de bronbestanden; tijdens de verwerking wordt voor elk product dat de run heeft gegenereerd een laag toegevoegd. Geëxporteerde bestanden behouden de bestandsnaam van het bronbestand — het is de**map** die het product identificeert, en de laagnaam is het label dat Chloros
-
-aan die map toekent.
+Een „laag“ in Chloros is één **productbestand**dat aan één bronafbeelding is gekoppeld. Bij het importeren krijgt u de bronbestanden; tijdens de verwerking wordt voor elk product dat de run heeft gegenereerd een laag toegevoegd. Geëxporteerde bestanden behouden de bestandsnaam van het bronbestand — het is de**map** die het product identificeert, en de laagnaam is het label dat Chloros aan die map toekent.
 
 <!-- SCREENSHOT-NEEDED: Image Viewer full screen with the layer dropdown open on a processed LATTICE multispectral image, showing the full list: TIFF base, RAW (Original), RAW (Debayered), RAW (Preview), RAW (Radiance), RAW (Reflectance), and one RAW (NDVI Index) entry. -->
 
@@ -20,24 +16,12 @@ aan die map toekent.
 
 | Laag | Wat het is |
 | --- | --- |
-| **JPG**(of**PNG
-
-**/**TIFF
-
-**) | Het basisbestand dat bij de opname is binnengekomen. Survey3
-
-importeert een `.JPG` naast elke `.RAW`; LATTICE-opnames leveren een PNG
-
-- of TIFF
-
--weergavevoorbeeld op. Gelabeld naar wat daadwerkelijk is geïmporteerd |
+| **JPG**(of**PNG**/**TIFF**) | Het basisbestand dat bij de opname is binnengekomen. Survey3 importeert een `.JPG` naast elke `.RAW`; LATTICE-opnames leveren een PNG- of TIFF-weergavevoorbeeld op. Gelabeld naar wat daadwerkelijk is geïmporteerd |
 | **RAW (Origineel)** | Het bron-RAW-frame, gedebayered voor weergave zonder toegepaste correcties. Beschikbaar vanaf het moment van importeren — het hoeft niet te worden verwerkt |
 
 Een LATTICE-opname waarvan het basisbestand **het**RAW-frame**is**, heeft geen aparte basisvermelding: `RAW (Original)` dekt dit al.
 
-### Survey3
-
--verwerkingsproducten
+### Survey3-verwerkingsproducten
 
 | Laag | Geschreven naar | Bestaat wanneer |
 | --- | --- | --- |
@@ -57,31 +41,19 @@ LATTICE legt deze in één verwerkingsronde vast. Welke er bestaan, hangt af van
 
 | Laag | Geschreven naar | Van toepassing op |
 | --- | --- | --- |
-| **RAW (Debayered)** | `Debayered_Images/` | RGB
-
-en multispectraal |
+| **RAW (Debayered)** | `Debayered_Images/` | RGB en multispectraal |
 | **RAW (Preview)** | `Preview_Images/` | Multispectraal (valse-kleurenuitrekking) |
-| **Witbalans** | `Preview_Images/` | RGB
-
--hoofdcamera’s — het RGB
-
--voorbeeld wordt onder deze naam geregistreerd, zodat het overeenkomt met de gelijknamige Survey3
-
--laag |
+| **Witbalans** | `Preview_Images/` | RGB-hoofdcamera’s — het RGB-voorbeeld wordt onder deze naam geregistreerd, zodat het overeenkomt met de gelijknamige Survey3-laag |
 | **RAW (straling)** | `Radiance_Images/` | Alleen multispectraal |
 | **RAW (reflectantie)** | `Reflectance_Calibrated_Images/` | Alleen multispectraal, en alleen wanneer een bijbehorend `.daq`-downwelling-record of een QA-goedgekeurd in-frame-doel het beeld bestrijkt |
 
-RGB
-
--mastercamera’s hebben geen radiometrie per band, dus straling en reflectie worden voor deze camera’s overgeslagen als **niet van toepassing** — dit wordt in het logboek vermeld in plaats van dat er stilzwijgend een fout wordt gerapporteerd.
+RGB-mastercamera’s hebben geen radiometrie per band, dus straling en reflectie worden voor deze camera’s overgeslagen als **niet van toepassing** — dit wordt in het logboek vermeld in plaats van dat er stilzwijgend een fout wordt gerapporteerd.
 
 {% hint style="info" %}
 **Raw- en debayered-lagen komen overeen met de producten (nieuw in 1.3.0).**LATTICE raw- en debayered-bestanden worden opgeslagen in de oorspronkelijke oriëntatie van de sensor en registreren in XMP de oriëntatie die bij hen hoort; de andere producten worden opgeslagen met die oriëntatie al toegepast. De viewer en het beeldraster schakelen**RAW (Origineel)**en**RAW (Debayered)** op basis van die vermelding in voor weergave, zodat het beeld niet langer wordt omgedraaid wanneer u schakelt tussen een productlaag en een raw-laag. Dit betreft alleen de weergave — de bestanden worden nooit herschreven. Bestanden zonder oriëntatiegegevens (vastgelegd vóór versie 1.3.0 of geschreven door andere software) worden weergegeven zoals ze zijn opgeslagen. Zie [Uitvoerbeeldformaten](../output-image-formats.md#orientation).
 {% endhint %}
 
-Clamp-maskers (`*_clampmask.tif` in een `clamp_masks/`-map) zijn geen lagen: Chloros
-
-slaat ze over bij het importeren. Zie [Uitvoerbeeldformaten](../output-image-formats.md#clamp-masks).
+Clamp-maskers (`*_clampmask.tif` in een `clamp_masks/`-map) zijn geen lagen: Chloros slaat ze over bij het importeren. Zie [Uitvoerbeeldformaten](../output-image-formats.md#clamp-masks).
 
 ### Index-, LUT- en sandbox-lagen
 
@@ -124,87 +96,41 @@ Het [paneel Cursorwaarden](opening-an-image-full-screen.md#cursor-values) geeft 
 
 | Laag | Weergegeven eenheid | Opmerkingen |
 | --- | --- | --- |
-| Basis (JPG / PNG
-
-/ TIFF
-
--voorbeeld) | DN, 0–255 | Weergavewaarden, gammagecorrigeerd op RGB
-
-. Alleen voor visuele inspectie |
+| Basis (JPG / PNG / TIFF-voorbeeld) | DN, 0–255 | Weergavewaarden, gammagecorrigeerd op RGB. Alleen voor visuele inspectie |
 | RAW (Origineel) | DN | Digitale RAW-sensorgegevens. De histogram-as geeft de diepte aan: 255 (8-bits), 4095 (12-bits) of 65535 (16-bits) |
 | RAW (Debayered) | DN | Lineair, geen weergave-uitrekking |
 | RAW (Voorbeeld) / Witbalans | DN | Weergaveproduct — uitgerekt of gammagecorrigeerd. Niet bedoeld voor metingen |
 | RAW (Stralingsintensiteit) | **W/m²/sr/nm** | Float32 fysieke stralingsintensiteit. Geen DN-kolom |
 | RAW (Reflectantie) | DN **en %** | Percentage berekend op basis van de eigen schaal van dat bestand — zie hieronder |
-| Index / LUT / sandbox-exporten | Indexwaarde, of RGB
-
--componenten | Een indexbestand met één kanaal geeft de indexwaarde weer; een LUT-bestand met kleurtoewijzing geeft de componenten Red
-
-/Green
-
-/Blue
-
-weer |
+| Index / LUT / sandbox-exporten | Indexwaarde, of RGB-componenten | Een indexbestand met één kanaal geeft de indexwaarde weer; een LUT-bestand met kleurtoewijzing geeft de componenten Red /Green /Blue weer |
 
 ### Reflectantie: de schaal is per bestand
 
 {% hint style="warning" %}
-**&quot;Delen door 65.535&quot; is alleen correct voor Survey3
-
-.** De reflectantie van LATTICE wordt op een andere schaal opgeslagen, en het door elkaar gebruiken van de twee delers is de meest voorkomende manier om reflectantiewaarden te krijgen die precies de helft zijn van wat ze zouden moeten zijn.
+**"Delen door 65.535" is alleen correct voor Survey3.** De reflectantie van LATTICE wordt op een andere schaal opgeslagen, en het door elkaar gebruiken van de twee delers is de meest voorkomende manier om reflectantiewaarden te krijgen die precies de helft zijn van wat ze zouden moeten zijn.
 {% endhint %}
 
 | Bron | DN die gelijk is aan reflectantie 1,0 | Geïdentificeerd door |
 | --- | --- | --- |
 | **LATTICE**(M3C / M3M) |**32768** | De XMP-tag `Chloros:PixelScale=32768` die in elke LATTICE-reflectantie-export is opgenomen. De 2× speling betekent dat ρ boven 1,0 weergegeven kan worden in plaats van afgekapt te worden |
-| **Survey3**| **65535** | Geen Chloros
+| **Survey3**| **65535** | Geen Chloros XMP-schaaltag — Survey3-kalibratie schrijft ρ × dtype-max en knipt af bij 1,0 |
 
-XMP-schaaltag — Survey3
-
--kalibratie schrijft ρ × dtype-max en knipt af bij 1,0 |
-
-Voor GIS en scripting: lees `Chloros:PixelScale` uit het bestand en deel erdoor. Als de tag ontbreekt, heeft het bestand de Survey3
-
--schaal (65535). De viewer, de index/LUT-sandbox en de indexexport bepalen de schaal allemaal op dezelfde manier, dus het getal dat je bij de cursor ziet, is het getal dat de indexberekening heeft gebruikt.
+Voor GIS en scripting: lees `Chloros:PixelScale` uit het bestand en deel erdoor. Als de tag ontbreekt, heeft het bestand de Survey3-schaal (65535). De viewer, de index/LUT-sandbox en de indexexport bepalen de schaal allemaal op dezelfde manier, dus het getal dat je bij de cursor ziet, is het getal dat de indexberekening heeft gebruikt.
 
 Formaatspecifieke opslag bovenop die schaal:
 
-* **TIFF
-
-(32-bit, Percent)** slaat DN / 65535 op als een float
-* **PNG
-
-(8-bit)**en**JPG (8-bit)** slaan DN × 255 / 65535 op
+* **TIFF (32-bit, Percent)** slaat DN / 65535 op als een float
+* **PNG (8-bit)**en**JPG (8-bit)** slaan DN × 255 / 65535 op
 * Een **8-bits DN-product van een 8-bits opname**, of een reflectantiebestand dat vóór versie 1.3.0 is geschreven, wordt begrensd tot 0–255 en bevat geen schaaltag. Het paneel geeft voor die bestanden alleen de DN weer, zonder kolom met percentages
 
 ### Bereiken van indexwaarden
 
 | Indexfamilie | Typisch bereik | Waarde |
 | --- | --- | --- |
-| Genormaliseerd verschil (NDVI
-
-, GNDVI
-
-, NDRE
-
-, ENDVI…) | −1 tot +1 | Gezonde vegetatie doorgaans 0,4–0,9; kale grond rond 0; water negatief |
-| Bodemaangepast (SAVI
-
-, OSAVI
-
-, MSAVI2…) | ruwweg −1 tot +1,5 | Vergelijkbare waarde als NDVI
-
-, maar met onderdrukte bodemachtergrond |
-| Verhouding (GRVI
-
-, GCI
-
-, MSR, CIRE…) | onbeperkt boven | Verhoudingen stijgen onbeperkt naarmate de noemerband naar nul gaat |
-| EVI
-
-/ LAI
-
-| 0 tot ~1, 0 tot ~3,5 | Wolken en andere verzadigde pixels zorgen ervoor dat beide waarden buiten het bereik vallen — maskeer deze eerst |
+| Genormaliseerd verschil (NDVI, GNDVI, NDRE, ENDVI…) | −1 tot +1 | Gezonde vegetatie doorgaans 0,4–0,9; kale grond rond 0; water negatief |
+| Bodemaangepast (SAVI, OSAVI, MSAVI2…) | ruwweg −1 tot +1,5 | Vergelijkbare waarde als NDVI, maar met onderdrukte bodemachtergrond |
+| Verhouding (GRVI, GCI, MSR, CIRE…) | onbeperkt boven | Verhoudingen stijgen onbeperkt naarmate de noemerband naar nul gaat |
+| EVI / LAI | 0 tot ~1, 0 tot ~3,5 | Wolken en andere verzadigde pixels zorgen ervoor dat beide waarden buiten het bereik vallen — maskeer deze eerst |
 
 Zie [Formules voor multispectrale indexen](../project-settings/multispectral-index-formulas.md) voor de exacte formule achter elke voorinstelling.
 
@@ -236,9 +162,7 @@ Zie [Formules voor multispectrale indexen](../project-settings/multispectral-ind
 1. Selecteer **RAW (Reflectance)**
 
 2. Lees de kolom**%** in het paneel Cursorwaarden — deze is al correct geschaald voor dat bestand
-3. Controleer of de waarden kloppen met bekende materialen in het beeld: gezonde vegetatie heeft een hoge NIR
-
--waarde en een lage rode waarde; een kalibratiedoel zou een waarde moeten aangeven die dicht bij de gepubliceerde reflectiewaarde ligt
+3. Controleer of de waarden kloppen met bekende materialen in het beeld: gezonde vegetatie heeft een hoge NIR-waarde en een lage rode waarde; een kalibratiedoel zou een waarde moeten aangeven die dicht bij de gepubliceerde reflectiewaarde ligt
 
 ***
 
@@ -250,25 +174,19 @@ Zie [Formules voor multispectrale indexen](../project-settings/multispectral-ind
 
 * De afbeelding is nooit verwerkt — alleen de basislaag en `RAW (Original)` zijn aanwezig
 * De exportschakelaar van het product is uitgeschakeld in de projectinstellingen
-* Het product is niet van toepassing op die camera (stralings- en reflectanciegegevens op een RGB
-
--master; elke index op een single-band M3M-monochromecamera)
+* Het product is niet van toepassing op die camera (stralings- en reflectanciegegevens op een RGB-master; elke index op een single-band M3M-monochromecamera)
 * De reflectantiekalibratie had geen gegevens om mee te werken — geen `.daq`-dekking in neerwaartse richting en geen QA-goedgekeurd doel binnen het beeld — dus viel het beeld terug op ‘Vignette Corrected’ of ‘Sensor Response’
 
 **Wat te doen**
 
-1. Controleer het logboek van de run: Chloros
-
-geeft aan wanneer een aangevraagd exportproduct onmogelijk was en waarom
+1. Controleer het logboek van de run: Chloros geeft aan wanneer een aangevraagd exportproduct onmogelijk was en waarom
 2. Controleer de exportschakelaars per product in [Projectinstellingen](../project-settings/project-settings.md)
 3. Controleer of de productmap aanwezig is in de uitvoerstructuur van het project
 4. Voer de bewerking opnieuw uit met het product ingeschakeld
 
 ### De lagenlijst lijkt verouderd
 
-Tijdens een lopende run scant Chloros
-
-de productmappen van het project opnieuw en herstelt ontbrekende laagregistraties op basis van wat er daadwerkelijk op de schijf staat. Een laag waarvan de export is voltooid, verschijnt dus normaal gesproken vanzelf in een poll. Als je wegklikt van de afbeelding en weer terugkeert, wordt een nieuwe weergave geforceerd.
+Tijdens een lopende run scant Chloros de productmappen van het project opnieuw en herstelt ontbrekende laagregistraties op basis van wat er daadwerkelijk op de schijf staat. Een laag waarvan de export is voltooid, verschijnt dus normaal gesproken vanzelf in een poll. Als je wegklikt van de afbeelding en weer terugkeert, wordt een nieuwe weergave geforceerd.
 
 ### De reflectiewaarden lijken de helft te zijn van wat ze zouden moeten zijn
 

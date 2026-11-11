@@ -1,10 +1,6 @@
 # De verwerking volgen
 
-Zodra de verwerking is gestart, biedt Chloros
-
-verschillende manieren om de voortgang te volgen, te controleren op problemen en inzicht te krijgen in wat er met je dataset gebeurt. Op deze pagina wordt uitgelegd hoe je de verwerking kunt volgen en hoe je de informatie die Chloros
-
-verstrekt kunt interpreteren.
+Zodra de verwerking is gestart, biedt Chloros verschillende manieren om de voortgang te volgen, te controleren op problemen en inzicht te krijgen in wat er met je dataset gebeurt. Op deze pagina wordt uitgelegd hoe je de verwerking kunt volgen en hoe je de informatie die Chloros verstrekt kunt interpreteren.
 
 ## Overzicht voortgangsbalk
 
@@ -12,9 +8,7 @@ De voortgangsbalk in de bovenste koptekst toont de realtime verwerkingsstatus en
 
 ### Voortgangsbalk in de gratis modus
 
-Voor gebruikers zonder Chloros
-
-+-licentie:
+Voor gebruikers zonder Chloros+-licentie:
 
 **Voortgangsweergave in 2 fasen:**
 
@@ -25,13 +19,9 @@ Voor gebruikers zonder Chloros
 * Naam van de huidige fase
 * Eenvoudige horizontale balkweergave
 
-### Chloros
+### Chloros+ voortgangsbalk
 
-+ voortgangsbalk
-
-Voor gebruikers met een Chloros
-
-+ licentie:
+Voor gebruikers met een Chloros+ licentie:
 
 **Voortgangsweergave in 4 fasen:**
 
@@ -44,9 +34,7 @@ Voor gebruikers met een Chloros
 * Elke fase toont de individuele voortgang (0-100%)
 
 {% hint style="info" %}
-**Pariteit met CLI**: tijdens een `chloros-cli process`-run rapporteren dezelfde vier threads ‘Detecting’, ‘Analyzing’, ‘Processing’ en ‘Exporting’, en toont `chloros-cli export-status` de live voortgang van Thread-4-export vanaf een andere terminal. Zie de [CLI
-
--referentie](../reference/cli-reference.md).
+**Pariteit met CLI**: tijdens een `chloros-cli process`-run rapporteren dezelfde vier threads ‘Detecting’, ‘Analyzing’, ‘Processing’ en ‘Exporting’, en toont `chloros-cli export-status` de live voortgang van Thread-4-export vanaf een andere terminal. Zie de [CLI-referentie](../reference/cli-reference.md).
 {% endhint %}
 
 ***
@@ -61,9 +49,7 @@ Voor gebruikers met een Chloros
 
 **Wat gebeurt er:**
 
-* Chloros
-
-scant de afbeeldingen die je hebt aangevinkt met het selectievakje ‘Doel’ (alle afbeeldingen als er geen zijn aangevinkt)
+* Chloros scant de afbeeldingen die je hebt aangevinkt met het selectievakje ‘Doel’ (alle afbeeldingen als er geen zijn aangevinkt)
 * Computervisie-algoritmen identificeren de kalibratiepanelen
 * Reflectiewaarden worden uit elk paneel gehaald
 * Tijdstempels van de doelen worden geregistreerd voor een correcte planning van de kalibratie
@@ -92,9 +78,7 @@ scant de afbeeldingen die je hebt aangevinkt met het selectievakje ‘Doel’ (a
 * EXIF-metadata van afbeeldingen lezen (tijdstempels, belichtingsinstellingen)
 * Kalibratiestrategie bepalen op basis van tijdstempels van doelen en beschikbare DAQ-downwelling-gegevens
 * Wachtlijst voor beeldverwerking ordenen
-* Werkers voor parallelle verwerking voorbereiden (alleen Chloros
-
-+)
+* Werkers voor parallelle verwerking voorbereiden (alleen Chloros+)
 
 **Duur:** 5-30 seconden**Voortgangsindicator:**
 
@@ -121,9 +105,7 @@ scant de afbeeldingen die je hebt aangevinkt met het selectievakje ‘Doel’ (a
 * Voltooide afbeeldingen / Totaal aantal afbeeldingen
 
 **Verwerkingsgedrag:*** **Vrije modus**: Verwerkt één beeld tegelijk, achtereenvolgens
-* **Chloros
-
-+-modus**: Draait een hardware-adaptieve werkpool — 1-4 gelijktijdige workers op GPU-systemen (afhankelijk van VRAM), één worker per fysieke kern (minus één) op systemen met alleen een CPU. Zie [Dynamic Compute Adaptation](../processing-architecture/dynamic-compute-adaptation.md)
+* **Chloros+-modus**: Draait een hardware-adaptieve werkpool — 1-4 gelijktijdige workers op GPU-systemen (afhankelijk van VRAM), één worker per fysieke kern (minus één) op systemen met alleen een CPU. Zie [Dynamic Compute Adaptation](../processing-architecture/dynamic-compute-adaptation.md)
 * **GPU-versnelling**: Versnelt deze fase aanzienlijk**Waarop letten:**
 
 * Gestage voortgang in het aantal afbeeldingen
@@ -169,17 +151,13 @@ in de linkerzijbalk
 
 ### Logberichten begrijpen De logregels van
 
-Chloros
-
-worden voorafgegaan door tags tussen haakjes die het subsysteem benoemen — bijvoorbeeld `[PROCESSING]`, `[RUN-SUMMARY]`, `[LATTICE-EXPORT]`, `[EXPORT-CHECK]`, `[IMPORT-LEVEL]`. Het belangrijkste om te weten is het **run-overzicht**, dat aan het einde van elke run wordt weergegeven (inclusief gestopte runs):
+Chloros worden voorafgegaan door tags tussen haakjes die het subsysteem benoemen — bijvoorbeeld `[PROCESSING]`, `[RUN-SUMMARY]`, `[LATTICE-EXPORT]`, `[EXPORT-CHECK]`, `[IMPORT-LEVEL]`. Het belangrijkste om te weten is het **run-overzicht**, dat aan het einde van elke run wordt weergegeven (inclusief gestopte runs):
 
 ```
 [RUN-SUMMARY] 49 image(s) in 2 camera group(s); 4 target(s) detected; 45 image(s) calibrated; 180 file(s) written.
 ```
 
-Er volgen extra `[RUN-SUMMARY]`-hintregels wanneer iets uitleg behoeft — bijvoorbeeld een run die niets heeft opgeleverd, of een camera waarvan het gevraagde product werd overgeslagen omdat het niet van toepassing was. `[EXPORT-CHECK]`-regels geven uitleg over het overslaan per camera (bijvoorbeeld waarom een RGB
-
--camera geen stralingsproduct kreeg).
+Er volgen extra `[RUN-SUMMARY]`-hintregels wanneer iets uitleg behoeft — bijvoorbeeld een run die niets heeft opgeleverd, of een camera waarvan het gevraagde product werd overgeslagen omdat het niet van toepassing was. `[EXPORT-CHECK]`-regels geven uitleg over het overslaan per camera (bijvoorbeeld waarom een RGB-camera geen stralingsproduct kreeg).
 
 De algemene ernstniveaus van berichten (onderstaande voorbeelden zijn ter illustratie, niet letterlijk):
 
@@ -210,17 +188,9 @@ Kritieke problemen die ervoor kunnen zorgen dat de verwerking mislukt — bijv. 
 | Geen doelen gevonden                      | Geen kalibratiedoelen gedetecteerd               | Doelafbeeldingen markeren of reflectiekalibratie uitschakelen |
 | Onvoldoende schijfruimte               | Onvoldoende opslagruimte voor uitvoer                 | Schijfruimte vrijmaken                                    |
 | Beschadigd bestand wordt overgeslagen               | Beeldbestand is beschadigd                         | Kopieer het bestand opnieuw vanaf de SD-kaart                             |
-| `[IMPORT-LEVEL] Skipping ... no raw source` | Een opname zonder raw-frame kan niet worden verwerkt | Neem opnieuw op met raw, of gebruik de CLI
-
-`--input-level`  |
+| `[IMPORT-LEVEL] Skipping ... no raw source` | Een opname zonder raw-frame kan niet worden verwerkt | Neem opnieuw op met raw, of gebruik de CLI `--input-level`  |
 | `[RUN-SUMMARY] ... 0 file(s) written` | De bewerking leverde geen beeldproducten op — gerapporteerd als een fout met hints | Lees de hintregels; controleer wat is overgeslagen en waarom |
-| `[PROCESS] refused: The project folder is too deep for this computer…` | Lange paden in Windows
-
-zijn uitgeschakeld en de projectmap is te diep voor de limiet van 260 tekens; er is niets verwerkt | Gebruik een kortere projectmap (het bericht geeft de langste naam aan die past), of schakel lange paden in Windows
-
-in en start Chloros
-
-opnieuw op — zie [De verwerking starten](starting-the-processing.md#the-project-folder-is-too-deep-for-this-computer) |
+| `[PROCESS] refused: The project folder is too deep for this computer…` | Lange paden in Windows zijn uitgeschakeld en de projectmap is te diep voor de limiet van 260 tekens; er is niets verwerkt | Gebruik een kortere projectmap (het bericht geeft de langste naam aan die past), of schakel lange paden in Windows in en start Chloros opnieuw op — zie [De verwerking starten](starting-the-processing.md#the-project-folder-is-too-deep-for-this-computer) |
 | `[unmix-clamp-mask] …` | Het clampmasker van een LATTICE-product kon niet worden geschreven; het product zelf is in orde en geeft de foutmelding `Chloros:UnmixClampMask=unavailable` | Controleer de schijfruimte en maprechten, en voer de verwerking vervolgens opnieuw uit als je het masker nodig hebt |
 
 ### Loggegevens kopiëren
@@ -231,32 +201,18 @@ Om het logboek te kopiëren voor probleemoplossing of ondersteuning:
 
 2. Klik op de knop**Kopiëren**(kopieert het logboek naar het klembord) of op**Downloaden** om het op te slaan als tekstbestand
 3. Plak de inhoud in een tekstbestand of e-mail
-4. Stuur het indien nodig naar de MAPIR
-
--ondersteuning
+4. Stuur het indien nodig naar de MAPIR-ondersteuning
 
 ### Een bug melden via het tabblad Logboek
 
-Nieuw in 1.3.0: het bugpictogram (**Een bug melden**) bovenaan het tabblad Debuglogboek stuurt een rapport rechtstreeks naar MAPIR
-
-.
+Nieuw in 1.3.0: het bugpictogram (**Een bug melden**) bovenaan het tabblad Debuglogboek stuurt een rapport rechtstreeks naar MAPIR.
 
 1. Klik op het bugpictogram bovenaan het tabblad Debuglogboek
 2. Beschrijf het probleem: wat je aan het doen was, wat je verwachtte en wat er in plaats daarvan gebeurde (verplicht)
 3. Vink eventueel **Voeg een paar afbeeldingen toe (maximaal 10)**aan en kies afbeeldingen uit het geopende project, of gebruik**Bladeren...** voor een ander afbeeldingsbestand
 4. Klik op **Verzenden**
 
-Het rapport bevat je beschrijving, eventuele bijgevoegde afbeeldingen, de Chloros
-
--logbestanden en systeemgegevens (Chloros
-
--versie, besturingssysteem, GPU en projectinstellingen). Je moet zijn ingelogd bij Chloros
-
-(tabblad ‘Gebruiker’) om een rapport te kunnen verzenden. Je kunt het venster sluiten terwijl het rapport wordt verzonden; zodra het verzenden is voltooid, wordt er een referentienummer zoals `Bug report sent. Reference: BR-…` in het logboek geschreven — vermeld dit nummer wanneer je contact opneemt met MAPIR
-
-. Als het rapport niet kan worden geüpload (bijvoorbeeld vanwege een ontbrekende internetverbinding), slaat Chloros
-
-het op je computer op en toont het pad, zodat je het per e-mail kunt versturen naar support@mapir.camera.
+Het rapport bevat je beschrijving, eventuele bijgevoegde afbeeldingen, de Chloros-logbestanden en systeemgegevens (Chloros-versie, besturingssysteem, GPU en projectinstellingen). Je moet zijn ingelogd bij Chloros (tabblad ‘Gebruiker’) om een rapport te kunnen verzenden. Je kunt het venster sluiten terwijl het rapport wordt verzonden; zodra het verzenden is voltooid, wordt er een referentienummer zoals `Bug report sent. Reference: BR-…` in het logboek geschreven — vermeld dit nummer wanneer je contact opneemt met MAPIR. Als het rapport niet kan worden geüpload (bijvoorbeeld vanwege een ontbrekende internetverbinding), slaat Chloros het op je computer op en toont het pad, zodat je het per e-mail kunt versturen naar support@mapir.camera.
 
 ***
 
@@ -270,33 +226,25 @@ het op je computer op en toont het pad, zodat je het per e-mail kunt versturen n
 * Andere kernen inactief of beschikbaar
 * Systeem blijft responsief
 
-**Parallelle modus van Chloros
-
-+:**
+**Parallelle modus van Chloros+:**
 
 * Meerdere kernen met hoge bezettingsgraad — hoeveel hangt af van de strategie die is gekozen door [Dynamic Compute Adaptation](../processing-architecture/dynamic-compute-adaptation.md)
 * Het systeem kan minder responsief aanvoelen
 
 **Om te controleren:**
 
-* Windows
-
-Taakbeheer (Ctrl+Shift+Esc)
+* Windows Taakbeheer (Ctrl+Shift+Esc)
 * Tabblad Prestaties → Sectie CPU
-* Zoek naar &quot;Chloros
-
-&quot;- of &quot;chloros-backend&quot;-processen
+* Zoek naar "Chloros"- of "chloros-backend"-processen
 
 ### Geheugen (RAM)-gebruik
 
 **Typisch gebruik:**
 
-* Kleine projecten (&lt; 100 afbeeldingen): 2-4 GB
+* Kleine projecten (< 100 afbeeldingen): 2-4 GB
 * Middelgrote projecten (100-500 afbeeldingen): 4-8 GB
 * Grote projecten (500+ afbeeldingen): 8-16 GB
-* De parallelle modus van Chloros
-
-+ verbruikt meer RAM
+* De parallelle modus van Chloros+ verbruikt meer RAM
 
 **Als het geheugen bijna op is:**
 
@@ -304,9 +252,7 @@ Taakbeheer (Ctrl+Shift+Esc)
 * Sluit andere applicaties
 * Breid het RAM-geheugen uit als je regelmatig grote datasets verwerkt
 
-### GPU-gebruik (Chloros
-
-+ met CUDA)
+### GPU-gebruik (Chloros+ met CUDA)
 
 Wanneer GPU-versnelling is ingeschakeld:
 
@@ -344,9 +290,7 @@ Wanneer GPU-versnelling is ingeschakeld:
 
 * Controleer het foutlogboek op fouten
 * Controleer of er voldoende schijfruimte beschikbaar is
-* Controleer in Taakbeheer of Chloros
-
-actief is
+* Controleer in Taakbeheer of Chloros actief is
 
 **Er verschijnen regelmatig foutmeldingen:**
 
@@ -356,9 +300,7 @@ actief is
 
 **Het systeem reageert niet meer:**
 
-* De parallelle modus van Chloros
-
-verbruikt te veel systeembronnen
+* De parallelle modus van Chloros verbruikt te veel systeembronnen
 * Overweeg het aantal gelijktijdige taken te verminderen of de hardware te upgraden
 * De vrije modus is minder systeembronintensief
 
@@ -397,9 +339,7 @@ Stop de verwerking als je het volgende ziet:
 
 1. Als het proces net is gestart en zich in de detectiefase bevindt: stop, markeer doelen, start opnieuw
 2. Voor de toekomst: gebruik een SSD, verminder het aantal indexen, upgrade de hardware
-3. Overweeg de CLI
-
--interface voor batchverwerking van grote datasets
+3. Overweeg de CLI-interface voor batchverwerking van grote datasets
 
 ### Waarschuwingen over „schijfruimte“
 
@@ -409,11 +349,9 @@ Stop de verwerking als je het volgende ziet:
 2. Verplaats het project naar een schijf met meer ruimte
 3. Verminder het aantal te exporteren indexen
 4. Schakel LATTICE-exportproducten uit die je niet nodig hebt (Projectinstellingen → Verwerking)
-5. Gebruik het JPG-formaat in plaats van TIFF
+5. Gebruik het JPG-formaat in plaats van TIFF (kleinere bestanden)
 
-(kleinere bestanden)
-
-### Frequente meldingen over &quot;beschadigde bestanden&quot;
+### Frequente meldingen over "beschadigde bestanden"
 
 **Oplossingen:**
 
@@ -428,9 +366,7 @@ Stop de verwerking als je het volgende ziet:
 
 1. Zorg voor voldoende ventilatie
 2. Verwijder stof uit de ventilatieopeningen van de computer
-3. Verminder de verwerkingsbelasting (gebruik de Free-modus in plaats van Chloros
-
-+)
+3. Verminder de verwerkingsbelasting (gebruik de Free-modus in plaats van Chloros+)
 4. Voer de verwerking uit op koelere momenten van de dag
 
 ***

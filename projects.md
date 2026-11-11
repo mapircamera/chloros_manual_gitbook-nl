@@ -33,7 +33,7 @@ Als een van de bronafbeeldingsbestanden van het project is verplaatst of verwijd
 
 ## Project dupliceren
 
-Beschikbaar zodra een project is geopend. Selecteer &#x27;Project dupliceren&#x27; om het huidige project onder een nieuwe naam te kopiëren — Chloros stelt de volgende beschikbare naam voor (bijv. &#x27;MijnProject (2)&#x27;) — en het duplicaat wordt onmiddellijk geopend.
+Beschikbaar zodra een project is geopend. Selecteer 'Project dupliceren' om het huidige project onder een nieuwe naam te kopiëren — Chloros stelt de volgende beschikbare naam voor (bijv. 'MijnProject (2)') — en het duplicaat wordt onmiddellijk geopend.
 
 ## Bestanden toevoegen
 
@@ -41,7 +41,7 @@ Nadat een project is geopend, selecteert u „Bestanden toevoegen” in het hoof
 
 ## Map toevoegen
 
-Nadat een project is geopend, selecteer je &quot;Map toevoegen&quot; in het hoofdmenu om mappen met afbeeldingen aan het huidige project toe te voegen. Je kunt in één keer meerdere mappen selecteren. Dubbele bestanden worden genegeerd.
+Nadat een project is geopend, selecteer je "Map toevoegen" in het hoofdmenu om mappen met afbeeldingen aan het huidige project toe te voegen. Je kunt in één keer meerdere mappen selecteren. Dubbele bestanden worden genegeerd.
 
 ## Verwerking starten / stoppen
 

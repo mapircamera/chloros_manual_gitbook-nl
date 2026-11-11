@@ -1,8 +1,6 @@
 # NVIDIA Jetson-handleiding
 
-Chloros
-op NVIDIA Jetson maakt multispectrale beeldverwerking aan de rand mogelijk — in het veld, op UAV’s en in afgelegen installaties. Chloros
-1.3.0 detecteert je Jetson-model bij het opstarten en optimaliseert de verwerkingsstrategie voor de gevonden hardware. **Handmatige afstemming is niet nodig.**
+Chloros op NVIDIA Jetson maakt multispectrale beeldverwerking aan de rand mogelijk — in het veld, op UAV’s en in afgelegen installaties. Chloros 1.3.0 detecteert je Jetson-model bij het opstarten en optimaliseert de verwerkingsstrategie voor de gevonden hardware. **Handmatige afstemming is niet nodig.**
 {% hint style="info" %}
 **Het Jetson-pakket 1.3.0 voert de verwerking uit op de GPU van de Jetson.** `chloros_1.3.0_arm64_jp6.deb` is gebouwd voor JetPack 6 en maakt gebruik van de CUDA-build van PyTorch uit JetPack 6, waardoor de verwerking – inclusief de ‘Texture Aware’-debayer – op de GPU van de Orin draait. Het pakket bevat zelf geen CUDA: het maakt gebruik van de CUDA- en cuDNN-bibliotheken die JetPack 6 installeert (`sudo apt install nvidia-jetpack` op een image waar deze ontbreken). Wanneer er geen CUDA-GPU beschikbaar is, vindt de verwerking plaats op de CPU en maakt Texture Aware gebruik van de standaard debayer.
 {% endhint %}
@@ -18,8 +16,7 @@ op NVIDIA Jetson maakt multispectrale beeldverwerking aan de rand mogelijk — i
 | **Jetson Orin Nano** | 8 GB gedeeld     | `GPU_SINGLE` (1 worker, sequentieel)                     | Edge-computing op instapniveau                                 |
 
 {% hint style="info" %}
-Het Linux
--arm64-pakket vereist **JetPack 6**, dat beschikbaar is op de Jetson Orin-serie. Oudere modellen (Nano, TX2, Xavier NX) kunnen JetPack 6 niet uitvoeren en worden niet ondersteund door het huidige pakket.
+Het Linux-arm64-pakket vereist **JetPack 6**, dat beschikbaar is op de Jetson Orin-serie. Oudere modellen (Nano, TX2, Xavier NX) kunnen JetPack 6 niet uitvoeren en worden niet ondersteund door het huidige pakket.
 {% endhint %}
 
 ***
@@ -28,10 +25,7 @@ Het Linux
 
 * **JetPack 6.x** (nieuwste versie aanbevolen)
 * **NVIDIA CUDA en cuDNN** uit JetPack 6 (`sudo apt install nvidia-jetpack` als deze ontbreken in je image)
-* **Betaald Chloros
-+-abonnement** — Copper-niveau of hoger (vereist voor alle CLI
--/SDK
--toegang; wordt server-side afgedwongen)
+* **Betaald Chloros+-abonnement** — Copper-niveau of hoger (vereist voor alle CLI-/SDK-toegang; wordt server-side afgedwongen)
 
 ## Installatie
 
@@ -48,15 +42,10 @@ python3 -c "import chloros_sdk; print(chloros_sdk.__version__)"   # the .deb ins
 chloros-cli selftest
 ```
 
-`.deb` installeert de Python
--SDK
-voor het systeem `python3`, dat bij deze build hoort. Alleen in een virtualenv moet het meegeleverde wheel worden geïnstalleerd: `pip install /usr/lib/chloros/sdk/chloros_sdk-*.whl` (volledig offline). Zie [Linux
--installatie](linux-installation.md) voor algemene details over de Linux
--installatie, bestandslocaties en het oplossen van problemen.
+`.deb` installeert de Python-SDK voor het systeem `python3`, dat bij deze build hoort. Alleen in een virtualenv moet het meegeleverde wheel worden geïnstalleerd: `pip install /usr/lib/chloros/sdk/chloros_sdk-*.whl` (volledig offline). Zie [Linux-installatie](linux-installation.md) voor algemene details over de Linux-installatie, bestandslocaties en het oplossen van problemen.
 
 {% hint style="info" %}
-**Geen uitpakken meer bij het opstarten.** Vanaf versie 1.3.0 worden de backend en de CLI
-&#x27; ongedicht geïnstalleerd onder `/usr/lib/chloros/`, zodat ze zichzelf niet langer bij elke start naar een tijdelijke map uitpakken. Tijdelijke bestanden worden nog steeds automatisch naar `/mnt/ssd/tmp` verplaatst als die map bestaat; anders kunt u `TMPDIR` instellen op een pad op uw NVMe (`export TMPDIR=/mnt/nvme/tmp`).
+**Geen uitpakken meer bij het opstarten.** Vanaf versie 1.3.0 worden de backend en de CLI' ongedicht geïnstalleerd onder `/usr/lib/chloros/`, zodat ze zichzelf niet langer bij elke start naar een tijdelijke map uitpakken. Tijdelijke bestanden worden nog steeds automatisch naar `/mnt/ssd/tmp` verplaatst als die map bestaat; anders kunt u `TMPDIR` instellen op een pad op uw NVMe (`export TMPDIR=/mnt/nvme/tmp`).
 {% endhint %}
 
 ***
@@ -65,8 +54,7 @@ voor het systeem `python3`, dat bij deze build hoort. Alleen in een virtualenv m
 
 ### Hoe het werkt
 
-Bij het opstarten stelt Chloros
-een profiel van je systeem op:
+Bij het opstarten stelt Chloros een profiel van je systeem op:
 
 1. **Detecteert het Jetson-model** via `/proc/device-tree/model`
 2. **Leest het beschikbare gedeelde GPU-/CPU-geheugen** (Jetson maakt gebruik van unified memory)
@@ -90,7 +78,7 @@ Je kunt de automatische keuze overschrijven met de omgevingsvariabele `CHLOROS_S
 | **Jetson Orin NX 16 GB**     | `GPU_PARALLEL` | 2       | Gelijktijdige werkprocessen, `fused_gpu`-pad  |
 | **Jetson AGX Orin 32-64 GB** | `GPU_PARALLEL` | 2       | Gelijktijdige werkprocessen, `fused_gpu`-pad  |
 
-Het belangrijkste verschil tussen de platforms is **het geheugen**. Een Jetson met 8 GB moet bij hoge belasting afbeeldingen één voor één verwerken met behulp van een geheugenefficiënte &#x27;tiled&#x27;-aanpak, terwijl een Orin met 16 GB of meer twee afbeeldingen tegelijk via de GPU kan verwerken met behulp van de &#x27;fused pipeline&#x27; met hogere doorvoercapaciteit.
+Het belangrijkste verschil tussen de platforms is **het geheugen**. Een Jetson met 8 GB moet bij hoge belasting afbeeldingen één voor één verwerken met behulp van een geheugenefficiënte 'tiled'-aanpak, terwijl een Orin met 16 GB of meer twee afbeeldingen tegelijk via de GPU kan verwerken met behulp van de 'fused pipeline' met hogere doorvoercapaciteit.
 
 ### GPU-budget per model
 
@@ -110,13 +98,10 @@ Zie [Dynamic Compute Adaptation](../processing-architecture/dynamic-compute-adap
 
 ## GPU-frequentiebeperking voor Texture Aware op Nano en Orin Nano
 
-De Texture Aware-debayer voert GPU-neurale-netwerkinferentie uit, wat bij volledige GPU-kloksnelheid **waarschuwingen voor overstroom**kan activeren op Jetson-modellen met laag vermogen (klasse 10-15 W). Wanneer je `--debayer texture-aware` doorgeeft op een**Jetson Nano of Orin Nano**, controleert de CLI
-de maximale frequentie van de GPU en beperkt deze tot **510 MHz** (510000000) als deze momenteel hoger is:
+De Texture Aware-debayer voert GPU-neurale-netwerkinferentie uit, wat bij volledige GPU-kloksnelheid **waarschuwingen voor overstroom**kan activeren op Jetson-modellen met laag vermogen (klasse 10-15 W). Wanneer je `--debayer texture-aware` doorgeeft op een**Jetson Nano of Orin Nano**, controleert de CLI de maximale frequentie van de GPU en beperkt deze tot **510 MHz** (510000000) als deze momenteel hoger is:
 
-* Als de CLI
-het sysfs-knooppunt voor de GPU-frequentie kan schrijven, wordt de limiet **automatisch toegepast** en wordt er een bevestiging weergegeven.
-* Zo niet (root-rechten vereist), geeft de CLI
-het exacte `sudo`-commando weer om de limiet handmatig toe te passen, wacht even zodat je het kunt lezen en gaat dan verder — de verwerking loopt nog steeds, maar er kunnen waarschuwingen voor overstroom verschijnen.
+* Als de CLI het sysfs-knooppunt voor de GPU-frequentie kan schrijven, wordt de limiet **automatisch toegepast** en wordt er een bevestiging weergegeven.
+* Zo niet (root-rechten vereist), geeft de CLI het exacte `sudo`-commando weer om de limiet handmatig toe te passen, wacht even zodat je het kunt lezen en gaat dan verder — de verwerking loopt nog steeds, maar er kunnen waarschuwingen voor overstroom verschijnen.
 
 Om de limiet zelf toe te passen vóór de verwerking:
 
@@ -127,20 +112,18 @@ echo 510000000 | sudo tee /sys/devices/platform/bus@0/17000000.gpu/devfreq/17000
 Modellen met een hoger vermogen (Orin NX 25W, AGX Orin 60W) draaien op volledige GPU-snelheid; er wordt geen limiet toegepast. De Standard-debayer activeert de limiet nooit op welk model dan ook.
 
 {% hint style="info" %}
-**Texture Aware op Jetson verwerkt altijd één afbeelding tegelijk.** Elke worker zou zijn eigen CUDA-context (~1 GB) nodig hebben, plus een eigen kopie van het denoiser-model, wat het unified memory niet aankan — daarom is het Texture Aware-pad op Jetson vastgezet aan één enkele worker, waarbij de toegang tot de GPU wordt geserialiseerd. Verwacht dat Texture Aware op elke Jetson aanzienlijk langzamer zal zijn dan Standard. Texture Aware is van toepassing op Survey3
--afbeeldingen: LATTICE-opnames krijgen altijd de Standard-debayer. Zonder een bruikbare CUDA-GPU wordt Standard gebruikt, en de backend logt één regel `[DEBAYER] … needs a CUDA GPU …` waarin wordt uitgelegd waarom (weergegeven met `chloros-cli --verbose`).
+**Texture Aware op Jetson verwerkt altijd één afbeelding tegelijk.** Elke worker zou zijn eigen CUDA-context (~1 GB) nodig hebben, plus een eigen kopie van het denoiser-model, wat het unified memory niet aankan — daarom is het Texture Aware-pad op Jetson vastgezet aan één enkele worker, waarbij de toegang tot de GPU wordt geserialiseerd. Verwacht dat Texture Aware op elke Jetson aanzienlijk langzamer zal zijn dan Standard. Texture Aware is van toepassing op Survey3-afbeeldingen: LATTICE-opnames krijgen altijd de Standard-debayer. Zonder een bruikbare CUDA-GPU wordt Standard gebruikt, en de backend logt één regel `[DEBAYER] … needs a CUDA GPU …` waarin wordt uitgelegd waarom (weergegeven met `chloros-cli --verbose`).
 {% endhint %}
 
 ***
 
 ## Warmtebeheer
 
-Jetson-apparaten hebben een beperkte thermische marge, vooral bij gebruik in gesloten ruimtes of in de lucht. Chloros
-houdt de SoC-temperatuur in de gaten en past de batchgroottes automatisch aan:
+Jetson-apparaten hebben een beperkte thermische marge, vooral bij gebruik in gesloten ruimtes of in de lucht. Chloros houdt de SoC-temperatuur in de gaten en past de batchgroottes automatisch aan:
 
 | Temperatuur         | Actie                                            |
 | ------------------- | ------------------------------------------------- |
-| **&lt; 70 °C**          | Normale werking — volledige verwerkingssnelheid          |
+| **< 70 °C**          | Normale werking — volledige verwerkingssnelheid          |
 | **70 °C** (Waarschuwing) | Batchgrootte wordt geleidelijk verkleind (100% → 50% tussen 70 °C en 80 °C) |
 | **80 °C** (Kritiek) | Agressieve beperking (50% → 0% tussen 80 °C en 90 °C) |
 | **90 °C** (Uitschakeling) | GPU-verwerking volledig stoppen — afkoelen vereist |
@@ -157,8 +140,7 @@ Jetson-apparaten maken gebruik van **unified memory** — de GPU en CPU delen he
 
 ### Waarschuwing en aanbevelingen met betrekking tot swap
 
-Voordat de verwerking op Jetson begint, telt de CLI
-het aantal RAW-afbeeldingen in uw invoermap (`.tif`, `.tiff`, `.raw`, `.dng` — JPG-voorbeelden worden niet meegeteld), schat het maximale geheugen dat de run nodig heeft, en **geeft een waarschuwing voordat het start** als RAM + swap waarschijnlijk onvoldoende is. De waarschuwing heeft als kop `LOW MEMORY WARNING - Jetson Detected`, geeft het aantal afbeeldingen, het RAM-geheugen, de huidige swapruimte en de geschatte piek, en geeft vervolgens de exacte `fallocate` / `chmod` / `mkswap` / `swapon`-opdrachten weer, afgestemd op uw project (nooit kleiner dan 8 GB). Het programma pauzeert een paar seconden zodat het bericht niet verloren gaat in de scrollback, waarna de verwerking wordt voortgezet.**Geheugenschattingen gebruikt door de waarschuwing:**
+Voordat de verwerking op Jetson begint, telt de CLI het aantal RAW-afbeeldingen in uw invoermap (`.tif`, `.tiff`, `.raw`, `.dng` — JPG-voorbeelden worden niet meegeteld), schat het maximale geheugen dat de run nodig heeft, en **geeft een waarschuwing voordat het start** als RAM + swap waarschijnlijk onvoldoende is. De waarschuwing heeft als kop `LOW MEMORY WARNING - Jetson Detected`, geeft het aantal afbeeldingen, het RAM-geheugen, de huidige swapruimte en de geschatte piek, en geeft vervolgens de exacte `fallocate` / `chmod` / `mkswap` / `swapon`-opdrachten weer, afgestemd op uw project (nooit kleiner dan 8 GB). Het programma pauzeert een paar seconden zodat het bericht niet verloren gaat in de scrollback, waarna de verwerking wordt voortgezet.**Geheugenschattingen gebruikt door de waarschuwing:**
 
 | Debayer-modus | Basis | Per afbeelding |
 | --- | --- | --- |
@@ -188,8 +170,7 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 
 ### OOM (Out of Memory) afhandeling
 
-Tijdens de verwerking houdt Chloros
-het GPU-geheugen in de gaten en schakelt het op een soepele manier over naar een lagere prestatieniveau in plaats van te crashen:
+Tijdens de verwerking houdt Chloros het GPU-geheugen in de gaten en schakelt het op een soepele manier over naar een lagere prestatieniveau in plaats van te crashen:
 
 1. Wanneer het GPU-geheugengebruik **85%** overschrijdt, worden de batchgroottes preventief verkleind
 2. Als er toch een out-of-memory-gebeurtenis optreedt, wordt de batchgrootte **gehalveerd**, en bij elke opeenvolgende OOM opnieuw gehalveerd; elke daaropvolgende succesvolle batch draait die beperking één stap terug
@@ -218,11 +199,9 @@ Plan uw stroomverbruik voor langdurige verwerking — het piekvermogen wordt ver
 * Houd rekening met 2-3x de grootte van je ruwe beeldgegevens voor de verwerkte output
 
 ### Headless-bediening via SSH
-De Chloros-CLI
-van
+De Chloros-CLI van
 
-Chloros
-is ideaal voor headless Jetson-implementaties:
+Chloros is ideaal voor headless Jetson-implementaties:
 
 ```bash
 # SSH into the Jetson
@@ -237,16 +216,14 @@ chloros-cli export-status
 
 ### Altijd actieve backend voor LATTICE / DAQ-E-tijdsynchronisatie
 
-Als je Jetson LATTICE-camera’s of DAQ-E-lichtsensoren headless aanstuurt, schakel dan de backend-systemd-service **als jouw gebruiker** in, zodat de PTP-grandmaster continu draait en SDK
--scripts een actieve backend vinden (de unit is geïnstalleerd maar standaard niet ingeschakeld):
+Als je Jetson LATTICE-camera’s of DAQ-E-lichtsensoren headless aanstuurt, schakel dan de backend-systemd-service **als jouw gebruiker** in, zodat de PTP-grandmaster continu draait en SDK-scripts een actieve backend vinden (de unit is geïnstalleerd maar standaard niet ingeschakeld):
 
 ```bash
 sudo systemctl enable --now chloros-backend@$USER.service    # $USER expands to your user name
 chloros-cli time-sync status
 ```
 
-De backend draait dan onder uw gebruikersaccount: de opnames die hij schrijft zijn van u, en hij gebruikt uw `chloros-cli login`. Zie [Linux
--installatie](linux-installation.md#always-on-ptp-for-headless-hosts) voor details, waaronder de root-`chloros-backend.service` en hoe het pakket ervoor zorgt dat PTP-poorten 319/320 zonder root-rechten kunnen worden gebonden.
+De backend draait dan onder uw gebruikersaccount: de opnames die hij schrijft zijn van u, en hij gebruikt uw `chloros-cli login`. Zie [Linux-installatie](linux-installation.md#always-on-ptp-for-headless-hosts) voor details, waaronder de root-`chloros-backend.service` en hoe het pakket ervoor zorgt dat PTP-poorten 319/320 zonder root-rechten kunnen worden gebonden.
 
 ### Geautomatiseerde verwerking met systemd
 
@@ -306,9 +283,7 @@ chloros-cli process /data/flights/flight_042 \
     --indices NDVI GNDVI OSAVI
 ```
 
-### Python
--SDK
-op Jetson
+### Python-SDK op Jetson
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -352,26 +327,16 @@ Overweeg voor inzet in het veld en in de lucht deze Jetson Orin NX 16 GB-carrier
 * **Robuust veldgebruik**: IP67/IP69K waterdichte behuizingen met PoE GigE-cameraconnectiviteit
 * **Minimaal/budget**: Ontwikkelaarskits met aanvullende behuizingen
 
-Neem contact op met [MAPIR
--ondersteuning](https://www.mapir.camera/community/contact) voor specifieke hardwareaanbevelingen voor uw toepassingsscenario.
+Neem contact op met [MAPIR-ondersteuning](https://www.mapir.camera/community/contact) voor specifieke hardwareaanbevelingen voor uw toepassingsscenario.
 
 ***
 
 ## Volgende stappen
 
-* [Linux
--installatie](linux-installation.md) — Algemene informatie over de installatie van Linux
+* [Linux-installatie](linux-installation.md) — Algemene informatie over de installatie van Linux
 
 * [Dynamische rekenkrachtadaptatie](../processing-architecture/dynamic-compute-adaptation.md) — Volledige referentie voor rekenkrachtstrategieën
 * [Verwerkingspijplijn](../processing-architecture/processing-pipeline.md) — Inzicht in de 4-thread-pijplijn
-* [CLI: opdrachtregel](../CLI.md) — De CLI
--handleiding
-* [API
-: Python
-SDK
-](../api-python-sdk.md) — De SDK
--handleiding
-* [Referentie CLI
-](../reference/cli-reference.md) en [Referentie SDK
-](../reference/sdk-reference.md) — Uitgebreide lijsten met commando’s en API
-’s voor versie 1.3.0
+* [CLI: opdrachtregel](../CLI.md) — De CLI-handleiding
+* [API: Python SDK](../api-python-sdk.md) — De SDK-handleiding
+* [Referentie CLI](../reference/cli-reference.md) en [Referentie SDK](../reference/sdk-reference.md) — Uitgebreide lijsten met commando’s en API’s voor versie 1.3.0

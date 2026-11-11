@@ -1,4 +1,4 @@
-# LATTICE-camera&#x27;s
+# LATTICE-camera's
 
 LATTICE is het modulaire multispectrale camerasysteem vMAPIR voor beeldvorming in de landbouw en de wetenschap. Elke LATTICE-camera is gebaseerd op de Sony IMX265 global-shutter-sensor (**3,1 MP, 3,45 µm pixels**) en maakt via Ethernet verbinding als een**GigE Vision**-apparaat.
 
@@ -37,13 +37,13 @@ Chloros geeft dit weer met het voorvoegsel `LATT-` (bijvoorbeeld `LATT-M3M-L87-F
 | --------- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | Sensor    | `M3C` / `M3M`                                            | Bayer-kleur / monochroom                                                                          |
 | Lens      | `L41` / `L87`                                            | Het getal is het **horizontale gezichtsveld in graden**: L41 = smal (41°), L87 = breed (87°)    |
-| Filter    | `FRGB` / `FRGN` / `FOCN` / `FNGB` (M3C) of `F<nm>` (M3M) | Zie [Filters &amp; spectrale banden](https://mapir.gitbook.io/lattice-camera/hardware/filters-and-bands) |
+| Filter    | `FRGB` / `FRGN` / `FOCN` / `FNGB` (M3C) of `F<nm>` (M3M) | Zie [Filters & spectrale banden](https://mapir.gitbook.io/lattice-camera/hardware/filters-and-bands) |
 
 De modelstring bepaalt alles wat daarna volgt: Chloros-bepaal het sensorprofiel, de bandindeling en de fabriekskalibratie op basis van `DeviceUserID` + `DeviceSerialNumber`. Er hoeft per camera niets te worden geconfigureerd — zie [Camera’s aansluiten](connecting.md).
 
 ## Filters en banden
 
-Bandmiddenwaarden, FWHM-randen en de volledige M3M-catalogus met 23 SKU’s zijn productspecificaties en staan daarom in de hardwarehandleiding: [**Filters &amp; spectrale banden**](https://mapir.gitbook.io/lattice-camera/hardware/filters-and-bands).
+Bandmiddenwaarden, FWHM-randen en de volledige M3M-catalogus met 23 SKU’s zijn productspecificaties en staan daarom in de hardwarehandleiding: [**Filters & spectrale banden**](https://mapir.gitbook.io/lattice-camera/hardware/filters-and-bands).
 
 Wat aan de softwarekant van belang is: de filtercode in de modelstring bepaalt welke producten Chloros kan samenstellen. RGB-filtercamera’s (`FRGB`) leveren uitsluitend debayered- en preview-producten — straling en reflectie per band zijn niet relevant voor een breedbandsensor, dus Chloros slaat deze over en vermeldt dit ook. Elk ander filter levert de volledige keten van straling → reflectie → index op.
 

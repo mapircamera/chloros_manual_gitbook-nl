@@ -51,8 +51,8 @@
 * [Het tabblad ‘DAQ’ in ‘Chloros’](daq/gui.md)
 * [Snelstartgids voor CLI (pool-\*)](daq/cli-quick-start.md)
 * [Cap-profielen en gekalibreerd bereik](daq/caps-and-range.md)
-* [Opname &amp; het .daq-formaat](daq/recording.md)
-* [DAQ-E-netwerken &amp; tijdsynchronisatie](daq/ethernet-ptp.md)
+* [Opname & het .daq-formaat](daq/recording.md)
+* [DAQ-E-netwerken & tijdsynchronisatie](daq/ethernet-ptp.md)
 * [Reflectiewerkstroom](daq/reflectance.md)
 
 ## Linux en edge computing
@@ -66,7 +66,7 @@
 * [Dynamische aanpassing van rekenkracht](processing-architecture/dynamic-compute-adaptation.md)
 * [Verwerkingspijplijn](processing-architecture/processing-pipeline.md)
 
-## Referentie (CLI &amp; SDK)
+## Referentie (CLI & SDK)
 
 * [Chloros CLI Referentie](reference/cli-reference.md)
 * [Chloros Python SDK Referentie](reference/sdk-reference.md)

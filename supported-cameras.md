@@ -6,23 +6,10 @@ metaLinks:
 
 # Ondersteunde camera’s
 
-Chloros
-verwerkt beeldmateriaal van twee MAPIR
--cameraseries op **alle platforms** (Windows
-, Linux
-amd64 en Linux
-arm64/Jetson):
+Chloros verwerkt beeldmateriaal van twee MAPIR-cameraseries op **alle platforms** (Windows, Linux amd64 en Linux arm64/Jetson):
 
-* **Survey3** — Survey3W
-- (breed) en Survey3N
-- (smal) camera’s. Invoer: `RAW+JPG`.
-* **LATTICE**— M3C- en M3M-multispectrale cameramodules. Invoer: opnames met `.tif`/`.tiff`. LATTICE-camera’s kunnen ook**live worden bediend** vanuit Chloros
-— via het tabblad ‘Camera’s’ in de GUI (Windows
-) of via `chloros-cli lattice` / de Python
-SDK
-(Windows
-en Linux
-) — inclusief gesynchroniseerde opstellingen met meerdere camera’s. Zie de [LATTICE-handleiding](lattice/).
+* **Survey3** — Survey3W- (breed) en Survey3N- (smal) camera’s. Invoer: `RAW+JPG`.
+* **LATTICE**— M3C- en M3M-multispectrale cameramodules. Invoer: opnames met `.tif`/`.tiff`. LATTICE-camera’s kunnen ook**live worden bediend** vanuit Chloros — via het tabblad ‘Camera’s’ in de GUI (Windows) of via `chloros-cli lattice` / de Python SDK (Windows en Linux) — inclusief gesynchroniseerde opstellingen met meerdere camera’s. Zie de [LATTICE-handleiding](lattice/).
 
 De verwerkingspijplijn accepteert ook `.dng`-invoerbestanden.
 
@@ -36,9 +23,7 @@ De LATTICE-serie is een modulair multispectraal camerasysteem dat is gebaseerd o
 <sensor>-<lens>-F<filter>        e.g.  M3C-L41-FRGN,  M3M-L87-F550
 ```
 
-Chloros
-
-geeft dit weer met het voorvoegsel `LATT-` (bijvoorbeeld `LATT-M3M-L41-F550`), en de modelstring stuurt alles verderop aan — sensorprofiel, bandindeling en kalibratie worden automatisch bepaald; er hoeft per camera niets te worden geconfigureerd. Het lensnummer is het **horizontale gezichtsveld in graden**: `L41` = smal 41°, `L87` = breed 87°.
+Chloros geeft dit weer met het voorvoegsel `LATT-` (bijvoorbeeld `LATT-M3M-L41-F550`), en de modelstring stuurt alles verderop aan — sensorprofiel, bandindeling en kalibratie worden automatisch bepaald; er hoeft per camera niets te worden geconfigureerd. Het lensnummer is het **horizontale gezichtsveld in graden**: `L41` = smal 41°, `L87` = breed 87°.
 
 Er zijn twee sensorconfiguraties:
 
@@ -49,52 +34,20 @@ Er zijn twee sensorconfiguraties:
 
 ### M3C (Bayer) filteropties
 
-| Filter | Banden (naam @ midden nm / FWHM
-
-nm)       |
+| Filter | Banden (naam @ midden nm / FWHM nm)       |
 | ------ | ---------------------------------------- |
-| `FRGB` | Blue
+| `FRGB` | Blue 475/30 · Green 550/30 · Red 625/30  |
+| `FRGN` | Red 660/21 · Green 550/30 · NIR 850/30   |
+| `FOCN` | Orange 618,4/46 · Cyan 494,1/40 · NIR 821,6/54 (gemeten — zie hieronder) |
+| `FNGB` | Blue 475/30 · Green 550/30 · NIR 850/30  |
 
-475/30 · Green
-
-550/30 · Red
-
-625/30  |
-| `FRGN` | Red
-
-660/21 · Green
-
-550/30 · NIR
-
-850/30   |
-| `FOCN` | Orange
-
-618,4/46 · Cyan
-
-494,1/40 · NIR
-
-821,6/54 (gemeten — zie hieronder) |
-| `FNGB` | Blue
-
-475/30 · Green
-
-550/30 · NIR
-
-850/30  |
-
-Voor `FOCN` zijn de waarden de **gemeten** halfmaximale bandbreedte van het filter (Chloros
-
-1.3.0 en later; eerdere versies gebruikten de waarden uit het specificatieblad 615/21 · 490/38 · 808/14). De bandnamen blijven `Orange_615`, `Cyan_490` en `NIR_808`, en het gemeten midden en de breedte zijn wat Chloros
-
-in elke gekalibreerde export vermeldt.
+Voor `FOCN` zijn de waarden de **gemeten** halfmaximale bandbreedte van het filter (Chloros 1.3.0 en later; eerdere versies gebruikten de waarden uit het specificatieblad 615/21 · 490/38 · 808/14). De bandnamen blijven `Orange_615`, `Cyan_490` en `NIR_808`, en het gemeten midden en de breedte zijn wat Chloros in elke gekalibreerde export vermeldt.
 
 ### M3M (mono) filtercatalogus — 23 SKU’s
 
 Het F-getal is het SKU-label; de gemeten band (die in elke gekalibreerde export wordt gestempeld) is de filterscan per partij:
 
-| SKU    | Centrum (nm, gemeten) | FWHM
-
--randen (nm) | Breedte (nm) |
+| SKU    | Centrum (nm, gemeten) | FWHM-randen (nm) | Breedte (nm) |
 | ------ | --------------------- | --------------- | ---------- |
 | F385   | 379,4                 | 367–392         | 25         |
 | F405   | 403,9                 | 390–417         | 27         |
@@ -120,14 +73,8 @@ Het F-getal is het SKU-label; de gemeten band (die in elke gekalibreerde export 
 | F950   | 945,1                 | 929–961         | 32         |
 | F988 † | 985,3                 | 968–1003        | 35         |
 
-_&quot;De bandranden worden gemeten als waarden voor de volledige breedte bij de helft van het maximum, afkomstig uit de filterscans per partij van MAPIR
+_"De bandranden worden gemeten als waarden voor de volledige breedte bij de helft van het maximum, afkomstig uit de filterscans per partij van MAPIR — dezelfde waarden die Chloros in elke gekalibreerde export vermeldt."_ "— (nominaal)" = nog geen lot-scan; voor die SKU’s is het vermelde middelpunt het SKU-nummer en is de breedte het cijfer van de fabrikant.
 
-— dezelfde waarden die Chloros
-
-in elke gekalibreerde export vermeldt.&quot;_ &quot;— (nominaal)&quot; = nog geen lot-scan; voor die SKU’s is het vermelde middelpunt het SKU-nummer en is de breedte het cijfer van de fabrikant.
-
-† &quot;De reflectantie van F988 wordt gekalibreerd met behulp van een reflectantiepaneel in de opname: de band ligt buiten het gekalibreerde bereik van de DAQ-lichtsensor, dus Chloros
-
-past uw meest recente paneelopname toe en handhaaft deze tussen de paneelmetingen door.&quot; Zie [Kalibratiedoelen](calibration-targets.md).
+† "De reflectantie van F988 wordt gekalibreerd met behulp van een reflectantiepaneel in de opname: de band ligt buiten het gekalibreerde bereik van de DAQ-lichtsensor, dus Chloros past uw meest recente paneelopname toe en handhaaft deze tussen de paneelmetingen door." Zie [Kalibratiedoelen](calibration-targets.md).
 
 Zie de [LATTICE-handleiding](lattice/) voor live camerabesturing, arrays, netwerkconfiguratie en de radiometrische verwerkingsketen.

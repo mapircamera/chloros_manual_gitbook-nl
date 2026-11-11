@@ -62,7 +62,7 @@ Chloros werkt in twee verschillende verwerkingsmodi, afhankelijk van uw licentie
 2. **Verwerking** – Kalibratie toepassen en beelden exporteren**Verwerkingstijd:**
 
 * Veel langzamer dan de parallelle modus van Chloros+
-* Geschikt voor kleine tot middelgrote datasets (&lt; 200 afbeeldingen)
+* Geschikt voor kleine tot middelgrote datasets (< 200 afbeeldingen)
 
 ### Chloros+-modus (parallelle verwerking)
 
@@ -202,7 +202,7 @@ Als u de verwerking moet stoppen:
 ### Hoe u de verwerking stopt
 
 1. Zoek de **Stop-knop**(vervangt de knop**Start** tijdens de verwerking)
-2. Klik er één keer op — de balk geeft **&quot;Stoppen...&quot;** weer terwijl de lopende afbeelding wordt voltooid
+2. Klik er één keer op — de balk geeft **"Stoppen..."** weer terwijl de lopende afbeelding wordt voltooid
 3. De verwerking eindigt in een definitieve gestopte toestand en het logboek geeft een eerlijk overzicht (`[RUN-SUMMARY]`) weer van wat is voltooid
 
 ### Wanneer stoppen
@@ -305,7 +305,7 @@ Zie [de CLI-referentie](../reference/cli-reference.md#a-run-that-writes-no-image
 **Oplossingen:**
 
 1. Bewaar projecten in een map met een kortere naam — wijzig de**werkmap** in [Projectinstellingen](../project-settings/project-settings.md) en maak het project opnieuw aan, of
-2. Schakel lange paden in Windows in en start Chloros opnieuw op: voer het Chloros-installatieprogramma opnieuw uit met het vinkje bij **Enable Windows long paths** (dit is standaard aangevinkt), of gebruik Groepsbeleid: *Computerconfiguratie &gt; Beheersjablonen &gt; Systeem &gt; Bestandssysteem &gt; Win32-lange paden inschakelen*.
+2. Schakel lange paden in Windows in en start Chloros opnieuw op: voer het Chloros-installatieprogramma opnieuw uit met het vinkje bij **Enable Windows long paths** (dit is standaard aangevinkt), of gebruik Groepsbeleid: *Computerconfiguratie > Beheersjablonen > Systeem > Bestandssysteem > Win32-lange paden inschakelen*.
 
 ### Waarschuwing „Geen doelen gedetecteerd“
 
@@ -318,7 +318,7 @@ Zie [de CLI-referentie](../reference/cli-reference.md#a-run-that-writes-no-image
 **Oplossingen:**
 
 1. Raadpleeg [Doelafbeeldingen kiezen](choosing-target-images.md)
-2. Markeer de juiste afbeeldingen in de kolom &#x27;Doel&#x27;
+2. Markeer de juiste afbeeldingen in de kolom 'Doel'
 3. Controleer of de doelen zichtbaar zijn in de gemarkeerde afbeeldingen
 4. Pas indien nodig de instellingen voor doeldetectie aan
 

@@ -32,7 +32,7 @@ De zijbalk toont, van boven naar beneden:
 * het paneel **Cursorwaarden** met de uitlezing, het histogram en de GSD-regelaar
 
 {% hint style="warning" %}
-**Niet beschikbaar voor monochrome camera’s.** Bij een LATTICE M3M-beeld met één band zijn beide selectievakjes uitgeschakeld, met de tooltip _&quot;Niet beschikbaar voor monochrome (M3M) sensoren&quot;_ — een multiband-index is niet gedefinieerd op één band. Om indexen te berekenen op basis van M3M-camera&#x27;s, combineert u twee of meer beelden tot een uitgelijnde multiband-stack en gebruikt u de LATTICE-indexengine.
+**Niet beschikbaar voor monochrome camera’s.** Bij een LATTICE M3M-beeld met één band zijn beide selectievakjes uitgeschakeld, met de tooltip _"Niet beschikbaar voor monochrome (M3M) sensoren"_ — een multiband-index is niet gedefinieerd op één band. Om indexen te berekenen op basis van M3M-camera's, combineert u twee of meer beelden tot een uitgelijnde multiband-stack en gebruikt u de LATTICE-indexengine.
 {% endhint %}
 
 ***
@@ -79,7 +79,7 @@ Een **Look-Up Table** koppelt indexwaarden aan kleuren: invoer NDVI 0,65, uitvoe
 
 ### Een LUT toevoegen
 
-1. Klik op de <img src="../.gitbook/assets/image (1) (1) (1).png" alt="" data-size="line"> **&quot;+ LUT toevoegen&quot;**-knop onder de formule
+1. Klik op de <img src="../.gitbook/assets/image (1) (1) (1).png" alt="" data-size="line"> **"+ LUT toevoegen"**-knop onder de formule
 2. Kies een kleurverloop
 3. Stel het minimum en maximum voor clipping in
 4. Kies een clippingmodus
@@ -143,14 +143,14 @@ Wanneer de indexwaarde van een pixel buiten het min/max-venster valt, bepaalt de
 
 | Label in het dropdown-menu                  | Opgeslagen waarde      | Pixels buiten het bereik worden weergegeven als                                                                                                |
 | ------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| **Minimum &amp; Maximum** (standaard) | `clip`            | De dichtstbijzijnde eindkleur van het verloop — waarden onder het minimum krijgen de eerste kleur, waarden boven het maximum krijgen de laatste |
+| **Minimum & Maximum** (standaard) | `clip`            | De dichtstbijzijnde eindkleur van het verloop — waarden onder het minimum krijgen de eerste kleur, waarden boven het maximum krijgen de laatste |
 | **Transparante achtergrond**      | `transparent`     | Volledig transparant (echte alfa)                                                                                                  |
 | **Indexachtergrond**| `indexColor`      | Grijswaarden, uitgerekt over het**volledige** indexbereik van de afbeelding, zodat structuren buiten dit bereik nog steeds in grijs zichtbaar zijn                |
 | **Originele achtergrond**         | `backgroundColor` | De onderliggende afbeelding zelf, zodat de kleuroverlay bovenop de echte scène ligt                                                |
 
 | Modus                       | Het meest geschikt voor                               | Uiterlijk                                      |
 | -------------------------- | -------------------------------------- | ----------------------------------------- |
-| **Minimum &amp; Maximum**      | Volledige gegevensweergave, wetenschappelijke analyse | Elke pixel gekleurd                      |
+| **Minimum & Maximum**      | Volledige gegevensweergave, wetenschappelijke analyse | Elke pixel gekleurd                      |
 | **Transparante achtergrond** | GIS-overlays, een waardeband isoleren   | Kleur binnen het venster, niets daarbuiten |
 | **Indexachtergrond**       | Nadruk met behoud van gegevenscontext    | Kleur binnen, grijs buiten               |
 | **Originele achtergrond**    | Rapporten en presentaties              | Kleur binnen, foto buiten         |
@@ -261,11 +261,11 @@ Squared ratio:                  (y/x)^2
 
 ## Probleemoplossing
 
-### &quot;Deze laag heeft niet de kanalen die deze index nodig heeft&quot;
+### "Deze laag heeft niet de kanalen die deze index nodig heeft"
 
 De formule leest een kanaalpositie die de huidige laag niet heeft — bijvoorbeeld een index met drie slots op een bestand met één of twee kanalen. Schakel over naar een multibandlaag (reflectantie of debayered), of kies een index die past bij het filter van je camera.
 
-### &quot;Kon de backend voor beeldverwerking niet bereiken&quot;
+### "Kon de backend voor beeldverwerking niet bereiken"
 
 De backend reageert niet. Controleer het tabblad Log; als de backend opnieuw wordt opgestart, herstelt de Sandbox zichzelf zodra deze weer beschikbaar is.
 

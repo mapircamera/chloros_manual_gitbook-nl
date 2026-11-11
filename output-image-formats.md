@@ -94,4 +94,4 @@ Reflectantie wordt opgeslagen als een digitaal geheel getal, en **het DN-getal d
 **8-bits opnames.** De exportgegevens van een 8-bits opname zijn 8-bits. De reflectantie ervan wordt opnieuw geschaald en voorzien van de tag `Chloros:PixelScale=32768`, zodat de schaal behouden blijft; 8-bits DN-producten en reflectantiebestanden die vóór versie 1.3.0 zijn geschreven, worden begrensd tot 0–255 en bevatten geen schaaltag. Als de tag ontbreekt in een LATTICE-reflectantiebestand, ga dan niet uit van een schaal; exporteer het bestand in plaats daarvan opnieuw in 16-bits of 32-bits.
 {% endhint %}
 
-Zie voor de volledige regels (inclusief de MicaSense-compatibele tags) **&quot;Reflectantiepixels lezen&quot;** in de [CLI-referentie](reference/cli-reference.md).
+Zie voor de volledige regels (inclusief de MicaSense-compatibele tags) **"Reflectantiepixels lezen"** in de [CLI-referentie](reference/cli-reference.md).

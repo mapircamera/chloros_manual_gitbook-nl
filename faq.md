@@ -9,9 +9,9 @@ metaLinks:
 
 <details>
 
-<summary>Kan ik met Chloros beelden verwerken van camera&#x27;s die niet van het merk MAPIR zijn?</summary>
+<summary>Kan ik met Chloros beelden verwerken van camera's die niet van het merk MAPIR zijn?</summary>
 
-Nee, Chloros ondersteunt alleen de verwerking van beelden van MAPIR-camera&#x27;s — de Survey3- en LATTICE-series. Raadpleeg de lijst met [ondersteunde cameramodellen](supported-cameras.md) voor meer informatie. We bieden wel verwerking van beelden van andere camera&#x27;s aan via MAPIR Cloud; zie de volledige lijst [hier](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
+Nee, Chloros ondersteunt alleen de verwerking van beelden van MAPIR-camera's — de Survey3- en LATTICE-series. Raadpleeg de lijst met [ondersteunde cameramodellen](supported-cameras.md) voor meer informatie. We bieden wel verwerking van beelden van andere camera's aan via MAPIR Cloud; zie de volledige lijst [hier](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
 
 </details>
 
@@ -27,15 +27,9 @@ Ja. Chloros 1.3.0 ondersteunt LATTICE M3C- en M3M-cameramodules van begin tot ei
 
 <summary>Kan ik mijn beelden kalibreren voor reflectantie zonder een kalibratiedoel?</summary>
 
-**Survey3
+**Survey3:** Nee. Zonder een opname van het kalibratiedoel die rond dezelfde tijd is gemaakt als de opnames zonder doel, kun je de pixelwaarden van de opname niet koppelen aan een bekend reflectantiepercentage. Als je ook geen logbestand van een MAPIR-lichtsensor toevoegt, wordt het omgevingslichtspectrum niet gemeten en zullen de reflectie-resultaten niet nauwkeurig zijn.
 
-:** Nee. Zonder een opname van het kalibratiedoel die rond dezelfde tijd is gemaakt als de opnames zonder doel, kun je de pixelwaarden van de opname niet koppelen aan een bekend reflectantiepercentage. Als je ook geen logbestand van een MAPIR
-
--lichtsensor toevoegt, wordt het omgevingslichtspectrum niet gemeten en zullen de reflectie-resultaten niet nauwkeurig zijn.
-
-**LATTICE:** Ja. De reflectie kan worden gerelateerd aan de neerwaartse stralingsintensiteit die wordt gemeten door een DAQ-lichtsensor in plaats van een paneel (ρ = π·L/E). Wanneer er *wel* een QA-goedgekeurd doel binnen het beeld aanwezig is, wordt dit standaard de absolute referentie (`--reflectance-source auto`), tenzij het met een vlag wordt goedgekeurd, in welk geval het doel en de DAQ-ketens met elkaar concurreren op basis van de gemeten score. Eén uitzondering: „De reflectie van F988 wordt gekalibreerd met behulp van een reflectiepaneel in de scène: de band ligt buiten het gekalibreerde bereik van de DAQ-lichtsensor, dus Chloros
-
-past je meest recente paneelopname toe en behoudt deze tussen paneelwaarnemingen door.” Zie [Kalibratiedoelen](calibration-targets.md).
+**LATTICE:** Ja. De reflectie kan worden gerelateerd aan de neerwaartse stralingsintensiteit die wordt gemeten door een DAQ-lichtsensor in plaats van een paneel (ρ = π·L/E). Wanneer er *wel* een QA-goedgekeurd doel binnen het beeld aanwezig is, wordt dit standaard de absolute referentie (`--reflectance-source auto`), tenzij het met een vlag wordt goedgekeurd, in welk geval het doel en de DAQ-ketens met elkaar concurreren op basis van de gemeten score. Eén uitzondering: „De reflectie van F988 wordt gekalibreerd met behulp van een reflectiepaneel in de scène: de band ligt buiten het gekalibreerde bereik van de DAQ-lichtsensor, dus Chloros past je meest recente paneelopname toe en behoudt deze tussen paneelwaarnemingen door.” Zie [Kalibratiedoelen](calibration-targets.md).
 
 </details>
 
@@ -43,9 +37,7 @@ past je meest recente paneelopname toe en behoudt deze tussen paneelwaarnemingen
 
 <summary>Heb ik een DAQ-lichtsensor nodig?</summary>
 
-Niet voor stralingsintensiteit: LATTICE-stralingsintensiteitsexporten zijn afkomstig van de radiometrische fabriekskalibratie van elke camera en vereisen noch een DAQ-sensor, noch een doel. Voor **reflectantie**heb je een referentie voor het omgevingslicht nodig — ofwel een neerwaartse meting van een DAQ-lichtsensor, ofwel een kalibratiedoel in het beeld. Met een DAQ-sensor kunt u gekalibreerde reflectie waarden genereren**zonder panelen in de opname te plaatsen**. Opgenomen `.daq`-bestanden worden automatisch aan uw beelden gekoppeld op basis van de tijdstempel. Zie [Kalibratiedoelen](calibration-targets.md) en de [CLI
-
--referentie](reference/cli-reference.md).
+Niet voor stralingsintensiteit: LATTICE-stralingsintensiteitsexporten zijn afkomstig van de radiometrische fabriekskalibratie van elke camera en vereisen noch een DAQ-sensor, noch een doel. Voor **reflectantie**heb je een referentie voor het omgevingslicht nodig — ofwel een neerwaartse meting van een DAQ-lichtsensor, ofwel een kalibratiedoel in het beeld. Met een DAQ-sensor kunt u gekalibreerde reflectie waarden genereren**zonder panelen in de opname te plaatsen**. Opgenomen `.daq`-bestanden worden automatisch aan uw beelden gekoppeld op basis van de tijdstempel. Zie [Kalibratiedoelen](calibration-targets.md) en de [CLI-referentie](reference/cli-reference.md).
 
 </details>
 
@@ -115,7 +107,7 @@ Nee. Chloros gaat ervan uit dat de invoergegevens niet zijn gewijzigd. Wijzig de
 
 <details>
 
-<summary>Kan ik mijn MAPIR Survey3-camera&#x27;s instellen op automatische belichting en de beelden verwerken in Chloros?</summary>
+<summary>Kan ik mijn MAPIR Survey3-camera's instellen op automatische belichting en de beelden verwerken in Chloros?</summary>
 
 Nee. Survey3-beelddatasets moeten een vaste/vergrendelde belichting hebben, dus geen automatische sluitertijd of automatische ISO. Alle beelden van hetzelfde cameramodel moeten een identieke sluitertijd en ISO (belichting) hebben.
 
@@ -143,9 +135,7 @@ Door in de tabel van de bestandsbrowser de doelbeelden in de rechterkolom vooraf
 
 <summary>Als ik mijn beelden naar <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud</a> wil uploaden, moet ik ze dan eerst in Chloros verwerken voordat ik ze upload?</summary>
 
-Als u van plan bent om uw beelden te uploaden naar ons online verwerkingsplatform [MAPIR
-
-Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), bewerk de beelden dan niet vóór het uploaden. Cloud voert dezelfde verwerking uit en nog veel meer.
+Als u van plan bent om uw beelden te uploaden naar ons online verwerkingsplatform [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), bewerk de beelden dan niet vóór het uploaden. Cloud voert dezelfde verwerking uit en nog veel meer.
 
 </details>
 
@@ -185,9 +175,7 @@ Ja! Chloros bevat [Dynamic Compute Adaptation](processing-architecture/dynamic-c
 
 <summary>Wat is de 4-thread verwerkingspijplijn?</summary>
 
-Chloros
-maakt gebruik van een 4-thread pipelined architectuur voor Chloros
-+-gebruikers: Thread 1 (Detectie) laadt afbeeldingen en detecteert kalibratiedoelen, Thread 2 (Kalibratie) berekent de reflectiekalibratie, Thread 3 (Verwerking) voert GPU-versnelde debayering en indexberekening uit, en Thread 4 (Exporteren) schrijft uitvoerbestanden. Meerdere afbeeldingen kunnen tegelijkertijd in verschillende threads worden verwerkt voor een maximale doorvoer. Zie [Verwerkingspijplijn](processing-architecture/processing-pipeline.md) voor meer informatie.
+Chloros maakt gebruik van een 4-thread pipelined architectuur voor Chloros+-gebruikers: Thread 1 (Detectie) laadt afbeeldingen en detecteert kalibratiedoelen, Thread 2 (Kalibratie) berekent de reflectiekalibratie, Thread 3 (Verwerking) voert GPU-versnelde debayering en indexberekening uit, en Thread 4 (Exporteren) schrijft uitvoerbestanden. Meerdere afbeeldingen kunnen tegelijkertijd in verschillende threads worden verwerkt voor een maximale doorvoer. Zie [Verwerkingspijplijn](processing-architecture/processing-pipeline.md) voor meer informatie.
 
 </details>
 

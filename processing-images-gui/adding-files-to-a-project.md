@@ -26,18 +26,18 @@ Er zijn twee belangrijke manieren om beelden aan je project toe te voegen:
 
 Gebruik deze optie om afzonderlijke beeldbestanden of een kleine selectie van bestanden te importeren.
 
-1. Klik op de knop **&quot;Bestanden toevoegen&quot;** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> bovenaan het paneel Bestandsbrowser
+1. Klik op de knop **"Bestanden toevoegen"** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> bovenaan het paneel Bestandsbrowser
 2. Navigeer naar de map waarin uw afbeeldingen staan
 3. Selecteer een of meer afbeeldingsbestanden (houd **Ctrl** ingedrukt om meerdere bestanden te selecteren)
-4. Klik op **&quot;Openen&quot;** om de geselecteerde bestanden te importeren
+4. Klik op **"Openen"** om de geselecteerde bestanden te importeren
 
 ### Methode 2: Map toevoegen
 
 Gebruik deze optie om alle afbeeldingen uit een map in één keer te importeren. U kunt **meerdere mappen** in één dialoogvenster selecteren.
 
-1. Klik op de knop **&quot;Map toevoegen&quot;** <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> bovenaan het paneel „Bestandsbrowser“
+1. Klik op de knop **"Map toevoegen"** <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> bovenaan het paneel „Bestandsbrowser“
 2. Navigeer naar de map(pen) met de afbeeldingen van uw opnamesessie en selecteer deze
-3. Klik op **&quot;Map selecteren&quot;** om alle ondersteunde afbeeldingen te importeren
+3. Klik op **"Map selecteren"** om alle ondersteunde afbeeldingen te importeren
 
 {% hint style="info" %}
 **Bestanden die niet kunnen worden geladen, worden gemeld.** Als een map bestanden bevat die Chloros herkent maar niet kan laden, krijg je een waarschuwing — afbeeldingen verdwijnen niet stilletjes uit het raster.
@@ -113,7 +113,7 @@ Als u op de schakelknop in de rechterbovenhoek boven de tabel klikt, worden de m
 Om ongewenste afbeeldingen uit je project te verwijderen:
 
 1. Selecteer een of meer afbeeldingen in de tabel van de bestandsbrowser
-2. Klik op de knop **&quot;Geselecteerde verwijderen&quot;** <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line">
+2. Klik op de knop **"Geselecteerde verwijderen"** <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line">
 3. Bevestig het verwijderen (bestanden worden niet van de schijf gewist, maar alleen uit het project verwijderd)
 
 ### Sorteren en filteren
@@ -228,7 +228,7 @@ Als bronbestanden zijn verplaatst of verwijderd sinds het project voor het laats
 Zodra je bestanden zijn geïmporteerd:
 
 1. **Controleer de bestandslijst** – Zorg ervoor dat alle afbeeldingen correct zijn geladen
-2. **Controleer de cameramodellen** – Controleer of de camera&#x27;s correct zijn gedetecteerd
+2. **Controleer de cameramodellen** – Controleer of de camera's correct zijn gedetecteerd
 3. **Markeer doelafbeeldingen** – Zie [Doelafbeeldingen kiezen](choosing-target-images.md)
 4. **Pas instellingen aan** – Configureer verwerkingsopties in [Projectinstellingen](adjusting-project-settings.md)
 5. **Start de verwerking** - Zie [De verwerking starten](starting-the-processing.md)

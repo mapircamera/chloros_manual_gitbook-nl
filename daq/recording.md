@@ -1,4 +1,4 @@
-# Opname &amp; het .daq-formaat
+# Opname & het .daq-formaat
 
 Een `.daq`-bestand is het opnameformaat voor lichtsensoren vChloros
 
@@ -12,19 +12,15 @@ Een `.daq`-bestand is het opnameformaat voor lichtsensoren vChloros
 | Bestandsnaam | Bevat de **sensor-ID**en een**tijdstempel**, bijv. `daq_data_daq-e-def330_2026_04_13_18h30m00.daq` |
 | Spectrum per frame | 135 punten, 340–1010 nm in stappen van 5 nm, plus CIE XYZ-tristimulus |
 | Eenheden | Gekalibreerde spectrale stralingsintensiteit, **W/m²/nm** (fabriekskalibratiebundel + cap-profiel toegepast) |
-| Ingeslagen metadata | Sensor-ID (de sleutel voor het ophalen van de fabriekskalibratie van dat apparaat) en het geldende kapprofiel — zie [Kapprofielen &amp; gekalibreerd bereik](caps-and-range.md) |
+| Ingeslagen metadata | Sensor-ID (de sleutel voor het ophalen van de fabriekskalibratie van dat apparaat) en het geldende kapprofiel — zie [Kapprofielen & gekalibreerd bereik](caps-and-range.md) |
 
 Het formaat is identiek voor DAQ-U, DAQ-M, DAQ-E en DAQ-E-S, dus voor verdere verwerking maakt het niet uit welk transportapparaat de gegevens heeft geregistreerd. Een DAQ-E-S-opname slaat naast elk spectrum ook de kantel-, rol- en pitchhoek van het apparaat op.
 
-**Opnames blijven behouden bij een stroomstoring (1.3.0).**Een live-opname wordt bij elke commit weggeschreven met een logboek en een volledige schijfsynchronisatie, zodat bij een stroomstoring of een afgebroken proces slechts de laatste 3 seconden verloren gaan, niet het bestand zelf. Een opname die halverwege het schrijven is gestopt, kan naast het bestand `.daq` een bestand `<name>.daq-journal` achterlaten:**bewaar en kopieer beide bestanden samen.** Chloros
-
-zet het journaal terug naar de eerste keer dat het bestand wordt gelezen. Een bezette schijf vertraagt het bestand, nooit de meetwaarden van de sensor.
+**Opnames blijven behouden bij een stroomstoring (1.3.0).**Een live-opname wordt bij elke commit weggeschreven met een logboek en een volledige schijfsynchronisatie, zodat bij een stroomstoring of een afgebroken proces slechts de laatste 3 seconden verloren gaan, niet het bestand zelf. Een opname die halverwege het schrijven is gestopt, kan naast het bestand `.daq` een bestand `<name>.daq-journal` achterlaten:**bewaar en kopieer beide bestanden samen.** Chloros zet het journaal terug naar de eerste keer dat het bestand wordt gelezen. Een bezette schijf vertraagt het bestand, nooit de meetwaarden van de sensor.
 
 **Een DAQ-E die geen gegevens meer levert, wordt opnieuw aangesloten (1.3.0).** Wanneer de stream van een DAQ-E stilvalt (de schakelaar is uit- en weer ingeschakeld, een verbinding is verbroken), maakt de backend opnieuw verbinding met de instellingen die hij had, en wordt een opname daarop voortgezet in hetzelfde `.daq`-bestand, waarbij het gat in het bestand wordt gemarkeerd.
 
-Voor gekalibreerde opnames is de fabriekskalibratiebundel van de sensor vereist. Voor DAQ-U en DAQ-M haalt de backend de bundel op uit de cloud van MAPIR
-
-op basis van de sensor-ID (de opname wordt geweigerd als dit niet lukt); DAQ-E-units zijn hiervan vrijgesteld omdat zij hun kalibratie op het apparaat zelf bewaren.
+Voor gekalibreerde opnames is de fabriekskalibratiebundel van de sensor vereist. Voor DAQ-U en DAQ-M haalt de backend de bundel op uit de cloud van MAPIR op basis van de sensor-ID (de opname wordt geweigerd als dit niet lukt); DAQ-E-units zijn hiervan vrijgesteld omdat zij hun kalibratie op het apparaat zelf bewaren.
 
 ## Opnemen via de GUI
 
@@ -45,11 +41,7 @@ Bestanden worden opgeslagen in `<project>/light_sensor/`, en wanneer een opname 
 
 
 
-De CLI
-
-neemt op via de sensorpool van de backend (de backend moet actief zijn — deze commando’s zijn ‘dunne’ HTTP
-
--clients):
+De CLI neemt op via de sensorpool van de backend (de backend moet actief zijn — deze commando’s zijn ‘dunne’ HTTP-clients):
 
 ```bash
 # Connect the sensor into the backend pool
@@ -69,41 +61,23 @@ Haal de waarde van `--sensor-id` op uit `chloros-cli daq pool-list`. Twee standa
 | Optie | Standaard |
 | --- | --- |
 | `--duration` | `0` — opnemen tot `pool-record --stop` |
-| `--output` / `-o` | `~/Documents/DAQ Live View/` op het bestandssysteem van de **backend**, niet dat van de CLI
+| `--output` / `-o` | `~/Documents/DAQ Live View/` op het bestandssysteem van de **backend**, niet dat van de CLI |
 
-|
-
-Het onderscheid tussen de uitvoermappen is van belang wanneer de CLI
-
--opdracht gericht is op een backend op een andere machine: het bestand komt terecht op de plek waar de backend draait. Als de backend zich op dezelfde computer bevindt, wordt een relatief `-o` (zoals `./out` hierboven) omgezet naar de map waarin je het commando hebt uitgevoerd.
+Het onderscheid tussen de uitvoermappen is van belang wanneer de CLI-opdracht gericht is op een backend op een andere machine: het bestand komt terecht op de plek waar de backend draait. Als de backend zich op dezelfde computer bevindt, wordt een relatief `-o` (zoals `./out` hierboven) omgezet naar de map waarin je het commando hebt uitgevoerd.
 
 ## Opname vanuit Python
 
-`DAQSensorSession` (geretourneerd door `chloros_sdk.connect_daq_sensor()`) toont dezelfde samengevoegde opname: `record_start(output_dir=None, device_name=None)` retourneert het bestandspad, `record_stop()` retourneert `{path, rows}`. Raadpleeg de [SDK
-
--referentie](../reference/sdk-reference.md) voor de volledige sessie-API
-
-. De direct-hardware-klassen van de SDK
-
-(alleen bij desktopinstallaties) schrijven opnames standaard naar `~/Documents/DAQ/`; voor vrijgegeven builds is het bovenstaande samengevoegde pad de ondersteunde methode.
+`DAQSensorSession` (geretourneerd door `chloros_sdk.connect_daq_sensor()`) toont dezelfde samengevoegde opname: `record_start(output_dir=None, device_name=None)` retourneert het bestandspad, `record_stop()` retourneert `{path, rows}`. Raadpleeg de [SDK-referentie](../reference/sdk-reference.md) voor de volledige sessie-API. De direct-hardware-klassen van de SDK (alleen bij desktopinstallaties) schrijven opnames standaard naar `~/Documents/DAQ/`; voor vrijgegeven builds is het bovenstaande samengevoegde pad de ondersteunde methode.
 
 ## Een .daq-bestand gebruiken tijdens de verwerking
 
-Om reflectantie uit beeldmateriaal te genereren, heeft Chloros
-
-de neerwaartse stralingsintensiteit nodig die is afgestemd op elke belichting:
+Om reflectantie uit beeldmateriaal te genereren, heeft Chloros de neerwaartse stralingsintensiteit nodig die is afgestemd op elke belichting:
 
 * **Bewaar het `.daq`-bestand samen met het beeldmateriaal.**Tijdens de verwerking bepaalt de pijplijn automatisch de**naar tijdstempel afgestemde neerwaartse straling** op basis van een opgenomen `.daq` (elk DAQ-model) — of op basis van een native `.csv` van DAQ-M — die naast de beelden wordt aangetroffen. GUI-opnames voldoen hier automatisch aan, aangezien ze direct na het stoppen aan het project worden toegevoegd.
-* **Kalibratie wordt op verzoek opgehaald.** Als een fabriekskalibratiebundel per camera of per DAQ nog niet lokaal in de cache is opgeslagen, haalt Chloros
-
-deze bij het eerste gebruik automatisch op uit de cloud van MAPIR
-
-(eenmalig internetverbinding vereist; opgeslagen in de cache onder `~/.chloros/`).
+* **Kalibratie wordt op verzoek opgehaald.** Als een fabriekskalibratiebundel per camera of per DAQ nog niet lokaal in de cache is opgeslagen, haalt Chloros deze bij het eerste gebruik automatisch op uit de cloud van MAPIR (eenmalig internetverbinding vereist; opgeslagen in de cache onder `~/.chloros/`).
 * **Live-opnames schrijven hun eigen sidecar.** Voor elk live vastgelegd reflectiebeeld wordt de daadwerkelijk gebruikte DAQ-meting opgeslagen als een `.daq`-bestand in de map `daq/` van de opname, zodat de opname later opnieuw kan worden verwerkt zonder de oorspronkelijke opname.
-* **Opnames van de `chloros_scripts`-recorders (1.3.0).**Een `.daq`-bestand dat is geschreven door de openbare [`chloros_scripts`](https://github.com/mapircamera/chloros_scripts)-recorders wordt vermeld als het DAQ-model dat het heeft gemaakt, en de limiet ervan kan worden ingesteld in**Projectinstellingen → DAQ-lichtsensor**, net als bij elke andere opname. Deze recorders schrijven ruwe sensortellingen op; Chloros
-
-haalt de fabriekskalibratie van de sensor op via de seriële poort en past deze toe.
-* **Van wie de meting is (1.3.0).**Naast elke opname `.daq` staat een `.daq.cameras.json` die de camera(&#x27;s) benoemt waarvan de beelden bij die meting horen, en de verwerking koppelt deze**uitsluitend aan beelden van die camera&#x27;s**. Een stand-alone camera zonder eigen lichtsensor leent daarom niet langer de meetwaarde van een andere camera — koppel er een sensor aan, of neem er zelf een op. Een opname die met de DAQ zelf is gemaakt (GUI Record, `daq pool-record`), en elke `.daq` zonder dat bestand (inclusief oudere opnames), is nog steeds bruikbaar voor elke camera.
+* **Opnames van de `chloros_scripts`-recorders (1.3.0).**Een `.daq`-bestand dat is geschreven door de openbare [`chloros_scripts`](https://github.com/mapircamera/chloros_scripts)-recorders wordt vermeld als het DAQ-model dat het heeft gemaakt, en de limiet ervan kan worden ingesteld in**Projectinstellingen → DAQ-lichtsensor**, net als bij elke andere opname. Deze recorders schrijven ruwe sensortellingen op; Chloros haalt de fabriekskalibratie van de sensor op via de seriële poort en past deze toe.
+* **Van wie de meting is (1.3.0).**Naast elke opname `.daq` staat een `.daq.cameras.json` die de camera('s) benoemt waarvan de beelden bij die meting horen, en de verwerking koppelt deze**uitsluitend aan beelden van die camera's**. Een stand-alone camera zonder eigen lichtsensor leent daarom niet langer de meetwaarde van een andere camera — koppel er een sensor aan, of neem er zelf een op. Een opname die met de DAQ zelf is gemaakt (GUI Record, `daq pool-record`), en elke `.daq` zonder dat bestand (inclusief oudere opnames), is nog steeds bruikbaar voor elke camera.
 
 ## De stralingsintensiteit terughalen
 
@@ -111,9 +85,7 @@ Bij het verwerken van een project worden ook alle lichtsensoropnames die het bev
 `Light Sensor/`-map naast de beeldproducten. Hiervoor zijn **geen** beelden nodig: een
 op zichzelf opgenomen lichtsensor is een volledige opname, en een map die alleen `.daq`-bestanden bevat,
 is een geldige invoer. Een project dat alleen lichtsensoropnames bevat, geeft deze weer in een lijst en
-verwerkt ze zowel vanuit de app als via de CLI
-
-, en ze blijven na de run in de lijst staan. De run
+verwerkt ze zowel vanuit de app als via de CLI, en ze blijven na de run in de lijst staan. De run
 geeft aan hoeveel lichtsensorproducten er zijn opgeslagen.
 
 | Product | Wat het is |
@@ -132,9 +104,7 @@ er lokaal niets in de cache is opgeslagen.
 De **DAQ-A** dateert van vóór het systeem met kalibratiebundels per seriële poort en heeft geen bundel om
 op te halen. Dat is geen vergissing: een DAQ-A wordt in het veld gekalibreerd aan de hand van een
 reflectiedoel, en bij kalibratie op basis van een doel is alleen de *relatieve*
-respons van de sensor nodig — en dat is precies wat de ruwe tellingen zijn. Chloros
-
-kalibreert er tegenwoordig mee.
+respons van de sensor nodig — en dat is precies wat de ruwe tellingen zijn. Chloros kalibreert er tegenwoordig mee.
 
 Een DAQ-A-opname kan dus wel worden geëxporteerd, maar onder een andere naam:
 
@@ -153,12 +123,8 @@ betekenis hebben voor werkelijke stralingsintensiteit — totaal vermogen, lux, 
 berekend op basis van tellingen.
 
 Oudere DAQ-A-SD-opnames (schema v1.01 / v1.02) registreren alleen de schrijftijd van het bestand, geen
-tijdstempel per meting. Chloros
-
-zal beelden niet aan die waarden koppelen — het koppelen van een frame aan een
+tijdstempel per meting. Chloros zal beelden niet aan die waarden koppelen — het koppelen van een frame aan een
 schrijftijd zou onjuist zijn, zonder dat het er op het eerste gezicht verkeerd uitziet — maar de export leest ze prima en
-in het CSV
-
--bestand staat vermeld op welke klok het is gebaseerd.
+in het CSV-bestand staat vermeld op welke klok het is gebaseerd.
 
 Voor het volledige verhaal over reflectantie — enkele sensor met een camera, en dubbele sensor voor omgeving/object — zie [Reflectantie-workflows](reflectance.md).

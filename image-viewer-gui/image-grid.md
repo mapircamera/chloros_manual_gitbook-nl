@@ -24,9 +24,7 @@ Wanneer het venster te smal is voor alle knoppen, worden de groepen van rechts n
 
 ## Knoppen voor exporteren en bekijken
 
-Deze knoppen schakelen tussen de verschillende afbeeldingstypen in het raster met miniaturen. **Er verschijnt een knop zodra het product waarnaar de knop verwijst, bestaat** — wat voor de bronbestanden betekent: direct bij het importeren, niet pas na de verwerking.Chloros
-
-scant de producten van het project opnieuw terwijl een run bezig is, dus knoppen verschijnen tijdens de verwerking zodra elk product op de schijf wordt opgeslagen.
+Deze knoppen schakelen tussen de verschillende afbeeldingstypen in het raster met miniaturen. **Er verschijnt een knop zodra het product waarnaar de knop verwijst, bestaat** — wat voor de bronbestanden betekent: direct bij het importeren, niet pas na de verwerking.Chloros scant de producten van het project opnieuw terwijl een run bezig is, dus knoppen verschijnen tijdens de verwerking zodra elk product op de schijf wordt opgeslagen.
 
 ### De basisknop
 
@@ -34,9 +32,7 @@ De meest linkse exportknop is gelabeld voor **wat je daadwerkelijk hebt geïmpor
 
 | Wat je hebt geïmporteerd | Knoplabel |
 | --- | --- |
-|Survey3
-
-RAW+JPG | `JPG` |
+|Survey3 RAW+JPG | `JPG` |
 | LATTICE-opnames met een weergavevoorbeeld naast het RAW-frame | `PNG` of `TIFF`, afhankelijk van welke voorbeelden er zijn |
 | LATTICE-opnames waarbij het basisbestand **het**RAW-beeld**is** | *geen knop* — `RAW (Original)` toont dat bestand al |
 
@@ -50,9 +46,7 @@ In een gemengd project volgt het label de extensie die door de meeste afbeelding
 | **Reflectantie** | Gekalibreerde reflectantiebeelden | Alleen bijSurvey3
 
 -projecten — LATTICE-projecten gebruiken in plaats daarvan `RAW (Reflectance)`, dus het raster toont nooit twee reflectantieknoppen |
-| **Witgebalanceerd** | Het witgebalanceerde resultaat (camera’s vanRGB
-
-) | Na verwerking |
+| **Witgebalanceerd** | Het witgebalanceerde resultaat (camera’s vanRGB) | Na verwerking |
 | **Vignetcorrectie** | De niet-gekalibreerde fallback met vignetcorrectie | Na een run waarbij reflectantiekalibratie niet kon worden toegepast en *Vignetcorrectie* was ingeschakeld |
 | **Sensorrespons** | De niet-gekalibreerde fallback voor sensorrespons | Hetzelfde, maar met *Vignetcorrectie* uitgeschakeld |
 | **`RAW (<INDEX> Index)`** | Eén knop per berekende index | Na een run met geconfigureerde indexen |
@@ -71,19 +65,15 @@ Projecten die LATTICE-opnames bevatten, voegen deze toe, gelabeld met de naam va
 
 `RAW (Original)` is direct na het importeren beschikbaar — er is geen verwerking nodig. Wanneer een LATTICE-import helemaal geen basisknop heeft (het basisbestand van elke opname is het raw-frame), verschuift het raster automatisch naar de eerste beschikbare niveauknop, zodat de markering in de werkbalk overeenkomt met wat u ziet.
 
-Twee niveaus-Chloros
-
--exports krijgen **geen eigen rasterknop**:
+Twee niveaus-Chloros-exports krijgen **geen eigen rasterknop**:
 
 * **Debayered** — de `RAW (Original)`-weergave wordt al debayered weergegeven, dus een tweede knop op een visueel identieke afbeelding zou overbodig zijn. Het `RAW (Debayered)`-product wordt nog steeds naar de schijf geschreven en is nog steeds selecteerbaar via de vervolgkeuzelijst voor lagen op volledig scherm.
 * **Voorbeeld** — opRGB
 
--camera’s wordt het voorbeeld geregistreerd als de `White Balanced`-laag, die wel een knop heeft. Op multispectrale camera&#x27;s wordt het geregistreerd als `RAW (Preview)` en is het bereikbaar via het dropdown-menu voor lagen op volledig scherm.
+-camera’s wordt het voorbeeld geregistreerd als de `White Balanced`-laag, die wel een knop heeft. Op multispectrale camera's wordt het geregistreerd als `RAW (Preview)` en is het bereikbaar via het dropdown-menu voor lagen op volledig scherm.
 
 {% hint style="info" %}
-Deze niveauknoppen worden alleen weergegeven voor projecten die daadwerkelijk LATTICE-frames bevatten.Survey3
-
--projecten registreren een aantal van dezelfde interne laag-namen, en de knoppen worden daarvoor weggefilterd, zodat eenSurvey3
+Deze niveauknoppen worden alleen weergegeven voor projecten die daadwerkelijk LATTICE-frames bevatten.Survey3-projecten registreren een aantal van dezelfde interne laag-namen, en de knoppen worden daarvoor weggefilterd, zodat eenSurvey3
 
 -raster zijn vertrouwde `JPG / Targets / Reflectance`-set behoudt.
 {% endhint %}
