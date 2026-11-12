@@ -81,7 +81,9 @@ Tel niet volgens een formule — het aantal uitvoerbestanden hangt af van welke 
 
 ### Voorbeeld bekijken in externe afbeeldingsviewers
 
-**Aanbevolen viewers:*** **QGIS** - Gratis GIS-software (het meest geschikt voor georefereerde multispectrale analyse)
+**Aanbevolen viewers:**
+
+* **QGIS** - Gratis GIS-software (het meest geschikt voor georefereerde multispectrale analyse)
 * **IrfanView** – Snelle, lichtgewicht afbeeldingsviewer (ondersteunt TIFF)
 * **Adobe Photoshop** – Professionele bewerking (ondersteunt TIFF)
 * **GIMP** – Gratis alternatief voor Photoshop
@@ -222,7 +224,9 @@ Om een probleem rechtstreeks naar MAPIR te sturen, gebruik je het bugpictogram (
 
 ### Probleem: NDVI-waarden lijken onjuist
 
-**Verwachte NDVI-bereiken:*** **Water, rotsen, grond**: -0,1 tot 0,2
+**Verwachte NDVI-bereiken:**
+
+* **Water, rotsen, grond**: -0,1 tot 0,2
 * **Schaarse/ongezonde vegetatie**: 0,2 tot 0,4
 * **Matige vegetatie**: 0,4 tot 0,6
 * **Gezonde, dichte vegetatie**: 0,6 tot 0,9**Als de waarden buiten deze bereiken vallen:**
@@ -276,12 +280,18 @@ Om een probleem rechtstreeks naar MAPIR te sturen, gebruik je het bugpictogram (
 
 ### Aanbevolen back-upstrategie
 
-**Wat moet je opslaan:*** ✅ **Originele RAW/JPG-afbeeldingen of LATTICE-raw-opnames** – Archiveer op een aparte schijf/in de cloud; raw is de bron van de verwerkingspijplijn en al het andere kan hieruit opnieuw worden gegenereerd
+**Wat moet je opslaan:**
+
+* ✅ **Originele RAW/JPG-afbeeldingen of LATTICE-raw-opnames** – Archiveer op een aparte schijf/in de cloud; raw is de bron van de verwerkingspijplijn en al het andere kan hieruit opnieuw worden gegenereerd
 * ✅ **`.daq` / `.csv`-bestanden van de lichtsensor** – Nodig om later de reflectie opnieuw te berekenen
 * ✅ **Verwerkte resultaten** – Bewaar gekalibreerde beelden en indices
 * ✅ **Projectmap** (`project.json` en bijbehorende bestanden) - Bevat alle instellingen voor herverwerking indien nodig
 * ✅ **Debuglog** - Documenteert verwerkingsdetails
-* ✅ **Kalibratiedoelafbeeldingen** - Voor verificatie en herverwerking**Aanbevelingen voor opslag:*** **Onmiddellijke back-up**: Externe harde schijf
+* ✅ **Kalibratiedoelafbeeldingen** - Voor verificatie en herverwerking
+
+**Aanbevelingen voor opslag:**
+
+* **Onmiddellijke back-up**: Externe harde schijf
 * **Langetermijnarchief**: Cloudopslag (Google Drive, Dropbox, enz.)
 * **Kritieke gegevens**: Bewaar 2-3 kopieën op verschillende locaties***
 

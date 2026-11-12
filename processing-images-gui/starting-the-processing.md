@@ -78,7 +78,11 @@ Chloros werkt in twee verschillende verwerkingsmodi, afhankelijk van uw licentie
 1. **Detecteren** (Thread 1) – Kalibratiedoelen zoeken
 2. **Analyseren** (thread 2) – Beeldmetadata onderzoeken en kalibratie berekenen
 3. **Kalibreren** (thread 3) – Debayering, vignetteringscorrectie, kalibratie, indexberekening
-4. **Exporteren** (thread 4) – Bewerkte afbeeldingen en indexen opslaan**Interactie met de voortgangsbalk:*** **Beweeg de muis** over de balk om het gedetailleerde dropdown-paneel met de 4 fasen te zien
+4. **Exporteren** (thread 4) – Bewerkte afbeeldingen en indexen opslaan
+
+**Interactie met de voortgangsbalk:**
+
+* **Beweeg de muis** over de balk om het gedetailleerde dropdown-paneel met de 4 fasen te zien
 * **Klik** op de voortgangsbalk om het dropdown-paneel vast te zetten
 * **Klik nogmaals** om het paneel weer vrij te geven en te verbergen**Verwerkingstijd:**
 
@@ -116,7 +120,9 @@ Chloros werkt in twee verschillende verwerkingsmodi, afhankelijk van uw licentie
 
 ### Fase 3: Kalibratie
 
-**Wat Chloros doet:*** **Vignetteringscorrectie**: Verwijdert lensverduistering aan de randen
+**Wat Chloros doet:**
+
+* **Vignetteringscorrectie**: Verwijdert lensverduistering aan de randen
 * **Reflectanciekalibratie**: Normaliseert aan de hand van doelreflectantiewaarden en/of DAQ-downwellinggegevens
 * Past correcties toe op alle banden/kanalen
 * Gebruikt voor elke afbeelding de juiste kalibratierferentie op basis van de tijdstempel

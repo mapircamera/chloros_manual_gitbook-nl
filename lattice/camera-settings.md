@@ -232,7 +232,7 @@ Deze zijn alleen voor de frontend — ze worden over de video heen getekend en r
 ### Spotmeter
 
 * Vinkvakje **Klik om te meten**: klik op het livebeeld om één pixel te meten (een dradenkruis markeert deze), of klik en sleep over een gebied voor een pixelgemiddelde.**Wissen**verwijdert de meting en het dradenkruis. Sluit de**Aim**-modus van AE-ROI uit.
-* ****Weergeven**-keuzelijst:**Raw (bitdiepte)**— native digitale waarden met de bitdiepte van de sensor (bijv. 12-bit → 0..4095) — of**Weergave (8-bit)**(standaard). Wanneer een live-index actief is, toont**Display** in plaats daarvan de berekende indexwaarde (bijv. NDVI).
+* **Weergeven** -keuzelijst:**Raw (bitdiepte)**— native digitale waarden met de bitdiepte van de sensor (bijv. 12-bit → 0..4095) — of**Weergave (8-bit)**(standaard). Wanneer een live-index actief is, toont**Display** in plaats daarvan de berekende indexwaarde (bijv. NDVI).
 * Het uitleespaneel geeft pixelcoördinaten, framegrootte, pixelformaat, bitdiepte en een kanaaltabel (Chan / Waarde / %) weer met bandlabels en golflengten; Bayer-groene paren worden gemiddeld; regio-monsters tonen „N px avg“.
 
 De status van de spotmeter geldt alleen voor de huidige sessie.
@@ -356,7 +356,7 @@ Chloros lijnt elke array automatisch uit na het verbinden, in beide weergavemodi
 ### Slimme vignettering
 
 * Selectievakje **Correctie inschakelen**— past de per camera geschatte vignettering toe op de radiometrische keten (live**en** exporten).
-* ****Kalibreren vanuit huidige weergave**— richt de array eerst op een uniform doel (vlak scherm, muur of lucht); elke camera wordt afzonderlijk geflatteerd en de status geeft "n/N cams · −x,x %" vlakheidswinst weer. Met**Wissen** wordt de schatting verwijderd.
+* **Kalibreren vanuit huidige weergave** — richt de array eerst op een uniform doel (vlak scherm, muur of lucht); elke camera wordt afzonderlijk geflatteerd en de status geeft "n/N cams · −x,x %" vlakheidswinst weer. Met**Wissen** wordt de schatting verwijderd.
 * Status: „Gekalibreerd”, „Niet gekalibreerd” of „Gedeeltelijk gekalibreerd — opnieuw uitvoeren” wanneer alleen de schattingen van sommige camera’s nog van toepassing zijn bij hun huidige kadrering (bijvoorbeeld nadat een „Opnieuw kalibreren” het uitsnijdvenster van een camera heeft verplaatst) — voer „Kalibreren” opnieuw uit.
 * Fijnafstemming per camera met de **Vignette**-schuifregelaar per camera in [Live Preview](#live-preview).
 
@@ -379,7 +379,7 @@ Een alleen-lezen paneel dat elke 5 s wordt vernieuwd:
 
 * **Niveau-label**: "Gelijktijdige opname" (groen) · "Gelijktijdige opname (FTD-versprongen uitsturing)" (groen) · "Versprongen opname (100 ms drift)" (oranje) · "Configuratie te groot" (rood).
 * **Frame-status**: "x,xx % onvolledig" — groen bij minder dan 1 %, oranje bij minder dan 5 %, rood bij 5 % of meer.
-* ****Linklijn**: „NIC {mbps} Mbps – sustained {MB/s} MB/s“.
+* **Linklijn**: „NIC {mbps} Mbps – sustained {MB/s} MB/s“.
 
 Dit is het live bandbreedtebudget van de array. Zie [Multi-Camera Arrays](arrays.md) en de [CLI-referentie](../reference/cli-reference.md) voor het onderliggende fps- en netwerkmodel — en wat u moet wijzigen wanneer het niveau oranje of rood wordt.
 
@@ -405,7 +405,7 @@ Beknopte overzicht van wat waar staat wanneer een camera deel uitmaakt van een a
 Overkoepelend gedrag:
 
 * **Gecombineerde versus afzonderlijke weergave** wordt gekozen bij het koppelen van de array: gecombineerd = één uitgelijnde samengestelde tegel (leden sturen alleen beelden via Split View); afzonderlijk = elk lid geeft zijn eigen gesynchroniseerde tegel weer. Een camera toont nooit zowel een afzonderlijke feed als een array-tegel.
-* ****Automatisch opnieuw verbinden**: bij het openen van een opgeslagen project worden de camera’s en arrays hersteld en worden alle opgeslagen instellingen opnieuw toegepast op de backend voordat de streams worden hervat.
+* **Automatisch opnieuw verbinden**: bij het openen van een opgeslagen project worden de camera’s en arrays hersteld en worden alle opgeslagen instellingen opnieuw toegepast op de backend voordat de streams worden hervat.
 * **Capture-gating**: verborgen of gepauzeerde camera’s worden uitgesloten van ‘Capture All’; een array wordt pas volledig geblokkeerd wanneer ALLE leden verborgen of gepauzeerd zijn. Zie [Opname-instellingen en -modi](capture.md).
 
 ## Hoe instellingen worden bewaard

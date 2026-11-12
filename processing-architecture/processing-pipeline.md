@@ -45,7 +45,11 @@ Een CPU-gebonden rekenthread. Bij een Survey3- of gemengde run wacht Thread 3 hi
 
 ### Thread 3: Verwerking (GPU)
 
-**Doel**: Correcties toepassen en vegetatie-indexen berekenen.**Dit is de meest rekenintensieve thread.*** **Debayering**: zet RAW-Bayer-gegevens om in meerkanaalsbeelden
+**Doel**: Correcties toepassen en vegetatie-indexen berekenen.
+
+**Dit is de meest rekenintensieve thread.**
+
+* **Debayering**: zet RAW-Bayer-gegevens om in meerkanaalsbeelden
   * Standaard (snel, gemiddelde kwaliteit) — standaard, `--debayer standard`
   * Textuurbewust (langzaam, hoogste kwaliteit) — alleen Chloros+, `--debayer texture-aware`, maakt gebruik van een AI/ML-ruisonderdrukkingsmodel
   * LATTICE mono (M3M)-opnames zijn enkelbandig: de demosaïc- en witbalansstappen worden hiervoor overgeslagen (met een logbericht van één regel), terwijl alle M3C/Bayer-beelden in dezelfde run deze stappen wel ondergaan

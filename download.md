@@ -253,10 +253,15 @@ Chloros controleert op updates, geeft aan wanneer er een nieuwe versie beschikba
 
 **Releasedatum: 10 februari 2026**
 
-**Nieuwe functies*** **Texture Aware-debayer-methode \[Alleen Chloros+] -** Texture Aware maakt gebruik van een hoogwaardige, randgevoelige debayer in combinatie met een AI/ML-ruisonderdrukkingsmodel dat vrijwel alle debayer-ruis verwijdert.
-* **Ondersteuning voor T4P-kalibratiedoelen*** **Snellere Chloros+ GPU-verwerking, beter geheugenbeheer**
+**Nieuwe functies**
 
-**Bugfixes*** Volledig nieuwe frontend (GUI), zou nu op alle Windows-computers moeten werken.
+* **Texture Aware-debayer-methode \[Alleen Chloros+] -** Texture Aware maakt gebruik van een hoogwaardige, randgevoelige debayer in combinatie met een AI/ML-ruisonderdrukkingsmodel dat vrijwel alle debayer-ruis verwijdert.
+* **Ondersteuning voor T4P-kalibratiedoelen**
+* **Snellere Chloros+ GPU-verwerking, beter geheugenbeheer**
+
+**Bugfixes**
+
+* Volledig nieuwe frontend (GUI), zou nu op alle Windows-computers moeten werken.
 
 </details>
 
@@ -266,14 +271,18 @@ Chloros controleert op updates, geeft aan wanneer er een nieuwe versie beschikba
 
 **Releasedatum: 5 januari 2026**
 
-**Nieuwe functies*** **Schakelaar voor afbeelding/metadata**: Schakelaar toegevoegd in de bestandsbrowser om de metadata van de geselecteerde afbeelding in een tabel te bekijken in plaats van in het afbeeldingsraster
+**Nieuwe functies**
+
+* **Schakelaar voor afbeelding/metadata**: Schakelaar toegevoegd in de bestandsbrowser om de metadata van de geselecteerde afbeelding in een tabel te bekijken in plaats van in het afbeeldingsraster
 * **Zoomschuifregelaar voor afbeeldingsraster**: Nieuwe UI-schuifregelaar om de grootte van de miniaturen aan te passen (ondersteunt ook CTRL + muiswiel)
 * **Knoppen voor het exporteren van het afbeeldingsraster**: Knoppen in de bovenste rij om miniaturen om te schakelen van JPG naar bewerkte exportformaten (Targets, Reflectance, Index, LUT)
 * **Tabblad Kaart**: Nieuwe interactieve 2D-kaart met GPS-locatiemarkeringen voor afbeeldingen
   * Ondersteunt Google Maps en ESRI-kaarttegels (selecteert automatisch de beste tegeldienst op basis van de beschikbaarheid per zoomniveau)
   * Voorbeeld van miniatuur bij muisaanwijzer op kaartmarkeringen
 
-**Bugfixes*** Verbeterde ondersteuning voor het installeren van Chloros op computers met een andere taal dan Engels
+**Bugfixes**
+
+* Verbeterde ondersteuning voor het installeren van Chloros op computers met een andere taal dan Engels
 
 </details>
 
@@ -283,13 +292,21 @@ Chloros controleert op updates, geeft aan wanneer er een nieuwe versie beschikba
 
 **Releasedatum: 20 december 2025**
 
-**Nieuwe functies*** Eerste release
+**Nieuwe functies**
 
-**Verbeteringen*** Eerste release
+* Eerste release
 
-**Bugfixes*** Eerste release
+**Verbeteringen**
 
-**Bekende problemen*** Eerste release
+* Eerste release
+
+**Bugfixes**
+
+* Eerste release
+
+**Bekende problemen**
+
+* Eerste release
 
 </details>
 

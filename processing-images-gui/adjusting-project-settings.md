@@ -44,7 +44,9 @@ Het paneel Projectinstellingen is onderverdeeld in de onderstaande secties. Twee
 
 Bepaalt hoe Chloros-kalibratiedoelen in uw afbeeldingen identificeert.
 
-**Belangrijkste instellingen:*** **Minimaal kalibratiemonstergebied (px)**: Drempelwaarde voor doeldetectie (standaard:**25**, bereik 0–10000)
+**Belangrijkste instellingen:**
+
+* **Minimaal kalibratiemonstergebied (px)**: Drempelwaarde voor doeldetectie (standaard:**25**, bereik 0–10000)
 * **Minimale doelclustering (0–100)**: Drempelwaarde voor de gelijkenis bij het groeperen van doelgebieden (standaard:**60**)**Wanneer aanpassen:**
 
 * Vergroot het steekproefgebied als er valse detecties optreden
@@ -59,7 +61,9 @@ Deze instellingen zijn grijs weergegeven wanneer **Reflectanciekalibratie / witb
 
 Belangrijkste opties voor beeldverwerking en kalibratie.
 
-**Belangrijkste instellingen:*** **Vignetteringscorrectie**: Compenseert lensverduistering aan de randen ✅ Aanbevolen
+**Belangrijkste instellingen:**
+
+* **Vignetteringscorrectie**: Compenseert lensverduistering aan de randen ✅ Aanbevolen
 * **Reflectankalibratie / witbalans**: Kalibreert beelden met behulp van gedetecteerde doelen (Survey3) en/of DAQ-lichtsensorgegevens (LATTICE) ✅ Aanbevolen
 * **Debayer-methode**: Algoritme voor het omzetten van RAW naar 3-kanaals multispectraal
 * **Minimaal herkalibratie-interval**: Minimale tijd in seconden tussen het gebruik van kalibratiedoelen (standaard:**0** = alles gebruiken, bereik 0–3600)**Niet-gekalibreerde alternatieve producten:**Wanneer een frame niet op reflectie kan worden gekalibreerd (geen doel beschikbaar of kalibratie uitgeschakeld), wordt het geëxporteerd als een van twee alternatieve producten —**er bestaat precies één van het paar per run**, gekozen door de schakelaar voor vignettcorrectie:
@@ -76,7 +80,11 @@ Het selectievakje dat niet van toepassing is, is grijs weergegeven. Als u het vi
 * **Stralingsintensiteit exporteren**: spectrale stralingsintensiteit in float32 (`Radiance_Images`, W/m²/sr/nm). Alleen multispectrale modules — niet van toepassing op RGB-masters.
 * **Reflectantie exporteren**: uint16-reflectantie (`Reflectance_Calibrated_Images`, DN 32768 = ρ 1,0) wanneer een `.daq`-meting van neerwaartse straling of een doel binnen het beeld het beeld bestrijkt. Alleen multispectrale modules.
 
-Alle vier zijn **standaard ingeschakeld**— één geïmporteerd LATTICE-ruwframe wordt in één verwerkingsronde uitgespreid naar elk ingeschakeld en toepasselijk product. Het selectievakje**Reflectantie exporteren** is grijs weergegeven wanneer Reflectantiekalibratie is uitgeschakeld. Instellingen die onmogelijk zijn vanwege de bovenliggende schakelaar, zijn altijd grijs weergegeven met een tooltip waarin de te wijzigen schakelaar wordt vermeld.**Geavanceerde instellingen:*** **Tijdzone-offset lichtsensor**: Aantal uren ten opzichte van UTC voor het afstemmen van de tijd van de lichtsensor (standaard: 0, bereik −12 tot +12)
+Alle vier zijn **standaard ingeschakeld**— één geïmporteerd LATTICE-ruwframe wordt in één verwerkingsronde uitgespreid naar elk ingeschakeld en toepasselijk product. Het selectievakje**Reflectantie exporteren** is grijs weergegeven wanneer Reflectantiekalibratie is uitgeschakeld. Instellingen die onmogelijk zijn vanwege de bovenliggende schakelaar, zijn altijd grijs weergegeven met een tooltip waarin de te wijzigen schakelaar wordt vermeld.
+
+**Geavanceerde instellingen:**
+
+* **Tijdzone-offset lichtsensor**: Aantal uren ten opzichte van UTC voor het afstemmen van de tijd van de lichtsensor (standaard: 0, bereik −12 tot +12)
 * **PPK-correcties toepassen**: maakt gebruik van GPS-/belichtingspin-gegevens uit `.daq`-bestanden (standaard: uit)
 * **Belichtingspin 1/2**: wijst camera’s toe aan belichtingspinnen voor opstellingen met twee camera’s
 
@@ -110,7 +118,9 @@ Configureer welke vegetatie-indices moeten worden berekend en geëxporteerd. De 
 3. Configureer de visualisatie-instellingen (LUT-kleuren, waardebereiken)
 4. Voeg indien nodig meerdere indexen toe
 
-**Populaire indexen:*** **NDVI**: Algemene gezondheid van de vegetatie (meest gebruikelijk)
+**Populaire indexen:**
+
+* **NDVI**: Algemene gezondheid van de vegetatie (meest gebruikelijk)
 * **NDRE**: Vroegtijdige stressdetectie met RedEdge
 * **GNDVI**: Gevoelig voor chlorofylconcentratie
 * **OSAVI**: Werkt goed bij zichtbare bodem
@@ -221,7 +231,11 @@ Bij gebruik van MAPIR DAQ-recorders met GPS voor nauwkeurige geolocatie:
 3. Stel indien nodig **"Tijdzone-offset lichtsensor"** in (standaard: 0 voor UTC)
 4. Wijs camera’s toe aan belichtingspinnen:
    * **Eén camera**: wordt automatisch toegewezen aan pin 1
-   * **Twee camera’s**: wijs elke camera handmatig toe aan de juiste pin**Toewijzing van belichtingspinnen:*** **Belichtingspin 1**: Selecteer het cameramodel uit de vervolgkeuzelijst
+   * **Twee camera’s**: wijs elke camera handmatig toe aan de juiste pin
+
+**Toewijzing van belichtingspinnen:**
+
+* **Belichtingspin 1**: Selecteer het cameramodel uit de vervolgkeuzelijst
 * **Belichtingspin 2**: Selecteer de tweede camera of “Niet gebruiken”
 * Dezelfde camera kan niet aan beide pinnen worden toegewezen
 

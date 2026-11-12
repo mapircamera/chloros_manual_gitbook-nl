@@ -57,7 +57,11 @@ output/
 └── *.daq          the downwelling reading matched to the capture
 ```
 
-**Stel de map in op de hoofdmap van de opnames** (`output/` hierboven). Wanneer de geselecteerde map zelf geen afbeeldingen bevat maar wel submappen heeft, gaat Chloros daar automatisch in naar beneden — de submappen op dat niveau en de hoofdmap `.daq` worden allemaal in één keer opgehaald.**Hoe opnames worden geïmporteerd:*** Elke opname wordt geïmporteerd als een **enkele afbeelding**, gegroepeerd per opname (niet één item per niveau). De andere niveaus van dezelfde opname verschijnen als weergavemodi van die ene afbeelding.
+**Stel de map in op de hoofdmap van de opnames** (`output/` hierboven). Wanneer de geselecteerde map zelf geen afbeeldingen bevat maar wel submappen heeft, gaat Chloros daar automatisch in naar beneden — de submappen op dat niveau en de hoofdmap `.daq` worden allemaal in één keer opgehaald.
+
+**Hoe opnames worden geïmporteerd:**
+
+* Elke opname wordt geïmporteerd als een **enkele afbeelding**, gegroepeerd per opname (niet één item per niveau). De andere niveaus van dezelfde opname verschijnen als weergavemodi van die ene afbeelding.
 * **De verwerking begint altijd bij het onbewerkte frame.** De andere niveaus zijn weliswaar zichtbaar, maar alleen `raw` wordt daadwerkelijk door de verwerkingspijplijn geleid — het opnieuw verwerken van een reeds verwerkt product zou leiden tot dubbele correcties, dus Chloros weigert dit. Een opnieuw geïmporteerde export kan nooit de ruwe slot van een opname innemen.
 * Een opnamemap die **zonder** ruwe bestanden is opgeslagen, wordt normaal weergegeven, maar de verwerking slaat deze over en vermeldt dit in het logboek. (De CLI-vlag `--input-level` kan in dit geval een startpunt afdwingen — zie [de CLI-referentie](../reference/cli-reference.md#what-a-captures-folder-looks-like).)
 * Vanaf versie 1.3.0 kan een map met opnames ook een map `clamp_masks/` bevatten (per-pixelmaskers voor de stralings- en reflectieniveaus — zie [Uitvoerbeeldformaten](../output-image-formats.md#clamp-masks)). Maskers zijn geen afbeeldingen van de scène, en Chloros slaat ze bij het importeren over, waar ze zich ook bevinden.

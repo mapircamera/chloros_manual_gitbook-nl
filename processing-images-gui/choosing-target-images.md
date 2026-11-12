@@ -32,7 +32,9 @@ Als er **geen** beelden zijn aangevinkt, valt Chloros terug op het scannen van e
 
 Bekijk uw geïmporteerde afbeeldingen in de bestandsbrowser en bepaal welke afbeeldingen kalibratiedoelen bevatten.
 
-**Veelvoorkomende scenario’s:*** **Doel vóór opname**: Opgenomen vóór het starten van de sessie
+**Veelvoorkomende scenario’s:**
+
+* **Doel vóór opname**: Opgenomen vóór het starten van de sessie
 * **Doel na opname**: vastgelegd na afloop van de sessie
 * **Doelen in het veld**: doelen die binnen het opnamegebied zijn geplaatst
 * **Meerdere doelen**: 2-3 doelafbeeldingen per sessie (aanbevolen)
@@ -141,9 +143,17 @@ Gebruik deze kolom om te controleren of je voor elk cameratype in je project doe
 
 ### De detectiegevoeligheid aanpassen
 
-Als Chloros uw doelen niet correct detecteert, pas dan deze instellingen aan in [Projectinstellingen](adjusting-project-settings.md):**Minimaal kalibratiegebied (px):*** **Standaard**: 25 pixels
+Als Chloros uw doelen niet correct detecteert, pas dan deze instellingen aan in [Projectinstellingen](adjusting-project-settings.md):
+
+**Minimaal kalibratiegebied (px):**
+
+* **Standaard**: 25 pixels
 * **Verhoog** deze waarde als er valse detecties optreden bij kleine artefacten
-* **Verlaag** deze waarde als doelen niet worden gedetecteerd**Minimale doelclustering (0-100):*** **Standaard**: 60
+* **Verlaag** deze waarde als doelen niet worden gedetecteerd
+
+**Minimale doelclustering (0-100):**
+
+* **Standaard**: 60
 * **Verhoog** als doelen in meerdere detecties worden opgesplitst
 * **Verlaag** als doelen met kleurvariatie niet volledig worden gedetecteerd
 

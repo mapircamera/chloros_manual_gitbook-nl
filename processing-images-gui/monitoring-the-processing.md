@@ -28,7 +28,11 @@ Voor gebruikers met een Chloros+ licentie:
 1.**Detecteren** – Kalibratiedoelen zoeken
 2. **Analyseren** – Beelden onderzoeken en de pijplijn voorbereiden
 3. **Kalibreren** - Vignetterings- en reflectancecorrecties toepassen
-4. **Exporteren** - Verwerkte bestanden opslaan**Interactieve functies:*** **Beweeg de muis over** de voortgangsbalk om het uitgebreide paneel met 4 fasen te zien
+4. **Exporteren** - Verwerkte bestanden opslaan
+
+**Interactieve functies:**
+
+* **Beweeg de muis over** de voortgangsbalk om het uitgebreide paneel met 4 fasen te zien
 * **Klik op** de voortgangsbalk om het uitgebreide paneel te bevriezen/vast te zetten
 * **Klik nogmaals** om het paneel weer vrij te geven; het wordt automatisch verborgen wanneer de muis eraf gaat
 * Elke fase toont de individuele voortgang (0-100%)
@@ -92,7 +96,9 @@ Voor gebruikers met een Chloros+ licentie:
 
 ### Fase 3: Kalibreren
 
-**Wat gebeurt er:*** **Debayering**: Het RAW-Bayerpatroon omzetten naar 3 kanalen (overgeslagen voor LATTICE-mono-modules, met een opmerking)
+**Wat gebeurt er:**
+
+* **Debayering**: Het RAW-Bayerpatroon omzetten naar 3 kanalen (overgeslagen voor LATTICE-mono-modules, met een opmerking)
 * **Vignetteringscorrectie**: Verduistering aan de randen van de lens verwijderen
 * **Reflectiekalibratie**: Normaliseren met streefwaarden en/of DAQ-downwelling
 * **Indexberekening**: Multispectrale indices berekenen
@@ -104,7 +110,9 @@ Voor gebruikers met een Chloros+ licentie:
 * Huidige afbeelding wordt verwerkt
 * Voltooide afbeeldingen / Totaal aantal afbeeldingen
 
-**Verwerkingsgedrag:*** **Vrije modus**: Verwerkt één beeld tegelijk, achtereenvolgens
+**Verwerkingsgedrag:**
+
+* **Vrije modus**: Verwerkt één beeld tegelijk, achtereenvolgens
 * **Chloros+-modus**: Draait een hardware-adaptieve werkpool — 1-4 gelijktijdige workers op GPU-systemen (afhankelijk van VRAM), één worker per fysieke kern (minus één) op systemen met alleen een CPU. Zie [Dynamic Compute Adaptation](../processing-architecture/dynamic-compute-adaptation.md)
 * **GPU-versnelling**: Versnelt deze fase aanzienlijk**Waarop letten:**
 
