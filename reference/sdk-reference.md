@@ -682,7 +682,7 @@ False         # export in native sensor geometry / skip the common-overlap crop
 
 #### Radiometrische uitvoer (LATTICE multispectrale pijplijn)
 
-Het LATTICE multispectrale (M3C/M3M) exportniveau van de `process`-pijplijn — `reflectance` (standaard), `radiance`, `sensor-response` of `all` (elke toepasselijke modus per afbeelding) — bepaalt de **"Export radiance"**en**"Export reflectance"****: `radiance` exporteert alleen radiance, `reflectance` alleen reflectance, `sensor-response` geen van beide (alleen de debayered- en preview-producten), `all` beide. De debayered- en preview-producten kunnen op dit niveau niet worden gewijzigd. `configure()` heeft hiervoor een speciaal trefwoord:
+Het LATTICE multispectrale (M3C/M3M) exportniveau van de `process`-pijplijn — `reflectance` (standaard), `radiance`, `sensor-response` of `all` (elke toepasselijke modus per afbeelding) — bepaalt de **"Export radiance"** en **"Export reflectance"**: `radiance` exporteert alleen radiance, `reflectance` alleen reflectance, `sensor-response` geen van beide (alleen de debayered- en preview-producten), `all` beide. De debayered- en preview-producten kunnen op dit niveau niet worden gewijzigd. `configure()` heeft hiervoor een speciaal trefwoord:
 
 ```python
 with chloros_sdk.ChlorosLocal() as cl:

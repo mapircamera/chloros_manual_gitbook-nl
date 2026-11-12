@@ -109,7 +109,7 @@ Tijdens het verbinden kan er een groen **kalibratiedownloadvenster** verschijnen
 
 ### Gecomprimeerde 12-bits overdracht
 
-12-bits formaten (`BayerRG12`, `Mono12`) worden normaal gesproken als 16-bits woorden verzonden. ****Gecomprimeerd**transport verzendt dezelfde 12 bits in 1,5 byte per pixel en decomprimeert deze op de host, waardoor het verzenden van elk frame 25 % minder tijd kost — bij volledige sensorbetrouwing levert dit ongeveer een derde meer frames per seconde op.**De opgeslagen gegevens zijn identiek.** Array Connect bepaalt dit automatisch (`auto`): het pakt alleen in wanneer dat nuttig is en de host voldoende CPU-capaciteit heeft voor het uitpakken. De GUI heeft hiervoor geen schakelaar; gebruik vanuit de CLI `array-connect --packed {auto,on,off}` (standaard `auto`). 8-bits en 16-bits formaten worden nooit gecomprimeerd.
+12-bits formaten (`BayerRG12`, `Mono12`) worden normaal gesproken als 16-bits woorden verzonden. **Gecomprimeerd**transport verzendt dezelfde 12 bits in 1,5 byte per pixel en decomprimeert deze op de host, waardoor het verzenden van elk frame 25 % minder tijd kost — bij volledige sensorbetrouwing levert dit ongeveer een derde meer frames per seconde op.**De opgeslagen gegevens zijn identiek.** Array Connect bepaalt dit automatisch (`auto`): het pakt alleen in wanneer dat nuttig is en de host voldoende CPU-capaciteit heeft voor het uitpakken. De GUI heeft hiervoor geen schakelaar; gebruik vanuit de CLI `array-connect --packed {auto,on,off}` (standaard `auto`). 8-bits en 16-bits formaten worden nooit gecomprimeerd.
 
 ## Bandbreedte: hoeveel camera’s passen er?
 

@@ -170,7 +170,7 @@ chloros-cli daq pool-reboot --sensor-id daq-e-def330
 chloros-cli daq pool-update-firmware --sensor-id daq-e-def330
 ```
 
-`pool-info` toont de firmware van de sensor (en of deze Chloros-release een nieuwere versie bevat), het adres en hoe het aan dat adres is gekomen, de opgeslagen netwerkinstelling als deze afwijkt van de huidige, streaming bij het opstarten en PTP. `pool-set-network` start de sensor opnieuw op om de wijziging toe te passen en verbindt hem opnieuw met de instellingen die hij eerder had; `--no-reboot` slaat deze alleen op. Er moet een statisch adres op het netwerk van deze computer aanwezig zijn, anders weigert Chloros het; `--force` negeert dat, maar alleen voor een computer die opnieuw geadresseerd of ernaar gerouteerd zal worden. Herstarten wordt geweigerd terwijl de sensor gegevens registreert. `pool-update-firmware` is het equivalent van **Update to \<version\>** </version\>in de GUI <version\>voor de opdrachtregel, en de manier om een DAQ-E op Linux bij te werken, waar geen GUI beschikbaar is. Nieuw in 1.3.0.
+`pool-info` toont de firmware van de sensor (en of deze Chloros-release een nieuwere versie bevat), het adres en hoe het aan dat adres is gekomen, de opgeslagen netwerkinstelling als deze afwijkt van de huidige, streaming bij het opstarten en PTP. `pool-set-network` start de sensor opnieuw op om de wijziging toe te passen en verbindt hem opnieuw met de instellingen die hij eerder had; `--no-reboot` slaat deze alleen op. Er moet een statisch adres op het netwerk van deze computer aanwezig zijn, anders weigert Chloros het; `--force` negeert dat, maar alleen voor een computer die opnieuw geadresseerd of ernaar gerouteerd zal worden. Herstarten wordt geweigerd terwijl de sensor gegevens registreert. `pool-update-firmware` is het equivalent van **Update to \<version\>** in de GUI voor de opdrachtregel, en de manier om een DAQ-E op Linux bij te werken, waar geen GUI beschikbaar is. Nieuw in 1.3.0.
 
 ***
 
@@ -206,4 +206,3 @@ chloros-cli daq pool-update-firmware --sensor-id daq-e-def330
 {% hint style="info" %}
 **Tip voor AI-assistenten.** Elke pagina van deze handleiding wordt als onbewerkte Markdown aangeboden — voeg `.md` toe aan de URL-slug in kleine letters van een pagina (deze pagina: `https://mapir.gitbook.io/chloros/daq/cli-quick-start.md`); de machinaal leesbare index is dan `https://mapir.gitbook.io/chloros/llms.txt`. Voor volledige documentatie op vlaggenniveau van `chloros-cli daq` en alle andere opdrachtenfamilies, raadpleeg de [CLI-referentie](../reference/cli-reference.md) (`https://mapir.gitbook.io/chloros/reference/cli-reference.md`); het Python-pad is `chloros_sdk.connect_daq_sensor()` in de [SDK-referentie](../reference/sdk-reference.md).
 {% endhint %}
-</version\>
