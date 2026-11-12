@@ -200,7 +200,9 @@ Alles in dit gedeelte is **alleen aan de weergavezijde**— het verandert wat je
 | **Verzadiging** | 0–200 (100 = neutraal) | 100 | Alleen RGB | HSV-verzadiging in de live preview. |
 | **Contrast** | 0–200 (100 = neutraal) | 100 | Alleen RGB | Lineair contrast rond middengrijs in het livevoorbeeld. |
 | **Spiegelen H / Spiegelen V** | Selectievakjes | Uit | Alles | Het voorbeeld horizontaal / verticaal spiegelen. |
-| **Rotatie**| 0° / 90° / 180° / 270° | 0° | Alles | Het voorbeeld roteren. De oriëntatie wordt toegepast aan het einde van de backend-voorbeeldketting.**Opgeslagen opnames (1.3.0):**de producten Preview, Radiance, Reflectance en Index van een standalone camera worden gedraaid door Spiegeling/Rotatie, terwijl**Raw en Debayered behouden de oorspronkelijke oriëntatie van de camera**; elk opnamebestand slaat de instelling op in zijn XMP, zodat deze bij latere verwerking van een raw-bestand op dezelfde manier wordt toegepast.**Bestanden in een array behouden hun oorspronkelijke oriëntatie** (de instelling wordt opgeslagen, maar niet toegepast), en samengestelde weergaven van de array negeren deze. |**Semantiek van kleurprofielen** (RGB-camera’s):
+| **Rotatie**| 0° / 90° / 180° / 270° | 0° | Alles | Het voorbeeld roteren. De oriëntatie wordt toegepast aan het einde van de backend-voorbeeldketting.**Opgeslagen opnames (1.3.0):**de producten Preview, Radiance, Reflectance en Index van een standalone camera worden gedraaid door Spiegeling/Rotatie, terwijl**Raw en Debayered behouden de oorspronkelijke oriëntatie van de camera**; elk opnamebestand slaat de instelling op in zijn XMP, zodat deze bij latere verwerking van een raw-bestand op dezelfde manier wordt toegepast.**Bestanden in een array behouden hun oorspronkelijke oriëntatie** (de instelling wordt opgeslagen, maar niet toegepast), en samengestelde weergaven van de array negeren deze. |
+
+**Semantiek van kleurprofielen** (RGB-camera’s):
 
 * **Raw** — de verwerkingsketen wordt volledig omzeild.
 * **Lineair** — donker-signaal + flat-field + witbalans; geen kleurenmatrix, geen gamma.

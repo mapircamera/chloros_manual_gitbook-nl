@@ -159,7 +159,9 @@ Dit gedeelte verschijnt **alleen** wanneer ten minste één afbeelding in het pr
 
 * **Array-uitlijning toepassen** (standaard: aan): pas op elk verwerkt product (debayered / preview / radiance / reflectance / index) een vervorming toe naar de gedeelde referentiegeometrie van de array. Uit = exporteren in de oorspronkelijke sensorgeometrie.
 * **Bijsnijden tot gemeenschappelijke overlap** (standaard: aan): snijd uitgelijnde exporten bij tot het gebied dat alle modules delen, zodat elke band dezelfde voetafdruk heeft. Uit behoudt het volledige sensorbeeld (zwarte vulling buiten de bron).
-* **Hersampling**:**Bilineair (vloeiend, standaard)**,**Dichtstbijzijnde (exacte waarden behouden)**— geen vermenging tussen pixels, voor strikte radiometrische analyse — of**Kubisch (scherpst)**.***
+* **Hersampling**:**Bilineair (vloeiend, standaard)**,**Dichtstbijzijnde (exacte waarden behouden)**— geen vermenging tussen pixels, voor strikte radiometrische analyse — of**Kubisch (scherpst)**.
+
+***
 
 ## Instellingen opslaan en laden
 

@@ -23,7 +23,9 @@ Chloros 1.3.0 biedt native Linux-ondersteuning voor de **CLI**en**Python SDK** �
 | **Texture Aware debayer** (vereist een CUDA-GPU) | Ja (Chloros+) | Ja (Chloros+) | Ja (Chloros+) | Ja (Chloros+) |
 | **Dynamic Compute Adaptation** | Ja | Ja | Ja | Ja |
 | **Backend als systeemservice** (`chloros-backend@<user>.service`) | Nee | Nee | Ja (opt-in) | Ja (opt-in) |
-| **In-place updater** (`chloros-cli update`) | Nee (het installatieprogramma uitvoeren) | Nee (het installatieprogramma uitvoeren) | Ja | Ja |***
+| **In-place updater** (`chloros-cli update`) | Nee (het installatieprogramma uitvoeren) | Nee (het installatieprogramma uitvoeren) | Ja | Ja |
+
+***
 
 ## Ondersteunde architecturen
 
@@ -36,7 +38,9 @@ Chloros 1.3.0 biedt native Linux-ondersteuning voor de **CLI**en**Python SDK** �
 
 * **Ubuntu 22.04 LTS of nieuwer** (amd64)
 * **Debian 12 of nieuwer** (amd64)
-* **NVIDIA JetPack 6** (arm64 — Jetson Orin-platforms)***
+* **NVIDIA JetPack 6** (arm64 — Jetson Orin-platforms)
+
+***
 
 ## Wat Linux-gebruikers krijgen
 
@@ -55,7 +59,9 @@ Chloros 1.3.0 biedt native Linux-ondersteuning voor de **CLI**en**Python SDK** �
 
 * **Desktop-GUI** — geen grafische interface; alle interactie verloopt via de CLI of de Python-SDK
 * **Beeldviewer** — geen interactieve beeldviewer, rasterweergave of kaartmarkeringen
-* **Visueel projectbeheer** — projecten worden aangemaakt en aangestuurd via CLI-opdrachten en SDK-aanroepen (de hardware zelf — camera’s, sensoren, opname — blijft volledig bedienbaar via de terminal)***
+* **Visueel projectbeheer** — projecten worden aangemaakt en aangestuurd via CLI-opdrachten en SDK-aanroepen (de hardware zelf — camera’s, sensoren, opname — blijft volledig bedienbaar via de terminal)
+
+***
 
 ## Licentievereisten
 

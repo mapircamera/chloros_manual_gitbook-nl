@@ -102,4 +102,4 @@ Details voor gebruikers die strikte afstemming vereisen:
 | Broadcastdomein | Host en sensor bevinden zich op hetzelfde L2-segment; mDNS wordt niet gerouteerd |
 | Firewall | Windows: de regel **Chloros Backend (UDP-In)** van het installatieprogramma laat de DAQ-E-stream (UDP 5002), mDNS (5353) en PTP (319/320) door; een firewall van een derde partij moet hetzelfde toestaan. Linux: de `.deb` opent deze poorten in `ufw` / `firewalld` alleen als de firewall actief was tijdens de installatie — sta ze zelf toe in een later ingeschakelde firewall |
 | Host met meerdere netwerkkaarten | Discovery doorzoekt mDNS met een ARP-fallback; `--eth-host <ip-or-hostname>` slaat discovery over en maakt direct verbinding |
-| Opnieuw scannen via de GUI | Discovery wordt alleen uitgevoerd terwijl het verbindingsvenster open is; gebruik ‘Vernieuwen’ |</version>
+| Opnieuw scannen via de GUI | Discovery wordt alleen uitgevoerd terwijl het verbindingsvenster open is; gebruik ‘Vernieuwen’ |

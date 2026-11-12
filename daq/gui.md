@@ -196,7 +196,9 @@ Voor kwantitatieve stralingsintensiteitswaarden moet je een gemiddelde nemen van
 
 * Combineer meerdere sensoren in één grafiek (gedeelde assen), houd afzonderlijke grafieken bij (automatische rasterindeling), verplaats sensoren tussen grafieken, herschik rijen/tegels door ze te verslepen en verberg afzonderlijke sensoren met de oogschakelaar.
 * Per project bewaart Chloros: apparaatnamen, grafiekkleuren, grafiekgrootte, weergavemodus en de instellingen van elke sensor (integratietijd, framemiddeling, AE-status, cap-selectie).
-* **Bij het opnieuw openen van een project worden de sensoren automatisch opnieuw verbonden** op basis van het adres — COM-poort voor DAQ-U, BLE-apparaat voor DAQ-M, mDNS-hostnaam voor DAQ-E (wordt omgezet zelfs als het IP-adres van het apparaat is gewijzigd) — en past het opgeslagen cap-profiel, het framegemiddelde, de AE-status en de handmatige integratietijd van elke sensor opnieuw toe.***
+* **Bij het opnieuw openen van een project worden de sensoren automatisch opnieuw verbonden** op basis van het adres — COM-poort voor DAQ-U, BLE-apparaat voor DAQ-M, mDNS-hostnaam voor DAQ-E (wordt omgezet zelfs als het IP-adres van het apparaat is gewijzigd) — en past het opgeslagen cap-profiel, het framegemiddelde, de AE-status en de handmatige integratietijd van elke sensor opnieuw toe.
+
+***
 
 ## Camera koppelen (DLS)
 

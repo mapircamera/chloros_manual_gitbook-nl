@@ -78,7 +78,9 @@ Elke afbeelding met GPS-gegevens krijgt een markering op de bijbehorende coördi
 | Aanbieder        | Opmerkingen                                                                                                                                                             |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Google Maps** | Brede wereldwijde dekking; ondersteunt alle vier de tegelsoorten                                                                                                            |
-| **Esri ArcGIS**| Vaak luchtfoto's met een hogere resolutie in bepaalde regio's. De tegelsoort**Terrain** wordt niet aangeboden voor Esri en de bijbehorende knop is uitgeschakeld zolang Esri is geselecteerd |***
+| **Esri ArcGIS**| Vaak luchtfoto's met een hogere resolutie in bepaalde regio's. De tegelsoort**Terrain** wordt niet aangeboden voor Esri en de bijbehorende knop is uitgeschakeld zolang Esri is geselecteerd |
+
+***
 
 ## Soorten kaarttegels
 
@@ -93,7 +95,9 @@ Kies het type kaartlaag met de knoppen (van links naar rechts):
 | **Satelliet**        | Gedetailleerde satellietbeelden, geen labels — de optie met de hoogste bandbreedte |
 | **Hybride** (standaard) | Satellietbeelden met daaroverheen getekende wegen en labels                |
 
-Het tabblad Kaart wordt geopend op **Hybride**. Uw keuze wordt doorgevoerd bij het wisselen van aanbieder, voor zover de aanbieder dit ondersteunt.***
+Het tabblad Kaart wordt geopend op **Hybride**. Uw keuze wordt doorgevoerd bij het wisselen van aanbieder, voor zover de aanbieder dit ondersteunt.
+
+***
 
 ## Navigatie op de kaart
 
@@ -141,7 +145,9 @@ Het tabblad Kaart wordt geopend op **Hybride**. Uw keuze wordt doorgevoerd bij h
 
 ### De kaart is leeg of het laden van tegels stopt
 
-De tegelaanbieders zijn online diensten. Als er geen tegels meer binnenkomen, controleer dan de netwerkverbinding van het apparaat en probeer vervolgens van aanbieder te wisselen. Als je sterk had ingezoomd, druk dan op de resetknop **×** om terug te keren naar een normaal zoomniveau en laat de kaart opnieuw tegels opvragen.***
+De tegelaanbieders zijn online diensten. Als er geen tegels meer binnenkomen, controleer dan de netwerkverbinding van het apparaat en probeer vervolgens van aanbieder te wisselen. Als je sterk had ingezoomd, druk dan op de resetknop **×** om terug te keren naar een normaal zoomniveau en laat de kaart opnieuw tegels opvragen.
+
+***
 
 ## Gerelateerde pagina’s
 

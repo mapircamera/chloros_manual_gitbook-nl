@@ -136,7 +136,9 @@ Twee regels bepalen de getallen:
 * Een thread die de **enige** actieve is, krijgt de maximale toewijzing van zijn profiel.
 * Wanneer er meer dan één *zware* GPU-taak actief is, wordt de basistoewijzing van elke zware taak over deze taken verdeeld (nooit onder het geconfigureerde minimum).
 
-De waarde die daadwerkelijk tijdens de uitvoering wordt gebruikt, is de **laagste** van de toewijzing in het platformprofiel en de live-aanbeveling van de GPU-geheugenmonitor, dus een drukbezette kaart krijgt altijd voorrang boven een optimistisch profiel.***
+De waarde die daadwerkelijk tijdens de uitvoering wordt gebruikt, is de **laagste** van de toewijzing in het platformprofiel en de live-aanbeveling van de GPU-geheugenmonitor, dus een drukbezette kaart krijgt altijd voorrang boven een optimistisch profiel.
+
+***
 
 ## Texture Aware-verwerking
 

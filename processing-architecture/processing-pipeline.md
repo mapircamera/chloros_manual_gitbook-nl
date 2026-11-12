@@ -15,7 +15,9 @@ Images In → [Thread 1: Detection] → [Thread 2: Calibration] → [Thread 3: P
 
 Elke afbeelding doorloopt alle vier de threads in volgorde. Met de multithread-verwerking vChloros+ bezetten meerdere afbeeldingen tegelijkertijd verschillende threads — terwijl thread 3 één afbeelding verwerkt, kan thread 1 de volgende detecteren, thread 2 een andere kalibreren en thread 4 een voltooide afbeelding naar de schijf schrijven.
 
-De voortgang wordt per thread gerapporteerd en gestreamd via Server-Sent Events (de backend publiceert deze op `/api/events`). In de live voortgangsweergave van de CLI worden de vier fasen aangeduid als **Detecteren, Analyseren, Verwerken, Exporteren**.***
+De voortgang wordt per thread gerapporteerd en gestreamd via Server-Sent Events (de backend publiceert deze op `/api/events`). In de live voortgangsweergave van de CLI worden de vier fasen aangeduid als **Detecteren, Analyseren, Verwerken, Exporteren**.
+
+***
 
 ## Details van de threads
 

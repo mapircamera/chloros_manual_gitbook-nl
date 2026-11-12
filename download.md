@@ -192,7 +192,9 @@ Ontgrendel geavanceerde functies met een Chloros+-abonnement:
 * **🐻 Geavanceerde textuurbewuste debayer-methode** - een hoogwaardige, randbewuste debayer gecombineerd met een AI/ML-ruisonderdrukkingsmodel dat vrijwel alle debayer-ruis verwijdert.
 * 🧮 **Aangepaste formules** - Maak aangepaste multispectrale indices
 
-<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Bekijk de abonnementen en prijzen vChloros+</a></p>***
+<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Bekijk de abonnementen en prijzen vChloros+</a></p>
+
+***
 
 ## Hulp bij de installatie
 
@@ -231,7 +233,9 @@ Hulp nodig bij de installatie of configuratie?
 * 📧 **E-mail**: info@mapir.camera
 * 🌐 **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **Documentatie**: [Aan de slag](./)
-* ❓ **Veelgestelde vragen**: [Veelgestelde vragen](faq.md)***
+* ❓ **Veelgestelde vragen**: [Veelgestelde vragen](faq.md)
+
+***
 
 ## Software-updates
 

@@ -180,7 +180,9 @@ Eenmaal gestart, verloopt de gehele pijplijn automatisch:
 * Een gestopte run rapporteert eerlijk wat er is voltooid (zie de `[RUN-SUMMARY]`-regels in het logboek)
 * Bij een nieuwe run begint de pijplijn helemaal opnieuw
 
-**Planningsadvies:** Overweeg bij zeer grote projecten om de verwerking in batches uit te voeren of de CLI te gebruiken voor meer controle.***
+**Planningsadvies:** Overweeg bij zeer grote projecten om de verwerking in batches uit te voeren of de CLI te gebruiken voor meer controle.
+
+***
 
 ## Uw verwerking volgen
 

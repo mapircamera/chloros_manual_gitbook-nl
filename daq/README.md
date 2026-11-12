@@ -17,7 +17,9 @@ MAPIR meten omgevingslicht als radiometrisch gekalibreerde spectra. In Chloros v
 | --- | --- | --- |
 | **DAQ-U** | USB (serieel) | scan via seriële poort |
 | **DAQ-M** | Bluetooth Low Energy | BLE-scan op naam |
-| **DAQ-E** | Ethernet (IPv4, PoE-voeding) | mDNS `_daq-e._tcp` (hostnaam `daq-e-<id>.local`) |**DAQ-E-S (nieuw in 1.3.0).** Een DAQ-E met een vaste diffusor en een kantelsensor. Chloros vermeldt dit apparaat als `DAQ-E-S` en het werkt precies zoals een DAQ-E, behalve dat er geen cap-correctie wordt toegepast en elke meting de kantel-, rol- en pitchgegevens van het apparaat bevat. Zie [DAQ-E-S: vaste diffusor en kanteling](caps-and-range.md#daq-e-s-fixed-diffuser-and-tilt).
+| **DAQ-E** | Ethernet (IPv4, PoE-voeding) | mDNS `_daq-e._tcp` (hostnaam `daq-e-<id>.local`) |
+
+**DAQ-E-S (nieuw in 1.3.0).** Een DAQ-E met een vaste diffusor en een kantelsensor. Chloros vermeldt dit apparaat als `DAQ-E-S` en het werkt precies zoals een DAQ-E, behalve dat er geen cap-correctie wordt toegepast en elke meting de kantel-, rol- en pitchgegevens van het apparaat bevat. Zie [DAQ-E-S: vaste diffusor en kanteling](caps-and-range.md#daq-e-s-fixed-diffuser-and-tilt).
 
 Alle drie gebruiken hetzelfde communicatieprotocol en leveren identieke gegevens:
 

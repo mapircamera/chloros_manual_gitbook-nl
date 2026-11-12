@@ -64,7 +64,9 @@ Volledige handleiding: [Chloros gebruiken met AI-assistenten](ai-assistants.md).
 * **Eerlijke foutmeldingen.** Een `chloros-cli process`-run die producten heeft aangevraagd maar er geen heeft geschreven, mislukt nu duidelijk en stopt met een uitkomst anders dan nul; succesvolle runs rapporteren hoeveel beeldproducten ze hebben geschreven.
 * **Nieuwe uitvoerindeling.** Producten worden opgeslagen in `<project>/<camera>/<format>/<Product>_Images/`-mappen en behouden de bronbestandsnaam — de map, niet een bestandsextensie, identificeert het product. Zie [Uitvoerbeeldformaten](output-image-formats.md).
 * **Meer invoeropties, abonnementen en talen.** Ondersteuning voor `.dng`-invoer; alle 38 interfacetalen volledig beschikbaar; hardwarebeperkingen per abonnement met gratis (zonder inloggen) gebruik van maximaal 4 camera’s en 2 lichtsensoren.
-* **Betrouwbaarheid.** ‘Stop Processing’ wordt netjes afgesloten met een eerlijk uitvoeringsoverzicht, projecten met meerdere camera’s exporteren elke camera, en upgrades via het installatieprogramma zorgen er niet langer voor dat je wordt uitgelogd.***
+* **Betrouwbaarheid.** ‘Stop Processing’ wordt netjes afgesloten met een eerlijk uitvoeringsoverzicht, projecten met meerdere camera’s exporteren elke camera, en upgrades via het installatieprogramma zorgen er niet langer voor dat je wordt uitgelogd.
+
+***
 
 Chloros is beschikbaar in 3 applicatieomgevingen:
 

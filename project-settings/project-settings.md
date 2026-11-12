@@ -34,7 +34,9 @@ in de linkerzijbalk
 * **Opties**: `Default (512 px)`, `1024 px`, `2048 px`, `Full resolution`
 * **Standaard**: Standaard (512 px)
 * **Beschrijving**: Resolutie (langste zijde, in pixels) waarmee de miniatuurafbeeldingen in het raster worden weergegeven. Hogere waarden zien er scherper uit bij inzoomen, maar laden langzamer en gebruiken meer geheugen. Volledige resolutie komt overeen met de oorspronkelijke afbeeldingsgrootte.
-* **Opmerking**: Alleen voor weergave — dit heeft nooit invloed op de verwerking of geëxporteerde bestanden.***
+* **Opmerking**: Alleen voor weergave — dit heeft nooit invloed op de verwerking of geëxporteerde bestanden.
+
+***
 
 ## Doeldetectie
 
@@ -184,7 +186,9 @@ De opgeslagen waarde wordt zonder onderscheid tussen hoofdletters en kleine lett
   * Eén camera + één pin: Pin 2 wordt automatisch ingesteld op „Niet gebruiken“
   * Eén camera + twee pinnen: Pin 2 wordt automatisch ingesteld op „Niet gebruiken“
   * Meerdere camera’s: Handmatige selectie vereist
-* **Opmerking**: Dezelfde camera kan niet tegelijkertijd aan zowel pin 1 als pin 2 worden toegewezen.***
+* **Opmerking**: Dezelfde camera kan niet tegelijkertijd aan zowel pin 1 als pin 2 worden toegewezen.
+
+***
 
 ## DAQ-lichtsensor
 
@@ -205,7 +209,9 @@ Elke rij toont het bestand, het sensormodel en de diffusorkapcorrectie die daadw
 * **Beschrijving**: `Auto` gebruikt de geregistreerde kap van elk bestand (de Sunshine-kap wordt verondersteld wanneer er niets is geregistreerd, maar DAQ-U, DAQ-M en DAQ-E worden geleverd zonder kap en Chloros kan niet zien wat er is gemonteerd, dus geeft de verwerking een waarschuwing bij een veronderstelde cap: kies de cap die was gemonteerd). Het kiezen van een specifieke cap overschrijft **elk** downwelling-bestand in het project, behalve die van een DAQ-E-S, waarvan de diffuser deel uitmaakt van de kalibratie; een project met alleen DAQ-E-S’en toont geen keuzelijst: ruwe opnames worden hiermee gecorrigeerd, en opnames die al een kap bevatten, worden opnieuw gerefereerd (de opgenomen correctie wordt ongedaan gemaakt en de geselecteerde correctie wordt toegepast).
 * **Belangrijk**: De geselecteerde kap moet overeenkomen met de kap die fysiek tijdens de opname was gemonteerd. Noch de sensor, noch de software kan de fysieke kap detecteren — een verkeerd gekoppelde kap-ID leidt tot een onjuiste correctie van de spectra.
 
-Er is bewust gekozen voor **één** projectbrede instelling in plaats van dropdown-menu’s per bestand: de instelling is van toepassing op elke neerwaartse bron in het project.***
+Er is bewust gekozen voor **één** projectbrede instelling in plaats van dropdown-menu’s per bestand: de instelling is van toepassing op elke neerwaartse bron in het project.
+
+***
 
 ## Uitlijning van arrays
 

@@ -57,7 +57,9 @@ De „effectieve“ vergroting houdt rekening met de GSD-blokgrootte: bij een bl
 | **←**                           | Volledig scherm | Vorige afbeelding                      |
 | **Ctrl + R**                    | Volledig scherm | De index/LUT-sandbox resetten         |
 | **Ctrl + `+`**/**Ctrl + `=`** | Raster        | Grotere miniaturen (4 px per druk op de toets)  |
-| **Ctrl + `−`**                  | Raster        | Kleinere miniaturen (4 px per druk op de toets) |***
+| **Ctrl + `−`**                  | Raster        | Kleinere miniaturen (4 px per druk op de toets) |
+
+***
 
 ## Cursorwaarden
 
@@ -100,7 +102,9 @@ De viewer, de index/LUT-sandbox en de indexexport berekenen de schaal allemaal v
 Twee gevolgen die het vermelden waard zijn:
 
 * Een **32-bits procent**TIFF slaat DN/65535 op als een float, en een**8-bits** PNG/JPG-export slaat DN × 255/65535 op — de viewer zet beide weer terug voordat er een percentage wordt weergegeven.
-* Eén geval kan niet worden hersteld: een **8-bits TIFF-export van een opname met een 8-bits bron** wordt begrensd tot 0–255 in plaats van opnieuw geschaald, en bevat opzettelijk geen schaaltag. Voor die bestanden geeft het paneel alleen de DN weer, zonder procentkolom. Dit is het eerlijke antwoord, geen bug.***
+* Eén geval kan niet worden hersteld: een **8-bits TIFF-export van een opname met een 8-bits bron** wordt begrensd tot 0–255 in plaats van opnieuw geschaald, en bevat opzettelijk geen schaaltag. Voor die bestanden geeft het paneel alleen de DN weer, zonder procentkolom. Dit is het eerlijke antwoord, geen bug.
+
+***
 
 ## Het laaghistogram
 
@@ -126,7 +130,9 @@ Boven het histogram bevinden zich drie knoppen:
 | **INDEX**| Aan      | Wordt alleen weergegeven terwijl een index actief is. Schakelt het histogram om van de bronbanden naar de**indexwaardeverdeling**, waarbij de twee clippedrempels worden weergegeven als oranje stippellijnen en de indexwaarde van de cursor als een witte lijn                                                          |
 | **RGB**| Uit     | Schakelt over van de gecombineerde curve naar curven per kanaal. Op een monosensor geeft deze knop**MONO** weer en is hij uitgeschakeld — er is slechts één kanaal om weer te geven                                                                                                                                  |
 
-Het histogram wordt berekend op basis van de **blokken die je ziet**, niet op basis van de bronpixels erachter: als je de GSD-blokgrootte wijzigt, wordt de verdeling opnieuw berekend, zodat het histogram, de cursormarkering en het weergegeven beeld altijd met elkaar overeenkomen.***
+Het histogram wordt berekend op basis van de **blokken die je ziet**, niet op basis van de bronpixels erachter: als je de GSD-blokgrootte wijzigt, wordt de verdeling opnieuw berekend, zodat het histogram, de cursormarkering en het weergegeven beeld altijd met elkaar overeenkomen.
+
+***
 
 ## GSD-blokgrootte
 
@@ -184,7 +190,9 @@ Pas multispectrale indices en kleuren-Look-Up Tables toe vanuit de zijbalk:
 2. Vink **Index** aan
 3. Kies het filter van je camera en een indexformule, en sleep vervolgens de kanaalcirkels naar de vakjes van de formule
 4. Voeg een LUT toe en kies een verloop, drempelwaarden en een clippingmodus
-5. Bekijk de waarden bij de cursor en sla het resultaat op met **Export/Save Image(s)**Zie [Index/LUT Sandbox](index-lut-sandbox.md) voor de volledige handleiding.***
+5. Bekijk de waarden bij de cursor en sla het resultaat op met **Export/Save Image(s)**Zie [Index/LUT Sandbox](index-lut-sandbox.md) voor de volledige handleiding.
+
+***
 
 ## Probleemoplossing
 

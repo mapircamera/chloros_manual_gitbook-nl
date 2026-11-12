@@ -71,7 +71,9 @@ Zie [Multispectrale indexformules](../project-settings/multispectral-index-formu
 
 ### Met ‘Index’ aangevinkt maar zonder LUT
 
-De afbeelding wordt weergegeven in **grijstinten**, uitgerekt tussen de twee drempelwaarden. Dit is opzettelijk: de indexafbeelding bestaat uit scalaire gegevens, en grijstinten geven deze het meest getrouw weer. Voeg een LUT toe als je kleur wilt.***
+De afbeelding wordt weergegeven in **grijstinten**, uitgerekt tussen de twee drempelwaarden. Dit is opzettelijk: de indexafbeelding bestaat uit scalaire gegevens, en grijstinten geven deze het meest getrouw weer. Voeg een LUT toe als je kleur wilt.
+
+***
 
 ## Werken met LUT’s (Look-Up Tables)
 
@@ -135,7 +137,9 @@ Voorbeeld NDVI-vensters:
 | Alleen gezonde vegetatie                 | 0,5  | 0,9 |
 | Stress benadrukken                        | 0,2  | 0,5 |
 
-Door het venster te verkleinen, wordt het contrast binnen het gebied dat je wilt bekijken verhoogd en wordt al het andere buiten het bereik geduwd — waar de **Clipping Mode** bepaalt wat ermee gebeurt.***
+Door het venster te verkleinen, wordt het contrast binnen het gebied dat je wilt bekijken verhoogd en wordt al het andere buiten het bereik geduwd — waar de **Clipping Mode** bepaalt wat ermee gebeurt.
+
+***
 
 ## Clipping-modi
 

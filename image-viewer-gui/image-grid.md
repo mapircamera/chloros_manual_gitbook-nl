@@ -10,7 +10,9 @@ Gebruik de zoomschuifbalk rechtsboven om de grootte van de afbeeldingsminiaturen
 * **Ctrl + `+`**/**Ctrl + `=`**en**Ctrl + `−`** verhogen of verlagen de grootte met 4 px per druk op de toets. Het toetsenbordpad stopt bij 64 px aan de onderkant en, aan de bovenkant, bij de grootte waarbij precies twee miniaturen per rij in het huidige venster passen.
 * De grootte die je kiest, wordt samen met het project opgeslagen (`UI → Grid thumbnail size` in `project.json`, standaard `160`), zodat deze bij het opnieuw openen van het project wordt hersteld.
 
-<figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>De *resolutie* van miniaturen is een aparte instelling, los van de *grootte* van miniaturen: zie **Weergave → Resolutie miniatuurafbeeldingen** in [Projectinstellingen](../project-settings/project-settings.md) (standaard 512 px aan de lange zijde). De grootte bepaalt hoe groot de tegel wordt weergegeven; de resolutie bepaalt hoeveel detail er wordt opgehaald om deze te vullen.***
+<figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>De *resolutie* van miniaturen is een aparte instelling, los van de *grootte* van miniaturen: zie **Weergave → Resolutie miniatuurafbeeldingen** in [Projectinstellingen](../project-settings/project-settings.md) (standaard 512 px aan de lange zijde). De grootte bepaalt hoe groot de tegel wordt weergegeven; de resolutie bepaalt hoeveel detail er wordt opgehaald om deze te vullen.
+
+***
 
 ## De rasterwerkbalk
 
@@ -20,7 +22,9 @@ De rij knoppen boven het raster bestaat uit maximaal drie groepen, van links naa
 2. **Camerafilterknoppen** — één per LATTICE-camera. Wordt alleen weergegeven in de modus Per camera.
 3. **Knoppen voor export-/weergavemodus** — welk product elke miniatuur weergeeft.
 
-Wanneer het venster te smal is voor alle knoppen, worden de groepen van rechts naar links samengevouwen tot dropdownmenu’s die verschijnen bij het aanwijzen: eerst worden de export-/weergaveknoppen ingeklapt, daarna de cameraknoppen. De ingeklapte groep laat één enkele knop achter met de momenteel actieve keuze, en als je er met de muis overheen gaat, schuift de volledige set naar beneden. **Per Trigger / Per Camera klapt nooit in.**<!-- SCREENSHOT-NEEDED: Image grid toolbar of a LATTICE array project at full width, showing all three button groups inline: Per Trigger / Per Camera, three camera filter buttons labelled "LATT-M3M (serial)", and the export/view buttons including TIFF, RAW (Original), RAW (Radiance), RAW (Reflectance). -->***
+Wanneer het venster te smal is voor alle knoppen, worden de groepen van rechts naar links samengevouwen tot dropdownmenu’s die verschijnen bij het aanwijzen: eerst worden de export-/weergaveknoppen ingeklapt, daarna de cameraknoppen. De ingeklapte groep laat één enkele knop achter met de momenteel actieve keuze, en als je er met de muis overheen gaat, schuift de volledige set naar beneden. **Per Trigger / Per Camera klapt nooit in.**<!-- SCREENSHOT-NEEDED: Image grid toolbar of a LATTICE array project at full width, showing all three button groups inline: Per Trigger / Per Camera, three camera filter buttons labelled "LATT-M3M (serial)", and the export/view buttons including TIFF, RAW (Original), RAW (Radiance), RAW (Reflectance). -->
+
+***
 
 ## Knoppen voor exporteren en bekijken
 
@@ -43,10 +47,8 @@ In een gemengd project volgt het label de extensie die door de meeste afbeelding
 | Knop | Toont | Wanneer deze verschijnt |
 | --- | --- | --- |
 | **Doelen** | Afbeeldingen met een gedetecteerd kalibratiedoel | Na een run waarbij doelen zijn gedetecteerd |
-| **Reflectantie** | Gekalibreerde reflectantiebeelden | Alleen bijSurvey3
-
--projecten — LATTICE-projecten gebruiken in plaats daarvan `RAW (Reflectance)`, dus het raster toont nooit twee reflectantieknoppen |
-| **Witgebalanceerd** | Het witgebalanceerde resultaat (camera’s vanRGB) | Na verwerking |
+| **Reflectantie** | Gekalibreerde reflectantiebeelden | Alleen bij Survey3-projecten — LATTICE-projecten gebruiken in plaats daarvan `RAW (Reflectance)`, dus het raster toont nooit twee reflectantieknoppen |
+| **Witgebalanceerd** | Het witgebalanceerde resultaat (camera’s van RGB) | Na verwerking |
 | **Vignetcorrectie** | De niet-gekalibreerde fallback met vignetcorrectie | Na een run waarbij reflectantiekalibratie niet kon worden toegepast en *Vignetcorrectie* was ingeschakeld |
 | **Sensorrespons** | De niet-gekalibreerde fallback voor sensorrespons | Hetzelfde, maar met *Vignetcorrectie* uitgeschakeld |
 | **`RAW (<INDEX> Index)`** | Eén knop per berekende index | Na een run met geconfigureerde indexen |

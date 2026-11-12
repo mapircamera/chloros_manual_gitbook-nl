@@ -62,7 +62,9 @@ output/
 * Een opnamemap die **zonder** ruwe bestanden is opgeslagen, wordt normaal weergegeven, maar de verwerking slaat deze over en vermeldt dit in het logboek. (De CLI-vlag `--input-level` kan in dit geval een startpunt afdwingen — zie [de CLI-referentie](../reference/cli-reference.md#what-a-captures-folder-looks-like).)
 * Vanaf versie 1.3.0 kan een map met opnames ook een map `clamp_masks/` bevatten (per-pixelmaskers voor de stralings- en reflectieniveaus — zie [Uitvoerbeeldformaten](../output-image-formats.md#clamp-masks)). Maskers zijn geen afbeeldingen van de scène, en Chloros slaat ze bij het importeren over, waar ze zich ook bevinden.
 
-**LATTICE-hub-sessies** worden op dezelfde manier geïmporteerd: klik op ‘Map toevoegen’ en selecteer de sessiemap die je vanuit de hub hebt gekopieerd (deze bevat `raw/` en `previews/`), samen met eventuele DAQ-M `.csv`-logbestanden van de neerwaartse straling. Als de kalibratie van de camera of DAQ nog niet in de cache van je computer is opgeslagen, haalt Chloros deze bij het importeren automatisch op aan de hand van het serienummer (hiervoor is eenmalig internetverbinding nodig).***
+**LATTICE-hub-sessies** worden op dezelfde manier geïmporteerd: klik op ‘Map toevoegen’ en selecteer de sessiemap die je vanuit de hub hebt gekopieerd (deze bevat `raw/` en `previews/`), samen met eventuele DAQ-M `.csv`-logbestanden van de neerwaartse straling. Als de kalibratie van de camera of DAQ nog niet in de cache van je computer is opgeslagen, haalt Chloros deze bij het importeren automatisch op aan de hand van het serienummer (hiervoor is eenmalig internetverbinding nodig).
+
+***
 
 ## De tabel in de bestandsbrowser begrijpen
 
@@ -104,7 +106,9 @@ Als u op de schakelknop in de rechterbovenhoek boven de tabel klikt, worden de m
 
 * De bestanden `.daq` en `.csv` verschijnen in de lijst van de bestandsbrowser, maar zijn geen aanklikbare afbeeldingen — ze leveren de neerwaartse stralingsintensiteit voor reflectiekalibratie.
 * Elk geïmporteerd `.daq`/`.csv`-bestand wordt weergegeven in **Projectinstellingen → DAQ-lichtsensor**, waar u de geldende correctie voor de diffusorkap voor elk bestand kunt bekijken. Zie [Projectinstellingen aanpassen](adjusting-project-settings.md).
-* Opnames die u maakt in het tabblad **Lichtsensoren** worden automatisch toegevoegd aan het geopende project — handmatig importeren is niet nodig.***
+* Opnames die u maakt in het tabblad **Lichtsensoren** worden automatisch toegevoegd aan het geopende project — handmatig importeren is niet nodig.
+
+***
 
 ## Bestanden beheren in uw project
 
@@ -221,7 +225,9 @@ Als uw project beelden bevat van meerdere MAPIR-camera’s:
 
 ### Heropend project meldt ontbrekende bestanden
 
-Als bronbestanden zijn verplaatst of verwijderd sinds het project voor het laatst werd geopend, geeft Chloros aan **welke**bestanden ontbreken in plaats van een leeg raster te openen. Als de projectmap zelf is verplaatst, wijst Chloros de bronpaden opnieuw naar de map waarin `project.json` zich nu bevindt, en bewaart het een back-up (`project.json.before-relink-<date>-<time>`). Als de bestanden dan nog steeds niet worden gevonden, biedt het venster**Bronbestanden niet gevonden**de optie**Bladeren** naar de nieuwe locatie, gevolgd door Nieuw project of Project verwijderen. Gebruik vanuit de CLI `chloros-cli project open PATH --relink FOLDER`; vanuit de SDK `open_project(path, relink=...)`.***
+Als bronbestanden zijn verplaatst of verwijderd sinds het project voor het laatst werd geopend, geeft Chloros aan **welke**bestanden ontbreken in plaats van een leeg raster te openen. Als de projectmap zelf is verplaatst, wijst Chloros de bronpaden opnieuw naar de map waarin `project.json` zich nu bevindt, en bewaart het een back-up (`project.json.before-relink-<date>-<time>`). Als de bestanden dan nog steeds niet worden gevonden, biedt het venster**Bronbestanden niet gevonden**de optie**Bladeren** naar de nieuwe locatie, gevolgd door Nieuw project of Project verwijderen. Gebruik vanuit de CLI `chloros-cli project open PATH --relink FOLDER`; vanuit de SDK `open_project(path, relink=...)`.
+
+***
 
 ## Volgende stappen
 

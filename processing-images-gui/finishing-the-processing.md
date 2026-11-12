@@ -110,7 +110,9 @@ Reflectantie wordt opgeslagen als een geheel getal (DN), en **de DN die overeenk
 | LATTICE (M3C/M3M) | **32768** (speling tot ρ 2,0) | XMP-tag `Chloros:PixelScale=32768` is in het bestand opgenomen |
 | Survey3          | **65535** (afgekapt bij ρ 1,0)     | Geen `Chloros:PixelScale`-tag — die afwezigheid is het signaal (Survey3-producten bevatten wel andere `Chloros:*`-verwerkingstags) |
 
-**Lees de `Chloros:PixelScale`-tag en deel erdoor** in plaats van zomaar uit te gaan van een vaste waarde van 65535 — het delen van de LATTICE-reflectantie door 65535 halveert stilzwijgend elke waarde. Een reflectantiebestand van vóór versie 1.3.0 dat als 8-bit is opgeslagen, is afgekapt, niet opnieuw geschaald, en heeft geen schaal-tag: exporteer het opnieuw als 16-bit of 32-bit in plaats van het te delen. Zie [Uitvoerbeeldformaten](../output-image-formats.md) voor het volledige verhaal.***
+**Lees de `Chloros:PixelScale`-tag en deel erdoor** in plaats van zomaar uit te gaan van een vaste waarde van 65535 — het delen van de LATTICE-reflectantie door 65535 halveert stilzwijgend elke waarde. Een reflectantiebestand van vóór versie 1.3.0 dat als 8-bit is opgeslagen, is afgekapt, niet opnieuw geschaald, en heeft geen schaal-tag: exporteer het opnieuw als 16-bit of 32-bit in plaats van het te delen. Zie [Uitvoerbeeldformaten](../output-image-formats.md) voor het volledige verhaal.
+
+***
 
 ## Metadata die worden meegenomen in de exporten
 
@@ -166,7 +168,9 @@ Om een verslag van de verwerking bij te houden of om het naar de MAPIR-ondersteu
 3. Voeg het toe aan de projectdocumentatie
 4. Stuur het naar de MAPIR-ondersteuning als er problemen zijn opgetreden
 
-Om een probleem rechtstreeks naar MAPIR te sturen, gebruik je het bugpictogram (**Een bug melden**) bovenaan het tabblad Debuglog — zie [Een bug melden vanuit het tabblad Log](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
+Om een probleem rechtstreeks naar MAPIR te sturen, gebruik je het bugpictogram (**Een bug melden**) bovenaan het tabblad Debuglog — zie [Een bug melden vanuit het tabblad Log](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).
+
+***
 
 ## Veelvoorkomende uitvoerproblemen en oplossingen
 
